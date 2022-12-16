@@ -13,7 +13,7 @@ if(isset($_GET['odjava']) == true) {
   unset($_SESSION['status']);
   session_destroy();
   header("Location: http://localhost/engy/index.php"); //Za sada hardcode path
-  exit;
+  exit; // OVO JE NENAD
 }
 ?>
 

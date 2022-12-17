@@ -66,22 +66,6 @@ $(function(){
   $("#nav-placeholder").load("nav.php");
 });
 </script> -->
-    <?php
-    session_start();
-    require_once("f.php");
-    if (!prijavljen()) {
-        header("Location: http://localhost/engy/index.php"); //HARDCODE PATH
-        exit;
-    }
-    $db = mysqli_connect("localhost", "root", "", "engy");
-
-    if (!$db) {
-        echo "ERROR WITH DB CONNECTION" . mysqli_connect_errno();
-        echo "<br>" . mysqli_connect_error();
-        exit();
-    }
-    mysqli_query($db, "SET NAMES utf8");
-    ?>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Container wrapper -->

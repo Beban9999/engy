@@ -36,7 +36,14 @@ if($f == "insertRow"){
 }
 
 
+if($f == "deleteRecord"){
+    $rec_id = $_POST["id"];
 
+    $stmt = $db->prepare("DELETE FROM data WHERE data_id = ?");
+    $stmt->bind_param('i', $rec_id);
+    $stmt->execute();
+    
+}
 if($f == "fillDataTable"){
     $currUser = $_SESSION['id_user'];
     $stmt = $db->prepare("SELECT * FROM data WHERE user = ?");
@@ -59,7 +66,7 @@ if($f == "fillDataTable"){
         <td id="'.$red->data_id.'result"    contenteditable style="max-width:1px"                   >'.$red->result.'</td>
         <td id="'.$red->data_id.'datecomm"  contenteditable style="max-width:1px"                   >'.$red->datecomm.'</td>
 
-        <td><button id="sendToArchive" onclick="sendToArch('.$red->data_id.')">SEND TO ARCHIVE</button></td>
+        <td><button id="deleteRecord" onclick="deleteRecord('.$red->data_id.')">DELETE</button> <button id="sendToArchive" onclick="sendToArch('.$red->data_id.')">ARCHIVE</button></td>
         </tr>';
         }
     }

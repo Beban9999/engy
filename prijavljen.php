@@ -124,12 +124,7 @@ mysqli_query($db, "SET NAMES utf8");
     <?php
     navbar();
     ?>
-
-
-
     <!-- TABLE -->
-
-
     <table class="table">
         <thead class="table-dark">
             <tr>

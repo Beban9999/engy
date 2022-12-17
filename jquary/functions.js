@@ -23,7 +23,7 @@ $(document).ready(function(){
         })
 
     });
-
+    
     $("#insertRow").click(function(){
         let ins_customer       = $("#ins_customer").html();
         let ins_prod           = $("#ins_prod").html();
@@ -92,5 +92,12 @@ $(document).ready(function(){
 function fillDataTable(){
     $.post("ajax.php?f=fillDataTable", function(response){
         $("#table_body").html(response);
+    })
+}
+
+function deleteRecord(id){
+    $.post("ajax.php?f=deleteRecord",{id:id}, function(response){
+        $("#insertResp").html(response);
+        fillDataTable();
     })
 }

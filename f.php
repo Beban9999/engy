@@ -40,13 +40,13 @@
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="prijavljen.php">Muda</a>
+                    <a class="nav-link" href="prijavljen.php">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="reports.php">Kurac</a>
+                    <a class="nav-link" href="reports.php">Reports</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="archive.php">Komitovo sam ovo proslo</a>
+                    <a class="nav-link" href="archive.php">Archive</a>
                 </li>
                 ';
                     if($_SESSION["status"] == 1){

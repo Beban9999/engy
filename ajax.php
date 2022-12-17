@@ -77,7 +77,7 @@ if($f == "prijava"){
     if(mysqli_num_rows($rez) > 0){
         $red = mysqli_fetch_object($rez);
         if($red->password != $pass){
-            echo "Lozinka za korisnika $red->first_name $red->last_name nije ispravna!";
+            echo '<div class="alert alert-danger" role="alert">Password for user '.$red->username.' is not correct!</div>';
         }
         else{
             $_SESSION['user'] = "$red->first_name $red->last_name";
@@ -88,7 +88,9 @@ if($f == "prijava"){
         }
     }
     else{
-        echo "Korisnik ne postoji!";
+        echo '<div class="alert alert-danger" role="alert">
+        User with entered credentials doesn&apos;t exist!
+      </div>';
     }
 }
 ?>

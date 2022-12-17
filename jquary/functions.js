@@ -8,7 +8,7 @@ $(document).ready(function(){
         
         console.log(korIme, pass);
         if(korIme == "" || pass == ""){
-            $("#odgPrijava").html("Morate uneti sve podatke!");
+            $("#odgPrijava").html('<div class="alert alert-danger" role="alert">You need to enter username and password</div>');
             return false;
         }
         $.post("ajax.php?f=prijava",{korIme:korIme, pass:pass}, function(response){

@@ -45,23 +45,26 @@ mysqli_query($db, "SET NAMES utf8");
         color: #9932CC;
     }
 
-    .table>:not(:last-child)>:last-child>* {
-        background: gray;
-        color: white;
-        text-align: center;
-        border: black;
-        border-style: solid;
-        margin: auto;
-        padding: 1em;
-    }
+    .table>:not(:last-child)>:last-child>* { 
+    background-color:#6C4AB6;
+    color: white;
+    /* border: white;
+    border-style: solid; */
+    margin: auto;
+    padding: 1em;
 
+  }
+    
     .table>thead {
         vertical-align: middle;
     }
-
+    .table>tbody{
+      vertical-align:middle !important;
+    }
     .table {
         text-align: center;
         border: black;
+
 
     }
 
@@ -95,6 +98,24 @@ mysqli_query($db, "SET NAMES utf8");
         padding-right: 130px;
 
     }
+    
+#first{
+    border-left:none;
+}
+#last{
+    border-right:none;
+}
+#ins_customer{
+  border-left:none;
+}
+#lastbutton{
+  border-right:none;
+}
+#ins_customer, #ins_prod,#ins_traff,#ins_maincomp,#ins_dest,#ins_looking,#ins_pot,#ins_act,#ins_next,#ins_result,#ins_datecomm,#lastbutton{
+  background:#8D72E1;
+}
+
+
 </style>
 
 
@@ -112,7 +133,7 @@ mysqli_query($db, "SET NAMES utf8");
     <table class="table">
         <thead class="table-dark">
             <tr>
-                <th scope="col">Customer</th>
+                <th id = 'first' scope="col">Customer</th>
                 <th scope="col">Product in use</th>
                 <th scope="col">Traffic Volume</th>
                 <th scope="col">Main Competitor</th>
@@ -123,11 +144,11 @@ mysqli_query($db, "SET NAMES utf8");
                 <th scope="col">Next Step</th>
                 <th scope="col">Result</th>
                 <th scope="col">Date/Comment</th>
-                <th scope="col">Archive</th>
+                <th id = 'last' scope="col">Archive</th>
 
             </tr>
         </thead>
-        <tr>
+        <tr class = "proba">
                 <th id='ins_customer' contenteditable style="max-width:1px" scope="row"></th>
                 <td id='ins_prod' contenteditable style="max-width:1px"></td>
                 <td id='ins_traff' contenteditable style="max-width:1px"></td>
@@ -139,7 +160,7 @@ mysqli_query($db, "SET NAMES utf8");
                 <td id='ins_next' contenteditable style="max-width:1px"></td>
                 <td id='ins_result' contenteditable style="max-width:1px"></td>
                 <td id='ins_datecomm' contenteditable style="max-width:1px"></td>
-                <td><button id='insertRow'>ADD</button></td>
+                <td id='lastbutton'><button id='insertRow'>ADD</button></td>
             </tr>
             <div id="insertResp"></div>
         <tbody id="table_body">

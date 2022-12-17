@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2022 at 11:13 PM
+-- Generation Time: Dec 17, 2022 at 09:39 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -20,6 +20,37 @@ SET time_zone = "+00:00";
 --
 -- Database: `engy`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data`
+--
+
+CREATE TABLE `data` (
+  `customer` varchar(80) NOT NULL,
+  `prod` varchar(80) NOT NULL,
+  `traff` varchar(80) NOT NULL,
+  `maincomp` varchar(80) NOT NULL,
+  `dest` varchar(80) NOT NULL,
+  `looking` varchar(80) NOT NULL,
+  `pot` varchar(80) NOT NULL,
+  `act` varchar(300) NOT NULL,
+  `next` varchar(80) NOT NULL,
+  `result` varchar(80) NOT NULL,
+  `datecomm` varchar(300) NOT NULL,
+  `user` int(10) UNSIGNED NOT NULL,
+  `data_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `data`
+--
+
+INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, `pot`, `act`, `next`, `result`, `datecomm`, `user`, `data_id`) VALUES
+('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 1, 2),
+('asd', 'asd', 'asd', '', '', '', '', '', '', '', '', 1, 11),
+('eEEEd', 'er', 'rtg', 'g', 'f', '', 'gg', 'f', 'd', 'g', 'g', 1, 12);
 
 -- --------------------------------------------------------
 
@@ -71,6 +102,12 @@ INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `
 --
 
 --
+-- Indexes for table `data`
+--
+ALTER TABLE `data`
+  ADD PRIMARY KEY (`data_id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -86,6 +123,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `data`
+--
+ALTER TABLE `data`
+  MODIFY `data_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `roles`

@@ -34,7 +34,7 @@ mysqli_query($db, "SET NAMES utf8");
     <script src="jquary/jquary.js"></script>
     <script src="jquary/jquary.form.js"></script>
     <script src="jquary/functions.js"></script>
-    
+
 
     <title>Dashboard</title>
 
@@ -44,218 +44,123 @@ mysqli_query($db, "SET NAMES utf8");
         font-size: 16px;
         color: #9932CC;
     }
-.table>:not(:last-child)>:last-child>*{
-    background:gray;
-    color:white;
-    text-align:center;
-    border:black;
-    border-style:solid;
-    margin:auto;
-    padding:1em;
-}
-.table>thead{
-    vertical-align:middle;
-}
-.table{
-    text-align:center;
-    border:black;
-    
-}
-.table-hover>tbody>tr:hover>*{
-    background:#9932CC;
-    color:white;
-}
-.table-hover>tbody>tr{
-    border:black;
-    border-style:solid;
-    
-}
-.btn-primary{
-    background:#9932CC;
-    box-shadow:#9932CC !important;
-}
-.btn-primary:hover{
-    background:purple;
-    box-shadow:purple;
-}
-.btn-primary:active{
-color:yellow;
-}
+
+    .table>:not(:last-child)>:last-child>* {
+        background: gray;
+        color: white;
+        text-align: center;
+        border: black;
+        border-style: solid;
+        margin: auto;
+        padding: 1em;
+    }
+
+    .table>thead {
+        vertical-align: middle;
+    }
+
+    .table {
+        text-align: center;
+        border: black;
+
+    }
+
+    .table-hover>tbody>tr:hover>* {
+        background: #9932CC;
+        color: white;
+    }
+
+    .table-hover>tbody>tr {
+        border: black;
+        border-style: solid;
+
+    }
+
+    .btn-primary {
+        background: #9932CC;
+        box-shadow: #9932CC !important;
+    }
+
+    .btn-primary:hover {
+        background: purple;
+        box-shadow: purple;
+    }
+
+    .btn-primary:active {
+        color: yellow;
+    }
+
+    #action {
+        padding-left: 130px;
+        padding-right: 130px;
+
+    }
 </style>
 
 
 <body>
     <!-- Navbar -->
-<?php
+    <?php
     navbar();
-?>
+    ?>
 
 
 
- <!-- TABLE -->
+    <!-- TABLE -->
 
 
-<table class="table">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">Customer</th>
-      <th scope="col">Product in use</th>
-      <th scope="col">Traffic Volume</th>
-      <th scope="col">Main Competitor</th>
-      <th scope="col">Core Destinations</th>
-      <th scope="col">Destinations Looking For</th>
-      <th scope="col">Potential Destinations</th>
-      <th scope="col">Action</th>
-      <th scope="col">Next Step</th>
-      <th scope="col">Result</th>
-      <th scope="col">Date/Comment</th>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Customer</th>
+                <th scope="col">Product in use</th>
+                <th scope="col">Traffic Volume</th>
+                <th scope="col">Main Competitor</th>
+                <th scope="col">Core Destinations</th>
+                <th scope="col">Destinations Looking For</th>
+                <th scope="col">Potential Destinations</th>
+                <th id="action" scope="col">Action</th>
+                <th scope="col">Next Step</th>
+                <th scope="col">Result</th>
+                <th scope="col">Date/Comment</th>
+                <th scope="col">Archive</th>
 
-    </tr>
-</thead>
-  <tbody>
-    <tr>
-      <th scope="row">IDT</th>
-      <td>NENAD</td>
-      <td>otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">IDT</th>
-      <td>Mark</td>
-      <td>otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">IDT</th>
-      <td>Mark</td>
-      <td>otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">IDT</th>
-      <td>Mark</td>
-      <td>otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">TeleSign</th>
-      <td>mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    
-    <tr>
-      <th scope="row">TeleSign</th>
-      <td>mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr><tr>
-      <th scope="row">TeleSign</th>
-      <td>mdo</td>
-      <td>OttoOttoOttoOttoOtto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr><tr>
-      <th scope="row">TeleSign</th>
-      <td>mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr><tr>
-      <th scope="row">TeleSign</th>
-      <td>mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">Twilio</th>
-      <!-- <td colspan="2">Larry the Bird</td> -->
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>    </tr>
-  
-  </tbody>
-</table>
-
-
-
-
+            </tr>
+        </thead>
+        <tr>
+                <th id='ins_customer' contenteditable style="max-width:1px" scope="row"></th>
+                <td id='ins_prod' contenteditable style="max-width:1px"></td>
+                <td id='ins_traff' contenteditable style="max-width:1px"></td>
+                <td id='ins_maincomp' contenteditable style="max-width:1px"></td>
+                <td id='ins_dest' contenteditable style="max-width:1px"></td>
+                <td id='ins_looking' contenteditable style="max-width:1px"></td>
+                <td id='ins_pot' contenteditable style="max-width:1px"></td>
+                <td id='ins_act' contenteditable style="max-width:1px"></td>
+                <td id='ins_next' contenteditable style="max-width:1px"></td>
+                <td id='ins_result' contenteditable style="max-width:1px"></td>
+                <td id='ins_datecomm' contenteditable style="max-width:1px"></td>
+                <td><button id='insertRow'>ADD</button></td>
+            </tr>
+            <div id="insertResp"></div>
+        <tbody id="table_body">
+        </tbody>
+    </table>
 
 
     <!-- Navbar -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/loginscript.js"></script>
+    <script>
+        rows = ['customer', 'prod','traff' ,'maincomp','dest' ,'looking' ,'pot' ,'act' ,'next' ,'result' ,'datecomm']
+
+        function sendToArch(rownum) {
+            for(i = 0; i < 11; i++)
+            {
+                let elemid = rownum+rows[i];
+                //console.log(document.getElementById(rownum+rows[i]).innerHTML);
+            }
+        }
+    </script>
     <!-- jQuery  -->
 </body>
 

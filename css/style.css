@@ -37,3 +37,6 @@
 .alert-danger{
     text-align:center;
 }
+.thead{
+    background-color: black !important;
+}

@@ -48,14 +48,14 @@ if($f == "execUpdate")
 if($f == "deleteRecord"){
     $rec_id = $_POST["id"];
 
-    $stmt = $db->prepare("DELETE FROM data WHERE data_id = ?");
+    $stmt = $db->prepare("UPDATE data SET deleted = 1 WHERE data_id = ?");
     $stmt->bind_param('i', $rec_id);
     $stmt->execute();
 
 }
 if($f == "fillDataTable"){
     $currUser = $_SESSION['id_user'];
-    $stmt = $db->prepare("SELECT * FROM data WHERE user = ?");
+    $stmt = $db->prepare("SELECT * FROM data WHERE user = ? AND deleted = 0");
     $stmt->bind_param('i', $currUser);
     $stmt->execute();
 
@@ -75,7 +75,7 @@ if($f == "fillDataTable"){
         <td id="'.$red->data_id.'result"    contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'result\')"        >'.$red->result.'</td>
         <td id="'.$red->data_id.'datecomm"  contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'datecomm\')"      >'.$red->datecomm.'</td>
 
-        <td><button id="deleteRecord" onclick="deleteRecord('.$red->data_id.')">DELETE</button> <button id="sendToArchive" onclick="sendToArch('.$red->data_id.')">ARCHIVE</button></td>
+        <td><button id="deleteRecord" onclick="deleteRecord('.$red->data_id.')">DELETE</i></button> <button id="sendToArchive" onclick="sendToArch('.$red->data_id.')">ARCHIVE</button></td>
         </tr>';
         }
     }

@@ -35,14 +35,23 @@ if($f == "insertRow"){
 
 }
 
-
+if($f == "execUpdate")
+{
+    $rec_id = $_POST["id"];
+    $col_name = $_POST["col"];
+    $val = $_POST["updateVal"];
+ //   echo $col_name,$val, $rec_id;
+    $stmt = $db->prepare("UPDATE data SET $col_name = ? WHERE data_id = ?");
+    $stmt->bind_param('si',$val, $rec_id);
+    $stmt->execute();
+}
 if($f == "deleteRecord"){
     $rec_id = $_POST["id"];
 
     $stmt = $db->prepare("DELETE FROM data WHERE data_id = ?");
     $stmt->bind_param('i', $rec_id);
     $stmt->execute();
-    
+
 }
 if($f == "fillDataTable"){
     $currUser = $_SESSION['id_user'];
@@ -54,17 +63,17 @@ if($f == "fillDataTable"){
     if(mysqli_num_rows($rez) > 0){
         while($red = mysqli_fetch_object($rez)){
         echo '<tr>
-        <th id="'.$red->data_id.'customer"  contenteditable style="max-width:1px" scope="row"       >'.$red->customer.'</th>
-        <td id="'.$red->data_id.'prod"      contenteditable style="max-width:1px"                   >'.$red->prod.'</td>
-        <td id="'.$red->data_id.'traff"     contenteditable style="max-width:1px"                   >'.$red->traff.'</td>
-        <td id="'.$red->data_id.'maincomp"  contenteditable style="max-width:1px"                   >'.$red->maincomp.'</td>
-        <td id="'.$red->data_id.'dest"      contenteditable style="max-width:1px"                   >'.$red->dest.'</td>
-        <td id="'.$red->data_id.'looking"   contenteditable style="max-width:1px"                   >'.$red->looking.'</td>
-        <td id="'.$red->data_id.'pot"       contenteditable style="max-width:1px"                   >'.$red->pot.'</td>
-        <td id="'.$red->data_id.'act"       contenteditable style="max-width:1px"                   >'.$red->act.'</td>
-        <td id="'.$red->data_id.'next"      contenteditable style="max-width:1px"                   >'.$red->next.'</td>
-        <td id="'.$red->data_id.'result"    contenteditable style="max-width:1px"                   >'.$red->result.'</td>
-        <td id="'.$red->data_id.'datecomm"  contenteditable style="max-width:1px"                   >'.$red->datecomm.'</td>
+        <th id="'.$red->data_id.'customer"  contenteditable style="max-width:1px" scope="row" oninput="execUpdate('.$red->data_id.',\'customer\')"      >'.$red->customer.'</th>
+        <td id="'.$red->data_id.'prod"      contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'prod\')"          >'.$red->prod.'</td>
+        <td id="'.$red->data_id.'traff"     contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'traff\')"         >'.$red->traff.'</td>
+        <td id="'.$red->data_id.'maincomp"  contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'maincomp\')"      >'.$red->maincomp.'</td>
+        <td id="'.$red->data_id.'dest"      contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'dest\')"          >'.$red->dest.'</td>
+        <td id="'.$red->data_id.'looking"   contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'looking\')"       >'.$red->looking.'</td>
+        <td id="'.$red->data_id.'pot"       contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'pot\')"           >'.$red->pot.'</td>
+        <td id="'.$red->data_id.'act"       contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'act\')"           >'.$red->act.'</td>
+        <td id="'.$red->data_id.'next"      contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'next\')"          >'.$red->next.'</td>
+        <td id="'.$red->data_id.'result"    contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'result\')"        >'.$red->result.'</td>
+        <td id="'.$red->data_id.'datecomm"  contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'datecomm\')"      >'.$red->datecomm.'</td>
 
         <td><button id="deleteRecord" onclick="deleteRecord('.$red->data_id.')">DELETE</button> <button id="sendToArchive" onclick="sendToArch('.$red->data_id.')">ARCHIVE</button></td>
         </tr>';

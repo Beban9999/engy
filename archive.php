@@ -57,9 +57,12 @@ color:#9932CC;
     margin:auto;
     padding:1em;
 }
-.table>thead{
-    vertical-align:middle;
-}
+.table>thead {
+        vertical-align: middle;
+    }
+    .table>tbody{
+      vertical-align:middle !important;
+    }
 .table{
     text-align:center;
     border:black;

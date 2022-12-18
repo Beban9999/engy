@@ -71,6 +71,9 @@ mysqli_query($db, "SET NAMES utf8");
 
 
     }
+    .table th{
+        font-weight:0 !important;
+    }
 
     .table-hover>tbody>tr:hover>* {
         background: #9932CC;
@@ -97,10 +100,13 @@ mysqli_query($db, "SET NAMES utf8");
         color: yellow;
     }
 
-    #action {
-        padding-left: 130px;
-        padding-right: 130px;
+    #action, #first {
+        padding-left: 40px;
+        padding-right: 40px;
 
+    }
+    .th>23customer{
+        color:blue;
     }
     
 #first{
@@ -158,20 +164,20 @@ mysqli_query($db, "SET NAMES utf8");
                 <th id = 'first' scope="col">Customer</th>
                 <th scope="col">Product in use</th>
                 <th scope="col">Traffic Volume</th>
-                <th scope="col">Main Competitor</th>
+                <th  scope="col">Main Competitor</th>
                 <th scope="col">Core Destinations</th>
                 <th scope="col">Destinations Looking For</th>
                 <th scope="col">Potential Destinations</th>
                 <th id="action" scope="col">Action</th>
                 <th scope="col">Next Step</th>
                 <th scope="col">Result</th>
-                <th scope="col">Date/Comment</th>
+                <th  scope="col">Date/Comment</th>
                 <th id = 'last' scope="col">Archive</th>
 
             </tr>
         </thead>
         <tr class = "proba">
-                <th id='ins_customer' contenteditable style="max-width:1px" scope="row"></th>
+                <th id='ins_customer' contenteditable style="max-width:1px; color:blue" scope="row"></th>
                 <td id='ins_prod' contenteditable style="max-width:1px"></td>
                 <td id='ins_traff' contenteditable style="max-width:1px"></td>
                 <td id='ins_maincomp' contenteditable style="max-width:1px"></td>

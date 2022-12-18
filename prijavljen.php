@@ -139,26 +139,12 @@ mysqli_query($db, "SET NAMES utf8");
     
     <div class="card text-center">
       <div class="card-body">
-        <h2 class="card-title">Welcome <?php echo $_SESSION['username'];
-    ?>
-    </h5>
-    
-        <p class="card-text" style ="font-size: 16px">This is your main dashboard. Here you can take care of your clients, enter the most important data, send them directly to the archive or delete them permanently</p>
+        <h2 class="card-title">Welcome <?php echo $_SESSION['username']; ?>
+        <p class="card-text m-3" style ="font-size: 16px">This is your main dashboard. Here you can take care of your clients, enter the most important data, send them directly to the archive or delete them permanently</p>
         <a href="#" class="btn btn-primary">Go to archive</a>
       </div>
       <div class="card-footer text-muted"><i>“Life can only be understood backwards, but it must be lived forwards.”</i></div>
-    </div><div class="col-md-3">
-                            <div class="ribbon-2">
-                                <div class="card-box ribbon-box">
-                                    <div class="ribbon ribbon-info"><?php echo $_SESSION['username'];
-?></div>
-                                    <p class="mb-0">There are many variations of passages of Lorem Ipsum available, 
-                                        but the majority have suffered alteration in some form, by injected humour, 
-                                        or randomised words which don't look even slightly believable. 
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!--end col-->
+    </div><!--end col-->
 
 <!-- TABLE -->
     <table class="table">
@@ -208,7 +194,7 @@ mysqli_query($db, "SET NAMES utf8");
         rows = ['customer', 'prod','traff' ,'maincomp','dest' ,'looking' ,'pot' ,'act' ,'next' ,'result' ,'datecomm']
 
         function execUpdate(id, col){
-            console.log(document.getElementById(id+col).innerHTML);
+            //console.log(document.getElementById(id+col).innerHTML);
             let updateVal = document.getElementById(id+col).innerHTML;
 
             $.post("ajax.php?f=execUpdate", 

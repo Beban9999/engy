@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2022 at 07:53 PM
+-- Generation Time: Dec 18, 2022 at 08:51 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -88,6 +88,7 @@ CREATE TABLE `user` (
   `username` varchar(80) NOT NULL,
   `email` varchar(80) NOT NULL,
   `password` varchar(80) NOT NULL,
+  `team` varchar(80) NOT NULL,
   `role` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -95,10 +96,12 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `password`, `role`) VALUES
-(1, 'Nenad', 'Grubenovic', 'grubi', 'grubi@gmail.com', '123', 1),
-(2, 'asd', 'asd', 'ceca', 'asdasd', '123', 2),
-(3, 'Joca', 'coca', 'joca', '123', '123', 3);
+INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `password`, `team`, `role`) VALUES
+(1, 'Nenad', 'Grubenovic', 'grubi', 'grubi@gmail.com', '123', 'CEO', 1),
+(2, 'asd', 'asd', 'ceca', 'asdasd', '123', 'Vice President', 2),
+(3, 'Joca', 'coca', 'joca', '123', '123', 'Sales Manager', 3),
+(4, 'Aleksa', 'Aleksic', 'beban', 'asogfk@gewk9.com', '123', 'Account Manager', 3),
+(5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@gmaog,afe.com', '123', 'Developer', 3);
 
 --
 -- Indexes for dumped tables
@@ -143,7 +146,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

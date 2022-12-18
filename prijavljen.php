@@ -31,6 +31,10 @@ mysqli_query($db, "SET NAMES utf8");
     <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/metricacss.css" />
+    
+
+
     <script src="jquary/jquary.js"></script>
     <script src="jquary/jquary.form.js"></script>
     <script src="jquary/functions.js"></script>
@@ -124,7 +128,39 @@ mysqli_query($db, "SET NAMES utf8");
     <?php
     navbar();
     ?>
-    <!-- TABLE -->
+<div id="MetricaPages" class="main-icon-menu-pane">
+                            
+                            
+                            </div><!-- end Authentication-->
+                        </div><!--end menu-body-->
+                    </div><!-- end main-menu-inner-->
+                </div>
+                <!-- end left-sidenav-->
+    
+    <div class="card text-center">
+      <div class="card-body">
+        <h2 class="card-title">Welcome <?php echo $_SESSION['username'];
+    ?>
+    </h5>
+    
+        <p class="card-text" style ="font-size: 16px">This is your main dashboard. Here you can take care of your clients, enter the most important data, send them directly to the archive or delete them permanently</p>
+        <a href="#" class="btn btn-primary">Go to archive</a>
+      </div>
+      <div class="card-footer text-muted"><i>“Life can only be understood backwards, but it must be lived forwards.”</i></div>
+    </div><div class="col-md-3">
+                            <div class="ribbon-2">
+                                <div class="card-box ribbon-box">
+                                    <div class="ribbon ribbon-info"><?php echo $_SESSION['username'];
+?></div>
+                                    <p class="mb-0">There are many variations of passages of Lorem Ipsum available, 
+                                        but the majority have suffered alteration in some form, by injected humour, 
+                                        or randomised words which don't look even slightly believable. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+
+<!-- TABLE -->
     <table class="table">
         <thead class="table-dark">
             <tr>
@@ -155,7 +191,9 @@ mysqli_query($db, "SET NAMES utf8");
                 <td id='ins_next' contenteditable style="max-width:1px"></td>
                 <td id='ins_result' contenteditable style="max-width:1px"></td>
                 <td id='ins_datecomm' contenteditable style="max-width:1px"></td>
-                <td id='lastbutton'><button id='insertRow'>ADD</button></td>
+                <td id='lastbutton'><button type="button" id='insertRow' class="btn btn-primary1 waves-effect waves-light" style = "background:#2b55cc; color:white"> <i class="fas fa-plus"></i> ADD</button>
+</td>
+
             </tr>
             <div id="insertResp"></div>
         <tbody id="table_body">

@@ -76,7 +76,6 @@
                 if($status == 2) $color = 'blue';
                 if($status == 1) $color = 'red';
         
-        
                 echo '<span style="color:'.$color.'">'.$_SESSION['username'].'</span>';
                 echo '
                 </div>

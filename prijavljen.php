@@ -169,12 +169,19 @@ mysqli_query($db, "SET NAMES utf8");
     <script>
         rows = ['customer', 'prod','traff' ,'maincomp','dest' ,'looking' ,'pot' ,'act' ,'next' ,'result' ,'datecomm']
 
-        function sendToArch(rownum) {
-            for(i = 0; i < 11; i++)
+        function execUpdate(id, col){
+            console.log(document.getElementById(id+col).innerHTML);
+            let updateVal = document.getElementById(id+col).innerHTML;
+
+            $.post("ajax.php?f=execUpdate", 
             {
-                let elemid = rownum+rows[i];
-                //console.log(document.getElementById(rownum+rows[i]).innerHTML);
-            }
+                id:id,
+                col:col,
+                updateVal:updateVal 
+            }, 
+            function(response){
+                $("#insertResp").html(response);
+            })
         }
     </script>
     <!-- jQuery  -->

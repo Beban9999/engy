@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2022 at 09:39 PM
+-- Generation Time: Dec 18, 2022 at 02:05 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -40,17 +40,16 @@ CREATE TABLE `data` (
   `result` varchar(80) NOT NULL,
   `datecomm` varchar(300) NOT NULL,
   `user` int(10) UNSIGNED NOT NULL,
-  `data_id` int(10) UNSIGNED NOT NULL
+  `data_id` int(10) UNSIGNED NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `data`
 --
 
-INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, `pot`, `act`, `next`, `result`, `datecomm`, `user`, `data_id`) VALUES
-('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 1, 2),
-('asd', 'asd', 'asd', '', '', '', '', '', '', '', '', 1, 11),
-('eEEEd', 'er', 'rtg', 'g', 'f', '', 'gg', 'f', 'd', 'g', 'g', 1, 12);
+INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, `pot`, `act`, `next`, `result`, `datecomm`, `user`, `data_id`, `deleted`) VALUES
+('Da li sad radi', 'asd', 'qewf', 'joi', 'joi', 'joiwfg', 'ojiwfg', 'wroigj', 'wejfoi', 'wrefogjiwef', 'woi', 1, 17, 0);
 
 -- --------------------------------------------------------
 
@@ -128,7 +127,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `data_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `data_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `roles`

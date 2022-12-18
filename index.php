@@ -122,6 +122,17 @@ if(isset($_GET['odjava']) == true) {
     
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script type="text/javascript" src="js/loginscript.js"></script>
+  <script>
+    document.getElementById("form2Example22").addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("login").click();
+  }
+});
 
+  </script>
 </body>
 </html>

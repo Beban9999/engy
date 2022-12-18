@@ -146,6 +146,7 @@ if($f == "prijava"){
             $_SESSION['username'] = "$red->username";
             $_SESSION['status'] = $red->role;
             $_SESSION['id_user'] = $red->id_user;
+            $_SESSION['team'] = $red->team;
             echo "prijavljen.php";
         }
     }

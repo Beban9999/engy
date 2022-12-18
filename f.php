@@ -71,11 +71,15 @@
                 <div class="text-reset me-3"> Welcome
                 <!-- Icon -->
             ';
-                $status = $_SESSION['status'];
-                $color = 'green';
-                if($status == 2) $color = 'blue';
-                if($status == 1) $color = 'red';
-        
+                $team = $_SESSION['team'];
+                $img = "img/CEO.png";
+                
+                if($team == "CEO")              $color = 'black';   
+                if($team == "Vice President"){  $color = '#38b6ff'; $img = "img/VP.png";}
+                if($team == "Sales Manager") {  $color = '#ff1616'; $img = "img/SM.png";}
+                if($team == "Account Manager"){ $color = '#3d9e67'; $img = "img/AM.png";}
+                if($team == "Developer"){       $color = '#004aad'; $img = "img/DEV.png";}
+                
                 echo '<span style="color:'.$color.'">'.$_SESSION['username'].'</span>';
                 echo '
                 </div>
@@ -92,8 +96,8 @@
                     aria-expanded="false"
                 >
                     <img
-                    src="user.png"
-                    height="30"
+                    src="'.$img.'"
+                    height="35"
                     alt="Black and White Portrait of a Man"
                     loading="lazy"
                     />

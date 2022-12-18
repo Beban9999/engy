@@ -1,6 +1,12 @@
 $(document).ready(function(){
     if(document.getElementById("table_body")){
+        console.log("table ???");
+
         fillDataTable();
+    }
+    if(document.getElementById("archive_table")){
+        console.log("IS IT TRUE");
+        fillArchiveTable();
     }
     $("#login").click(function(){
         let korIme = $("#form2Example11").val();
@@ -94,10 +100,29 @@ function fillDataTable(){
         $("#table_body").html(response);
     })
 }
+function fillArchiveTable(){
+    console.log("FILL TABLE");
+    $.post("ajax.php?f=fillArchiveTable", function(response){
+        $("#archive_table").html(response);
+    })
+}
 
 function deleteRecord(id){
     $.post("ajax.php?f=deleteRecord",{id:id}, function(response){
         $("#insertResp").html(response);
         fillDataTable();
+    })
+}
+function sendToArch(id){
+    $.post("ajax.php?f=sendToArch",{id:id}, function(response){
+        $("#insertResp").html(response);
+        fillDataTable();
+    })
+}
+
+function returnFromArchive(id){
+    $.post("ajax.php?f=returnFromArchive",{id:id}, function(response){
+        $("#insertResp").html(response);
+        fillArchiveTable();
     })
 }

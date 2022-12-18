@@ -53,9 +53,55 @@ if($f == "deleteRecord"){
     $stmt->execute();
 
 }
+if($f == "sendToArch"){
+    $rec_id = $_POST["id"];
+
+    $stmt = $db->prepare("UPDATE data SET archived = 1 WHERE data_id = ?");
+    $stmt->bind_param('i', $rec_id);
+    $stmt->execute();
+}
+if($f == "returnFromArchive"){
+    $rec_id = $_POST["id"];
+
+    $stmt = $db->prepare("UPDATE data SET archived = 0 WHERE data_id = ?");
+    $stmt->bind_param('i', $rec_id);
+    $stmt->execute();
+}
+
+
+if($f == "fillArchiveTable"){
+    $currUser = $_SESSION['id_user'];
+    $stmt = $db->prepare("SELECT * FROM data WHERE user = ? AND deleted = 0 AND archived = 1 order by data_id desc");
+    $stmt->bind_param('i', $currUser);
+    $stmt->execute();
+
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+        echo '<tr>
+        <th  style="max-width:1px" scope="row"   >'.$red->customer.'</th>
+        <td  style="max-width:1px"               >'.$red->prod.'</td>
+        <td  style="max-width:1px"               >'.$red->traff.'</td>
+        <td  style="max-width:1px"               >'.$red->maincomp.'</td>
+        <td  style="max-width:1px"               >'.$red->dest.'</td>
+        <td  style="max-width:1px"               >'.$red->looking.'</td>
+        <td  style="max-width:1px"               >'.$red->pot.'</td>
+        <td  style="max-width:1px"               >'.$red->act.'</td>
+        <td  style="max-width:1px"               >'.$red->next.'</td>
+        <td  style="max-width:1px"               >'.$red->result.'</td>
+        <td  style="max-width:1px"               >'.$red->datecomm.'</td>
+
+        <td><button id="returnFromArchive" class="btn btn-warning" onclick="returnFromArchive('.$red->data_id.')"><i class="fas fa-archive"></i></button></td>
+        </tr>';
+        }
+    }
+}
+
+
+
 if($f == "fillDataTable"){
     $currUser = $_SESSION['id_user'];
-    $stmt = $db->prepare("SELECT * FROM data WHERE user = ? AND deleted = 0");
+    $stmt = $db->prepare("SELECT * FROM data WHERE user = ? AND deleted = 0 AND archived = 0 order by data_id desc");
     $stmt->bind_param('i', $currUser);
     $stmt->execute();
 
@@ -75,7 +121,7 @@ if($f == "fillDataTable"){
         <td id="'.$red->data_id.'result"    contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'result\')"        >'.$red->result.'</td>
         <td id="'.$red->data_id.'datecomm"  contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'datecomm\')"      >'.$red->datecomm.'</td>
 
-        <td><button id="deleteRecord" class="btn btn-danger" onclick="deleteRecord('.$red->data_id.')">DELETE</i></button> <button id="sendToArchive" class="btn btn-warning" onclick="sendToArch('.$red->data_id.')"><i class="fas fa-archive"></i>ARCHIVE</button></td>
+        <td><button id="deleteRecord" class="btn btn-danger" onclick="deleteRecord('.$red->data_id.')"><i class="fas fa-archive"></i></button> <button id="sendToArchive" class="btn btn-warning" onclick="sendToArch('.$red->data_id.')"><i class="fas fa-archive"></i></button></td>
         </tr>';
         }
     }

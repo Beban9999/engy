@@ -33,6 +33,9 @@ mysqli_query($db, "SET NAMES utf8");
   <link rel="stylesheet" href="css/metricacss.css" />
   
 
+  <script src="jquary/jquary.js"></script>
+  <script src="jquary/jquary.form.js"></script>
+  <script src="jquary/functions.js"></script>
 
 
 
@@ -44,6 +47,43 @@ mysqli_query($db, "SET NAMES utf8");
 .nav-link{
 font-size:16px;
 color:#9932CC;
+}
+.table>:not(:last-child)>:last-child>*{
+    background:gray;
+    color:white;
+    text-align:center;
+    border:black;
+    border-style:solid;
+    margin:auto;
+    padding:1em;
+}
+.table>thead{
+    vertical-align:middle;
+}
+.table{
+    text-align:center;
+    border:black;
+    
+}
+.table-hover>tbody>tr:hover>*{
+    background:#9932CC;
+    color:white;
+}
+.table-hover>tbody>tr{
+    border:black;
+    border-style:solid;
+    
+}
+.btn-primary{
+    background:#9932CC;
+    box-shadow:#9932CC !important;
+}
+.btn-primary:hover{
+    background:purple;
+    box-shadow:purple;
+}
+.btn-primary:active{
+color:yellow;
 }
 </style>
 <body>
@@ -87,181 +127,10 @@ an achiever never gives up, never settles and lastly never forgets.”</i></div>
       <th scope="col">Next Step</th>
       <th scope="col">Result</th>
       <th scope="col">Date/Comment</th>
-
+      <th scope="col">Return</th>
     </tr>
   </thead>
-<style>
-.table>:not(:last-child)>:last-child>*{
-    background:gray;
-    color:white;
-    text-align:center;
-    border:black;
-    border-style:solid;
-    margin:auto;
-    padding:1em;
-}
-.table>thead{
-    vertical-align:middle;
-}
-.table{
-    text-align:center;
-    border:black;
-    
-}
-.table-hover>tbody>tr:hover>*{
-    background:#9932CC;
-    color:white;
-}
-.table-hover>tbody>tr{
-    border:black;
-    border-style:solid;
-    
-}
-.btn-primary{
-    background:#9932CC;
-    box-shadow:#9932CC !important;
-}
-.btn-primary:hover{
-    background:purple;
-    box-shadow:purple;
-}
-.btn-primary:active{
-color:yellow;
-}
-
-</style>
-  <tbody>
-    <tr>
-      <th scope="row">IDT</th>
-      <td>Mark</td>
-      <td>otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">IDT</th>
-      <td>Mark</td>
-      <td>otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">IDT</th>
-      <td>Mark</td>
-      <td>otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">IDT</th>
-      <td>Mark</td>
-      <td>otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">TeleSign</th>
-      <td>mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    
-    <tr>
-      <th scope="row">TeleSign</th>
-      <td>mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr><tr>
-      <th scope="row">TeleSign</th>
-      <td>mdo</td>
-      <td>OttoOttoOttoOttoOtto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr><tr>
-      <th scope="row">TeleSign</th>
-      <td>mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr><tr>
-      <th scope="row">TeleSign</th>
-      <td>mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">Twilio</th>
-      <!-- <td colspan="2">Larry the Bird</td> -->
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>    </tr>
+  <tbody id="archive_table">
   </tbody>
 </table>
   

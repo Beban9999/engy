@@ -68,7 +68,7 @@
             </div>
             <!-- Collapsible wrapper -->
             <div class="d-flex align-items-center">
-                <div class="text-reset me-3"> Welcome
+                <div class="text-reset me-1"> Welcome
                 <!-- Icon -->
             ';
                 $team = $_SESSION['team'];

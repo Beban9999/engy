@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2022 at 02:05 AM
+-- Generation Time: Dec 18, 2022 at 07:53 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -41,15 +41,19 @@ CREATE TABLE `data` (
   `datecomm` varchar(300) NOT NULL,
   `user` int(10) UNSIGNED NOT NULL,
   `data_id` int(10) UNSIGNED NOT NULL,
-  `deleted` tinyint(1) NOT NULL DEFAULT 0
+  `deleted` tinyint(1) NOT NULL DEFAULT 0,
+  `archived` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `data`
 --
 
-INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, `pot`, `act`, `next`, `result`, `datecomm`, `user`, `data_id`, `deleted`) VALUES
-('Da li sad radi', 'asd', 'qewf', 'joi', 'joi', 'joiwfg', 'ojiwfg', 'wroigj', 'wejfoi', 'wrefogjiwef', 'woi', 1, 17, 0);
+INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, `pot`, `act`, `next`, `result`, `datecomm`, `user`, `data_id`, `deleted`, `archived`) VALUES
+('', 'eeeeee', 'qewf', 'joi', 'joi', 'eeee', 'ojiwfg', 'asdasd', 'qweqwe', 'qweqwe', '123123123123', 1, 17, 0, 0),
+('asd', 'asd', 'weqwe', '', 'qwe', '', '', '', '', '', '', 1, 18, 0, 0),
+('', '', '', '', '', '', '', '', '', '', '', 1, 19, 0, 0),
+('', '', 'qwe', 'qwe', 'qwe', 'qweqwe', 'eee', '', '', '', '', 1, 20, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -127,7 +131,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `data_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `data_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `roles`

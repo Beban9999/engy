@@ -30,6 +30,11 @@ mysqli_query($db, "SET NAMES utf8");
   <!-- MDB -->
   <link rel="stylesheet" href="css/mdb.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/metricacss.css" />
+  
+
+
+
 
 
     <title>Document</title>
@@ -58,7 +63,9 @@ color:#9932CC;
             <div class="card text-center">
   <div class="card-header">Archive</div>
   <div class="card-body">
-    <h5 class="card-title">Welcome Username!</h5>
+    <h5 class="card-title">Welcome <?php echo $_SESSION['username'];
+?>!
+</h5>
     <p class="card-text">This is your archive user! Here you can send and see all your previous agreements.</p>
     <a href="#" class="btn btn-primary">Return to Dashboard</a>
   </div>

@@ -1,7 +1,6 @@
 $(document).ready(function(){
     if(document.getElementById("table_body")){
         console.log("table ???");
-
         fillDataTable();
     }
     if(document.getElementById("archive_table")){
@@ -114,6 +113,15 @@ function deleteRecord(id){
     })
 }
 function sendToArch(id){
+    document.getElementById("archvInfo").style.visibility = "visible";
+    setTimeout(() => {
+        document.getElementById("archvInfo").style.visibility = "hidden";
+        
+    }, 2000);
+
+
+
+    document.getElementById("archvInfo").style.visibility = "visible";
     $.post("ajax.php?f=sendToArch",{id:id}, function(response){
         $("#insertResp").html(response);
         fillDataTable();

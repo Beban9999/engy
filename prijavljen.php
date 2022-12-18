@@ -118,12 +118,17 @@ mysqli_query($db, "SET NAMES utf8");
 #ins_customer, #ins_prod,#ins_traff,#ins_maincomp,#ins_dest,#ins_looking,#ins_pot,#ins_act,#ins_next,#ins_result,#ins_datecomm,#lastbutton{
   background:#8D72E1;
 }
-
+#archvInfo{
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    visibility: hidden;
+}
 
 </style>
 
 
-<body>
+<body id="dashboard_body" onclick="removeNoti()">
     <!-- Navbar -->
     <?php
     navbar();
@@ -208,7 +213,8 @@ mysqli_query($db, "SET NAMES utf8");
             })
         }
     </script>
-    <!-- jQuery  -->
+    <div id="archvInfo" class="alert alert-success" role="alert">Successfuly archived</div>
+    
 </body>
 
 </html>

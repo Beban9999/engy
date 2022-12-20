@@ -17,3 +17,4 @@ function showAlert() {
         cancelButtonAriaLabel: 'Thumbs down'
       })
   }
+

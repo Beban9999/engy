@@ -116,10 +116,14 @@ color:yellow;
 an achiever never gives up, never settles and lastly never forgets.”</i></div>
 </div>
 
+<style>
+
+</style>
+
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th scope="col">Customer</th>
+      <th id = 'first' scope="col">Customer</th>
       <th scope="col">Product in use</th>
       <th scope="col">Traffic Volume</th>
       <th scope="col">Main Competitor</th>
@@ -130,7 +134,7 @@ an achiever never gives up, never settles and lastly never forgets.”</i></div>
       <th scope="col">Next Step</th>
       <th scope="col">Result</th>
       <th scope="col">Date/Comment</th>
-      <th scope="col">Return</th>
+      <th id = 'last' scope="col">Return</th>
     </tr>
   </thead>
   <tbody id="archive_table">

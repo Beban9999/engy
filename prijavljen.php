@@ -131,6 +131,7 @@ mysqli_query($db, "SET NAMES utf8");
     visibility: hidden;
 }
 
+
 </style>
 
 
@@ -157,6 +158,16 @@ mysqli_query($db, "SET NAMES utf8");
       <div class="card-footer text-muted"><i>“Life can only be understood backwards, but it must be lived forwards.”</i></div>
     </div><!--end col-->
 
+
+                        <div class="col-lg-6">
+                                <div class="card-body">
+                                    <div class="chart-demo">
+                                        <div id="apex_mixed1" class="apex-charts"></div>
+                                    </div>                                        
+                                </div><!--end card-body-->
+                        </div><!--end col-->
+
+
 <!-- TABLE -->
     <table class="table">
         <thead class="table-dark">
@@ -177,7 +188,7 @@ mysqli_query($db, "SET NAMES utf8");
             </tr>
         </thead>
         <tr class = "proba">
-                <th id='ins_customer' contenteditable style="max-width:1px; color:blue" scope="row"></th>
+                <th id='ins_customer' contenteditable style="max-width:1px; color:purple" scope="row"></th>
                 <td id='ins_prod' contenteditable style="max-width:1px"></td>
                 <td id='ins_traff' contenteditable style="max-width:1px"></td>
                 <td id='ins_maincomp' contenteditable style="max-width:1px"></td>
@@ -198,7 +209,16 @@ mysqli_query($db, "SET NAMES utf8");
     </table>
 
 
+   
     <!-- Navbar -->
+        <!-- Chartovi -->
+
+        <script src="assets/plugins/moment/moment.js"></script>
+        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
+        <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
+        <script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
+        <script src="assets/pages/jquery.apexcharts.init.js"></script>
+
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/loginscript.js"></script>
     <script>

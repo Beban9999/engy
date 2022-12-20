@@ -17,86 +17,80 @@ mysqli_query($db, "SET NAMES utf8");
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- MDB icon -->
-  <link rel="icon" href="logo.ico" type="image/x-icon" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <!-- Google Fonts Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-  <!-- MDB -->
-  <link rel="stylesheet" href="css/mdb.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+    <head>
+        <meta charset="utf-8" />
+        <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A premium admin dashboard template by Mannatthemes" name="description" />
+        <meta content="Mannatthemes" name="author" />
 
+         <!-- Sweet Alert -->
+         <!-- <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css"> -->
+        <link href="assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
+        <script src="js/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="css/sweetalert2.min.css">
 
-    <title>Reports</title>
     
-</head>
-<style>
-.nav-link{
-font-size:16px;
-color:#9932CC;
-}
-</style>
-<body>
-    
-<?php
+        <!-- App css -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <!-- <link rel="stylesheet" href="css/footer.css" /> -->
+    <!-- <link rel="stylesheet" href="css/metricacss.css" /> -->
+    <script src="jquary/jquary.js"></script>
+    <script src="jquary/jquary.form.js"></script>
+    <script src="jquary/functions.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/info.js"></script>
+
+    </head>
+
+    <body>
+    <div> <?php
     navbar();
-?>
-<div id="MetricaPages" class="main-icon-menu-pane">
-                            
-                            
-                        </div><!-- end Authentication-->
-                    </div><!--end menu-body-->
-                </div><!-- end main-menu-inner-->
-            </div>
-            <!-- end left-sidenav-->
-
+    ?></div>
+      
+      
             <!-- Page Content-->
             <div class="page-content">
 
-                <div class="container-fluid">
-                    <!-- Page-Title -->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="page-title-box">
-                                <div class="float-right">
-                                    
-                                </div>
-<br>                            </div><!--end page-title-box-->
-                        </div><!--end col-->
-                    </div>
                     <!-- end page title end breadcrumb -->
+                    
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">            
-                                    <h4 class="mt-0 header-title">Here you can write your weekly report</h4>
-                                    <p class="text-muted mb-3">Don't forget to upload!
+                                    <p class="text-muted mb-3">Bootstrap-wysihtml5 is a javascript
+                                        plugin that makes it easy to create simple, beautiful wysiwyg editors
+                                        with the help of wysihtml5 and Twitter Bootstrap.
                                     </p>        
                                     <form method="post">
                                         <textarea id="elm1" name="area"></textarea>
-                                    </form>        
+                                        <br>
+                                        <br>
+                                        <button type="button" class="btn btn-success" style= "position:absolute; right:1.5%; bottom:3.5%;" onclick = "showAlert2()">UPLOAD</button>
+
+                                    </form>    
+    
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div> <!-- end col -->
                     </div> <!-- end row --> 
 
                 </div><!-- container -->
-  <!-- Container wrapper -->
 
-<!-- Navbar -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
-  <script type="text/javascript" src="js/loginscript.js"></script>
-    <!-- jQuery  -->
-    <script src="assets/js/jquery.min.js"></script>
+             
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+      
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/metisMenu.min.js"></script>
         <script src="assets/js/waves.min.js"></script>
         <script src="assets/js/jquery.slimscroll.min.js"></script>
+
 
         <!--Wysiwig js-->
         <script src="assets/plugins/tinymce/tinymce.min.js"></script>
@@ -105,5 +99,5 @@ color:#9932CC;
         <!-- App js -->
         <script src="assets/js/app.js"></script>
 
-</body>
+    </body>
 </html>

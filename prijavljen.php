@@ -106,31 +106,28 @@ mysqli_query($db, "SET NAMES utf8");
         padding-right: 40px;
 
     }
-    .th>23customer{
-        color:blue;
-    }
     
-#first{
+    #first{
+        border-left:none;
+    }
+    #last{
+        border-right:none;
+    }
+    #ins_customer{
     border-left:none;
-}
-#last{
+    }
+    #lastbutton{
     border-right:none;
-}
-#ins_customer{
-  border-left:none;
-}
-#lastbutton{
-  border-right:none;
-}
-#ins_customer, #ins_prod,#ins_traff,#ins_maincomp,#ins_dest,#ins_looking,#ins_pot,#ins_act,#ins_next,#ins_result,#ins_datecomm,#lastbutton{
-  background:#8D72E1;
-}
-#archvInfo{
-    position: fixed;
-    bottom: 0%;
-    right: 0%;
-    visibility: hidden;
-}
+    }
+    #ins_customer, #ins_prod,#ins_traff,#ins_maincomp,#ins_dest,#ins_looking,#ins_pot,#ins_act,#ins_next,#ins_result,#ins_datecomm,#lastbutton{
+    background:#8D72E1;
+    }
+    #archvInfo{
+        position: fixed;
+        bottom: 0%;
+        right: 0%;
+        visibility: hidden;
+    }
 
 
 </style>
@@ -159,46 +156,7 @@ mysqli_query($db, "SET NAMES utf8");
     </div><!--end col-->
 
 <br>
-<div class="row">
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="blog-card">
-                                        <div class="meta-box">
-                                           
-                                        </div><!--end meta-box-->            
-                                        <h4 class="mt-2 mb-3" style="color:purple;text-align:center">
-                                            Private Message
-                                        </h4>
-                                        <p class="text-muted" style="text-align:center">The standard chunk of Lorem Ipsum used since the 1500s is reproducede the 1500s is reproducede the 1500s is reproducede the 1500s is reproducede the 1500s is reproduced below for those interested. Cum sociis natoque penatibus et magnis.</p>
-                                        <ul class="p-0 mt-4 list-inline " style="text-align:center">
-                                                <li class="list-inline-item" >26 Avgust 2019</li>
-                                                <li class="list-inline-item">by: <a href="">admin</a></li>
-                                            </ul>
-                                    </div><!--end blog-card-->                                   
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div> <!--end col-->
-
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="blog-card">
-                                        <div class="meta-box">
-                                           
-                                        </div><!--end meta-box-->            
-                                        <h4 class="mt-2 mb-3" style="color:purple;text-align:center;font-weight:bold">
-                                            Global Message
-                                        </h4>
-                                        <p class="text-muted" style="text-align:center">The standard chunk of Lorem Ipsum used since the 1500s is reproducede the 1500s is reproducede the 1500s is reproducede the 1500s is reproducede the 1500s is reproduced below for those interested. Cum sociis natoque penatibus et magnis.</p>
-                                        <ul class="p-0 mt-4 list-inline " style="text-align:center">
-                                                <li class="list-inline-item" >26 Avgust 2019</li>
-                                                <li class="list-inline-item">by: <a href="">admin</a></li>
-                                            </ul>
-                                    </div><!--end blog-card-->                                   
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div> <!--end col-->
+<div class="row" id="message_div">
 </div>
 <br>
 

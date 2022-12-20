@@ -1,12 +1,17 @@
 $(document).ready(function(){
     if(document.getElementById("table_body")){
-        console.log("table ???");
         fillDataTable();
     }
     if(document.getElementById("archive_table")){
-        console.log("IS IT TRUE");
         fillArchiveTable();
     }
+    if(document.getElementById("users_table")){
+        fillUsersTable();
+    }
+    if(document.getElementById("message_div")){
+        fillMessages();
+    }
+    
     $("#login").click(function(){
         let korIme = $("#form2Example11").val();
         let pass = $("#form2Example22").val();
@@ -28,6 +33,48 @@ $(document).ready(function(){
         })
 
     });
+
+    //sendPrivateMessage
+    $("#sendPrivateMessage").click(function(){
+        $('#product-options').modal('hide');
+        let message_text = $("#privateMessageText").val();
+        let to_user = $("#clickedUserId").html();
+        console.log(message_text, to_user);
+        if(message_text == ""){
+            //$("#odgPrijava").html('<div class="alert alert-danger" role="alert">You need to enter username and password</div>');
+            return false;
+        }
+        $.post("ajax.php?f=sendPrivateMessage",{message_text:message_text, to_user:to_user}, function(response){
+            console.log(response)
+            // if(response.startsWith("prijavljen.php")){
+            // }
+            // else{
+            //     $("#odgPrijava").html(response); 
+            // }
+        })
+
+    });
+        
+    $("#sendGlobalMessage").click(function(){
+        let message_text = $("#globalMessageText").val();
+        console.log(message_text);
+        if(message_text == ""){
+            //$("#odgPrijava").html('<div class="alert alert-danger" role="alert">You need to enter username and password</div>');
+            return false;
+        }
+        $("#globalMessageText").val("");
+        $.post("ajax.php?f=sendGlobalMessage",{message_text:message_text}, function(response){
+            console.log(response)
+            // if(response.startsWith("prijavljen.php")){
+            // }
+            // else{
+            //     $("#odgPrijava").html(response); 
+            // }
+        })
+
+    });
+
+    
     
     $("#insertRow").click(function(){
         let ins_customer       = $("#ins_customer").html();
@@ -105,6 +152,17 @@ function fillArchiveTable(){
         $("#archive_table").html(response);
     })
 }
+function fillUsersTable(){
+    $.post("ajax.php?f=fillUsersTable", function(response){
+        $("#users_table").html(response);
+    })
+}
+
+function fillMessages(){
+    $.post("ajax.php?f=fillMessages", function(response){
+        $("#message_div").html(response);
+    })
+}
 
 function deleteRecord(id){
     $.post("ajax.php?f=deleteRecord",{id:id}, function(response){
@@ -118,8 +176,6 @@ function sendToArch(id){
         document.getElementById("archvInfo").style.visibility = "hidden";
         
     }, 2000);
-
-
 
     document.getElementById("archvInfo").style.visibility = "visible";
     $.post("ajax.php?f=sendToArch",{id:id}, function(response){

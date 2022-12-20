@@ -34,7 +34,48 @@ if($f == "insertRow"){
     echo $rez;
 
 }
+if($f == "fillMessages")
+{
+    $currUser = $_SESSION['id_user'];
+    $stmt = $db->prepare("SELECT * 
+    FROM messages JOIN user ON messages.user_from = user.id_user
+    WHERE user_for in (?, 0) AND deleted = 0 order by message_date desc");
+    $stmt->bind_param('i', $currUser);
+    $stmt->execute();
 
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            $message_type = ($red->user_for == 0)? "Global Message" : "Private Message";
+            if($red->team == "CEO")              $color = 'black';   
+            if($red->team == "Vice President"){  $color = '#38b6ff';}
+            if($red->team == "Sales Manager") {  $color = '#ff1616';}
+            if($red->team == "Account Manager"){ $color = '#3d9e67';}
+            if($red->team == "Developer"){       $color = '#004aad';}
+
+        echo '                   
+        <div class="col-lg-6 mb-3">
+           <div class="card">
+               <div class="card-body">
+                   <div class="blog-card">
+                       <div class="meta-box">
+                          
+                       </div><!--end meta-box-->            
+                       <h4 class="mt-2 mb-3" style="color:purple;text-align:center">
+                           '.$message_type.'
+                       </h4>
+                       <p class="text-muted" style="text-align:center">'.$red->message_text.'</p>
+                       <ul class="p-0 mt-4 list-inline " style="text-align:center">
+                               <li class="list-inline-item" >'.$red->message_date.'</li>
+                               <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li>
+                           </ul>
+                   </div><!--end blog-card-->                                   
+               </div><!--end card-body-->
+           </div><!--end card-->
+       </div> <!--end col-->';
+        }
+    }
+}
 if($f == "execUpdate")
 {
     $rec_id = $_POST["id"];
@@ -67,7 +108,51 @@ if($f == "returnFromArchive"){
     $stmt->bind_param('i', $rec_id);
     $stmt->execute();
 }
+if($f == "sendPrivateMessage"){
+    $currUser = $_SESSION['id_user'];
+    $message_text = $_POST['message_text'];
+    $to_user = $_POST['to_user'];
+    $d=strtotime("now");
+    $date = date("Y-m-d h:i:sa", $d);
+    $stmt = $db->prepare("INSERT INTO `messages`(`message_text`, `user_from`,`message_date`, `user_for`) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param('sisi', $message_text, $currUser, $date, $to_user);
+    $stmt->execute();
+}
 
+if($f == "sendGlobalMessage"){
+    $currUser = $_SESSION['id_user'];
+    $message_text = $_POST['message_text'];
+    $d=strtotime("now");
+    $date = date("Y-m-d h:i:sa", $d);
+    $stmt = $db->prepare("INSERT INTO `messages`(`message_text`, `user_from`,`message_date`) VALUES (?, ?, ?)");
+    $stmt->bind_param('sis', $message_text, $currUser, $date);
+    $stmt->execute();
+}
+
+if($f == "fillUsersTable"){
+    $currUser = $_SESSION['id_user'];
+    $stmt = $db->prepare("SELECT * 
+    FROM user JOIN roles ON user.role = roles.id_role
+    WHERE role <> 1 ORDER BY first_name DESC");
+    $stmt->execute();
+
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+        echo '<tr>
+        <td>'.$red->first_name.' '.$red->last_name.'</td>
+        <td>'.$red->team.'</td>
+        <td>'.$red->email.'</td>
+        <td>
+        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" onclick = "saveClickedUserInfo(\''.$red->username.'\', \''.$red->id_user.'\')" data-animation="bounce" data-target=".bs-example-modal-center">Private Message</button>
+        <button type="button" class="btn btn-danger waves-effect waves-light">Remove</button></td>
+        <td>                                                       
+        <button type="button" class="btn btn-primary waves-effect waves-light">Visit</button></td>
+        <i class="mdi mdi-message-text-outline"></i>
+        </tr>';
+        }
+    }
+}
 
 if($f == "fillArchiveTable"){
     $currUser = $_SESSION['id_user'];

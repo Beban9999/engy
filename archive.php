@@ -40,7 +40,7 @@ mysqli_query($db, "SET NAMES utf8");
 
 
 
-    <title>Document</title>
+    <title>Archive</title>
     
 </head>
 <style>

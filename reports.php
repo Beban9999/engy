@@ -19,7 +19,7 @@ mysqli_query($db, "SET NAMES utf8");
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>Reports</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A premium admin dashboard template by Mannatthemes" name="description" />
         <meta content="Mannatthemes" name="author" />

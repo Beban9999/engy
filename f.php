@@ -51,7 +51,7 @@
                 ';
                     if($_SESSION["status"] == 1){
                     echo '<li class="nav-item">
-                            <a class="nav-link" href="#">Managment</a>
+                            <a class="nav-link" href="managment.php">Managment</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" href="#">Admin Panel</a>
@@ -59,7 +59,7 @@
                     }
                     if($_SESSION['status'] == 2){
                     echo '<li class="nav-item">
-                            <a class="nav-link" href="#">Managment</a>
+                            <a class="nav-link" href="managment.php">Managment</a>
                             </li>';
                     }
                 echo '

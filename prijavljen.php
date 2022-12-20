@@ -153,14 +153,14 @@ mysqli_query($db, "SET NAMES utf8");
       <div class="card-body">
         <h2 class="card-title">Welcome <?php echo $_SESSION['username']; ?>
         <p class="card-text m-3" style ="font-size: 16px">This is your main dashboard. Here you can take care of your clients, enter the most important data, send them directly to the archive or delete them permanently</p>
-        <a href="#" class="btn btn-primary">Go to archive</a>
       </div>
       <div class="card-footer text-muted"><i>“Life can only be understood backwards, but it must be lived forwards.”</i></div>
     </div><!--end col-->
 
-
+<br>
                         <div class="col-lg-6">
                                 <div class="card-body">
+                                <h5 class="card-title" style="position:relative;left:38%;"><?php echo $_SESSION['username'] ?>'s Traffic</h5>
                                     <div class="chart-demo">
                                         <div id="apex_mixed1" class="apex-charts"></div>
                                     </div>                                        

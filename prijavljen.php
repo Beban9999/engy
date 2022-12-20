@@ -44,6 +44,7 @@ mysqli_query($db, "SET NAMES utf8");
 
 </head>
 <style>
+    
     .nav-link {
         font-size: 16px;
         color: #9932CC;
@@ -156,6 +157,51 @@ mysqli_query($db, "SET NAMES utf8");
       </div>
       <div class="card-footer text-muted"><i>“Life can only be understood backwards, but it must be lived forwards.”</i></div>
     </div><!--end col-->
+
+<br>
+<div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="blog-card">
+                                        <div class="meta-box">
+                                           
+                                        </div><!--end meta-box-->            
+                                        <h4 class="mt-2 mb-3" style="color:purple;text-align:center">
+                                            Private Message
+                                        </h4>
+                                        <p class="text-muted" style="text-align:center">The standard chunk of Lorem Ipsum used since the 1500s is reproducede the 1500s is reproducede the 1500s is reproducede the 1500s is reproducede the 1500s is reproduced below for those interested. Cum sociis natoque penatibus et magnis.</p>
+                                        <ul class="p-0 mt-4 list-inline " style="text-align:center">
+                                                <li class="list-inline-item" >26 Avgust 2019</li>
+                                                <li class="list-inline-item">by: <a href="">admin</a></li>
+                                            </ul>
+                                    </div><!--end blog-card-->                                   
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div> <!--end col-->
+
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="blog-card">
+                                        <div class="meta-box">
+                                           
+                                        </div><!--end meta-box-->            
+                                        <h4 class="mt-2 mb-3" style="color:purple;text-align:center;font-weight:bold">
+                                            Global Message
+                                        </h4>
+                                        <p class="text-muted" style="text-align:center">The standard chunk of Lorem Ipsum used since the 1500s is reproducede the 1500s is reproducede the 1500s is reproducede the 1500s is reproducede the 1500s is reproduced below for those interested. Cum sociis natoque penatibus et magnis.</p>
+                                        <ul class="p-0 mt-4 list-inline " style="text-align:center">
+                                                <li class="list-inline-item" >26 Avgust 2019</li>
+                                                <li class="list-inline-item">by: <a href="">admin</a></li>
+                                            </ul>
+                                    </div><!--end blog-card-->                                   
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div> <!--end col-->
+</div>
+<br>
+
 
 <br>
                         <div class="col-lg-6">

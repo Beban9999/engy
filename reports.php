@@ -31,6 +31,7 @@ mysqli_query($db, "SET NAMES utf8");
         <link rel="stylesheet" href="css/sweetalert2.min.css">
 
     
+        
         <!-- App css -->
     <link rel="stylesheet" href="css/mdb.min.css" />
     <!-- <link rel="stylesheet" href="css/style.css" /> -->
@@ -48,20 +49,22 @@ mysqli_query($db, "SET NAMES utf8");
     <div> <?php
     navbar();
     ?></div>
-      
-      
+      <style>
+      body{
+        background:#9932CC;
+        }
+        </style>
+      <br>
             <!-- Page Content-->
             <div class="page-content">
 
                     <!-- end page title end breadcrumb -->
                     
                     <div class="row">
-                        <div class="col-12">
-                            <div class="card">
+                        <div class="col-12" >
+                            <div class="card"style="border-radius:0px;" >
                                 <div class="card-body">            
-                                    <p class="text-muted mb-3">Bootstrap-wysihtml5 is a javascript
-                                        plugin that makes it easy to create simple, beautiful wysiwyg editors
-                                        with the help of wysihtml5 and Twitter Bootstrap.
+                                    <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'>Write your weekly reports.<br> <b>Don't forget to upload!</b>
                                     </p>        
                                     <form method="post">
                                         <textarea id="elm1" name="area"></textarea>

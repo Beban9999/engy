@@ -112,20 +112,16 @@ if($f == "sendPrivateMessage"){
     $currUser = $_SESSION['id_user'];
     $message_text = $_POST['message_text'];
     $to_user = $_POST['to_user'];
-    $d=strtotime("now");
-    $date = date("Y-m-d h:i:sa", $d);
-    $stmt = $db->prepare("INSERT INTO `messages`(`message_text`, `user_from`,`message_date`, `user_for`) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param('sisi', $message_text, $currUser, $date, $to_user);
+    $stmt = $db->prepare("INSERT INTO `messages`(`message_text`, `user_from`,`user_for`) VALUES (?, ?, ?)");
+    $stmt->bind_param('sii', $message_text, $currUser, $to_user);
     $stmt->execute();
 }
 
 if($f == "sendGlobalMessage"){
     $currUser = $_SESSION['id_user'];
     $message_text = $_POST['message_text'];
-    $d=strtotime("now");
-    $date = date("Y-m-d h:i:sa", $d);
-    $stmt = $db->prepare("INSERT INTO `messages`(`message_text`, `user_from`,`message_date`) VALUES (?, ?, ?)");
-    $stmt->bind_param('sis', $message_text, $currUser, $date);
+    $stmt = $db->prepare("INSERT INTO `messages`(`message_text`, `user_from`) VALUES (?, ?)");
+    $stmt->bind_param('si', $message_text, $currUser);
     $stmt->execute();
 }
 

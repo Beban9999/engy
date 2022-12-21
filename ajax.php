@@ -61,12 +61,12 @@ if($f == "fillMessages")
                        <div class="meta-box" >
                           
                        </div><!--end meta-box-->            
-                       <h4 class="mt-2 mb-3" style="color:white;text-align:center">
+                       <h4 class="mt-2 mb-3" style="text-align:center">
                            '.$message_type.'
                        </h4>
-                       <p class="text" style="text-align:center; color:white">'.$red->message_text.'</p>
+                       <p class="text" style="text-align:center;">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:center">
-                       <button type="button" class="btn btn-outline-light waves-effect waves-light"><li class="list-inline-item" >'.$red->message_date.'</li><li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li></button>
+                       <button type="button" class="btn btn-inline-light waves-effect waves-light"><li class="list-inline-item" >'.$red->message_date.'</li><li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li></button>
                                
                            </ul>
                    </div><!--end blog-card-->                                   

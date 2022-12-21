@@ -45,7 +45,7 @@ mysqli_query($db, "SET NAMES utf8");
 </head>
 <style>
     body{
-        background:#00005C;
+        background:#00004d;
     }
     .nav-link {
         font-size: 16px;
@@ -214,8 +214,8 @@ mysqli_query($db, "SET NAMES utf8");
 <br>
 
 <h4 style = "color:white">Message Board</h4>
-<div class = card  style = background:#6c4ab6>
-<div class="row" id="message_div" style = "margin-left:1px;margin-top:15px;color:blue;margin-right:1px"></div>
+<div class = card>
+<div class="row" id="message_div" style = "margin-left:1px;margin-top:15px;margin-right:1px"></div>
 </div>
 <br>
 <!-- TABLE -->

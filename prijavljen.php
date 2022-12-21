@@ -331,6 +331,12 @@ mysqli_query($db, "SET NAMES utf8");
                             $("#insertResp").html(response);
                         })
                 }
+                function deletePrivateMessageFrom(id){
+                    console.log("POKRENU")
+                    $.post("ajax.php?f=deletePrivateMessageFrom",{id:id}, function(response){
+                    fillMessages(1);
+                })
+    }
             </script>
             <div id="archvInfo" class="alert alert-success" role="alert">Successfuly archived</div>
 

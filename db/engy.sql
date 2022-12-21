@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 10:26 PM
+-- Generation Time: Dec 21, 2022 at 03:26 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -67,7 +67,7 @@ CREATE TABLE `messages` (
   `message_text` text NOT NULL,
   `user_from` int(10) UNSIGNED NOT NULL,
   `user_for` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `message_date` datetime NOT NULL,
+  `message_date` datetime NOT NULL DEFAULT current_timestamp(),
   `deleted` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -76,12 +76,9 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id_message`, `message_text`, `user_from`, `user_for`, `message_date`, `deleted`) VALUES
-(3, 'TEST TEST', 1, 0, '2022-12-20 09:24:08', 0),
-(4, 'asdasdasd', 1, 5, '2022-12-20 09:45:30', 0),
-(6, 'Test msg', 1, 5, '2022-12-20 09:51:19', 0),
-(7, 'asdasd', 1, 5, '2022-12-20 09:51:44', 0),
-(8, 'Jovo sisaj ga', 2, 5, '2022-12-20 10:11:16', 0),
-(14, 'Pisemo JOVI', 1, 5, '2022-12-20 10:22:57', 0);
+(23, 'test test', 1, 0, '2022-12-21 15:23:39', 0),
+(24, 'Test sada', 1, 0, '2022-12-21 15:24:01', 0),
+(25, 'test sada', 1, 0, '2022-12-21 15:25:43', 0);
 
 -- --------------------------------------------------------
 
@@ -174,7 +171,7 @@ ALTER TABLE `data`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `roles`

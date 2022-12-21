@@ -45,7 +45,7 @@ mysqli_query($db, "SET NAMES utf8");
 </head>
 <style>
     body{
-        background:#00004d;
+        background:#25316D;
     }
     .nav-link {
         font-size: 16px;
@@ -203,8 +203,6 @@ mysqli_query($db, "SET NAMES utf8");
                                             <br>
                                             <br>
                                             <br>
-                                            
-                                            <p>Cao</p>
                                             </div>
                                         </div>                                        
                                     </div>                                               
@@ -214,8 +212,22 @@ mysqli_query($db, "SET NAMES utf8");
 <br>
 
 <h4 style = "color:white">Message Board</h4>
-<div class = card>
-<div class="row" id="message_div" style = "margin-left:1px;margin-top:15px;margin-right:1px"></div>
+<div class = 'row'>
+<div class="col-lg-6">
+<div class = 'card' style = background:#6c4ab6>
+<h5 class="card-title" style="text-align:center; margin-top:15px;color:white"><b>Global Messages</b></h5>
+<hr style = "border-color: white">
+<div class="row" id="message_div" style = "margin-left:1px;margin-top:15px;margin-right:1px;"></div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class = card style = background:#6c4ab6>
+<h5 class="card-title" style="text-align:center; margin-top:15px; color:white"><b>Private Messages</b></h5>
+<hr style = "border-color: white">
+<div class="row" id="message_div" style = "margin-left:1px;margin-top:15px;margin-right:1px;"></div>
+</div>
+</div>
+
 </div>
 <br>
 <!-- TABLE -->

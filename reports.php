@@ -51,8 +51,8 @@ mysqli_query($db, "SET NAMES utf8");
     ?></div>
       <style>
       body{
-        background:#9932CC;
-        }
+        background:#25316D;
+    }
         </style>
       <br>
             <!-- Page Content-->
@@ -62,7 +62,7 @@ mysqli_query($db, "SET NAMES utf8");
                     
                     <div class="row">
                         <div class="col-12" >
-                            <div class="card"style="border-radius:0px;" >
+                            <div class="card" >
                                 <div class="card-body">            
                                     <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'>Write your weekly reports.<br> <b>Don't forget to upload!</b>
                                     </p>        

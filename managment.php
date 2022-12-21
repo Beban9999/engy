@@ -46,7 +46,12 @@ mysqli_query($db, "SET NAMES utf8");
 
 
 </head>
+<style>
 
+body{
+        background:#25316D;
+    }
+</style>
 <body>
     <?php
     navbar();

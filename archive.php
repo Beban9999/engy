@@ -44,6 +44,9 @@ mysqli_query($db, "SET NAMES utf8");
     
 </head>
 <style>
+  body{
+        background:#25316D;
+    }
 .nav-link{
 font-size:16px;
 color:#9932CC;
@@ -95,7 +98,7 @@ color:yellow;
     navbar();
 ?>
 <div id="MetricaPages" class="main-icon-menu-pane">
-                            
+               <br>             
                             
                         </div><!-- end Authentication-->
                     </div><!--end menu-body-->
@@ -119,8 +122,10 @@ an achiever never gives up, never settles and lastly never forgets.”</i></div>
 <style>
 
 </style>
+<br>
+<div class="card">
 
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover" style = margin:0px;>
   <thead>
     <tr>
       <th id = 'first' scope="col">Customer</th>
@@ -140,6 +145,7 @@ an achiever never gives up, never settles and lastly never forgets.”</i></div>
   <tbody id="archive_table">
   </tbody>
 </table>
+</div>
   
 
   <!-- Container wrapper -->

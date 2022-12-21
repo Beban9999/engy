@@ -54,8 +54,8 @@ if($f == "fillMessages")
             if($red->team == "Developer"){       $color = '#004aad';}
 
         echo '                   
-        <div class="col-lg-3 mb-3">
-           <div class="card"style="background:none;border:solid;border-color:gray">
+        <div class="col-lg-6 mb-3">
+           <div class="card"style="background:#8d72e1;color:white">
                <div class="card-body" >
                    <div class="blog-card">
                        <div class="meta-box" >
@@ -65,8 +65,8 @@ if($f == "fillMessages")
                            '.$message_type.'
                        </h4>
                        <p class="text" style="text-align:center;">'.$red->message_text.'</p>
-                       <ul class="p-0 mt-4 list-inline " style="text-align:center">
-                       <button type="button" class="btn btn-inline-light waves-effect waves-light"><li class="list-inline-item" >'.$red->message_date.'</li><li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li></button>
+                       <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">
+                       <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
                                
                            </ul>
                    </div><!--end blog-card-->                                   

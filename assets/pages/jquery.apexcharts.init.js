@@ -1249,11 +1249,11 @@ var options = {
   series: [{
       name: 'Your traffic',
       type: 'column',
-      data: [25,26,73,43]
+      data: [25,26,73,43,26,73,43,26,73,43,26,73]
   }, {
       name: 'Manager Expetation',
       type: 'area',
-      data: [44,27,100,50]
+      data: [44,27,100,50,26,11,43,35,13,112,57,73]
   }, ],
   fill: {
       opacity: [0.85, 0.25, 1],

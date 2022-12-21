@@ -46,7 +46,7 @@ if($f == "fillMessages")
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
         while($red = mysqli_fetch_object($rez)){
-            $message_type = ($red->user_for == 0)? "Global Message" : "Private Message";
+            $message_type = ($red->user_for == 0)? "<b>Global Message</b>" : "Private Message";
             if($red->team == "CEO")              $color = 'black';   
             if($red->team == "Vice President"){  $color = '#38b6ff';}
             if($red->team == "Sales Manager") {  $color = '#ff1616';}
@@ -54,20 +54,20 @@ if($f == "fillMessages")
             if($red->team == "Developer"){       $color = '#004aad';}
 
         echo '                   
-        <div class="col-lg-6 mb-3">
-           <div class="card">
-               <div class="card-body">
+        <div class="col-lg-3 mb-3">
+           <div class="card"style="background:none;border:solid;border-color:gray">
+               <div class="card-body" >
                    <div class="blog-card">
-                       <div class="meta-box">
+                       <div class="meta-box" >
                           
                        </div><!--end meta-box-->            
-                       <h4 class="mt-2 mb-3" style="color:purple;text-align:center">
+                       <h4 class="mt-2 mb-3" style="color:white;text-align:center">
                            '.$message_type.'
                        </h4>
-                       <p class="text-muted" style="text-align:center">'.$red->message_text.'</p>
+                       <p class="text" style="text-align:center; color:white">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:center">
-                               <li class="list-inline-item" >'.$red->message_date.'</li>
-                               <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li>
+                       <button type="button" class="btn btn-outline-light waves-effect waves-light"><li class="list-inline-item" >'.$red->message_date.'</li><li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li></button>
+                               
                            </ul>
                    </div><!--end blog-card-->                                   
                </div><!--end card-body-->

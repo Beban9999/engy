@@ -44,7 +44,9 @@ mysqli_query($db, "SET NAMES utf8");
 
 </head>
 <style>
-    
+    body{
+        background:#00005C;
+    }
     .nav-link {
         font-size: 16px;
         color: #9932CC;
@@ -128,6 +130,9 @@ mysqli_query($db, "SET NAMES utf8");
         right: 0%;
         visibility: hidden;
     }
+    .card{
+        border-radius:5px;
+    }
 
 
 </style>
@@ -141,38 +146,83 @@ mysqli_query($db, "SET NAMES utf8");
 <div id="MetricaPages" class="main-icon-menu-pane">
                             
                             
+
                             </div><!-- end Authentication-->
                         </div><!--end menu-body-->
                     </div><!-- end main-menu-inner-->
                 </div>
                 <!-- end left-sidenav-->
-    
-    <div class="card text-center">
-      <div class="card-body">
-        <h2 class="card-title">Welcome <?php echo $_SESSION['username']; ?>
-        <p class="card-text m-3" style ="font-size: 16px">This is your main dashboard. Here you can take care of your clients, enter the most important data, send them directly to the archive or delete them permanently</p>
-      </div>
-      <div class="card-footer text-muted"><i>“Life can only be understood backwards, but it must be lived forwards.”</i></div>
-    </div><!--end col-->
+  
 
+                <div class="page-content">
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <br>
+                    <h4 class="page-title" style ="color:white">Dashboard</h4>
+                      
+                    <!-- end page title end breadcrumb -->
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-body">
+                                   
+                                
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="media">
+                                                <div class="media-body align-self-center"> 
+                                                <h5 class="card-title" style="text-align:center;"><b><?php echo $_SESSION['username'] ?>'s Traffic</b></h5>
+                                            <div class="chart-demo">
+                                                <div id="apex_mixed1" class="apex-charts"></div>
+                                             </div>                                                                                                     
+                                                </div><!--end media body-->
+                                            </div><!--end col--> 
+                                        </div><!--end col--> 
+                                        
+                                        
+                                        
+                                    </div><!-- end row -->                                            
+                                </div><!--end card-body--> 
+                            </div><!--end card--> 
+                        </div><!--end col--> 
+
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                        <h6 class="card-title" style="text-align:center;"><b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
+                                        <hr>
+                                        <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'>Write your monthly traffic.<br> <b>Try to reach expected number</b>
+                                            <br>                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            
+                                            <p>Cao</p>
+                                            </div>
+                                        </div>                                        
+                                    </div>                                               
+                                </div><!--end card-body-->
+                            </div>
+                        </div>
 <br>
-<div class="row" id="message_div">
+
+<h4 style = "color:white">Message Board</h4>
+<div class = card  style = background:#6c4ab6>
+<div class="row" id="message_div" style = "margin-left:1px;margin-top:15px;color:blue;margin-right:1px"></div>
 </div>
 <br>
-
-
-<br>
-                        <div class="col-lg-6">
-                                <div class="card-body">
-                                <h5 class="card-title" style="position:relative;left:38%;"><?php echo $_SESSION['username'] ?>'s Traffic</h5>
-                                    <div class="chart-demo">
-                                        <div id="apex_mixed1" class="apex-charts"></div>
-                                    </div>                                        
-                                </div><!--end card-body-->
-                        </div><!--end col-->
-
-
 <!-- TABLE -->
+<h4 style = "color:white">Client's Table</h4>
+
+<div class="card">
+
     <table class="table">
         <thead class="table-dark">
             <tr>
@@ -211,7 +261,7 @@ mysqli_query($db, "SET NAMES utf8");
         <tbody id="table_body">
         </tbody>
     </table>
-
+</div>
 
    
     <!-- Navbar -->

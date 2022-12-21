@@ -37,12 +37,19 @@ if($f == "insertRow"){
 if($f == "fillMessages")
 {
     $currUser = $_SESSION['id_user'];
-    $stmt = $db->prepare("SELECT * 
-    FROM messages JOIN user ON messages.user_from = user.id_user
-    WHERE user_for in (?, 0) AND deleted = 0 order by message_date desc");
-    $stmt->bind_param('i', $currUser);
+    $type = $_POST["type"];
+    if($type == 0){
+        $stmt = $db->prepare("SELECT * 
+        FROM messages JOIN user ON messages.user_from = user.id_user
+        WHERE user_for = 0 AND deleted = 0 order by message_date desc");
+    }
+    else{
+        $stmt = $db->prepare("SELECT * 
+        FROM messages JOIN user ON messages.user_from = user.id_user
+        WHERE user_for = ? AND deleted = 0 order by message_date desc");
+        $stmt->bind_param('i', $currUser);
+    }
     $stmt->execute();
-
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
         while($red = mysqli_fetch_object($rez)){
@@ -140,7 +147,7 @@ if($f == "fillUsersTable"){
         <td>'.$red->team.'</td>
         <td>'.$red->email.'</td>
         <td>
-        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" onclick = "saveClickedUserInfo(\''.$red->username.'\', \''.$red->id_user.'\')" data-animation="bounce" data-target=".bs-example-modal-center">Private Message</button>
+        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" onclick = "saveClickedUserInfo(\''.$red->username.'\', \''.$red->id_user.'\')" data-animation="bounce" data-target="#exampleModal">Private Message</button>
         <button type="button" class="btn btn-danger waves-effect waves-light">Remove</button></td>
         <td>                                                       
         <button type="button" class="btn btn-primary waves-effect waves-light">Visit</button></td>

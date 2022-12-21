@@ -8,8 +8,11 @@ $(document).ready(function(){
     if(document.getElementById("users_table")){
         fillUsersTable();
     }
-    if(document.getElementById("message_div")){
-        fillMessages();
+    if(document.getElementById("message_div_global")){
+        fillMessages(0);
+    }
+    if(document.getElementById("message_div_private")){
+        fillMessages(1);
     }
     
     $("#login").click(function(){
@@ -36,7 +39,6 @@ $(document).ready(function(){
 
     //sendPrivateMessage
     $("#sendPrivateMessage").click(function(){
-        $('#product-options').modal('hide');
         let message_text = $("#privateMessageText").val();
         let to_user = $("#clickedUserId").html();
         console.log(message_text, to_user);
@@ -44,17 +46,17 @@ $(document).ready(function(){
             //$("#odgPrijava").html('<div class="alert alert-danger" role="alert">You need to enter username and password</div>');
             return false;
         }
+        $("#privateMessageText").val("");
         $.post("ajax.php?f=sendPrivateMessage",{message_text:message_text, to_user:to_user}, function(response){
             console.log(response)
             // if(response.startsWith("prijavljen.php")){
-            // }
-            // else{
-            //     $("#odgPrijava").html(response); 
-            // }
+                // }
+                // else{
+                    //     $("#odgPrijava").html(response); 
+                    // }
         })
 
     });
-        
     $("#sendGlobalMessage").click(function(){
         let message_text = $("#globalMessageText").val();
         console.log(message_text);
@@ -158,11 +160,22 @@ function fillUsersTable(){
     })
 }
 
-function fillMessages(){
-    $.post("ajax.php?f=fillMessages", function(response){
-        $("#message_div").html(response);
-    })
+function fillMessages(type){
+    if(type == 0){
+        $.post("ajax.php?f=fillMessages",{type:type}, function(response){
+            $("#message_div_global").html(response);
+        })    
+    }
+    else{
+        $.post("ajax.php?f=fillMessages",{type:type}, function(response){
+            $("#message_div_private").html(response);
+        })  
+    }
+    
 }
+setInterval(() => {
+    fillMessages(1); fillMessages(0);
+}, 2000);
 
 function deleteRecord(id){
     $.post("ajax.php?f=deleteRecord",{id:id}, function(response){

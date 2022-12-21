@@ -32,7 +32,105 @@ if($f == "insertRow"){
     
     $rez = $stmt->get_result();
     echo $rez;
+}
+if($f == "deletePrivateMessageFrom")
+{
+    $msg_id = $_POST["id"];
+    $stmt = $db->prepare("UPDATE messages SET deleted = 1 WHERE id_message = ?");
+    $stmt->bind_param('i', $msg_id);
+    $stmt->execute();
+}
 
+if($f == "checkPrivateMessages")
+{
+    $currUser = $_SESSION['id_user'];
+    $forUser = $_POST["id"];
+
+    $stmt = $db->prepare("SELECT * 
+    FROM messages JOIN user ON messages.user_from = user.id_user
+    WHERE user_for = ? AND user_from = ? AND deleted = 0 order by message_date desc");
+    $stmt->bind_param('ii',$forUser, $currUser);
+
+    $stmt->execute();
+    $rez = $stmt->get_result();
+
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            $message_type = "Private Message";
+            if($red->team == "CEO")              $color = 'black';   
+            if($red->team == "Vice President"){  $color = '#38b6ff';}
+            if($red->team == "Sales Manager") {  $color = '#ff1616';}
+            if($red->team == "Account Manager"){ $color = '#3d9e67';}
+            if($red->team == "Developer"){       $color = '#004aad';}
+            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.','.$forUser.')" style="color:white" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
+        echo '                   
+        <div class="col-lg-6 mb-3">
+           <div class="card"style="background:#8d72e1;color:white">
+               <div class="card-body" >
+                   <div class="blog-card">
+                       <div class="meta-box" >
+                          
+                       </div><!--end meta-box-->            
+                       '.$btn.'
+                       <h4 class="mt-2 mb-3" style="text-align:center">
+                       '.$message_type.'    
+                       </h4>
+                       <p class="text" style="text-align:center;">'.$red->message_text.'</p>
+                       <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">
+                       <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
+                               
+                           </ul>
+                   </div><!--end blog-card-->                                   
+               </div><!--end card-body-->
+           </div><!--end card-->
+       </div> <!--end col-->';
+        }
+    }
+}
+if($f == "checkGlobalMessages")
+{
+    $currUser = $_SESSION['id_user'];
+
+    $stmt = $db->prepare("SELECT * 
+    FROM messages JOIN user ON messages.user_from = user.id_user
+    WHERE user_for = 0 AND user_from = ? AND deleted = 0 order by message_date desc");
+    $stmt->bind_param('i', $currUser);
+
+    $stmt->execute();
+    $rez = $stmt->get_result();
+
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            $message_type = ($red->user_for == 0)? "<b>Global Message</b>" : "Private Message";
+            if($red->team == "CEO")              $color = 'black';   
+            if($red->team == "Vice President"){  $color = '#38b6ff';}
+            if($red->team == "Sales Manager") {  $color = '#ff1616';}
+            if($red->team == "Account Manager"){ $color = '#3d9e67';}
+            if($red->team == "Developer"){       $color = '#004aad';}
+            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.',0)" style="color:white" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
+        echo '                   
+        <div class="col-lg-6 mb-3">
+           <div class="card"style="background:#8d72e1;color:white">
+               <div class="card-body" >
+                   <div class="blog-card">
+                       <div class="meta-box" >
+                          
+                       </div><!--end meta-box-->            
+                       '.$btn.'
+                       <h4 class="mt-2 mb-3" style="text-align:center">
+                       '.$message_type.'    
+                       </h4>
+                       <p class="text" style="text-align:center;">'.$red->message_text.'</p>
+                       <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">
+                       <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
+                               
+                           </ul>
+                   </div><!--end blog-card-->                                   
+               </div><!--end card-body-->
+           </div><!--end card-->
+       </div> <!--end col-->';
+        }
+    }
 }
 if($f == "fillMessages")
 {
@@ -59,7 +157,8 @@ if($f == "fillMessages")
             if($red->team == "Sales Manager") {  $color = '#ff1616';}
             if($red->team == "Account Manager"){ $color = '#3d9e67';}
             if($red->team == "Developer"){       $color = '#004aad';}
-
+            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.')" style="color:white" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
+        if($message_type != "Private Message") $btn = "";
         echo '                   
         <div class="col-lg-6 mb-3">
            <div class="card"style="background:#8d72e1;color:white">
@@ -68,8 +167,9 @@ if($f == "fillMessages")
                        <div class="meta-box" >
                           
                        </div><!--end meta-box-->            
+                       '.$btn.'
                        <h4 class="mt-2 mb-3" style="text-align:center">
-                           '.$message_type.'
+                       '.$message_type.'    
                        </h4>
                        <p class="text" style="text-align:center;">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">
@@ -148,7 +248,7 @@ if($f == "fillUsersTable"){
         <td>'.$red->email.'</td>
         <td>
         <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" onclick = "saveClickedUserInfo(\''.$red->username.'\', \''.$red->id_user.'\')" data-animation="bounce" data-target="#exampleModal">Private Message</button>
-        <button type="button" class="btn btn-danger waves-effect waves-light">Remove</button></td>
+        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal"  onclick = "saveClickedUserRemove(\''.$red->username.'\', \''.$red->id_user.'\')" data-animation="bounce" data-target="#exempleScroll">Remove</button></td>
         <td>                                                       
         <button type="button" class="btn btn-primary waves-effect waves-light">Visit</button></td>
         <i class="mdi mdi-message-text-outline"></i>

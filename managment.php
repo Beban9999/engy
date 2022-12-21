@@ -47,43 +47,63 @@ mysqli_query($db, "SET NAMES utf8");
 
 </head>
 <style>
-
-body{
-        background:#25316D;
+    body {
+        background: #25316D;
     }
 </style>
+
 <body>
     <?php
     navbar();
     ?>
     <br>
 
-
+    <!-- Button trigger modal -->
+    <button type="button" id='checkGlobalMessages' class="btn btn-primary" data-toggle="modal" data-target="#exempleScroll">
+        Check your global messages
+    </button>
+    <div class="modal fade" id="exempleScroll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Global Messages </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="globalMessagesForUser" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id='privateMessageHeader'>New </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="privateMessageText"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" id="sendPrivateMessage" class="btn btn-primary" data-dismiss="modal">Send message</button>
-      </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id='privateMessageHeader'>New </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="privateMessageText"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="sendPrivateMessage" class="btn btn-primary" data-dismiss="modal">Send message</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
     <div class="col-md-12 col-lg-4" style="position:relative;left:34%">
@@ -148,10 +168,32 @@ body{
 <script type="text/javascript" src="js/loginscript.js"></script>
 <script>
     //<h4 id = 'privateMessageHeader' class="mt-0 header-title" style = "text-align:center">Private Message to USER</h4>
-
     function saveClickedUserInfo(clickedUser, userId) {
         document.getElementById("privateMessageHeader").innerHTML = "Private Message to " + clickedUser;
         document.getElementById("clickedUserId").innerHTML = userId;
+    }
+
+    function saveClickedUserRemove(clickedUser, userId) {
+        document.getElementById("clickedUserId").innerHTML = userId;
+        fillPrivateMessageModal(userId);
+
+    }
+
+    function deletePrivateMessageFrom(id, usr) {
+        if (usr == 0) {
+            $.post("ajax.php?f=deletePrivateMessageFrom", {
+                id: id
+            }, function(response) {
+                fillGlobalMessagesModal();
+            })
+        }
+        else{
+            $.post("ajax.php?f=deletePrivateMessageFrom", {
+                id: id
+            }, function(response) {
+                fillPrivateMessageModal(usr);
+            })
+        }
 
     }
 </script>

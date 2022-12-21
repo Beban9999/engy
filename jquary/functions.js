@@ -57,6 +57,11 @@ $(document).ready(function(){
         })
 
     });
+    
+    $("#checkGlobalMessages").click(function(){
+        console.log("SLANJE USPELO");
+        fillGlobalMessagesModal();
+    });
     $("#sendGlobalMessage").click(function(){
         let message_text = $("#globalMessageText").val();
         console.log(message_text);
@@ -159,6 +164,16 @@ function fillUsersTable(){
         $("#users_table").html(response);
     })
 }
+function fillGlobalMessagesModal(){
+    $.post("ajax.php?f=checkGlobalMessages", function(response){
+        $("#globalMessagesForUser").html(response);    
+    })
+}
+function fillPrivateMessageModal(id){
+    $.post("ajax.php?f=checkPrivateMessages",{id:id}, function(response){
+        $("#globalMessagesForUser").html(response);    
+    })
+}
 
 function fillMessages(type){
     if(type == 0){
@@ -173,9 +188,9 @@ function fillMessages(type){
     }
     
 }
-setInterval(() => {
-    fillMessages(1); fillMessages(0);
-}, 2000);
+// setInterval(() => {
+//     fillMessages(1); fillMessages(0);
+// }, 2000);
 
 function deleteRecord(id){
     $.post("ajax.php?f=deleteRecord",{id:id}, function(response){

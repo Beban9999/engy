@@ -165,11 +165,13 @@ function fillUsersTable(){
     })
 }
 function fillGlobalMessagesModal(){
+    $("#modal_heading").html("Global Messages");
     $.post("ajax.php?f=checkGlobalMessages", function(response){
         $("#globalMessagesForUser").html(response);    
     })
 }
 function fillPrivateMessageModal(id){
+    $("#modal_heading").html("Private Messages");
     $.post("ajax.php?f=checkPrivateMessages",{id:id}, function(response){
         $("#globalMessagesForUser").html(response);    
     })

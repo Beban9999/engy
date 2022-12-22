@@ -41,6 +41,8 @@ if($f == "deletePrivateMessageFrom")
     $stmt->execute();
 }
 
+
+//Private message modal
 if($f == "checkPrivateMessages")
 {
     $currUser = $_SESSION['id_user'];
@@ -87,6 +89,7 @@ if($f == "checkPrivateMessages")
         }
     }
 }
+//Global message modal
 if($f == "checkGlobalMessages")
 {
     $currUser = $_SESSION['id_user'];

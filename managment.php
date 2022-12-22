@@ -64,7 +64,7 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Global Messages </h5>
+                    <h5 id="modal_heading" class="modal-title">Private Message</h5>
                     
                 </div>
                 <div id="globalMessagesForUser" class="modal-body">

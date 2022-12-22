@@ -58,32 +58,32 @@ mysqli_query($db, "SET NAMES utf8");
     ?>
     <br>
 
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalreport">Launch demo modal</button>  -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalreport">Launch demo modal</button>  -->
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="modaltitle_for_report" >Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id='modal_for_report'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaltitle_for_report">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id='modal_for_report'>
 
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-    
+
     <div class="modal fade" id="exempleScroll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 id="modal_heading" class="modal-title">Private Message</h5>
-                    
+
                 </div>
                 <div id="globalMessagesForUser" class="modal-body">
                 </div>
@@ -99,7 +99,7 @@ mysqli_query($db, "SET NAMES utf8");
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id='privateMessageHeader'>New </h5>
-                    
+
                 </div>
                 <div class="modal-body">
                     <form>
@@ -128,11 +128,11 @@ mysqli_query($db, "SET NAMES utf8");
                 <div class="form-group">
                     <textarea class="form-control" id="globalMessageText" rows="4" placeholder="Your message"></textarea>
                 </div>
-                
+
                 <button type="submit" id="sendGlobalMessage" class="btn btn-primary btn-block px-4" style="background:purple;color:white">Send Message</button>
-                <button type="button" id='checkGlobalMessages'  class="btn btn-primary btn-block px-4" data-toggle="modal" data-target="#exempleScroll" style="background:darkred">
-        Remove your Global Messages
-    </button>
+                <button type="button" id='checkGlobalMessages' class="btn btn-primary btn-block px-4" data-toggle="modal" data-target="#exempleScroll" style="background:darkred">
+                    Remove your Global Messages
+                </button>
             </div>
             <!--end card-body-->
         </div>
@@ -142,89 +142,97 @@ mysqli_query($db, "SET NAMES utf8");
     </div>
     <!--end row-->
     <br>
-    <!--TABLE -->
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <!-- <div class="card-body"> -->
 
-                <div class="table-responsive">
-                    <table class="table table-striped mb-0">
-                        <thead class="thead-light" style="background:purple;color:white">
-                            <tr>
-                                <th>Users</th>
-                                <th>Role</th>
-                                <th>Email</th>
-                                <th>Message User</th>
-                                <th>Visit Page</th>
-                            </tr>
-                        </thead>
-                        <tbody id="users_table">
-                        </tbody>
-                    </table>
-                    <!--end /table-->
+
+    <div class="container-fluid">
+        <!--TABLE -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <!-- <div class="card-body"> -->
+
+                    <div class="table-responsive">
+                        <table class="table table-striped mb-0">
+                            <thead class="thead-light" style="background:purple;color:white">
+                                <tr>
+                                    <th>Users</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
+                                    <th>Message User</th>
+                                    <th>Visit Page</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users_table">
+                            </tbody>
+                        </table>
+                        <!--end /table-->
+                    </div>
+                    <!--end /tableresponsive-->
+                    <!-- </div>end card-body -->
                 </div>
-                <!--end /tableresponsive-->
-                <!-- </div>end card-body -->
+                <!--end card-->
+            </div> <!-- end col -->
+        </div>
+        <!--end row-->
+        <div style="visibility:hidden" id="clickedUserId">TEST2</div>
+
+
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <h4 class="mt-0 header-title">Reports for all users</h4>
+                    <p class="text-muted mb-3">Add <code>.table-bordered</code> for
+                        borders on all sides of the table and cells.
+                    </p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered mb-0 table-centered">
+                            <thead>
+                                <tr>
+                                    <th> </th>
+                                    <th>Week 1</th>
+                                    <th>Week 2</th>
+                                    <th>Week 3</th>
+                                    <th>Week 4</th>
+                                </tr>
+                            </thead>
+                            <tbody id='reports_table'>
+                                <tr>
+                                    <td>User</td>
+                                    <td>25/11/2018</td>
+                                    <td>$321</td>
+                                    <td><span class="badge badge-soft-success">Approved</span></td>
+                                    <td>
+                                        <div class="dropdown d-inline-block float-right">
+                                            <a class="nav-link dropdown-toggle arrow-none" id="dLabel8" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v font-20 text-muted"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel8">
+                                                <a class="dropdown-item" href="#">Creat Project</a>
+                                                <a class="dropdown-item" href="#">Open Project</a>
+                                                <a class="dropdown-item" href="#">Tasks Details</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--end /table-->
+                    </div>
+                    <!--end /tableresponsive-->
+                </div>
+
+
+
             </div>
-            <!--end card-->
-        </div> <!-- end col -->
-    </div>
-    <!--end row-->
-    <div style="visibility:hidden" id="clickedUserId">TEST2</div>
-
-
-
-    <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body">
-    
-                                    <h4 class="mt-0 header-title">Bordered table</h4>
-                                    <p class="text-muted mb-3">Add <code>.table-bordered</code> for
-                                        borders on all sides of the table and cells.
-                                    </p>
-    
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered mb-0 table-centered">
-                                            <thead>
-                                            <tr>
-                                                <th> </th>
-                                                <th>Week 1</th>
-                                                <th>Week 2</th>
-                                                <th>Week 3</th>
-                                                <th>Week 4</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody id='reports_table'>
-                                            <tr>
-                                                <td>User</td>
-                                                <td>25/11/2018</td>
-                                                <td>$321</td>
-                                                <td><span class="badge badge-soft-success">Approved</span></td>
-                                                <td>
-                                                    <div class="dropdown d-inline-block float-right">
-                                                        <a class="nav-link dropdown-toggle arrow-none" id="dLabel8" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                                            <i class="fas fa-ellipsis-v font-20 text-muted"></i>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel8">
-                                                            <a class="dropdown-item" href="#">Creat Project</a>
-                                                            <a class="dropdown-item" href="#">Open Project</a>
-                                                            <a class="dropdown-item" href="#">Tasks Details</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table><!--end /table-->
-                                    </div><!--end /tableresponsive-->
-
-
-
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
-                    <div id="user_report_div"></div>
+            <!--end card-body-->
+        </div>
+        <!--end card-->
+    </div> <!-- end col -->
+    </div> <!-- end row -->
+    <div id="user_report_div"></div>
 </body>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -246,11 +254,17 @@ mysqli_query($db, "SET NAMES utf8");
         fillPrivateMessageModal(userId);
 
     }
-    function viewReportForUser(week, userID){
-        $.post("ajax.php?f=viewReportForUser",{week:week, userID, userID}, function(response){
-            $("#modal_for_report").html(response); 
+
+    function viewReportForUser(week, userID) {
+        $.post("ajax.php?f=viewReportForUser", {
+            week: week,
+            userID,
+            userID
+        }, function(response) {
+            $("#modal_for_report").html(response);
         })
     }
+
     function deletePrivateMessageFrom(id, usr) {
         if (usr == 0) {
             $.post("ajax.php?f=deletePrivateMessageFrom", {
@@ -258,8 +272,7 @@ mysqli_query($db, "SET NAMES utf8");
             }, function(response) {
                 fillGlobalMessagesModal();
             })
-        }
-        else{
+        } else {
             $.post("ajax.php?f=deletePrivateMessageFrom", {
                 id: id
             }, function(response) {

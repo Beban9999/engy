@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2022 at 03:26 PM
+-- Generation Time: Dec 22, 2022 at 11:07 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -53,7 +53,7 @@ INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, 
 ('', 'eeeeee', 'qewf', 'joi', 'joi', 'eeee', 'ojiwfg', 'asdasd', 'qweqwe', 'qweqwe', '123123123123', 1, 17, 0, 0),
 ('asd', 'asd', 'weqwe', '', 'qwe', '', '', '', '', '', '', 1, 18, 0, 0),
 ('', '', '', '', '', '', '', '', '', '', '', 1, 19, 0, 0),
-('Nesa nije smrad', '', 'qwe', 'qwe', 'qwe', 'qweqwe', 'eee', '', '', '', '', 1, 20, 0, 0),
+('Nesa nije smrad', '', 'qwe', 'qwe', 'qwe', 'qweqwe', 'eee', '', '', 'asd', 'qwqeqwewqeqeqe', 1, 20, 0, 0),
 ('kita muda&nbsp;', 'sise', 'asdasd', 'asdasd', 'ewotrhi', '2', '', '', '', '', '', 1, 21, 0, 0);
 
 -- --------------------------------------------------------
@@ -76,9 +76,42 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id_message`, `message_text`, `user_from`, `user_for`, `message_date`, `deleted`) VALUES
-(23, 'test test', 1, 0, '2022-12-21 15:23:39', 0),
-(24, 'Test sada', 1, 0, '2022-12-21 15:24:01', 0),
-(25, 'test sada', 1, 0, '2022-12-21 15:25:43', 0);
+(23, 'test test', 1, 0, '2022-12-21 15:23:39', 1),
+(24, 'Test sada', 1, 0, '2022-12-21 15:24:01', 1),
+(25, 'test sada', 1, 0, '2022-12-21 15:25:43', 0),
+(26, 'TEST PRIV', 1, 1, '2022-12-21 20:19:38', 1),
+(46, 'Test msg', 2, 4, '2022-12-21 21:02:04', 0),
+(47, 'TEST TEST BREEEE', 2, 4, '2022-12-21 21:02:11', 0),
+(48, 'ALO', 4, 0, '2022-12-21 21:02:22', 1),
+(67, 'ASDASD', 1, 5, '2022-12-22 18:21:03', 1),
+(68, '<b>Test bold</b>', 1, 0, '2022-12-22 18:22:09', 0),
+(69, 'asd', 1, 5, '2022-12-22 19:33:31', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reports`
+--
+
+CREATE TABLE `reports` (
+  `id_report` int(10) UNSIGNED NOT NULL,
+  `report_message` text NOT NULL,
+  `report_date` datetime DEFAULT current_timestamp(),
+  `report_user` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`id_report`, `report_message`, `report_date`, `report_user`) VALUES
+(47, '<p style=\"text-align: center;\">TEST 1</p>', '2022-12-22 22:37:28', 3),
+(48, '<p><strong>Moze li sad ovako?</strong></p>\n<p>&nbsp;</p>\n<p><strong>HAhahahaha</strong></p>', '2022-12-22 22:43:35', 3),
+(49, '<p><strong>Moze li sad ovako?</strong></p>\n<p>&nbsp;</p>\n<p style=\"text-align: right;\"><strong>HAhahahaha</strong></p>\n<p style=\"text-align: right;\"><strong>Moze li sad ovako?</strong></p>\n<p>&nbsp;</p>\n<p style=\"text-align: center;\"><strong>HAhahahaha</strong></p>\n<p style=\"text-align: center;\"><strong>Moze li sad ovako?</strong></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\"><strong>HAhahahaha</strong></p>\n<p style=\"text-align: center;\"><strong>Moze li sad ovako?</strong></p>\n<p>&nbsp;</p>\n<p><strong>HAhahahaha</strong></p>', '2022-12-22 22:44:12', 3),
+(50, '<p>tes test testtttt</p>', '2022-12-22 22:45:36', 3),
+(51, '<p>bOOOOoooomba</p>', '2022-12-22 22:45:43', 3),
+(52, '<p>Test test</p>', '2022-12-22 22:48:18', 3),
+(53, '<p>Da li radi sad</p>', '2022-12-22 22:49:52', 3);
 
 -- --------------------------------------------------------
 
@@ -125,7 +158,7 @@ INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `
 (1, 'Nenad', 'Grubenovic', 'grubi', 'grubi@gmail.com', '123', 'CEO', 1),
 (2, 'asd', 'asd', 'ceca', 'asdasd', '123', 'Vice President', 2),
 (3, 'Joca', 'coca', 'joca', '123', '123', 'Sales Manager', 3),
-(4, 'Aleksa', 'Aleksic', 'beban', 'asogfk@gewk9.com', '123', 'Account Manager', 3),
+(4, 'Aleksa', 'Aleksic', 'beban', 'asogfk@gewk9.com', '123', 'Account Manager', 2),
 (5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@gmaog,afe.com', '123', 'Developer', 3);
 
 --
@@ -143,6 +176,12 @@ ALTER TABLE `data`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id_message`);
+
+--
+-- Indexes for table `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id_report`);
 
 --
 -- Indexes for table `roles`
@@ -171,7 +210,13 @@ ALTER TABLE `data`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+
+--
+-- AUTO_INCREMENT for table `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `id_report` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `roles`

@@ -135,6 +135,36 @@ if($f == "checkGlobalMessages")
         }
     }
 }
+if($f == "sendReport")
+{
+    $report_content = $_POST["myContent"];
+    $currUser = $_SESSION['id_user'];
+    echo $report_content;
+    $stmt = $db->prepare("INSERT INTO `reports` (`report_message`, `report_user`) VALUES (?,?)");
+    $stmt->bind_param("si", $report_content, $currUser);
+    $stmt->execute();
+}
+if($f == "fillReportsTable")
+{
+    $stmt = $db->prepare("SELECT * FROM user WHERE role = 3 order by first_name desc");
+
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            
+        echo '                   
+        <tr>
+            <td>'.$red->first_name.' '.$red->last_name.'</td>
+            <td><button data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser(1,'.$red->id_user.');">WEEK 1</button></td>
+            <td><button data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser(2,'.$red->id_user.');">WEEK 2</button></td></td>
+            <td><button data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser(3,'.$red->id_user.');">WEEK 3</button></td></td>
+            <td><button data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser(4,'.$red->id_user.');">WEEK 4</button></td></td>
+        </tr>';
+        }
+    }
+
+}
 if($f == "fillMessages")
 {
     $currUser = $_SESSION['id_user'];
@@ -235,6 +265,23 @@ if($f == "sendGlobalMessage"){
     $stmt->execute();
 }
 
+if($f == "viewReportForUser"){
+    $user = $_POST["userID"];
+    $week = $_POST["week"]-1;
+
+    $stmt = $db->prepare("SELECT * FROM reports WHERE report_user = ? ORDER BY report_date DESC LIMIT ?,1;");
+    $stmt->bind_param("ii",$user, $week);
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        $red = mysqli_fetch_object($rez);
+        echo $red->report_message;
+        echo '<br><br><p>Date: '.$red->report_date.'</p>';
+    }
+    else{
+        echo "No report for user";
+    }
+}
 if($f == "fillUsersTable"){
     $currUser = $_SESSION['id_user'];
     $stmt = $db->prepare("SELECT * 

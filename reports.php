@@ -70,10 +70,8 @@ mysqli_query($db, "SET NAMES utf8");
                                         <textarea id="elm1" name="area"></textarea>
                                         <br>
                                         <br>
-                                        <button type="button" class="btn btn-success" style= "position:absolute; right:1.5%; bottom:3.5%;" onclick = "showAlert2()">UPLOAD</button>
-
+                                        <button type="button"  class="btn btn-success" id="sendReportbtn" style= "position:absolute; right:1.5%; bottom:3.5%;">UPLOAD</button>
                                     </form>    
-    
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div> <!-- end col -->
@@ -81,13 +79,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                 </div><!-- container -->
 
-             
-            </div>
-            <!-- end page content -->
-        </div>
-        <!-- end page-wrapper -->
-      
-        <!-- jQuery  -->
+
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/metisMenu.min.js"></script>
@@ -101,6 +93,7 @@ mysqli_query($db, "SET NAMES utf8");
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
+
 
     </body>
 </html>

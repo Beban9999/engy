@@ -58,7 +58,25 @@ mysqli_query($db, "SET NAMES utf8");
     ?>
     <br>
 
-    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalreport">Launch demo modal</button>  -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modaltitle_for_report" >Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id='modal_for_report'>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>
     
     <div class="modal fade" id="exempleScroll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -177,7 +195,7 @@ mysqli_query($db, "SET NAMES utf8");
                                                 <th>Week 4</th>
                                             </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id='reports_table'>
                                             <tr>
                                                 <td>User</td>
                                                 <td>25/11/2018</td>
@@ -196,67 +214,17 @@ mysqli_query($db, "SET NAMES utf8");
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>User</td>
-                                                <td>19/11/2018</td>
-                                                <td>$227</td>
-                                                <td><span class="badge badge-soft-success">Approved</span></td>
-                                                <td>
-                                                    <div class="dropdown d-inline-block float-right">
-                                                        <a class="nav-link dropdown-toggle arrow-none" id="dLabel9" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                                            <i class="fas fa-ellipsis-v font-20 text-muted"></i>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel9">
-                                                            <a class="dropdown-item" href="#">Creat Project</a>
-                                                            <a class="dropdown-item" href="#">Open Project</a>
-                                                            <a class="dropdown-item" href="#">Tasks Details</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>User</td>
-                                                <td>11/10/2018</td>
-                                                <td>$442</td>
-                                                <td><span class="badge badge-soft-danger">Rejected</span></td>
-                                                <td>
-                                                    <div class="dropdown d-inline-block float-right">
-                                                        <a class="nav-link dropdown-toggle arrow-none" id="dLabel10" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                                            <i class="fas fa-ellipsis-v font-20 text-muted"></i>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel10">
-                                                            <a class="dropdown-item" href="#">Creat Project</a>
-                                                            <a class="dropdown-item" href="#">Open Project</a>
-                                                            <a class="dropdown-item" href="#">Tasks Details</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>User</td>
-                                                <td>03/12/2018</td>
-                                                <td>$625</td>
-                                                <td><span class="badge badge-soft-success">Approved</span></td>
-                                                <td>
-                                                    <div class="dropdown d-inline-block float-right">
-                                                        <a class="nav-link dropdown-toggle arrow-none" id="dLabel11" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                                            <i class="fas fa-ellipsis-v font-20 text-muted"></i>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel11">
-                                                            <a class="dropdown-item" href="#">Creat Project</a>
-                                                            <a class="dropdown-item" href="#">Open Project</a>
-                                                            <a class="dropdown-item" href="#">Tasks Details</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
                                             </tbody>
                                         </table><!--end /table-->
                                     </div><!--end /tableresponsive-->
+
+
+
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div> <!-- end col -->
                     </div> <!-- end row -->
+                    <div id="user_report_div"></div>
 </body>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -278,7 +246,11 @@ mysqli_query($db, "SET NAMES utf8");
         fillPrivateMessageModal(userId);
 
     }
-
+    function viewReportForUser(week, userID){
+        $.post("ajax.php?f=viewReportForUser",{week:week, userID, userID}, function(response){
+            $("#modal_for_report").html(response); 
+        })
+    }
     function deletePrivateMessageFrom(id, usr) {
         if (usr == 0) {
             $.post("ajax.php?f=deletePrivateMessageFrom", {
@@ -294,7 +266,6 @@ mysqli_query($db, "SET NAMES utf8");
                 fillPrivateMessageModal(usr);
             })
         }
-
     }
 </script>
 

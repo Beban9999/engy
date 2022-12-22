@@ -8,6 +8,9 @@ $(document).ready(function(){
     if(document.getElementById("users_table")){
         fillUsersTable();
     }
+    if(document.getElementById("reports_table")){
+        fillReportsTable();
+    }
     if(document.getElementById("message_div_global")){
         fillMessages(0);
     }
@@ -81,7 +84,16 @@ $(document).ready(function(){
 
     });
 
-    
+    $("#sendReportbtn").click(function(){
+        var myContent = tinymce.get("elm1").getContent();
+        if(myContent == "") return;
+        showAlert2()
+        tinymce.activeEditor.setContent("");
+        console.log(myContent);
+        $.post("ajax.php?f=sendReport",{myContent:myContent}, function(response){
+            console.log(response);
+        })
+    });
     
     $("#insertRow").click(function(){
         let ins_customer       = $("#ins_customer").html();
@@ -162,6 +174,11 @@ function fillArchiveTable(){
 function fillUsersTable(){
     $.post("ajax.php?f=fillUsersTable", function(response){
         $("#users_table").html(response);
+    })
+}
+function fillReportsTable(){
+    $.post("ajax.php?f=fillReportsTable", function(response){
+        $("#reports_table").html(response);
     })
 }
 function fillGlobalMessagesModal(){

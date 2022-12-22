@@ -154,6 +154,109 @@ mysqli_query($db, "SET NAMES utf8");
     </div>
     <!--end row-->
     <div style="visibility:hidden" id="clickedUserId">TEST2</div>
+
+
+
+    <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+    
+                                    <h4 class="mt-0 header-title">Bordered table</h4>
+                                    <p class="text-muted mb-3">Add <code>.table-bordered</code> for
+                                        borders on all sides of the table and cells.
+                                    </p>
+    
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered mb-0 table-centered">
+                                            <thead>
+                                            <tr>
+                                                <th> </th>
+                                                <th>Week 1</th>
+                                                <th>Week 2</th>
+                                                <th>Week 3</th>
+                                                <th>Week 4</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>User</td>
+                                                <td>25/11/2018</td>
+                                                <td>$321</td>
+                                                <td><span class="badge badge-soft-success">Approved</span></td>
+                                                <td>
+                                                    <div class="dropdown d-inline-block float-right">
+                                                        <a class="nav-link dropdown-toggle arrow-none" id="dLabel8" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                                            <i class="fas fa-ellipsis-v font-20 text-muted"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel8">
+                                                            <a class="dropdown-item" href="#">Creat Project</a>
+                                                            <a class="dropdown-item" href="#">Open Project</a>
+                                                            <a class="dropdown-item" href="#">Tasks Details</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>User</td>
+                                                <td>19/11/2018</td>
+                                                <td>$227</td>
+                                                <td><span class="badge badge-soft-success">Approved</span></td>
+                                                <td>
+                                                    <div class="dropdown d-inline-block float-right">
+                                                        <a class="nav-link dropdown-toggle arrow-none" id="dLabel9" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                                            <i class="fas fa-ellipsis-v font-20 text-muted"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel9">
+                                                            <a class="dropdown-item" href="#">Creat Project</a>
+                                                            <a class="dropdown-item" href="#">Open Project</a>
+                                                            <a class="dropdown-item" href="#">Tasks Details</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>User</td>
+                                                <td>11/10/2018</td>
+                                                <td>$442</td>
+                                                <td><span class="badge badge-soft-danger">Rejected</span></td>
+                                                <td>
+                                                    <div class="dropdown d-inline-block float-right">
+                                                        <a class="nav-link dropdown-toggle arrow-none" id="dLabel10" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                                            <i class="fas fa-ellipsis-v font-20 text-muted"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel10">
+                                                            <a class="dropdown-item" href="#">Creat Project</a>
+                                                            <a class="dropdown-item" href="#">Open Project</a>
+                                                            <a class="dropdown-item" href="#">Tasks Details</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>User</td>
+                                                <td>03/12/2018</td>
+                                                <td>$625</td>
+                                                <td><span class="badge badge-soft-success">Approved</span></td>
+                                                <td>
+                                                    <div class="dropdown d-inline-block float-right">
+                                                        <a class="nav-link dropdown-toggle arrow-none" id="dLabel11" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                                            <i class="fas fa-ellipsis-v font-20 text-muted"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel11">
+                                                            <a class="dropdown-item" href="#">Creat Project</a>
+                                                            <a class="dropdown-item" href="#">Open Project</a>
+                                                            <a class="dropdown-item" href="#">Tasks Details</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table><!--end /table-->
+                                    </div><!--end /tableresponsive-->
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
 </body>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>

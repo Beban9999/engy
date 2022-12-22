@@ -156,10 +156,10 @@ if($f == "fillReportsTable")
         echo '                   
         <tr>
             <td>'.$red->first_name.' '.$red->last_name.'</td>
-            <td><button data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser(1,'.$red->id_user.');">WEEK 1</button></td>
-            <td><button data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser(2,'.$red->id_user.');">WEEK 2</button></td></td>
-            <td><button data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser(3,'.$red->id_user.');">WEEK 3</button></td></td>
-            <td><button data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser(4,'.$red->id_user.');">WEEK 4</button></td></td>
+            <td><button data-toggle="modal" data-target="#exampleModalreport" class="btn btn-primary waves-effect waves-light" onclick="viewReportForUser(1,'.$red->id_user.');">WEEK 1</button></td>
+            <td><button data-toggle="modal" data-target="#exampleModalreport" class="btn btn-primary waves-effect waves-light" onclick="viewReportForUser(2,'.$red->id_user.');">WEEK 2</button></td></td>
+            <td><button data-toggle="modal" data-target="#exampleModalreport" class="btn btn-primary waves-effect waves-light" onclick="viewReportForUser(3,'.$red->id_user.');">WEEK 3</button></td></td>
+            <td><button data-toggle="modal" data-target="#exampleModalreport" class="btn btn-primary waves-effect waves-light" onclick="viewReportForUser(4,'.$red->id_user.');">WEEK 4</button></td></td>
         </tr>';
         }
     }

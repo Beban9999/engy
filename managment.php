@@ -59,17 +59,13 @@ mysqli_query($db, "SET NAMES utf8");
     <br>
 
     <!-- Button trigger modal -->
-    <button type="button" id='checkGlobalMessages' class="btn btn-primary" data-toggle="modal" data-target="#exempleScroll">
-        Check your global messages
-    </button>
+    
     <div class="modal fade" id="exempleScroll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Global Messages </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    
                 </div>
                 <div id="globalMessagesForUser" class="modal-body">
                 </div>
@@ -85,9 +81,7 @@ mysqli_query($db, "SET NAMES utf8");
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id='privateMessageHeader'>New </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    
                 </div>
                 <div class="modal-body">
                     <form>
@@ -116,8 +110,11 @@ mysqli_query($db, "SET NAMES utf8");
                 <div class="form-group">
                     <textarea class="form-control" id="globalMessageText" rows="4" placeholder="Your message"></textarea>
                 </div>
-
+                
                 <button type="submit" id="sendGlobalMessage" class="btn btn-primary btn-block px-4" style="background:purple;color:white">Send Message</button>
+                <button type="button" id='checkGlobalMessages'  class="btn btn-primary btn-block px-4" data-toggle="modal" data-target="#exempleScroll" style="background:darkred">
+        Remove your Global Messages
+    </button>
             </div>
             <!--end card-body-->
         </div>

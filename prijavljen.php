@@ -158,14 +158,14 @@ mysqli_query($db, "SET NAMES utf8");
 </style>
 
 
-<body id="dashboard_body" onclick="removeNoti()">
+<body id="dashboard_body">
+    <!-- onclick="removeNoti()" ...ADD TO REMOVE NOTIFICATIONS ON CLICK-->
     <!-- Navbar -->
     <?php
     navbar();
     ?>
     <div id="MetricaPages" class="main-icon-menu-pane">
-
-
+        
 
     </div><!-- end Authentication-->
     </div>
@@ -173,7 +173,6 @@ mysqli_query($db, "SET NAMES utf8");
     </div><!-- end main-menu-inner-->
     </div>
     <!-- end left-sidenav-->
-
 
     <div class="page-content">
 
@@ -331,12 +330,15 @@ mysqli_query($db, "SET NAMES utf8");
                             $("#insertResp").html(response);
                         })
                 }
-                function deletePrivateMessageFrom(id){
+
+                function deletePrivateMessageFrom(id) {
                     console.log("POKRENU")
-                    $.post("ajax.php?f=deletePrivateMessageFrom",{id:id}, function(response){
-                    fillMessages(1);
-                })
-    }
+                    $.post("ajax.php?f=deletePrivateMessageFrom", {
+                        id: id
+                    }, function(response) {
+                        fillMessages(1);
+                    })
+                }
             </script>
             <div id="archvInfo" class="alert alert-success" role="alert">Successfuly archived</div>
 

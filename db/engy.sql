@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2022 at 11:07 PM
+-- Generation Time: Dec 23, 2022 at 01:45 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -50,11 +50,11 @@ CREATE TABLE `data` (
 --
 
 INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, `pot`, `act`, `next`, `result`, `datecomm`, `user`, `data_id`, `deleted`, `archived`) VALUES
-('', 'eeeeee', 'qewf', 'joi', 'joi', 'eeee', 'ojiwfg', 'asdasd', 'qweqwe', 'qweqwe', '123123123123', 1, 17, 0, 0),
+('test', 'eeeeee', 'qewf', 'joi', 'joi', 'eeee', 'ojiwfg', 'asdasd', 'qweqwe', 'qweqwe', '123123123123', 1, 17, 0, 0),
 ('asd', 'asd', 'weqwe', '', 'qwe', '', '', '', '', '', '', 1, 18, 0, 0),
-('', '', '', '', '', '', '', '', '', '', '', 1, 19, 0, 0),
-('Nesa nije smrad', '', 'qwe', 'qwe', 'qwe', 'qweqwe', 'eee', '', '', 'asd', 'qwqeqwewqeqeqe', 1, 20, 0, 0),
-('kita muda&nbsp;', 'sise', 'asdasd', 'asdasd', 'ewotrhi', '2', '', '', '', '', '', 1, 21, 0, 0);
+('Aaaaaa', '', 'EEEE', '', '', '', '', '', '', '', '', 1, 19, 0, 0),
+('Nesa nije smrad', 'testi', 'asdkoaqwe', 'wkropwrgpkqwe', 'gwkopwrqwe', 'fkqweqwe', 'eee', 'Nesto', 'asdasd', 'asd', 'qwqeqwewqeqeqe', 1, 20, 0, 0),
+('kita aeae', 'aeise', 'asdasd', 'asdasd', 'ewotrhi', '2', 'test', 'pisemo&nbsp;', 'haha', '', '', 1, 21, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,8 @@ INSERT INTO `reports` (`id_report`, `report_message`, `report_date`, `report_use
 (50, '<p>tes test testtttt</p>', '2022-12-22 22:45:36', 3),
 (51, '<p>bOOOOoooomba</p>', '2022-12-22 22:45:43', 3),
 (52, '<p>Test test</p>', '2022-12-22 22:48:18', 3),
-(53, '<p>Da li radi sad</p>', '2022-12-22 22:49:52', 3);
+(53, '<p>Da li radi sad</p>', '2022-12-22 22:49:52', 3),
+(54, '<p>Test report</p>', '2022-12-23 13:19:04', 1);
 
 -- --------------------------------------------------------
 
@@ -156,10 +157,12 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `password`, `team`, `role`) VALUES
 (1, 'Nenad', 'Grubenovic', 'grubi', 'grubi@gmail.com', '123', 'CEO', 1),
-(2, 'asd', 'asd', 'ceca', 'asdasd', '123', 'Vice President', 2),
-(3, 'Joca', 'coca', 'joca', '123', '123', 'Sales Manager', 3),
-(4, 'Aleksa', 'Aleksic', 'beban', 'asogfk@gewk9.com', '123', 'Account Manager', 2),
-(5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@gmaog,afe.com', '123', 'Developer', 3);
+(2, 'Svetlana', 'Grubenovic', 'ceca', 'cecili@gmail.com', '123', 'Vice President', 2),
+(3, 'Joca', 'Grubenovic', 'joca', 'cojomaks@yahoo.com', '123', 'Sales Manager', 3),
+(4, 'Aleksa', 'Aleksic', 'beban', 'aleksart919@gs.viser.edu.rs', '123', 'Account Manager', 2),
+(5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@sesmail.com', '123', 'Developer', 3),
+(7, 'Ivan', 'Ivanovic', 'iva', 'nekimail@test.com', '123', 'Developer', 3),
+(8, 'Mirko', 'Aleksic', 'miks', 'blejanje@tebra.com', '123', 'Developer', 3);
 
 --
 -- Indexes for dumped tables
@@ -216,7 +219,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id_report` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_report` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -228,7 +231,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

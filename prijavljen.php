@@ -44,10 +44,10 @@ mysqli_query($db, "SET NAMES utf8");
 
 </head>
 <style>
-    body {
-        background: #25316D;
+    body{
+        background:#E8E8E8;
     }
-
+    
     .nav-link {
         font-size: 16px;
         color: #9932CC;
@@ -179,7 +179,7 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="container-fluid">
             <!-- Page-Title -->
             <br>
-            <h4 class="page-title" style="color:white">Dashboard</h4>
+            <h5 class="page-title">Dashboard</h5>
 
             <!-- end page title end breadcrumb -->
             <div class="row">
@@ -192,7 +192,7 @@ mysqli_query($db, "SET NAMES utf8");
                                 <div class="col-md-12">
                                     <div class="media">
                                         <div class="media-body align-self-center">
-                                            <h5 class="card-title" style="text-align:center;"><b><?php echo $_SESSION['username'] ?>'s Traffic</b></h5>
+                                            <h5 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s Traffic</b></h5>
                                             <div class="chart-demo">
                                                 <div id="apex_mixed1" class="apex-charts"></div>
                                             </div>
@@ -218,17 +218,30 @@ mysqli_query($db, "SET NAMES utf8");
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">
-                                    <h6 class="card-title" style="text-align:center;"><b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
+                                    <h6 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
                                     <hr>
+                                    <img src="assets/images/widgets/p-1.svg" alt="" height="168" class="mx-auto d-block mb-3"> 
+
                                     <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your monthly traffic.<br> <b>Try to reach expected number</b>
-                                        <br> <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
+                                        
+                                    <div class="table-responsive">
+                        <table class="table table-bordered mb-0 table-centered">
+                            <thead>
+                                <tr >
+                                    <th style = "background:#6c4ab6;color:white">This Month Traffic</th>
+                                    <th style = "background:#6c4ab6;color:white">Manager Expected</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              <td>1,000,000</td>
+                              <td>5,000,000</td>
+
+                            </tbody>
+                        </table>
+                        <!--end /table-->
+                    </div>
+                    <!--end /tableresponsive-->
+                </div>
                                 </div>
                             </div>
                         </div>
@@ -238,7 +251,7 @@ mysqli_query($db, "SET NAMES utf8");
             </div>
             <br>
 
-            <h4 style="color:white">Message Board</h4>
+            <h5>Message Board</h5>
             <div class='row'>
                 <div class="col-lg-6">
                     <div class='card' style=background:#6c4ab6>
@@ -258,7 +271,7 @@ mysqli_query($db, "SET NAMES utf8");
             </div>
             <br>
             <!-- TABLE -->
-            <h4 style="color:white">Client's Table</h4>
+            <h5>Client's Table</h5>
 
             <div class="card">
 

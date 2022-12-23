@@ -391,19 +391,19 @@ if($f == "fillDataTable"){
 
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
-        while($red = mysqli_fetch_object($rez)){
+        while($red = mysqli_fetch_object($rez)){ //onfocusout alternative
         echo '<tr>
-        <th id="'.$red->data_id.'customer"  contenteditable style="max-width:1px" scope="row" oninput="execUpdate('.$red->data_id.',\'customer\')"      >'.$red->customer.'</th>
-        <td id="'.$red->data_id.'prod"      contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'prod\')"          >'.$red->prod.'</td>
-        <td id="'.$red->data_id.'traff"     contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'traff\')"         >'.$red->traff.'</td>
-        <td id="'.$red->data_id.'maincomp"  contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'maincomp\')"      >'.$red->maincomp.'</td>
-        <td id="'.$red->data_id.'dest"      contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'dest\')"          >'.$red->dest.'</td>
-        <td id="'.$red->data_id.'looking"   contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'looking\')"       >'.$red->looking.'</td>
-        <td id="'.$red->data_id.'pot"       contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'pot\')"           >'.$red->pot.'</td>
-        <td id="'.$red->data_id.'act"       contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'act\')"           >'.$red->act.'</td>
-        <td id="'.$red->data_id.'next"      contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'next\')"          >'.$red->next.'</td>
-        <td id="'.$red->data_id.'result"    contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'result\')"        >'.$red->result.'</td>
-        <td id="'.$red->data_id.'datecomm"  contenteditable style="max-width:1px"             oninput="execUpdate('.$red->data_id.',\'datecomm\')"      >'.$red->datecomm.'</td>
+        <th id="'.$red->data_id.'customer"  contenteditable style="max-width:1px" scope="row" onfocusout="execUpdate('.$red->data_id.',\'customer\')"      >'.$red->customer.'</th>
+        <td id="'.$red->data_id.'prod"      contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'prod\')"          >'.$red->prod.'</td>
+        <td id="'.$red->data_id.'traff"     contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'traff\')"         >'.$red->traff.'</td>
+        <td id="'.$red->data_id.'maincomp"  contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'maincomp\')"      >'.$red->maincomp.'</td>
+        <td id="'.$red->data_id.'dest"      contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'dest\')"          >'.$red->dest.'</td>
+        <td id="'.$red->data_id.'looking"   contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'looking\')"       >'.$red->looking.'</td>
+        <td id="'.$red->data_id.'pot"       contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'pot\')"           >'.$red->pot.'</td>
+        <td id="'.$red->data_id.'act"       contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'act\')"           >'.$red->act.'</td>
+        <td id="'.$red->data_id.'next"      contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'next\')"          >'.$red->next.'</td>
+        <td id="'.$red->data_id.'result"    contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'result\')"        >'.$red->result.'</td>
+        <td id="'.$red->data_id.'datecomm"  contenteditable style="max-width:1px"             onfocusout="execUpdate('.$red->data_id.',\'datecomm\')"      >'.$red->datecomm.'</td>
 
         <td><button id="deleteRecord" class="btn btn-danger" onclick="deleteRecord('.$red->data_id.')"><i class="fas fa-trash"></i></button> <button id="sendToArchive" class="btn btn-warning" onclick="sendToArch('.$red->data_id.')"><i class="fas fa-archive"></i></button></td>
         </tr>';

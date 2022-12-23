@@ -51,7 +51,7 @@ mysqli_query($db, "SET NAMES utf8");
 </head>
 <style>
     body {
-        background: #E8E8E8	;
+        background: #E8E8E8;
     }
 </style>
 

@@ -45,7 +45,7 @@ mysqli_query($db, "SET NAMES utf8");
 </head>
 <style>
     body{
-        background:#E8E8E8;
+        background: #E8E8E8;
     }
     
     .nav-link {
@@ -220,28 +220,20 @@ mysqli_query($db, "SET NAMES utf8");
                                 <div class="col-12">
                                     <h6 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
                                     <hr>
-                                    <img src="assets/images/widgets/p-1.svg" alt="" height="168" class="mx-auto d-block mb-3"> 
+                                    <img src="assets/images/widgets/p-1.svg" alt="" height="192" class="mx-auto d-block mb-3"> 
 
                                     <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your monthly traffic.<br> <b>Try to reach expected number</b>
-                                        
-                                    <div class="table-responsive">
-                        <table class="table table-bordered mb-0 table-centered">
+                                    <table class="table table-bordered mb-0 table-centered">
                             <thead>
-                                <tr >
-                                    <th style = "background:#6c4ab6;color:white">This Month Traffic</th>
-                                    <th style = "background:#6c4ab6;color:white">Manager Expected</th>
+                                <tr>
+                                    <th style = "background:#6c4ab6;color:white">Your Traffic</th>
+                                    <th style = "background:#6c4ab6;color:white">Traffic Goal</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                              <td>1,000,000</td>
-                              <td>5,000,000</td>
-
-                            </tbody>
+                            <td></td>
+                            <td></td>
                         </table>
-                        <!--end /table-->
-                    </div>
-                    <!--end /tableresponsive-->
-                </div>
+                                        
                                 </div>
                             </div>
                         </div>

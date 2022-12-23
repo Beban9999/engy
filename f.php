@@ -7,9 +7,24 @@
             return false;
         }
     }
+   
     function navbar()
     {
-        echo '<!-- Navbar -->
+        echo '
+        
+         <style>   
+        .nav-link {
+            font-size: 16px;
+            color: #9932CC;
+            font-weight: bold;
+        }
+
+        #'.explode(".",explode("/", $_SERVER['PHP_SELF'])[2])[0].'{
+            color:black;
+        }
+        </style>    
+        
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- Container wrapper -->
             <div class="container-fluid">
@@ -40,26 +55,26 @@
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="prijavljen.php">Dashboard</a>
+                    <a id="prijavljen" class="nav-link" href="prijavljen.php">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="reports.php">Reports</a>
+                    <a id="reports" class="nav-link" href="reports.php">Reports</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="archive.php">Archive</a>
+                    <a id="archive" class="nav-link" href="archive.php">Archive</a>
                 </li>
                 ';
                     if($_SESSION["status"] == 1){
                     echo '<li class="nav-item">
-                            <a class="nav-link" href="managment.php">Managment</a>
+                            <a id="managment" class="nav-link" href="managment.php">Managment</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="#">Admin Panel</a>
+                            <a id="admin_panel" class="nav-link" href="#">Admin Panel</a>
                             </li>';
                     }
                     if($_SESSION['status'] == 2){
                     echo '<li class="nav-item">
-                            <a class="nav-link" href="managment.php">Managment</a>
+                            <a id="managment" class="nav-link" href="managment.php">Managment</a>
                             </li>';
                     }
                 echo '

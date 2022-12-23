@@ -47,11 +47,6 @@ mysqli_query($db, "SET NAMES utf8");
     body{
         background: #E8E8E8;
     }
-    
-    .nav-link {
-        font-size: 16px;
-        color: #9932CC;
-    }
 
     .table>:not(:last-child)>:last-child>* {
         background-color: #6C4AB6;

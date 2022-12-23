@@ -146,7 +146,7 @@ if($f == "sendReport")
 }
 if($f == "fillReportsTable")
 {
-    $stmt = $db->prepare("SELECT * FROM user WHERE role = 3 order by first_name desc");
+    $stmt = $db->prepare("SELECT * FROM user WHERE role = 3 order by first_name");
 
     $i = 0;
     $fridays = array();
@@ -332,7 +332,7 @@ if($f == "fillUsersTable"){
     $currUser = $_SESSION['id_user'];
     $stmt = $db->prepare("SELECT * 
     FROM user JOIN roles ON user.role = roles.id_role
-    WHERE role <> 1 ORDER BY first_name DESC");
+    WHERE role <> 1 ORDER BY first_name, last_name");
     $stmt->execute();
 
     $rez = $stmt->get_result();

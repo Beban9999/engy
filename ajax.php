@@ -151,18 +151,31 @@ if($f == "fillReportsTable")
     $i = 0;
     $fridays = array();
     $ind = 0;
-    while($ind < 4) 
+    while($ind < 20) 
     {
+        //echo date("[W]", time()-($i*24*60*60));
+        //echo date("j F Y", time()-($i*24*60*60));
         if(date("w", time()-($i*24*60*60)) != 5)
         {
             $i++;
         }
         else{
-            $fridays[$ind++] = date("j F Y", time()-($i*24*60*60));
+            $fridays[$ind++] = date("W", time()-($i*24*60*60));
             $i++;
             //echo $fridays[$ind-1];
         }
     }
+    echo'
+    <thead>
+        <tr >
+            <th style> </th>
+            <th id = "week1" style = "background:#6c4ab6;color:white">Last Week - '.$fridays[0].'</th>
+            <th id = "week2" style = "background:#6c4ab6;color:white">Week '.$fridays[1].'</th>
+            <th id = "week3" style = "background:#6c4ab6;color:white">Week '.$fridays[2].'</th>
+            <th id = "week4" style = "background:#6c4ab6;color:white">Week '.$fridays[3].'</th>
+        </tr>
+    </thead>
+    <tbody>';
     $stmt->execute();
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
@@ -171,42 +184,41 @@ if($f == "fillReportsTable")
         echo '                   
         <tr style="vertical-align:middle">
             <td style = "background:#8d72e1;color:white;font-weight:bold">'.$red->first_name.' '.$red->last_name.'<br>'.$red->team.'</td>
-            <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(1,'.$red->id_user.');">
+            <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser('.$fridays[0].','.$red->id_user.',\''.$red->first_name.'\');">
             </a>
             <div class="text-center">
                 <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
 <br>
-                <small class="text-muted">'.$fridays[0].'</small>
+
             </div>                                                        
         </div></td>
-        <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(2,'.$red->id_user.');">
+        <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser('.$fridays[1].','.$red->id_user.',\''.$red->first_name.'\');">
             </a>
             <div class="text-center">
                 <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
 <br>
-                <small class="text-muted">'.$fridays[1].'</small>
+
             </div>                                                        
         </div></td>
-        <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(3,'.$red->id_user.');">
+        <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser('.$fridays[2].','.$red->id_user.',\''.$red->first_name.'\');">
             </a>
             <div class="text-center">
                 <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
 <br>
-                <small class="text-muted">'.$fridays[2].'</small>
+
             </div>                                                        
         </div></td>
-        <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(4,'.$red->id_user.');">
+        <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser('.$fridays[3].','.$red->id_user.',\''.$red->first_name.'\');">
             </a>
             <div class="text-center">
                 <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer;color:red !important"></i>
                 <br>
-                <small style="color:red">Last week</small>
-                <br>
-                <small class="text-muted">'.$fridays[3].'</small>
+                <small style="color:red">Last week visible</small>
+
             </div>                                                        
         </div></td>
            
-        </tr>';
+        </tr></tbody>';
         }
    }
 
@@ -313,16 +325,28 @@ if($f == "sendGlobalMessage"){
 
 if($f == "viewReportForUser"){
     $user = $_POST["userID"];
-    $week = $_POST["week"]-1;
-
-    $stmt = $db->prepare("SELECT * FROM reports WHERE report_user = ? ORDER BY report_date DESC LIMIT ?,1;");
-    $stmt->bind_param("ii",$user, $week);
+    $week = $_POST["week"];
+    $stmt = $db->prepare("SELECT * FROM reports WHERE report_user = ? ORDER BY report_date DESC;");
+    $stmt->bind_param("i",$user);
     $stmt->execute();
+    $isThereReport = 0;
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
-        $red = mysqli_fetch_object($rez);
-        echo $red->report_message;
-        echo '<br><br><p>Date: '.$red->report_date.'</p>';
+        while($red = mysqli_fetch_object($rez)){
+
+            $reports_week = date("W", strtotime(explode(" ", $red->report_date)[0]));
+
+            if($reports_week == $week){
+                echo $red->report_message;
+                echo '<br><br><p>Date: '.$red->report_date.'</p>';  
+                $isThereReport = 1;
+                break;
+            }
+        }
+        if($isThereReport == 0)
+        {
+            echo "No report for user";
+        }
     }
     else{
         echo "No report for user";

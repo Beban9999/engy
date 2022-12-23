@@ -66,8 +66,8 @@ mysqli_query($db, "SET NAMES utf8");
 
     <!-- Modal -->
     
-    <div class="modal fade" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+    <div class="modal fade col-lg-12" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modaltitle_for_report">Users's Report</h5>
@@ -191,19 +191,8 @@ mysqli_query($db, "SET NAMES utf8");
                     </p>
 
                     <div class="table-responsive">
-                        <table class="table table-bordered mb-0 table-centered">
-                            <thead>
-                                <tr >
-                                    <th style> </th>
-                                    <th style = "background:#6c4ab6;color:white">Last Week</th>
-                                    <th style = "background:#6c4ab6;color:white">Two Weeks Ago</th>
-                                    <th style = "background:#6c4ab6;color:white">Three Weeks Ago</th>
-                                    <th style = "background:#6c4ab6;color:white">Four Weeks Ago</th>
-                                </tr>
-                            </thead>
-                            <tbody id='reports_table'>
-                              
-                            </tbody>
+                        <table id="reports_table" class="table table-bordered mb-0 table-centered">
+                            
                         </table>
                         <!--end /table-->
                     </div>
@@ -242,7 +231,8 @@ mysqli_query($db, "SET NAMES utf8");
 
     }
 
-    function viewReportForUser(week, userID) {
+    function viewReportForUser(week, userID, userName) {
+        $("#modaltitle_for_report").html(userName+"'s Report")
         $.post("ajax.php?f=viewReportForUser", {
             week: week,
             userID,

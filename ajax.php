@@ -154,12 +154,43 @@ if($f == "fillReportsTable")
         while($red = mysqli_fetch_object($rez)){
             
         echo '                   
-        <tr>
-            <td>'.$red->first_name.' '.$red->last_name.'</td>
-            <td><button data-toggle="modal" data-target="#exampleModalreport" class="btn btn-primary waves-effect waves-light" onclick="viewReportForUser(1,'.$red->id_user.');">WEEK 1</button></td>
-            <td><button data-toggle="modal" data-target="#exampleModalreport" class="btn btn-primary waves-effect waves-light" onclick="viewReportForUser(2,'.$red->id_user.');">WEEK 2</button></td></td>
-            <td><button data-toggle="modal" data-target="#exampleModalreport" class="btn btn-primary waves-effect waves-light" onclick="viewReportForUser(3,'.$red->id_user.');">WEEK 3</button></td></td>
-            <td><button data-toggle="modal" data-target="#exampleModalreport" class="btn btn-primary waves-effect waves-light" onclick="viewReportForUser(4,'.$red->id_user.');">WEEK 4</button></td></td>
+        <tr style="vertical-align:middle">
+            <td style = "background:#8d72e1;color:white;font-weight:bold">'.$red->first_name.' '.$red->last_name.'<br>'.$red->team.'</td>
+            <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(1,'.$red->id_user.');">
+            </a>
+            <div class="text-center">
+                <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
+<br>
+                <small class="text-muted">06 March 2019</small>
+            </div>                                                        
+        </div></td>
+        <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(2,'.$red->id_user.');">
+            </a>
+            <div class="text-center">
+                <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
+<br>
+                <small class="text-muted">06 March 2019</small>
+            </div>                                                        
+        </div></td>
+        <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(3,'.$red->id_user.');">
+            </a>
+            <div class="text-center">
+                <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
+<br>
+                <small class="text-muted">06 March 2019</small>
+            </div>                                                        
+        </div></td>
+        <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(4,'.$red->id_user.');">
+            </a>
+            <div class="text-center">
+                <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer;color:red !important"></i>
+                <br>
+                <small style="color:red">Last week</small>
+                <br>
+                <small class="text-muted">06 March 2019</small>
+            </div>                                                        
+        </div></td>
+           
         </tr>';
         }
     }

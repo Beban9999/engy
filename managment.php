@@ -31,11 +31,14 @@ mysqli_query($db, "SET NAMES utf8");
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+
     <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/metricacss.css" />
     <link rel="shortcut icon" href="assets/images/favicon.ico">
+    
 
 
 
@@ -58,17 +61,18 @@ mysqli_query($db, "SET NAMES utf8");
     ?>
     <br>
 
+    
     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalreport">Launch demo modal</button>  -->
 
     <!-- Modal -->
+    
     <div class="modal fade" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modaltitle_for_report">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="modaltitle_for_report">Users's Report</h5>
                 </div>
-                <div class="modal-body" id='modal_for_report'>
+                <div class="modal-body" style="border:solid 3px;margin:3px" id='modal_for_report'>
 
                 </div>
                 <div class="modal-footer">
@@ -118,7 +122,7 @@ mysqli_query($db, "SET NAMES utf8");
     </div>
 
 
-    <div class="col-md-12 col-lg-4" style="position:relative;left:34%">
+    <div class="col-lg-4" style="position:relative;left:34%">
         <div class="card">
             <div class="card-body">
                 <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
@@ -147,13 +151,13 @@ mysqli_query($db, "SET NAMES utf8");
     <div class="container-fluid">
         <!--TABLE -->
         <div class="row">
-            <div class="col-12">
-                <div class="card">
+            <div class="col-12" >
+                <div class="card" style="border-radius:1px;">
                     <!-- <div class="card-body"> -->
 
-                    <div class="table-responsive">
+                    <div class="table-responsive" >
                         <table class="table table-striped mb-0">
-                            <thead class="thead-light" style="background:purple;color:white">
+                            <thead class="thead-light" style="background:#6c4ab6;color:white">
                                 <tr>
                                     <th>Users</th>
                                     <th>Role</th>
@@ -182,41 +186,23 @@ mysqli_query($db, "SET NAMES utf8");
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="mt-0 header-title">Reports for all users</h4>
-                    <p class="text-muted mb-3">Add <code>.table-bordered</code> for
-                        borders on all sides of the table and cells.
+                    <h4 class="mt-0 header-title">Weekly Reports</h4>
+                    <p class="text-muted mb-3">Preview all employees week reports, sorted by last 4 weeks.
                     </p>
 
                     <div class="table-responsive">
                         <table class="table table-bordered mb-0 table-centered">
                             <thead>
-                                <tr>
-                                    <th> </th>
-                                    <th>Week 1</th>
-                                    <th>Week 2</th>
-                                    <th>Week 3</th>
-                                    <th>Week 4</th>
+                                <tr >
+                                    <th style> </th>
+                                    <th style = "background:#6c4ab6;color:white">Last Week</th>
+                                    <th style = "background:#6c4ab6;color:white">Two Weeks Ago</th>
+                                    <th style = "background:#6c4ab6;color:white">Three Weeks Ago</th>
+                                    <th style = "background:#6c4ab6;color:white">Four Weeks Ago</th>
                                 </tr>
                             </thead>
                             <tbody id='reports_table'>
-                                <tr>
-                                    <td>User</td>
-                                    <td>25/11/2018</td>
-                                    <td>$321</td>
-                                    <td><span class="badge badge-soft-success">Approved</span></td>
-                                    <td>
-                                        <div class="dropdown d-inline-block float-right">
-                                            <a class="nav-link dropdown-toggle arrow-none" id="dLabel8" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v font-20 text-muted"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel8">
-                                                <a class="dropdown-item" href="#">Creat Project</a>
-                                                <a class="dropdown-item" href="#">Open Project</a>
-                                                <a class="dropdown-item" href="#">Tasks Details</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                              
                             </tbody>
                         </table>
                         <!--end /table-->
@@ -233,6 +219,7 @@ mysqli_query($db, "SET NAMES utf8");
     </div> <!-- end col -->
     </div> <!-- end row -->
     <div id="user_report_div"></div>
+    <br>
 </body>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>

@@ -317,6 +317,10 @@ mysqli_query($db, "SET NAMES utf8");
             <script>
                 rows = ['customer', 'prod', 'traff', 'maincomp', 'dest', 'looking', 'pot', 'act', 'next', 'result', 'datecomm']
 
+
+                // window.onbeforeunload = function () {
+                // return 'Are you sure you want to leave?';
+                // }
                 function execUpdate(id, col) {
                     //console.log(document.getElementById(id+col).innerHTML);
                     let updateVal = document.getElementById(id + col).innerHTML;

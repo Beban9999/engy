@@ -148,6 +148,21 @@ if($f == "fillReportsTable")
 {
     $stmt = $db->prepare("SELECT * FROM user WHERE role = 3 order by first_name desc");
 
+    $i = 0;
+    $fridays = array();
+    $ind = 0;
+    while($ind < 4) 
+    {
+        if(date("w", time()-($i*24*60*60)) != 5)
+        {
+            $i++;
+        }
+        else{
+            $fridays[$ind++] = date("j F Y", time()-($i*24*60*60));
+            $i++;
+            //echo $fridays[$ind-1];
+        }
+    }
     $stmt->execute();
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
@@ -161,7 +176,7 @@ if($f == "fillReportsTable")
             <div class="text-center">
                 <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
 <br>
-                <small class="text-muted">06 March 2019</small>
+                <small class="text-muted">'.$fridays[0].'</small>
             </div>                                                        
         </div></td>
         <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(2,'.$red->id_user.');">
@@ -169,7 +184,7 @@ if($f == "fillReportsTable")
             <div class="text-center">
                 <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
 <br>
-                <small class="text-muted">06 March 2019</small>
+                <small class="text-muted">'.$fridays[1].'</small>
             </div>                                                        
         </div></td>
         <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(3,'.$red->id_user.');">
@@ -177,7 +192,7 @@ if($f == "fillReportsTable")
             <div class="text-center">
                 <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
 <br>
-                <small class="text-muted">06 March 2019</small>
+                <small class="text-muted">'.$fridays[2].'</small>
             </div>                                                        
         </div></td>
         <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport"onclick="viewReportForUser(4,'.$red->id_user.');">
@@ -187,13 +202,13 @@ if($f == "fillReportsTable")
                 <br>
                 <small style="color:red">Last week</small>
                 <br>
-                <small class="text-muted">06 March 2019</small>
+                <small class="text-muted">'.$fridays[3].'</small>
             </div>                                                        
         </div></td>
            
         </tr>';
         }
-    }
+   }
 
 }
 if($f == "fillMessages")

@@ -17,6 +17,7 @@ mysqli_query($db, "SET NAMES utf8");
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,22 +41,49 @@ mysqli_query($db, "SET NAMES utf8");
     <script src="jquary/functions.js"></script>
 
 
+
     <title>Admin Panel</title>
 </head>
+<style>
+    body{
+        background:#000080;
+    }
+</style>
+
 
 <body id="dashboard_body">
     <?php
     navbar();
     ?>
 
+<br>
+<div class="container-fluid">
 
-    <script src="assets/plugins/moment/moment.js"></script>
-    <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
-    <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
-    <script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
+<div class='row'>
+                <div class="col-lg-8">
+                    <div class='card'>
+                        <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Welcome Administrator</b></h5>
+                        <hr style="border-color: white">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class='card'>
+                        <br>
+                    <img src="assets/images/widgets/admin.png" alt="" height="250" class="mx-auto d-block mb-3">
+
+                        <hr style="border-color: white">
+                    </div>
+                </div>
+
+            </div>
+</div>
+            <br>
+
+
     <script src="assets/pages/jquery.apexcharts.init.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/loginscript.js"></script>
+
 
 </body>
 

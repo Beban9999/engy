@@ -1245,7 +1245,7 @@ var options = {
           columnWidth: '50%'
       }
   },
-  colors: ["#000000", "#9932CC", "#f93b7a"],
+  colors: ["#000000", "#4B0082"],
   series: [{
       name: 'Your traffic',
       type: 'column',

@@ -118,6 +118,7 @@ mysqli_query($db, "SET NAMES utf8");
             </div>
         </div>
     </div>
+<div class="container-fluid">
 
 <div class ="row">
     <div class="col-lg-6">
@@ -226,6 +227,7 @@ mysqli_query($db, "SET NAMES utf8");
     </div> <!-- end row -->
     <div id="user_report_div"></div>
     <br>
+</div>
 </body>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>

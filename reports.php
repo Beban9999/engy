@@ -55,15 +55,21 @@ mysqli_query($db, "SET NAMES utf8");
       <br>
             <!-- Page Content-->
             <div class="page-content">
+            <div class="container-fluid">
 
                     <!-- end page title end breadcrumb -->
                     
+
+                    <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'>Write your weekly reports.<br> <b>Don't forget to upload!</b>
+                                    </p>        
+                                    <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
+
                     <div class="row">
                         <div class="col-12" >
                             <div class="card" >
-                                <div class="card-body">            
-                                    <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'>Write your weekly reports.<br> <b>Don't forget to upload!</b>
-                                    </p>        
+                                <div class="card-body">         
+                                
+                                   
                                     <form method="post">
                                         <textarea id="elm1" name="area"></textarea>
                                         <br>
@@ -74,7 +80,7 @@ mysqli_query($db, "SET NAMES utf8");
                             </div><!--end card-->
                         </div> <!-- end col -->
                     </div> <!-- end row --> 
-
+</div>
                 </div><!-- container -->
 
 

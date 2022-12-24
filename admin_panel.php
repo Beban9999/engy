@@ -54,13 +54,30 @@ mysqli_query($db, "SET NAMES utf8");
 <body id="dashboard_body">
     <?php
     navbar();
+    if ($_SESSION["status"] == 3) {
+        echo '
+        <br>
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>You do not have access to this page</b></h5>
+                        <hr style="border-color: white">
+                    </div>
+                </div>
+            </div>
+        </div>';
+        exit();
+    }
+
     ?>
 
 <br>
 <div class="container-fluid">
 
 <div class='row'>
-    
+
                 <div class="col-lg-8">
                     <div class='card'>
                         <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Welcome Administrator</b></h5>
@@ -69,7 +86,7 @@ mysqli_query($db, "SET NAMES utf8");
                         <div class="col-lg-6">
 
                                 <div class="card-body">
-                                    <h4 class="header-title mt-0"style=text-align:center>Aplication Users</h4>  
+                                    <h4 class="header-title mt-0"style=text-align:center>Aplication Users</h4>
                                     <div id="ana_device" class="apex-charts"></div>
                                     <div class="table-responsive mt-4">
                                         <table class="table mb-0">
@@ -77,26 +94,26 @@ mysqli_query($db, "SET NAMES utf8");
                                             <tr style = background:purple;color:white>
                                                 <th>Role</th>
                                                 <th>Number of Users</th>
-                                               
+
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
                                                 <th scope="row">Administrators</th>
                                                 <td>1</td>
-                                               
+
                                             </tr>
                                             <tr>
                                                 <th scope="row">Managers</th>
                                                 <td>3</td>
-                                                                                              
+
                                             </tr>
                                             <tr>
                                                 <th scope="row">Users</th>
                                                 <td>5</td>
-                                               
+
                                             </tr>
-                                            
+
                                             </tbody>
                                         </table><!--end /table-->
                                     </div>
@@ -115,7 +132,7 @@ mysqli_query($db, "SET NAMES utf8");
                 </div>
 
             </div>
-            
+
 </div>
             <br>
 

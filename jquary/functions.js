@@ -1,4 +1,37 @@
 $(document).ready(function(){
+
+
+
+    if (document.getElementById("apex_mixed1")) {
+
+
+        $.post("ajax.php?f=trafficChart", function (response) {
+            var respArray = response.split(" ");
+            var yourTraffic = respArray[1].split(",").map(function (x) { return parseInt(x); })
+            var trafficGoal = respArray[0].split(",").map(function (x) { return parseInt(x); })
+
+            console.log(yourTraffic, trafficGoal)
+
+            options.series = [{
+                name: 'Your traffic',
+                type: 'column',
+                data: yourTraffic
+            }, {
+                name: 'Manager Expetation',
+                type: 'area',
+                data: trafficGoal
+            },]
+
+            var chart = new ApexCharts(
+                document.querySelector("#apex_mixed1"),
+                options
+            );
+
+            chart.render();
+        })
+
+
+    }
     if(document.getElementById("table_body")){
         fillDataTable();
     }
@@ -246,6 +279,8 @@ function deleteRecord(id){
     })
 }
 function sendToArch(id){
+
+
     document.getElementById("archvInfo").style.visibility = "visible";
     setTimeout(() => {
         document.getElementById("archvInfo").style.visibility = "hidden";

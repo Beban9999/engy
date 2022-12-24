@@ -41,7 +41,25 @@ if($f == "deletePrivateMessageFrom")
     $stmt->execute();
 }
 
+if($f == "trafficChart"){
+    $currUser = $_SESSION['id_user'];
+    $stmt = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ? order by goal_date desc");
+    $stmt->bind_param("i", $currUser);
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    $goals = "";
+    $reached = "";
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            $goals.=$red->goal. ',';
+            $reached.=$red->goal_reach. ',';
+        }
+        $goals = substr($goals, 0, -1);
+        $reached = substr($reached, 0, -1);
+        echo $goals.' '.$reached;
+    }
 
+}
 //Private message modal
 if($f == "checkPrivateMessages")
 {

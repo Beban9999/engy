@@ -44,7 +44,7 @@ mysqli_query($db, "SET NAMES utf8");
 
 </head>
 <style>
-    body{
+    body {
         background: #E8E8E8;
     }
 
@@ -219,15 +219,15 @@ mysqli_query($db, "SET NAMES utf8");
 
                                     <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your monthly traffic.<br> <b>Try to reach expected number</b>
                                     <table class="table table-bordered mb-0 table-centered">
-                            <thead>
-                                <tr>
-                                    <th style = "background:#6c4ab6;color:white">Your Traffic</th>
-                                    <th style = "background:#6c4ab6;color:white">Traffic Goal</th>
-                                </tr>
-                            </thead>
-                            <td id="your_traffic"></td>
-                            <td id="traffic_goal"></td>
-                        </table>
+                                        <thead>
+                                            <tr>
+                                                <th style="background:#6c4ab6;color:white">Your Traffic</th>
+                                                <th style="background:#6c4ab6;color:white">Traffic Goal</th>
+                                            </tr>
+                                        </thead>
+                                        <td id="your_traffic"></td>
+                                        <td id="traffic_goal"></td>
+                                    </table>
 
                                 </div>
                             </div>
@@ -342,6 +342,80 @@ mysqli_query($db, "SET NAMES utf8");
                     }, function(response) {
                         fillMessages(1);
                     })
+                }
+
+
+                //Mixed-1
+                var options = {
+                    chart: {
+                        height: 380,
+                        type: 'line',
+                        stacked: false,
+                        toolbar: {
+                            show: false
+                        }
+                    },
+                    stroke: {
+                        width: [0, 2, 4],
+                        curve: 'smooth'
+                    },
+                    plotOptions: {
+                        bar: {
+                            columnWidth: '50%'
+                        }
+                    },
+                    colors: ["#000000", "#4B0082"],
+
+                    fill: {
+                        opacity: [0.85, 0.25, 1],
+                        gradient: {
+                            inverseColors: false,
+                            shade: 'light',
+                            type: "vertical",
+                            opacityFrom: 0.85,
+                            opacityTo: 0.55,
+                            stops: [0, 100, 100, 100]
+                        }
+                    },
+                    labels: ['01/01/2023', '02/01/2023', '03/01/2023', '04/01/2023', '05/01/2023', '06/01/2023', '07/01/2023', '08/01/2023', '09/01/2023', '10/01/2023', '11/01/2023'],
+                    markers: {
+                        size: 0
+                    },
+                    legend: {
+                        offsetY: -10,
+                    },
+                    xaxis: {
+                        type: 'datetime',
+                        axisBorder: {
+                            show: true,
+                            color: '#bec7e0',
+                        },
+                        axisTicks: {
+                            show: true,
+                            color: '#bec7e0',
+                        },
+                    },
+                    yaxis: {
+                        title: {
+                            text: 'Traffic',
+                        },
+                    },
+                    tooltip: {
+                        shared: true,
+                        intersect: false,
+                        y: {
+                            formatter: function(y) {
+                                if (typeof y !== "undefined") {
+                                    return y.toFixed(0) + " SMS";
+                                }
+                                return y;
+
+                            }
+                        }
+                    },
+                    grid: {
+                        borderColor: '#f1f3fa'
+                    }
                 }
             </script>
             <div id="archvInfo" class="alert alert-success" role="alert">Successfuly archived</div>

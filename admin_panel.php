@@ -48,6 +48,18 @@ mysqli_query($db, "SET NAMES utf8");
     body{
         background:#003060;
     }
+    .apexcharts-legend-text, .apexcharts-legend-marker{
+        margin-bottom:10px;
+    }
+    #apexcharts-donut-slice-0{
+        fill:black;
+    }
+    #apexcharts-donut-slice-1{
+        fill:blue;
+    }
+    #apexcharts-donut-slice-2{
+        fill:purple;
+    }
 </style>
 
 
@@ -82,14 +94,17 @@ mysqli_query($db, "SET NAMES utf8");
                     <div class='card'>
                         <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Welcome Administrator</b></h5>
                         <hr style="border-color: white">
-                        <div class="card">
+                        
+                        <div class = "row">
                         <div class="col-lg-6">
-
                                 <div class="card-body">
                                     <h4 class="header-title mt-0"style=text-align:center>Aplication Users</h4>
-                                    <div id="ana_device" class="apex-charts"></div>
+                                    <div id="ana_device" class="apex-charts" ></div>
+
                                     <div class="table-responsive mt-4">
                                         <table class="table mb-0">
+                                            <thead class="thead-light">
+                                            <tr style = background:purple;color:white>
                                             <thead class="thead-light">
                                             <tr style = background:purple;color:white>
                                                 <th>Role</th>
@@ -116,16 +131,83 @@ mysqli_query($db, "SET NAMES utf8");
 
                                             </tbody>
                                         </table><!--end /table-->
+                        </div>
+                        </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                                <div class="card-body">
+                                    <h4 class="header-title mt-0"style=text-align:center>Company Roles</h4>
+                                    
+                                    <div class="table-responsive mt-4">
+                                        <table class="table mb-0">
+                                            <thead class="thead-light">
+                                            <tr style = background:purple;color:white>
+                                                <th>Role </th>
+                                                <th>Banner</th>
+                                                <th>Users</th>
+
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr> 
+                                            <th scope="row">Developers</th>
+
+                                                <td><img src="img/DEV.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td>1</td>
+                                                
+
+                                            </tr>
+                                            <tr>
+                                            <th scope="row">C Level</th>
+
+                                                <td><img src="img/CEO.png" alt="" height="30" class="mx-auto d-block mb-3"> </td>
+                                                <td>3</td>
+
+                                            </tr>
+                                            <tr>
+                                            <th scope="row">Vice Presidents</th>
+
+                                            <td> <img src="img/VP.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td>5</td>
+
+                                            </tr>
+                                            <tr>
+                                            <th scope="row">Sales Manager</th>
+
+                                            <td> <img src="img/SM.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td>5</td>
+
+                                            </tr>
+                                            <tr>
+                                            <th scope="row">Account Manager</th>
+
+                                            <td><img src="img/AM.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td>5</td>
+
+                                            </tr>
+
+                                            </tbody>
+                                        </table><!--end /table-->
                                     </div>
-</div>
+                                    
+                                    </div>
+
                                 </div><!--end card-body-->
+                                
                             </div><!--end card-->
+                            
+                            
                     </div>
+                    
+                    
+                    
                 </div>
                 <div class="col-lg-4">
                     <div class='card'>
                         <br>
-                    <img src="assets/images/widgets/admin.png" alt="" height="330" class="mx-auto d-block mb-3">
+                    <img src="assets/images/widgets/admin.png" alt="" height="330" class="mx-auto d-block mb-3" style = margin-top:15px>
 
                         <hr style="border-color: white">
                     </div>
@@ -136,7 +218,8 @@ mysqli_query($db, "SET NAMES utf8");
 </div>
             <br>
 
-
+        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
+        <script src="assets/pages/jquery.analytics_dashboard.init.js"></script>
     <script src="assets/pages/jquery.apexcharts.init.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/loginscript.js"></script>

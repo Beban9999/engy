@@ -54,7 +54,7 @@ mysqli_query($db, "SET NAMES utf8");
 <body id="dashboard_body">
     <?php
     navbar();
-    if ($_SESSION["status"] == 3) {
+    if ($_SESSION["status"] == 3 || $_SESSION["status"] == 2) {
         echo '
         <br>
         <div class="container-fluid">

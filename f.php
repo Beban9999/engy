@@ -7,12 +7,12 @@
             return false;
         }
     }
-   
+
     function navbar()
     {
         echo '
-        
-         <style>   
+
+         <style>
         .nav-link {
             font-size: 16px;
             color: #9932CC;
@@ -22,8 +22,8 @@
         #'.explode(".",explode("/", $_SERVER['PHP_SELF'])[2])[0].'{
             color:black;
         }
-        </style>    
-        
+        </style>
+
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- Container wrapper -->
@@ -40,7 +40,7 @@
             >
                 <i class="fas fa-bars"></i>
             </button>
-        
+
             <!-- Collapsible wrapper -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Navbar brand -->
@@ -69,7 +69,7 @@
                             <a id="managment" class="nav-link" href="managment.php">Managment</a>
                             </li>
                             <li class="nav-item">
-                            <a id="admin_panel" class="nav-link" href="#">Admin Panel</a>
+                            <a id="admin_panel" class="nav-link" href="admin_panel.php">Admin Panel</a>
                             </li>';
                     }
                     if($_SESSION['status'] == 2){
@@ -88,18 +88,18 @@
             ';
                 $team = $_SESSION['team'];
                 $img = "img/CEO.png";
-                
-                if($team == "CEO")              $color = 'black';   
+
+                if($team == "CEO")              $color = 'black';
                 if($team == "Vice President"){  $color = '#38b6ff'; $img = "img/VP.png";}
                 if($team == "Sales Manager") {  $color = '#ff1616'; $img = "img/SM.png";}
                 if($team == "Account Manager"){ $color = '#3d9e67'; $img = "img/AM.png";}
                 if($team == "Developer"){       $color = '#004aad'; $img = "img/DEV.png";}
-                
+
                 echo '<span style="color:'.$color.'">'.$_SESSION['username'].'</span>';
                 echo '
                 </div>
             </div>
-            
+
                 <!-- Avatar -->
                 <div class="dropdown">
                 <a

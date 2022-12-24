@@ -5,7 +5,7 @@
  */
 
 
-   
+
 var options = {
     chart: {
       height: 374,
@@ -33,11 +33,11 @@ var options = {
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-      },    
+      },
     },
     title: {
       text: 'Social Media',
@@ -98,16 +98,16 @@ var options = {
       }
     }]
   }
-  
+
   var chart = new ApexCharts(
     document.querySelector("#apex_line1"),
     options
   );
-  
+
   chart.render();
 
     //line-2
-    
+
 var options = {
     chart: {
       height: 380,
@@ -156,11 +156,11 @@ var options = {
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-      },    
+      },
       title: {
         text: 'Month'
       }
@@ -193,16 +193,16 @@ var options = {
       }
     }]
   }
-  
+
   var chart = new ApexCharts(
     document.querySelector("#apex_line2"),
     options
   );
-  
+
   chart.render();
 
     // line-3
-  
+
 var ts2 = 1484418600000;
 var dates = [];
 var spikes = [5, -5, 3, -3, 8, -8]
@@ -280,11 +280,11 @@ var options = {
     axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-      },    
+      },
   },
 
   tooltip: {
@@ -416,11 +416,11 @@ for(var i=0; i<12; i++) {
     axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-      },    
+      },
   },
   title: {
     text: 'Irregular Data in Time Series',
@@ -442,7 +442,7 @@ for(var i=0; i<12; i++) {
       document.querySelector("#apex_area1"),
       options
   );
-  
+
   chart.render();
 
   //Area-2
@@ -760,7 +760,7 @@ for(var i=0; i<12; i++) {
             [1361833200000,38.59],
             [1361919600000,39.60],
             ]
-            
+
         },
 
         ],
@@ -775,11 +775,11 @@ for(var i=0; i<12; i++) {
         axisBorder: {
             show: true,
             color: '#bec7e0',
-          },  
+          },
           axisTicks: {
             show: true,
             color: '#bec7e0',
-          },    
+          },
         },
         colors: ['#dfa579'],
         tooltip: {
@@ -869,11 +869,11 @@ for(var i=0; i<12; i++) {
 
     })
   })
-  
+
   //  Column Charts
 
   //colunm-1
-  
+
 var options = {
     chart: {
         height: 396,
@@ -913,11 +913,11 @@ var options = {
         axisBorder: {
             show: true,
             color: '#bec7e0',
-          },  
+          },
           axisTicks: {
             show: true,
             color: '#bec7e0',
-        },    
+        },
     },
     legend: {
         offsetY: -10,
@@ -1103,14 +1103,14 @@ var options = {
         axisBorder: {
             show: true,
             color: '#bec7e0',
-          },  
+          },
           axisTicks: {
             show: true,
             color: '#bec7e0',
-        }, 
+        },
     },
     xaxis: {
-        categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan', 'United States', 'China', 'Germany'],        
+        categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan', 'United States', 'China', 'Germany'],
     },
     states: {
         hover: {
@@ -1146,7 +1146,7 @@ var options = {
         bar: {
             horizontal: true,
             barHeight: '80%',
-            
+
         },
     },
     dataLabels: {
@@ -1178,11 +1178,11 @@ var options = {
         axisBorder: {
             show: true,
             color: '#bec7e0',
-          },  
+          },
           axisTicks: {
             show: true,
             color: '#bec7e0',
-        }, 
+        },
     },
     tooltip: {
         shared: false,
@@ -1199,7 +1199,7 @@ var options = {
     },
     xaxis: {
       categories: ['85+', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54', '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'],
-      
+
       title: {
           text: 'Percent'
       },
@@ -1225,94 +1225,6 @@ var chart = new ApexCharts(
 chart.render();
 
 // Mixed All
-
-  //Mixed-1
-var options = {
-  chart: {
-      height: 380,
-      type: 'line',
-      stacked: false,
-      toolbar: {
-          show: false
-      }
-  },
-  stroke: {
-      width: [0, 2, 4],
-      curve: 'smooth'
-  },
-  plotOptions: {
-      bar: {
-          columnWidth: '50%'
-      }
-  },
-  colors: ["#000000", "#4B0082"],
-  series: [{
-      name: 'Your traffic',
-      type: 'column',
-      data: [25,26,73,43,26,73,43,26,73,43,26,73]
-  }, {
-      name: 'Manager Expetation',
-      type: 'area',
-      data: [44,27,100,50,26,11,43,35,13,112,57,73]
-  }, ],
-  fill: {
-      opacity: [0.85, 0.25, 1],
-      gradient: {
-          inverseColors: false,
-          shade: 'light',
-          type: "vertical",
-          opacityFrom: 0.85,
-          opacityTo: 0.55,
-          stops: [0, 100, 100, 100]
-      }
-  },
-  labels: ['01/01/2023', '02/01/2023', '03/01/2023', '04/01/2023', '05/01/2023', '06/01/2023', '07/01/2023', '08/01/2023', '09/01/2023', '10/01/2023', '11/01/2023'],
-  markers: {
-      size: 0
-  },
-  legend: {
-      offsetY: -10,
-  },
-  xaxis: {
-      type: 'datetime',
-      axisBorder: {
-        show: true,
-        color: '#bec7e0',
-      },  
-      axisTicks: {
-        show: true,
-        color: '#bec7e0',
-    }, 
-  },
-  yaxis: {
-      title: {
-          text: 'Traffic',
-      },
-  },
-  tooltip: {
-      shared: true,
-      intersect: false,
-      y: {
-          formatter: function (y) {
-              if (typeof y !== "undefined") {
-                  return y.toFixed(0) + " SMS";
-              }
-              return y;
-
-          }
-      }
-  },
-  grid: {
-      borderColor: '#f1f3fa'
-  }
-}
-
-var chart = new ApexCharts(
-  document.querySelector("#apex_mixed1"),
-  options
-);
-
-chart.render();
 
 //Mixed-2
 
@@ -1351,11 +1263,11 @@ var options = {
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-    }, 
+    },
   },
   yaxis: [
       {
@@ -1491,11 +1403,11 @@ var options = {
     axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-    }, 
+    },
   },
   yaxis: [
       {
@@ -1614,11 +1526,11 @@ var options = {
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-    }, 
+    },
   },
   yaxis: {
       max: 70
@@ -1720,11 +1632,11 @@ var options2 = {
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-    }, 
+    },
   },
   yaxis: {
       max: 70
@@ -1776,11 +1688,11 @@ var options = {
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-    }, 
+    },
   },
   yaxis: {
       tickAmount: 7
@@ -1882,11 +1794,11 @@ var options = {
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-    }, 
+    },
   },
   yaxis: {
       max: 70
@@ -1960,22 +1872,22 @@ var options = {
   series: [{
       data: seriesData
   }],
-  	
+
 stroke: {
   show: true,
   colors: '#f1f3fa',
-  width: [1,4]    
+  width: [1,4]
 },
   xaxis: {
       type: 'datetime',
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-    }, 
+    },
   },
   grid: {
     borderColor: '#f1f3fa'
@@ -2018,11 +1930,11 @@ var optionsCandlestick = {
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-    }, 
+    },
   },
   grid: {
     borderColor: '#f1f3fa'
@@ -2087,9 +1999,9 @@ var options = {
                       color: '#08aeb0'
                   }
               ],
-             
+
           },
-      }        
+      }
   },
   series: [{
       name: 'volume',
@@ -2103,11 +2015,11 @@ var options = {
       axisBorder: {
         show: true,
         color: '#bec7e0',
-      },  
+      },
       axisTicks: {
         show: true,
         color: '#bec7e0',
-    }, 
+    },
   },
   yaxis: {
       labels: {
@@ -2132,12 +2044,12 @@ chart.render();
 
   //apex-pie1
 
-  
+
 var options = {
   chart: {
       height: 320,
       type: 'pie',
-  }, 
+  },
   series: [44, 55, 41, 17, 15],
   labels: ["Series 1", "Series 2", "Series 3", "Series 4", "Series 5"],
   colors: ["#a3cae0", "#232f5b","#f06a6c", "#f1e299", "#08aeb0"],
@@ -2178,7 +2090,7 @@ var options = {
   chart: {
       height: 320,
       type: 'donut',
-  }, 
+  },
   series: [44, 55, 41, 17, 15],
   legend: {
       show: true,
@@ -2248,7 +2160,7 @@ chart.render();
       opacity: 1,
       pattern: {
         enabled: true,
-        style: ['verticalLines', 'squares', 'horizontalLines', 'circles','slantedLines'], 
+        style: ['verticalLines', 'squares', 'horizontalLines', 'circles','slantedLines'],
       },
     },
     states: {
@@ -2402,7 +2314,7 @@ var options = {
   },
   series: [44, 55, 67, 83],
   labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
-  
+
 }
 
 var chart = new ApexCharts(

@@ -6,11 +6,13 @@ $(document).ready(function(){
 
 
         $.post("ajax.php?f=trafficChart", function (response) {
+            console.log(response);
             var respArray = response.split(" ");
             var yourTraffic = respArray[1].split(",").map(function (x) { return parseInt(x); })
             var trafficGoal = respArray[0].split(",").map(function (x) { return parseInt(x); })
 
-            console.log(yourTraffic, trafficGoal)
+            var glalDates = respArray[2].split(",")
+            console.log(yourTraffic, trafficGoal, glalDates)
 
             options.series = [{
                 name: 'Your traffic',
@@ -20,7 +22,8 @@ $(document).ready(function(){
                 name: 'Manager Expetation',
                 type: 'area',
                 data: trafficGoal
-            },]
+            },];
+            options.labels = glalDates
 
             var chart = new ApexCharts(
                 document.querySelector("#apex_mixed1"),

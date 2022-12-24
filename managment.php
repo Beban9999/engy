@@ -23,7 +23,7 @@ mysqli_query($db, "SET NAMES utf8");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- MDB icon -->
-    <link rel="icon" href="engy.png" type="image/x-icon" />
+    <link rel="icon" href="logo.png" type="image/x-icon" />
     <title>Managment</title>
 
     <!-- Font Awesome -->
@@ -31,13 +31,11 @@ mysqli_query($db, "SET NAMES utf8");
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
-    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/metricacss.css" />
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
     
 
 
@@ -121,11 +119,29 @@ mysqli_query($db, "SET NAMES utf8");
         </div>
     </div>
 
+<div class ="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title" style = text-align:center >Welcome <?php echo $_SESSION['username']; ?> </h3>
+                <h4 class="card-title" style = text-align:center > You are part of Managment Team! </h4>
+                <hr>
+                <h5 class="card-title" style = text-align:center >On this page you can:</h5>
+                <br>
+                <h6 class="card-title" style = text-align:center >Visit Employees Profiles</h6>
+                <h6 class="card-title" style = text-align:center >Check Employees Weekly Reports</h6>
+                <h6 class="card-title" style = text-align:center >Send Global or Private Message</h6>
 
-    <div class="col-lg-4" style="position:relative;left:34%">
+
+
+</div></div></div>
+
+    <div class="col-6">
         <div class="card">
             <div class="card-body">
                 <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
+                <img src="assets/images/widgets/login.png" alt="" height="192" class="mx-auto d-block mb-3"> 
+
                 <div class="form-group row">
 
                 </div>
@@ -146,6 +162,7 @@ mysqli_query($db, "SET NAMES utf8");
     </div>
     <!--end row-->
     <br>
+</div>
 
 
     <div class="container-fluid">

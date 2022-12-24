@@ -23,6 +23,7 @@ mysqli_query($db, "SET NAMES utf8");
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A premium admin dashboard template by Mannatthemes" name="description" />
         <meta content="Mannatthemes" name="author" />
+        <link rel="icon" href="logo.png" type="image/x-icon" />
 
          <!-- Sweet Alert -->
          <!-- <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css"> -->
@@ -34,9 +35,9 @@ mysqli_query($db, "SET NAMES utf8");
         
         <!-- App css -->
     <link rel="stylesheet" href="css/mdb.min.css" />
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
-    <!-- <link rel="stylesheet" href="css/footer.css" /> -->
-    <!-- <link rel="stylesheet" href="css/metricacss.css" /> -->
+     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/footer.css" /> 
+     <link rel="stylesheet" href="css/metricacss.css" /> 
     <script src="jquary/jquary.js"></script>
     <script src="jquary/jquary.form.js"></script>
     <script src="jquary/functions.js"></script>
@@ -46,6 +47,7 @@ mysqli_query($db, "SET NAMES utf8");
     </head>
 
     <body>
+
     <div> <?php
     navbar();
     ?></div>
@@ -89,7 +91,8 @@ mysqli_query($db, "SET NAMES utf8");
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
-
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/loginscript.js"></script>
 
     </body>
 </html>

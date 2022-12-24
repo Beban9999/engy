@@ -22,7 +22,7 @@ mysqli_query($db, "SET NAMES utf8");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- MDB icon -->
-  <link rel="icon" href="logo.ico" type="image/x-icon" />
+     <link rel="icon" href="logo.png" type="image/x-icon" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <!-- Google Fonts Roboto -->
@@ -45,7 +45,7 @@ mysqli_query($db, "SET NAMES utf8");
 </head>
 <style>
   body{
-        background:#25316D;
+        background:#E8E8E8;
     }
 .nav-link{
 font-size:16px;
@@ -107,13 +107,12 @@ color:yellow;
             <!-- end left-sidenav-->
 
             <div class="card text-center">
-  <div class="card-header">Archive</div>
   <div class="card-body">
-    <h5 class="card-title">Welcome <?php echo $_SESSION['username'];
+    <h3 class="card-title">Welcome <?php echo $_SESSION['username'];
 ?>!
-</h5>
-    <p class="card-text">This is your archive user! Here you can send and see all your previous agreements.</p>
-    <a href="#" class="btn btn-primary">Return to Dashboard</a>
+</h5><br>
+
+    <img src="assets/images/widgets/calendar.png" alt="" height="300" class="mx-auto d-block mb-3"> 
   </div>
   <div class="card-footer text-muted"><i>“The difference between an <b>achiever</b> and a loser is,
 an achiever never gives up, never settles and lastly never forgets.”</i></div>

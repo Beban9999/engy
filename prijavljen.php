@@ -160,7 +160,7 @@ mysqli_query($db, "SET NAMES utf8");
     navbar();
     ?>
     <div id="MetricaPages" class="main-icon-menu-pane">
-        
+
 
     </div><!-- end Authentication-->
     </div>
@@ -215,7 +215,7 @@ mysqli_query($db, "SET NAMES utf8");
                                 <div class="col-12">
                                     <h6 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
                                     <hr>
-                                    <img src="assets/images/widgets/p-1.png" alt="" height="192" class="mx-auto d-block mb-3"> 
+                                    <img src="assets/images/widgets/p-1.png" alt="" height="192" class="mx-auto d-block mb-3">
 
                                     <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your monthly traffic.<br> <b>Try to reach expected number</b>
                                     <table class="table table-bordered mb-0 table-centered">
@@ -225,10 +225,10 @@ mysqli_query($db, "SET NAMES utf8");
                                     <th style = "background:#6c4ab6;color:white">Traffic Goal</th>
                                 </tr>
                             </thead>
-                            <td></td>
-                            <td></td>
+                            <td id="your_traffic"></td>
+                            <td id="traffic_goal"></td>
                         </table>
-                                        
+
                                 </div>
                             </div>
                         </div>

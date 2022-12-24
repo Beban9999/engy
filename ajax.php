@@ -135,6 +135,19 @@ if($f == "checkGlobalMessages")
         }
     }
 }
+if($f == "fillTrafficGoal")
+{
+    $currUser = $_SESSION['id_user'];
+    $stmt = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ? order by goal_date desc");
+    $stmt->bind_param("i", $currUser);
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        if($red = mysqli_fetch_object($rez)){
+            echo $red->goal;
+        }
+    }
+}
 if($f == "sendReport")
 {
     $report_content = $_POST["myContent"];

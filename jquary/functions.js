@@ -13,6 +13,9 @@ $(document).ready(function(){
     if(document.getElementById("archive_table")){
         fillArchiveTable();
     }
+    if(document.getElementById("traffic_goal")){
+        fillTrafficGoal();
+    }
     if(document.getElementById("users_table")){
         fillUsersTable();
     }
@@ -167,6 +170,12 @@ $(document).ready(function(){
     });
 
 })
+function fillTrafficGoal(){
+    console.log("JAVA")
+    $.post("ajax.php?f=fillTrafficGoal", function(response){
+        $("#traffic_goal").html(response);
+    })
+}
 function fillDataTableVisit(id){
     console.log(id);
     $.post("ajax.php?f=fillDataTableVisit",{id:id}, function(response){

@@ -22,7 +22,7 @@ mysqli_query($db, "SET NAMES utf8");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- MDB icon -->
-    <link rel="icon" href="logo.ico" type="image/x-icon" />
+    <link rel="icon" href="logo.png" type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <!-- Google Fonts Roboto -->
@@ -215,7 +215,7 @@ mysqli_query($db, "SET NAMES utf8");
                                 <div class="col-12">
                                     <h6 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
                                     <hr>
-                                    <img src="assets/images/widgets/p-1.svg" alt="" height="192" class="mx-auto d-block mb-3"> 
+                                    <img src="assets/images/widgets/p-1.png" alt="" height="192" class="mx-auto d-block mb-3"> 
 
                                     <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your monthly traffic.<br> <b>Try to reach expected number</b>
                                     <table class="table table-bordered mb-0 table-centered">

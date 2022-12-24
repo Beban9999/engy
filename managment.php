@@ -36,7 +36,7 @@ mysqli_query($db, "SET NAMES utf8");
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/metricacss.css" />
-    
+
 
 
 
@@ -56,14 +56,31 @@ mysqli_query($db, "SET NAMES utf8");
 <body>
     <?php
     navbar();
+
+    if ($_SESSION["status"] == 3) {
+        echo '
+        <br>
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>You do not have access to this page</b></h5>
+                        <hr style="border-color: white">
+                    </div>
+                </div>
+            </div>
+        </div>';
+        exit();
+    }
     ?>
     <br>
 
-    
+
     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalreport">Launch demo modal</button>  -->
 
     <!-- Modal -->
-    
+
     <div class="modal fade col-lg-12" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
@@ -141,7 +158,7 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="card">
             <div class="card-body">
                 <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
-                <img src="assets/images/widgets/login.png" alt="" height="192" class="mx-auto d-block mb-3"> 
+                <img src="assets/images/widgets/login.png" alt="" height="192" class="mx-auto d-block mb-3">
 
                 <div class="form-group row">
 
@@ -210,7 +227,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                     <div class="table-responsive">
                         <table id="reports_table" class="table table-bordered mb-0 table-centered">
-                            
+
                         </table>
                         <!--end /table-->
                     </div>

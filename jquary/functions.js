@@ -2,6 +2,14 @@ $(document).ready(function(){
     if(document.getElementById("table_body")){
         fillDataTable();
     }
+    if(document.getElementById("table_body_visit")){
+        var user = document.getElementById("visit_user").innerHTML;
+        fillDataTableVisit(user);
+    }
+    if(document.getElementById("table_archive_body_visit")){
+        var user = document.getElementById("visit_user").innerHTML;
+        fillArchiveTableVisit(user);
+    }
     if(document.getElementById("archive_table")){
         fillArchiveTable();
     }
@@ -17,11 +25,11 @@ $(document).ready(function(){
     if(document.getElementById("message_div_private")){
         fillMessages(1);
     }
-    
+
     $("#login").click(function(){
         let korIme = $("#form2Example11").val();
         let pass = $("#form2Example22").val();
-        
+
         console.log(korIme, pass);
         if(korIme == "" || pass == ""){
             $("#odgPrijava").html('<div class="alert alert-danger" role="alert">You need to enter username and password</div>');
@@ -31,10 +39,10 @@ $(document).ready(function(){
             console.log(response)
             if(response.startsWith("prijavljen.php")){
                 window.location.assign("prijavljen.php");
-                
+
             }
             else{
-                $("#odgPrijava").html(response); 
+                $("#odgPrijava").html(response);
             }
         })
 
@@ -55,12 +63,12 @@ $(document).ready(function(){
             // if(response.startsWith("prijavljen.php")){
                 // }
                 // else{
-                    //     $("#odgPrijava").html(response); 
+                    //     $("#odgPrijava").html(response);
                     // }
         })
 
     });
-    
+
     $("#checkGlobalMessages").click(function(){
         console.log("SLANJE USPELO");
         fillGlobalMessagesModal();
@@ -78,7 +86,7 @@ $(document).ready(function(){
             // if(response.startsWith("prijavljen.php")){
             // }
             // else{
-            //     $("#odgPrijava").html(response); 
+            //     $("#odgPrijava").html(response);
             // }
         })
 
@@ -94,7 +102,7 @@ $(document).ready(function(){
             console.log(response);
         })
     });
-    
+
     $("#insertRow").click(function(){
         let ins_customer       = $("#ins_customer").html();
         let ins_prod           = $("#ins_prod").html();
@@ -107,7 +115,7 @@ $(document).ready(function(){
         let ins_next           = $("#ins_next").html();
         let ins_result         = $("#ins_result").html();
         let ins_datecomm       = $("#ins_datecomm").html();
-        
+
 
         console.log(ins_customer,
                     ins_prod    ,
@@ -120,9 +128,9 @@ $(document).ready(function(){
                     ins_next    ,
                     ins_result  ,
                     ins_datecomm);
-                    
 
-            $.post("ajax.php?f=insertRow", 
+
+            $.post("ajax.php?f=insertRow",
             {
                 ins_customer:ins_customer,
                 ins_prod    :ins_prod    ,
@@ -135,14 +143,14 @@ $(document).ready(function(){
                 ins_next    :ins_next    ,
                 ins_result  :ins_result  ,
                 ins_datecomm:ins_datecomm
-            }, 
-            
+            },
+
             function(response){
                 fillDataTable();
                 $("#insertResp").html(response);
             })
-            
-            
+
+
             //RESET FIELDS
             $("#ins_customer").html("");
             $("#ins_prod").html("");
@@ -157,9 +165,20 @@ $(document).ready(function(){
             $("#ins_datecomm").html("");
 
     });
-    
-})
 
+})
+function fillDataTableVisit(id){
+    console.log(id);
+    $.post("ajax.php?f=fillDataTableVisit",{id:id}, function(response){
+        $("#table_body_visit").html(response);
+    })
+}
+function fillArchiveTableVisit(id){
+    console.log(id);
+    $.post("ajax.php?f=fillArchiveTableVisit",{id:id}, function(response){
+        $("#table_archive_body_visit").html(response);
+    })
+}
 function fillDataTable(){
     $.post("ajax.php?f=fillDataTable", function(response){
         $("#table_body").html(response);
@@ -184,13 +203,13 @@ function fillReportsTable(){
 function fillGlobalMessagesModal(){
     $("#modal_heading").html("Global Messages");
     $.post("ajax.php?f=checkGlobalMessages", function(response){
-        $("#globalMessagesForUser").html(response);    
+        $("#globalMessagesForUser").html(response);
     })
 }
 function fillPrivateMessageModal(id){
     $("#modal_heading").html("Private Messages");
     $.post("ajax.php?f=checkPrivateMessages",{id:id}, function(response){
-        $("#globalMessagesForUser").html(response);    
+        $("#globalMessagesForUser").html(response);
     })
 }
 
@@ -198,14 +217,14 @@ function fillMessages(type){
     if(type == 0){
         $.post("ajax.php?f=fillMessages",{type:type}, function(response){
             $("#message_div_global").html(response);
-        })    
+        })
     }
     else{
         $.post("ajax.php?f=fillMessages",{type:type}, function(response){
             $("#message_div_private").html(response);
-        })  
+        })
     }
-    
+
 }
 // setInterval(() => {
 //     fillMessages(1); fillMessages(0);
@@ -221,7 +240,7 @@ function sendToArch(id){
     document.getElementById("archvInfo").style.visibility = "visible";
     setTimeout(() => {
         document.getElementById("archvInfo").style.visibility = "hidden";
-        
+
     }, 2000);
 
     document.getElementById("archvInfo").style.visibility = "visible";

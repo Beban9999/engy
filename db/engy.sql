@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2022 at 07:48 PM
+-- Generation Time: Dec 24, 2022 at 08:58 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -150,7 +150,7 @@ CREATE TABLE `trafic_goals` (
   `goal_user` int(10) UNSIGNED NOT NULL,
   `goal` int(11) NOT NULL,
   `goal_reach` int(11) NOT NULL DEFAULT 0,
-  `goal_date` datetime DEFAULT current_timestamp()
+  `goal_date` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -158,8 +158,10 @@ CREATE TABLE `trafic_goals` (
 --
 
 INSERT INTO `trafic_goals` (`id_goal`, `goal_user`, `goal`, `goal_reach`, `goal_date`) VALUES
-(1, 1, 1000000, 0, '2022-12-24 19:34:57'),
-(2, 1, 10020000, 0, '2022-12-27 19:34:57');
+(1, 1, 1000000, 15000, '2022-12-24'),
+(2, 1, 65000, 2332, '2023-01-27'),
+(3, 1, 23000, 22222, '2023-02-27'),
+(4, 1, 556000, 512441, '2023-03-27');
 
 -- --------------------------------------------------------
 
@@ -264,7 +266,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `trafic_goals`
 --
 ALTER TABLE `trafic_goals`
-  MODIFY `id_goal` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_goal` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`

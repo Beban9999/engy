@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2022 at 08:58 PM
+-- Generation Time: Dec 25, 2022 at 09:51 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -148,8 +148,8 @@ INSERT INTO `roles` (`id_role`, `role_name`) VALUES
 CREATE TABLE `trafic_goals` (
   `id_goal` int(10) UNSIGNED NOT NULL,
   `goal_user` int(10) UNSIGNED NOT NULL,
-  `goal` int(11) NOT NULL,
-  `goal_reach` int(11) NOT NULL DEFAULT 0,
+  `goal` bigint(11) NOT NULL,
+  `goal_reach` bigint(11) NOT NULL DEFAULT 0,
   `goal_date` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -158,10 +158,12 @@ CREATE TABLE `trafic_goals` (
 --
 
 INSERT INTO `trafic_goals` (`id_goal`, `goal_user`, `goal`, `goal_reach`, `goal_date`) VALUES
-(1, 1, 1000000, 15000, '2022-12-24'),
-(2, 1, 65000, 2332, '2023-01-27'),
-(3, 1, 23000, 22222, '2023-02-27'),
-(4, 1, 556000, 512441, '2023-03-27');
+(1, 1, 1000000, 0, '2023-04-24'),
+(2, 1, 65000, 123123, '2023-01-27'),
+(4, 1, 556000, 0, '2023-03-27'),
+(5, 1, 1000000, 0, '2023-05-24'),
+(6, 1, 1500000, 0, '2023-06-24'),
+(7, 1, 1500000, 0, '2023-02-24');
 
 -- --------------------------------------------------------
 
@@ -185,13 +187,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `password`, `team`, `role`) VALUES
-(1, 'Nenad', 'Grubenovic', 'grubi', 'grubi@gmail.com', '123', 'CEO', 1),
-(2, 'Svetlana', 'Grubenovic', 'ceca', 'cecili@gmail.com', '123', 'Vice President', 2),
-(3, 'Joca', 'Grubenovic', 'joca', 'cojomaks@yahoo.com', '123', 'Sales Manager', 3),
-(4, 'Aleksa', 'Aleksic', 'beban', 'aleksart919@gs.viser.edu.rs', '123', 'Account Manager', 2),
-(5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@sesmail.com', '123', 'Developer', 3),
-(7, 'Ivan', 'Ivanovic', 'iva', 'nekimail@test.com', '123', 'Developer', 3),
-(8, 'Mirko', 'Aleksic', 'miks', 'blejanje@tebra.com', '123', 'Developer', 3);
+(1, 'Nenad', 'Grubenovic', 'grubi', 'grubi@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'CEO', 1),
+(2, 'Svetlana', 'Grubenovic', 'ceca', 'cecili@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President', 2),
+(3, 'Joca', 'Grubenovic', 'joca', 'cojomaks@yahoo.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Sales Manager', 3),
+(4, 'Aleksa', 'Aleksic', 'beban', 'aleksart919@gs.viser.edu.rs', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Account Manager', 2),
+(5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@sesmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3),
+(7, 'Ivan', 'Ivanovic', 'iva', 'nekimail@test.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3),
+(8, 'Mirko', 'Aleksic', 'miks', 'blejanje@tebra.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3);
 
 --
 -- Indexes for dumped tables
@@ -266,13 +268,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `trafic_goals`
 --
 ALTER TABLE `trafic_goals`
-  MODIFY `id_goal` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_goal` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

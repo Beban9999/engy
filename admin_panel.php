@@ -45,20 +45,25 @@ mysqli_query($db, "SET NAMES utf8");
     <title>Admin Panel</title>
 </head>
 <style>
-    body{
-        background:#003060;
+    body {
+        background: #003060;
     }
-    .apexcharts-legend-text, .apexcharts-legend-marker{
-        margin-bottom:10px;
+
+    .apexcharts-legend-text,
+    .apexcharts-legend-marker {
+        margin-bottom: 10px;
     }
-    #apexcharts-donut-slice-0{
-        fill:black;
+
+    #apexcharts-donut-slice-0 {
+        fill: black;
     }
-    #apexcharts-donut-slice-1{
-        fill:blue;
+
+    #apexcharts-donut-slice-1 {
+        fill: blue;
     }
-    #apexcharts-donut-slice-2{
-        fill:purple;
+
+    #apexcharts-donut-slice-2 {
+        fill: purple;
     }
 </style>
 
@@ -85,189 +90,193 @@ mysqli_query($db, "SET NAMES utf8");
 
     ?>
 
-<br>
-<div class="container-fluid">
+    <br>
+    <div class="container-fluid">
 
-<div class='row'>
+        <div class='row'>
 
-                <div class="col-lg-8">
-                    <div class='card'>
-                        <h5 class="card-title" style="text-align:center; margin-top:20px;"><b>Welcome to Admin Panel</b></h5>
-                        <hr>
-                        
-                        <div class = "row">
+            <div class="col-lg-8">
+                <div class='card'>
+                    <h5 class="card-title" style="text-align:center; margin-top:20px;"><b>Welcome to Admin Panel</b></h5>
+                    <hr>
+
+                    <div class="row">
                         <div class="col-lg-6">
-                                <div class="card-body">
-                                    <h4 class="header-title mt-0"style=text-align:center>Aplication Users</h4>
-                                    <div id="ana_device" class="apex-charts" ></div>
+                            <div class="card-body">
+                                <h4 class="header-title mt-0" style=text-align:center>Aplication Users</h4>
+                                <div id="ana_device" class="apex-charts"></div>
 
-                                    <div class="table-responsive mt-4">
-                                        <table class="table mb-0">
-                                            <thead class="thead-light">
-                                            <tr style = background:#6c4ab6;color:white>
-                                            <thead class="thead-light">
-                                            <tr style = background:#6c4ab6;color:white>
-                                                <th>Role</th>
-                                                <th>Number of Users</th>
+                                <div class="table-responsive mt-4">
+                                    <table class="table mb-0">
+                                        <thead class="thead-light">
+                                            <tr style=background:#6c4ab6;color:white>
+                                                <thead class="thead-light">
+                                                    <tr style=background:#6c4ab6;color:white>
+                                                        <th>Role</th>
+                                                        <th>Number of Users</th>
 
-                                            </tr>
-                                            </thead>
-                                            <tbody>
+                                                    </tr>
+                                                </thead>
+                                        <tbody>
                                             <tr>
                                                 <th scope="row">Administrators</th>
-                                                <td>1</td>
+                                                <td id="admins">1</td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row">Managers</th>
-                                                <td>3</td>
+                                                <td id="managers">3</td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row">Users</th>
-                                                <td>5</td>
+                                                <td id="users">5</td>
 
                                             </tr>
 
-                                            </tbody>
-                                        </table><!--end /table-->
-                        </div>
-                        </div>
+                                        </tbody>
+                                    </table>
+                                    <!--end /table-->
+                                </div>
+                            </div>
                         </div>
 
                         <div class="col-lg-6">
-                                <div class="card-body">
-                                    <h4 class="header-title mt-0"style=text-align:center>Company Roles</h4>
-                                    
-                                    <div class="table-responsive mt-4">
-                                        <table class="table mb-0">
-                                            <thead class="thead-light">
-                                            <tr style = background:#6c4ab6;color:white>
+                            <div class="card-body">
+                                <h4 class="header-title mt-0" style=text-align:center>Company Roles</h4>
+
+                                <div class="table-responsive mt-4">
+                                    <table class="table mb-0">
+                                        <thead class="thead-light">
+                                            <tr style=background:#6c4ab6;color:white>
                                                 <th>Role </th>
                                                 <th>Banner</th>
                                                 <th>Users</th>
 
 
                                             </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr> 
-                                            <th scope="row">Developers</th>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                                <th scope="row">Account Manager</th>
 
-                                                <td><img src="img/DEV.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
-                                                <td>1</td>
-                                                
+                                                <td><img src="img/AM.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td id="account_managers">5</td>
 
                                             </tr>
                                             <tr>
-                                            <th scope="row">C Level</th>
+                                                <th scope="row">C Level</th>
 
                                                 <td><img src="img/CEO.png" alt="" height="30" class="mx-auto d-block mb-3"> </td>
-                                                <td>3</td>
+                                                <td id="c_levels">3</td>
 
                                             </tr>
                                             <tr>
-                                            <th scope="row">Vice Presidents</th>
+                                                <th scope="row">Developers</th>
 
-                                            <td> <img src="img/VP.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
-                                                <td>5</td>
+                                                <td><img src="img/DEV.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td id="developers">1</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row">Sales Manager</th>
+
+                                                <td> <img src="img/SM.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td id='sales_manager'>5</td>
 
                                             </tr>
                                             <tr>
-                                            <th scope="row">Sales Manager</th>
+                                                <th scope="row">Vice Presidents</th>
 
-                                            <td> <img src="img/SM.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
-                                                <td>5</td>
-
-                                            </tr>
-                                            <tr>
-                                            <th scope="row">Account Manager</th>
-
-                                            <td><img src="img/AM.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
-                                                <td>5</td>
+                                                <td> <img src="img/VP.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td id="vice_presidents">5</td>
 
                                             </tr>
 
-                                            </tbody>
-                                        </table><!--end /table-->
-                                    </div>
-                                    
-                                    </div>
 
-                                </div><!--end card-body-->
-                                
-                            </div><!--end card-->
-                            
-                            
+                                        </tbody>
+                                    </table>
+                                    <!--end /table-->
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--end card-body-->
+
                     </div>
-                    
-                    
-                    
+                    <!--end card-->
+
+
                 </div>
-                <div class="col-lg-4">
-                    <div class='card'>
-                        <br>
-                    <img src="assets/images/widgets/admin.png" alt="" height="330" class="mx-auto d-block mb-3" style = margin-top:15px>
+
+
+
+            </div>
+            <div class="col-lg-4">
+                <div class='card'>
+                    <br>
+                    <img src="assets/images/widgets/admin.png" alt="" height="330" class="mx-auto d-block mb-3" style=margin-top:15px>
                     <div class="col-lg-12">
                         <br>
-                        <h3 class="header-title"style=text-align:center;background:#6c4ab6;color:white>Database Access</h3>
-                        <img src="assets/images/widgets/info.png" alt="" height="92" class="mx-auto d-block mb-3" style = margin-top:15px>
+                        <h3 class="header-title" style=text-align:center;background:#6c4ab6;color:white>Database Access</h3>
+                        <img src="assets/images/widgets/info.png" alt="" height="92" class="mx-auto d-block mb-3" style=margin-top:15px>
 
-                        <h6 class="header-title"style=text-align:center;>Contact <b>Head Administrators</b> for more informations.</h6>
-                        <h6 class="header-title"style=text-align:center;>At the moment <b><a href="https://www.ngrubii.com/">Nenad</a></b> is only available Head Admin.</h6>
-                        <h6 class="header-title"style=text-align:center;margin:5px>You can find him by pressing on his name, or send him a private email on <a href="mailto:nenad@engy.solutions"><b>nenad@engy.solutions</b></a>.
-</h6>
+                        <h6 class="header-title" style=text-align:center;>Contact <b>Head Administrators</b> for more informations.</h6>
+                        <h6 class="header-title" style=text-align:center;>At the moment <b><a href="https://www.ngrubii.com/">Nenad</a></b> is only available Head Admin.</h6>
+                        <h6 class="header-title" style=text-align:center;margin:5px>You can find him by pressing on his name, or send him a private email on <a href="mailto:nenad@engy.solutions"><b>nenad@engy.solutions</b></a>.
+                        </h6>
 
 
                     </div>
                 </div>
-                    </div>
-                </div>
-
-                
-                
             </div>
-<br>
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-body">
+        </div>
 
-                    <h4 class="mt-0 header-title">Users</h4>
-                    <p class="text-muted mb-3">Preview of all users
-                    </p>
 
-                    <div class="table-responsive">
-                        <table id="user_table" class="table table-bordered mb-0 table-centered">
-                          <thead>
+
+    </div>
+    <br>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="mt-0 header-title">Users</h4>
+                <p class="text-muted mb-3">Preview of all users
+                </p>
+
+                <div class="table-responsive">
+                    <table id="user_table" class="table table-bordered mb-0 table-centered">
+                        <thead>
                             <tr>
                                 <th style> </th>
-                                <th id = "week1" style = "background:#6c4ab6;color:white">ID</th>
-                                <th id = "week2" style = "background:#6c4ab6;color:white">Name</th>
-                                <th id = "week3" style = "background:#6c4ab6;color:white">Lastname</th>
-                                <th id = "week4" style = "background:#6c4ab6;color:white">Username</th>
-                                <th id = "week4" style = "background:#6c4ab6;color:white">Email</th>
-                                <th id = "week4" style = "background:#6c4ab6;color:white">Role</th>
-                                <th id = "week4" style = "background:#6c4ab6;color:white">Team</th>
+                                <th id="week1" style="background:#6c4ab6;color:white">ID</th>
+                                <th id="week2" style="background:#6c4ab6;color:white">Name</th>
+                                <th id="week3" style="background:#6c4ab6;color:white">Lastname</th>
+                                <th id="week4" style="background:#6c4ab6;color:white">Username</th>
+                                <th id="week4" style="background:#6c4ab6;color:white">Email</th>
+                                <th id="week4" style="background:#6c4ab6;color:white">Role</th>
+                                <th id="week4" style="background:#6c4ab6;color:white">Team</th>
                             </tr>
                         </thead>
 
-                        </table>
-                        <!--end /table-->
-                    </div>
-                    <!--end /tableresponsive-->
+                    </table>
+                    <!--end /table-->
                 </div>
-
-
-
+                <!--end /tableresponsive-->
             </div>
-            <!--end card-body-->
+
+
+
         </div>
+        <!--end card-body-->
+    </div>
 
-</div>
-            <br>
+    </div>
+    <br>
 
-        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
-        <script src="assets/pages/jquery.analytics_dashboard.init.js"></script>
+    <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/pages/jquery.analytics_dashboard.init.js"></script>
     <script src="assets/pages/jquery.apexcharts.init.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/loginscript.js"></script>

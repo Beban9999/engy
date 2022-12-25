@@ -195,6 +195,25 @@ if($f == "sendTrafficGoal"){
     $stmt->bind_param("ii", $traffic, $goalId);
     $stmt->execute();
 }
+if($f == "usersStatistics"){
+    $stmt = $db->prepare("SELECT role, count(*) as 'num' FROM user GROUP BY role");
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            echo $red->num.'|';
+        }
+    }
+    $stmt = $db->prepare("SELECT team, count(*) as 'num' FROM user GROUP BY team");
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            echo $red->num.'|';
+        }
+    }
+
+}
 if($f == "fillTrafficGoal"){
     $currUser = $_SESSION['id_user'];
     $stmt = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ?  AND goal_reach = 0 order by goal_date");

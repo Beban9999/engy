@@ -6,7 +6,7 @@
 
 
   //colunm-1
-  
+
   var options = {
     chart: {
         height: 340,
@@ -43,11 +43,11 @@
         axisBorder: {
           show: true,
           color: '#bec7e0',
-        },  
+        },
         axisTicks: {
           show: true,
           color: '#bec7e0',
-        },    
+        },
     },
     legend: {
       offsetY: -10,
@@ -59,7 +59,7 @@
     },
     fill: {
         opacity: 1
-  
+
     },
     // legend: {
     //     floating: true
@@ -79,18 +79,18 @@
         }
     }
   }
-  
+
   var chart = new ApexCharts(
     document.querySelector("#ana_dash_1"),
     options
   );
-  
+
   chart.render();
-  
-  
+
+
   // traffice chart
-  
-  
+
+
   var optionsCircle = {
       chart: {
         type: 'radialBar',
@@ -100,7 +100,7 @@
       },
       plotOptions: {
         radialBar: {
-          inverseOrder: true,      
+          inverseOrder: true,
           hollow: {
             margin: 5,
             size: '55%',
@@ -113,7 +113,7 @@
             opacity: 1,
             margin: 5, // margin is in pixels
           },
-    
+
           dataLabels: {
             name: {
                 fontSize: '18px',
@@ -122,7 +122,7 @@
                 fontSize: '16px',
                 color: '#50649c',
             },
-            
+
           }
         },
       },
@@ -154,38 +154,38 @@
         lineCap: 'round'
       },
     }
-    
+
     var chartCircle = new ApexCharts(document.querySelector('#circlechart'), optionsCircle);
     chartCircle.render();
-    
-    
-    
+
+
+
     var iteration = 11
-    
+
     function getRandom() {
       var i = iteration;
       return (Math.sin(i / trigoStrength) * (i / trigoStrength) + i / trigoStrength + 1) * (trigoStrength * 2)
     }
-    
+
     function getRangeRandom(yrange) {
       return Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
     }
-    
+
     window.setInterval(function () {
-    
+
       iteration++;
-    
+
       chartCircle.updateSeries([getRangeRandom({ min: 10, max: 100 }), getRangeRandom({ min: 10, max: 100 })])
-    
-    
+
+
     }, 3000)
-  
-  
+
+
   // saprkline chart
-  
-  
+
+
   var dash_spark_1 = {
-      
+
     chart: {
         type: 'area',
         height: 85,
@@ -209,74 +209,8 @@
     colors: ['#4ac7ec'],
   }
   new ApexCharts(document.querySelector("#dash_spark_1"), dash_spark_1).render();
-  
-  
-  
+
+
+
   //Device-widget
-  
-  
-  var options = {
-    chart: {
-        height: 250,
-        type: 'donut',
-    }, 
-    plotOptions: {
-      pie: {
-        donut: {
-          size: '85%'
-        }
-      }
-    },
-    dataLabels: {
-      enabled: false,
-      },
-   
-    series: [10, 65, 25,],
-    legend: {
-        show: true,
-        position: 'bottom',
-        horizontalAlign: 'center',
-        verticalAlign: 'middle',
-        floating: false,
-        fontSize: '14px',
-        offsetX: 0,
-        offsetY: -13
-    },
-    labels: [ "Admins", "Managers", "Users"],
-    colors: ["black", "blue", "purple"],
-   
-    responsive: [{
-        breakpoint: 600,
-        options: {
-          plotOptions: {
-              donut: {
-                customScale: 0.2
-              }
-            },        
-            chart: {
-                height: 300
-            },
-            legend: {
-                show: false
-            },
-        }
-    }],
-  
-    tooltip: {
-      y: {
-          formatter: function (val) {
-              return   val + " %"
-          }
-      }
-    }
-    
-  }
-  
-  var chart = new ApexCharts(
-    document.querySelector("#ana_device"),
-    options
-  );
-  
-  chart.render();
-  
   

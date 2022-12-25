@@ -2,8 +2,11 @@ $(document).ready(function(){
 
 
 
-    if (document.getElementById("apex_mixed1")) {
+    if(document.getElementById("apex_mixed1")){
         fillTrafficChart();
+    }
+    if(document.getElementById("ana_device")){
+        fillApplicationUsersChart();
     }
     if(document.getElementById("table_body")){
         fillDataTable();
@@ -355,6 +358,87 @@ function fillTrafficChart(){
         );
 
         chart.render();
+    })
+}
+function fillApplicationUsersChart(){
+    $.post("ajax.php?f=usersStatistics", function (response) {
+        responseArray = response.split("|").map(function (x) { return parseInt(x); });
+        console.log(responseArray);
+        var options = {
+        chart: {
+            height: 250,
+            type: 'donut',
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              size: '85%'
+            }
+          }
+        },
+        dataLabels: {
+          enabled: false,
+          },
+
+        series: [responseArray[0],responseArray[1],responseArray[2]],
+        legend: {
+            show: true,
+            position: 'bottom',
+            horizontalAlign: 'center',
+            verticalAlign: 'middle',
+            floating: false,
+            fontSize: '14px',
+            offsetX: 0,
+            offsetY: -13
+        },
+        labels: [ "Admins", "Managers", "Users"],
+        colors: ["black", "blue", "purple"],
+
+        responsive: [{
+            breakpoint: 600,
+            options: {
+              plotOptions: {
+                  donut: {
+                    customScale: 0.2
+                  }
+                },
+                chart: {
+                    height: 300
+                },
+                legend: {
+                    show: false
+                },
+            }
+        }],
+
+        tooltip: {
+          y: {
+              formatter: function (val) {
+                  return val
+              }
+          }
+        }
+
+      }
+
+
+      var chart = new ApexCharts(
+        document.querySelector("#ana_device"),
+        options
+      );
+
+      chart.render();
+
+      $("#admins").html(responseArray[0])
+      $("#managers").html(responseArray[1])
+      $("#users").html(responseArray[2])
+
+      $("#account_managers").html(responseArray[3])
+      $("#c_levels").html(responseArray[4])
+      $("#developers").html(responseArray[5])
+      $("#sales_manager").html(responseArray[6])
+      $("#vice_presidents").html(responseArray[7])
+
     })
 }
 // setInterval(() => {

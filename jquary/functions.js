@@ -3,37 +3,7 @@ $(document).ready(function(){
 
 
     if (document.getElementById("apex_mixed1")) {
-
-
-        $.post("ajax.php?f=trafficChart", function (response) {
-            console.log(response);
-            var respArray = response.split(" ");
-            var yourTraffic = respArray[1].split(",").map(function (x) { return parseInt(x); })
-            var trafficGoal = respArray[0].split(",").map(function (x) { return parseInt(x); })
-
-            var glalDates = respArray[2].split(",")
-            console.log(yourTraffic, trafficGoal, glalDates)
-
-            options.series = [{
-                name: 'Your traffic',
-                type: 'column',
-                data: yourTraffic
-            }, {
-                name: 'Manager Expetation',
-                type: 'area',
-                data: trafficGoal
-            },];
-            options.labels = glalDates
-
-            var chart = new ApexCharts(
-                document.querySelector("#apex_mixed1"),
-                options
-            );
-
-            chart.render();
-        })
-
-
+        fillTrafficChart();
     }
     if(document.getElementById("table_body")){
         fillDataTable();
@@ -130,6 +100,21 @@ $(document).ready(function(){
         })
 
     });
+    $("#your_traffic_send").click(function () {
+        var inputTraffic = $("#your_traffic_input").val();
+        var goalId = $("#currGoalId").html();
+
+        console.log(inputTraffic, goalId);
+        if (inputTraffic == "" || inputTraffic == "0" || goalId == "") return;
+
+        $.post("ajax.php?f=sendTrafficGoal", { inputTraffic: inputTraffic, goalId: goalId }, function (response) {
+            console.log(response);
+            fillTrafficGoal();
+            $("#apex_mixed1").html("");
+            fillTrafficChart();
+            $("#your_traffic_input").val("");
+        })
+    });
 
     $("#sendReportbtn").click(function(){
         var myContent = tinymce.get("elm1").getContent();
@@ -209,7 +194,10 @@ $(document).ready(function(){
 function fillTrafficGoal(){
     console.log("JAVA")
     $.post("ajax.php?f=fillTrafficGoal", function(response){
-        $("#traffic_goal").html(response);
+        respArray = response.split("|");
+        $("#traffic_goal").html(respArray[0]);
+        $("#traffic_goal_title").html("Traffic Goal ("+respArray[1]+")");
+        $("#currGoalId").html(respArray[2]);
     })
 }
 function fillDataTableVisit(id){
@@ -270,6 +258,104 @@ function fillMessages(type){
         })
     }
 
+}
+function fillTrafficChart(){
+    $.post("ajax.php?f=trafficChart", function (response) {
+        console.log(response);
+        var respArray = response.split(" ");
+        var yourTraffic = respArray[1].split(",").map(function (x) { return parseInt(x); })
+        var trafficGoal = respArray[0].split(",").map(function (x) { return parseInt(x); })
+
+        var glalDates = respArray[2].split(",")
+        console.log(yourTraffic, trafficGoal, glalDates)
+        var options = {
+            chart: {
+                height: 380,
+                type: 'line',
+                stacked: false,
+                toolbar: {
+                    show: false
+                }
+            },
+            stroke: {
+                width: [0, 2, 4],
+                curve: 'smooth'
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: '50%'
+                }
+            },
+            colors: ["#000000", "#4B0082"],
+
+            fill: {
+                opacity: [0.85, 0.25, 1],
+                gradient: {
+                    inverseColors: false,
+                    shade: 'light',
+                    type: "vertical",
+                    opacityFrom: 0.85,
+                    opacityTo: 0.55,
+                    stops: [0, 100, 100, 100]
+                }
+            },
+            markers: {
+                size: 0
+            },
+            legend: {
+                offsetY: -10,
+            },
+            xaxis: {
+                type: 'datetime',
+                axisBorder: {
+                    show: true,
+                    color: '#bec7e0',
+                },
+                axisTicks: {
+                    show: true,
+                    color: '#bec7e0',
+                },
+            },
+            yaxis: {
+                title: {
+                    text: 'Traffic',
+                },
+            },
+            tooltip: {
+                shared: true,
+                intersect: false,
+                y: {
+                    formatter: function(y) {
+                        if (typeof y !== "undefined") {
+                            return y.toFixed(0) + " SMS";
+                        }
+                        return y;
+
+                    }
+                }
+            },
+            grid: {
+                borderColor: '#f1f3fa'
+            }
+        }
+        options.series = [{
+            name: 'Your traffic',
+            type: 'column',
+            data: yourTraffic
+        }, {
+            name: 'Manager Expetation',
+            type: 'area',
+            data: trafficGoal
+        },];
+        options.labels = glalDates
+
+        var chart = new ApexCharts(
+            document.querySelector("#apex_mixed1"),
+            options
+        );
+
+        chart.render();
+    })
 }
 // setInterval(() => {
 //     fillMessages(1); fillMessages(0);

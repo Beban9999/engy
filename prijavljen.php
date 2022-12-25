@@ -222,10 +222,14 @@ mysqli_query($db, "SET NAMES utf8");
                                         <thead>
                                             <tr>
                                                 <th style="background:#6c4ab6;color:white">Your Traffic</th>
-                                                <th style="background:#6c4ab6;color:white">Traffic Goal</th>
+                                                <th id='traffic_goal_title' style="background:#6c4ab6;color:white">Traffic Goal</th>
                                             </tr>
                                         </thead>
-                                        <td id="your_traffic"></td>
+                                        <td id="your_traffic">
+                                            <input id="your_traffic_input" class='form-control' type="number">
+                                            <br>
+                                            <button id='your_traffic_send' class='btn btn-success'>Send</button>
+                                            <div id='currGoalId' style='position:absolute; visibility:hidden'></div></td>
                                         <td id="traffic_goal"></td>
                                     </table>
 
@@ -342,79 +346,6 @@ mysqli_query($db, "SET NAMES utf8");
                     }, function(response) {
                         fillMessages(1);
                     })
-                }
-
-
-                //Mixed-1
-                var options = {
-                    chart: {
-                        height: 380,
-                        type: 'line',
-                        stacked: false,
-                        toolbar: {
-                            show: false
-                        }
-                    },
-                    stroke: {
-                        width: [0, 2, 4],
-                        curve: 'smooth'
-                    },
-                    plotOptions: {
-                        bar: {
-                            columnWidth: '50%'
-                        }
-                    },
-                    colors: ["#000000", "#4B0082"],
-
-                    fill: {
-                        opacity: [0.85, 0.25, 1],
-                        gradient: {
-                            inverseColors: false,
-                            shade: 'light',
-                            type: "vertical",
-                            opacityFrom: 0.85,
-                            opacityTo: 0.55,
-                            stops: [0, 100, 100, 100]
-                        }
-                    },
-                    markers: {
-                        size: 0
-                    },
-                    legend: {
-                        offsetY: -10,
-                    },
-                    xaxis: {
-                        type: 'datetime',
-                        axisBorder: {
-                            show: true,
-                            color: '#bec7e0',
-                        },
-                        axisTicks: {
-                            show: true,
-                            color: '#bec7e0',
-                        },
-                    },
-                    yaxis: {
-                        title: {
-                            text: 'Traffic',
-                        },
-                    },
-                    tooltip: {
-                        shared: true,
-                        intersect: false,
-                        y: {
-                            formatter: function(y) {
-                                if (typeof y !== "undefined") {
-                                    return y.toFixed(0) + " SMS";
-                                }
-                                return y;
-
-                            }
-                        }
-                    },
-                    grid: {
-                        borderColor: '#f1f3fa'
-                    }
                 }
             </script>
             <div id="archvInfo" class="alert alert-success" role="alert">Successfuly archived</div>

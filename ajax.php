@@ -9,9 +9,40 @@ if (!$db) {
 }
 
 mysqli_query($db, "SET NAMES utf8");
-
 $f = $_GET['f'];
 
+//------------------------------------------------------------index.php------------------------------------------------------------
+if($f == "prijava"){
+    $korIme = $_POST['korIme'];
+    $pass = $_POST['pass'];
+
+    $stmt = $db->prepare("SELECT * FROM user WHERE username = ?");
+    $stmt->bind_param('s', $korIme);
+    $stmt->execute();
+
+    $rez = $stmt->get_result();
+
+    if(mysqli_num_rows($rez) > 0){
+        $red = mysqli_fetch_object($rez);
+        if($red->password != $pass){
+            echo '<div class="alert alert-danger" role="alert">Password for user '.$red->username.' is not correct!</div>';
+        }
+        else{
+            $_SESSION['user'] = "$red->first_name $red->last_name";
+            $_SESSION['username'] = "$red->username";
+            $_SESSION['status'] = $red->role;
+            $_SESSION['id_user'] = $red->id_user;
+            $_SESSION['team'] = $red->team;
+            echo "prijavljen.php";
+        }
+    }
+    else{
+        echo '<div class="alert alert-danger" role="alert">
+        User with entered credentials doesn&apos;t exist!
+      </div>';
+    }
+}
+//------------------------------------------------------------prijavljen.php------------------------------------------------------------
 if($f == "insertRow"){
     $currUser = $_SESSION['id_user'];
     $ins_customer = $_POST["ins_customer"];
@@ -156,17 +187,30 @@ if($f == "checkGlobalMessages")
         }
     }
 }
-if($f == "fillTrafficGoal")
-{
+if($f == "sendTrafficGoal"){
+    $traffic = $_POST['inputTraffic'];
+    $goalId = $_POST['goalId'];
+    echo $goalId.' '.$traffic;
+    $stmt = $db->prepare("UPDATE trafic_goals SET goal_reach = ? WHERE id_goal = ?");
+    $stmt->bind_param("ii", $traffic, $goalId);
+    $stmt->execute();
+}
+if($f == "fillTrafficGoal"){
     $currUser = $_SESSION['id_user'];
-    $stmt = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ? order by goal_date desc");
+    $stmt = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ?  AND goal_reach = 0 order by goal_date");
     $stmt->bind_param("i", $currUser);
     $stmt->execute();
     $rez = $stmt->get_result();
+    $curr_month =  date("F",time());
     if(mysqli_num_rows($rez) > 0){
         if($red = mysqli_fetch_object($rez)){
-            echo $red->goal;
+            echo $red->goal.'|';
+            echo date("F|", strtotime($red->goal_date));
+            echo $red->id_goal;
         }
+    }
+    else{
+        echo "No goal for current month|$curr_month|";
     }
 }
 if($f == "sendReport")
@@ -518,36 +562,6 @@ if($f == "fillDataTable"){
         <td><button id="deleteRecord" class="btn btn-danger" onclick="deleteRecord('.$red->data_id.')"><i class="fas fa-trash"></i></button> <button id="sendToArchive" class="btn btn-warning" onclick="sendToArch('.$red->data_id.')"><i class="fas fa-archive"></i></button></td>
         </tr>';
         }
-    }
-}
-if($f == "prijava"){
-    $korIme = $_POST['korIme'];
-    $pass = $_POST['pass'];
-
-    $stmt = $db->prepare("SELECT * FROM user WHERE username = ?");
-    $stmt->bind_param('s', $korIme);
-    $stmt->execute();
-
-    $rez = $stmt->get_result();
-
-    if(mysqli_num_rows($rez) > 0){
-        $red = mysqli_fetch_object($rez);
-        if($red->password != $pass){
-            echo '<div class="alert alert-danger" role="alert">Password for user '.$red->username.' is not correct!</div>';
-        }
-        else{
-            $_SESSION['user'] = "$red->first_name $red->last_name";
-            $_SESSION['username'] = "$red->username";
-            $_SESSION['status'] = $red->role;
-            $_SESSION['id_user'] = $red->id_user;
-            $_SESSION['team'] = $red->team;
-            echo "prijavljen.php";
-        }
-    }
-    else{
-        echo '<div class="alert alert-danger" role="alert">
-        User with entered credentials doesn&apos;t exist!
-      </div>';
     }
 }
 ?>

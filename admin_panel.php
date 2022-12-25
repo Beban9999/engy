@@ -92,8 +92,8 @@ mysqli_query($db, "SET NAMES utf8");
 
                 <div class="col-lg-8">
                     <div class='card'>
-                        <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Welcome Administrator</b></h5>
-                        <hr style="border-color: white">
+                        <h5 class="card-title" style="text-align:center; margin-top:20px;"><b>Welcome to Admin Panel</b></h5>
+                        <hr>
                         
                         <div class = "row">
                         <div class="col-lg-6">
@@ -104,9 +104,9 @@ mysqli_query($db, "SET NAMES utf8");
                                     <div class="table-responsive mt-4">
                                         <table class="table mb-0">
                                             <thead class="thead-light">
-                                            <tr style = background:purple;color:white>
+                                            <tr style = background:#6c4ab6;color:white>
                                             <thead class="thead-light">
-                                            <tr style = background:purple;color:white>
+                                            <tr style = background:#6c4ab6;color:white>
                                                 <th>Role</th>
                                                 <th>Number of Users</th>
 
@@ -142,7 +142,7 @@ mysqli_query($db, "SET NAMES utf8");
                                     <div class="table-responsive mt-4">
                                         <table class="table mb-0">
                                             <thead class="thead-light">
-                                            <tr style = background:purple;color:white>
+                                            <tr style = background:#6c4ab6;color:white>
                                                 <th>Role </th>
                                                 <th>Banner</th>
                                                 <th>Users</th>
@@ -208,12 +208,60 @@ mysqli_query($db, "SET NAMES utf8");
                     <div class='card'>
                         <br>
                     <img src="assets/images/widgets/admin.png" alt="" height="330" class="mx-auto d-block mb-3" style = margin-top:15px>
+                    <div class="col-lg-12">
+                        <br>
+                        <h3 class="header-title"style=text-align:center;background:#6c4ab6;color:white>Database Access</h3>
+                        <img src="assets/images/widgets/info.png" alt="" height="92" class="mx-auto d-block mb-3" style = margin-top:15px>
 
-                        <hr style="border-color: white">
+                        <h6 class="header-title"style=text-align:center;>Contact <b>Head Administrators</b> for more informations.</h6>
+                        <h6 class="header-title"style=text-align:center;>At the moment <b><a href="https://www.ngrubii.com/">Nenad</a></b> is only available Head Admin.</h6>
+                        <h6 class="header-title"style=text-align:center;margin:5px>You can find him by pressing on his name, or send him a private email on <a href="mailto:nenad@engy.solutions"><b>nenad@engy.solutions</b></a>.
+</h6>
+
+
+                    </div>
+                </div>
                     </div>
                 </div>
 
+                
+                
             </div>
+<br>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <h4 class="mt-0 header-title">Users</h4>
+                    <p class="text-muted mb-3">Preview of all users
+                    </p>
+
+                    <div class="table-responsive">
+                        <table id="user_table" class="table table-bordered mb-0 table-centered">
+                          <thead>
+                            <tr>
+                                <th style> </th>
+                                <th id = "week1" style = "background:#6c4ab6;color:white">ID</th>
+                                <th id = "week2" style = "background:#6c4ab6;color:white">Name</th>
+                                <th id = "week3" style = "background:#6c4ab6;color:white">Lastname</th>
+                                <th id = "week4" style = "background:#6c4ab6;color:white">Username</th>
+                                <th id = "week4" style = "background:#6c4ab6;color:white">Email</th>
+                                <th id = "week4" style = "background:#6c4ab6;color:white">Role</th>
+                                <th id = "week4" style = "background:#6c4ab6;color:white">Team</th>
+                            </tr>
+                        </thead>
+
+                        </table>
+                        <!--end /table-->
+                    </div>
+                    <!--end /tableresponsive-->
+                </div>
+
+
+
+            </div>
+            <!--end card-body-->
+        </div>
 
 </div>
             <br>

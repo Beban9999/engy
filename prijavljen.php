@@ -215,7 +215,7 @@ mysqli_query($db, "SET NAMES utf8");
                                 <div class="col-12">
                                     <h6 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
                                     <hr>
-                                    <img src="assets/images/widgets/p-1.png" alt="" height="192" class="mx-auto d-block mb-3">
+                                    <img src="assets/images/widgets/p-1.png" alt="" height="168" class="mx-auto d-block mb-3">
 
                                     <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your monthly traffic.<br> <b>Try to reach expected number</b>
                                     <table class="table table-bordered mb-0 table-centered">

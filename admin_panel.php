@@ -157,7 +157,7 @@ mysqli_query($db, "SET NAMES utf8");
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
+                                            <tr>
                                                 <th scope="row">Account Manager</th>
 
                                                 <td><img src="img/AM.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
@@ -249,17 +249,18 @@ mysqli_query($db, "SET NAMES utf8");
                     <table id="user_table" class="table table-bordered mb-0 table-centered">
                         <thead>
                             <tr>
-                                <th style> </th>
-                                <th id="week1" style="background:#6c4ab6;color:white">ID</th>
                                 <th id="week2" style="background:#6c4ab6;color:white">Name</th>
                                 <th id="week3" style="background:#6c4ab6;color:white">Lastname</th>
                                 <th id="week4" style="background:#6c4ab6;color:white">Username</th>
                                 <th id="week4" style="background:#6c4ab6;color:white">Email</th>
                                 <th id="week4" style="background:#6c4ab6;color:white">Role</th>
                                 <th id="week4" style="background:#6c4ab6;color:white">Team</th>
+                                <th id="week4" style="background:#6c4ab6;color:white">Actions</th>
+
                             </tr>
                         </thead>
-
+                        <tbody id="admin_users_table">
+                        </tbody>
                     </table>
                     <!--end /table-->
                 </div>

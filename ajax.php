@@ -14,7 +14,7 @@ $f = $_GET['f'];
 //------------------------------------------------------------index.php------------------------------------------------------------
 if($f == "prijava"){
     $korIme = $_POST['korIme'];
-    $pass = $_POST['pass'];
+    $pass = sha1($_POST['pass']);
 
     $stmt = $db->prepare("SELECT * FROM user WHERE username = ?");
     $stmt->bind_param('s', $korIme);
@@ -71,6 +71,7 @@ if($f == "deletePrivateMessageFrom")
     $stmt->bind_param('i', $msg_id);
     $stmt->execute();
 }
+
 
 if($f == "trafficChart"){
     $currUser = $_SESSION['id_user'];
@@ -194,6 +195,30 @@ if($f == "sendTrafficGoal"){
     $stmt = $db->prepare("UPDATE trafic_goals SET goal_reach = ? WHERE id_goal = ?");
     $stmt->bind_param("ii", $traffic, $goalId);
     $stmt->execute();
+}
+if($f == "fillUsersTableAdmin"){
+    $stmt = $db->prepare("SELECT * FROM user JOIN roles ON user.role = roles.id_role order by first_name");
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            if($red->team == "CEO")              $color = 'black';
+            if($red->team == "Vice President"){  $color = '#38b6ff';}
+            if($red->team == "Sales Manager") {  $color = '#ff1616';}
+            if($red->team == "Account Manager"){ $color = '#3d9e67';}
+            if($red->team == "Developer"){       $color = '#004aad';}
+            echo  '
+            <tr style="vertical-align:middle">
+                <td>'.$red->first_name.'</td>
+                <td>'.$red->last_name.'</td>
+                <td>'.$red->username.'</td>
+                <td>'.$red->email.'</td>
+                <td>'.$red->role_name.'</td>
+                <td style="color:'.$color.';font-weight:bold">'.$red->team.'</td>
+                <td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger">Delete</button></td>
+            </tr>';
+        }
+    }
 }
 if($f == "usersStatistics"){
     $stmt = $db->prepare("SELECT role, count(*) as 'num' FROM user GROUP BY role");

@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
 
-
+    if(document.getElementById("admin_users_table")){
+        fillUsersTableAdmin();
+    }
     if(document.getElementById("apex_mixed1")){
         fillTrafficChart();
     }
@@ -356,8 +358,12 @@ function fillTrafficChart(){
             document.querySelector("#apex_mixed1"),
             options
         );
-
         chart.render();
+    })
+}
+function fillUsersTableAdmin(){
+    $.post("ajax.php?f=fillUsersTableAdmin", function(response){
+        $("#admin_users_table").html(response);
     })
 }
 function fillApplicationUsersChart(){

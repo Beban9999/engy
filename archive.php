@@ -105,6 +105,7 @@ color:yellow;
                 </div><!-- end main-menu-inner-->
             </div>
             <!-- end left-sidenav-->
+            <div class="container-fluid">
 
             <div class="card text-center">
   <div class="card-body">
@@ -122,6 +123,11 @@ an achiever never gives up, never settles and lastly never forgets.”</i></div>
 
 </style>
 <br>
+
+<div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
 <div class="card">
 
 <table class="table table-striped table-hover" style = margin:0px;>
@@ -145,7 +151,9 @@ an achiever never gives up, never settles and lastly never forgets.”</i></div>
   </tbody>
 </table>
 </div>
-  
+</div>
+</div>
+</div>
 
   <!-- Container wrapper -->
 

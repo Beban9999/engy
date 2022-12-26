@@ -188,7 +188,10 @@ mysqli_query($db, "SET NAMES utf8");
                                     <div class="media">
                                         <div class="media-body align-self-center">
                                             <h5 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s Traffic</b></h5>
+                                           
+                                           <br>
                                             <div class="chart-demo">
+                                                <br>
                                                 <div id="apex_mixed1" class="apex-charts"></div>
                                             </div>
                                         </div>
@@ -217,7 +220,7 @@ mysqli_query($db, "SET NAMES utf8");
                                     <hr>
                                     <img src="assets/images/widgets/p-1.png" alt="" height="168" class="mx-auto d-block mb-3">
 
-                                    <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your monthly traffic.<br> <b>Try to reach expected number</b>
+                                    <p class="text-muted mb-3" style='text-align:center;font-size:16px;'>Write your monthly traffic.<br> <b>Try to reach expected number</b>
                                     <table class="table table-bordered mb-0 table-centered">
                                         <thead>
                                             <tr>
@@ -226,9 +229,9 @@ mysqli_query($db, "SET NAMES utf8");
                                             </tr>
                                         </thead>
                                         <td id="your_traffic">
-                                            <input id="your_traffic_input" class='form-control' type="number">
+                                            <input id="your_traffic_input" placeholder="Your Traffic" class='form-control' type="number">
                                             <br>
-                                            <button id='your_traffic_send' class='btn btn-success'>Send</button>
+                                            <button id='your_traffic_send' class='btn btn-success' style = background:purple>Update</button>
                                             <div id='currGoalId' style='position:absolute; visibility:hidden'></div></td>
                                         <td id="traffic_goal"></td>
                                     </table>

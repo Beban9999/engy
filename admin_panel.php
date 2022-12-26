@@ -237,6 +237,8 @@ mysqli_query($db, "SET NAMES utf8");
 
     </div>
     <br>
+    <div class="container-fluid">
+
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">

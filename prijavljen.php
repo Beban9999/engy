@@ -218,7 +218,7 @@ mysqli_query($db, "SET NAMES utf8");
                                 <div class="col-12">
                                     <h6 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
                                     
-                                    <img src="assets/images/widgets/p-1.png" alt="" height="188" class="mx-auto d-block mb-3">
+                                    <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
 
                                     <p class="text-muted mb-3" style='text-align:center;font-size:16px;'><b>Write your monthly traffic.</b>
                                     <table class="table table-bordered mb-0 table-centered">
@@ -231,10 +231,11 @@ mysqli_query($db, "SET NAMES utf8");
                                         <td id="your_traffic">
                                             <input id="your_traffic_input" placeholder="Your Traffic" class='form-control' type="number">
                                             <br>
-                                            <button id='your_traffic_send' class='btn btn-success' style = background:purple>Update</button>
+                                            <button id='your_traffic_send' class='btn btn' style = background:#6c4ab6;color:white>Update</button>
                                             <div id='currGoalId' style='position:absolute; visibility:hidden'></div></td>
                                         <td id="traffic_goal"></td>
                                     </table>
+                                    <br>
 
                                 </div>
                             </div>
@@ -248,16 +249,16 @@ mysqli_query($db, "SET NAMES utf8");
             <h5>Message Board</h5>
             <div class='row'>
                 <div class="col-lg-6">
-                    <div class='card' style=background:#6c4ab6>
-                        <h5 class="card-title" style="text-align:center; margin-top:15px;color:white"><b>Global Messages</b></h5>
-                        <hr style="border-color: white">
+                    <div class='card'>
+                        <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Global Messages</b></h5>
+                        <hr>
                         <div class="row" id="message_div_global" style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class=card style=background:#6c4ab6>
-                        <h5 class="card-title" style="text-align:center; margin-top:15px; color:white"><b>Private Messages</b></h5>
-                        <hr style="border-color: white">
+                    <div class=card>
+                        <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Private Messages</b></h5>
+                        <hr>
                         <div class="row" id="message_div_private" style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
                     </div>
                 </div>

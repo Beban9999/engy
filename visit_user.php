@@ -193,9 +193,13 @@ mysqli_query($db, "SET NAMES utf8");
     ?>
 
     <br>
-    <p id="visit_user" style="visibility:hidden; position:absolute;"><?php echo $_GET["user"] ?></p> <!--NE DIRAJ-->
+    <p id="visit_user" style="visibility:hidden; position:absolute;"><?php echo $_GET["user"] ?></p> <!--DONT TOUCH YOU WILL DIE-->
     <div class="container-fluid">
         <div class="card">
+            <br>
+        <h4 class="card-title" style = text-align:center >Current Data</h4>
+        <h6 class="card-title" style = text-align:center >Managers current actions </h6>
+
             <table class="table">
                 <thead class="table-dark">
                     <tr>
@@ -217,8 +221,12 @@ mysqli_query($db, "SET NAMES utf8");
                 </tbody>
             </table>
         </div>
-
+<br>
         <div class="card">
+            <br>
+        <h4 class="card-title" style = text-align:center >Archived Data</h4>
+        <h6 class="card-title" style = text-align:center >Managers past actions </h6>
+
             <table class="table">
                 <thead class="table-dark">
                     <tr>

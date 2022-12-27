@@ -138,23 +138,16 @@ mysqli_query($db, "SET NAMES utf8");
 <div class="container-fluid">
 
 <div class ="row">
-    <div class="col-lg-6">
+    <div class="col-lg-8">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title" style = text-align:center >Welcome <?php echo $_SESSION['username']; ?> </h3>
+                <h3 class="card-title" style = text-align:center >Welcome <b> <?php echo $_SESSION['username']; ?></b> </h3>
                 <h4 class="card-title" style = text-align:center > You are part of Managment Team! </h4>
-                <hr>
-                <h5 class="card-title" style = text-align:center >On this page you can:</h5>
-                <br>
-                <h6 class="card-title" style = text-align:center >Visit Employees Profiles</h6>
-                <h6 class="card-title" style = text-align:center >Check Employees Weekly Reports</h6>
-                <h6 class="card-title" style = text-align:center >Send Global or Private Message</h6>
-
-
+             
 
 </div></div></div>
 
-    <div class="col-6">
+    <div class="col-4">
         <div class="card">
             <div class="card-body">
                 <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>

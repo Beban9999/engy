@@ -163,7 +163,7 @@ if($f == "checkGlobalMessages")
             if($red->team == "Sales Manager") {  $color = '#ff1616';}
             if($red->team == "Account Manager"){ $color = '#3d9e67';}
             if($red->team == "Developer"){       $color = '#004aad';}
-            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.',0)" style="color:white" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
+            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.',0)" style="color:white;box-shadow:none" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
         echo '
         <div class="col-lg-6 mb-3">
            <div class="card"style="background:#8d72e1;color:white">
@@ -215,7 +215,7 @@ if($f == "fillUsersTableAdmin"){
                 <td>'.$red->email.'</td>
                 <td>'.$red->role_name.'</td>
                 <td style="color:'.$color.';font-weight:bold">'.$red->team.'</td>
-                <td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
             </tr>';
         }
     }
@@ -370,7 +370,7 @@ if($f == "fillMessages")
             if($red->team == "Sales Manager") {  $color = '#ff1616';}
             if($red->team == "Account Manager"){ $color = '#3d9e67';}
             if($red->team == "Developer"){       $color = '#004aad';}
-            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.')" style="color:white" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
+            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.')" style="color:white;box-shadow:none" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
         if($message_type != "Private Message") $btn = "";
         echo '
         <div class="col-lg-6 mb-3">
@@ -381,8 +381,8 @@ if($f == "fillMessages")
 
                        </div><!--end meta-box-->
                        '.$btn.'
-                       <h4 class="mt-2 mb-3" style="text-align:center">
-                       '.$message_type.'
+                       <h4 class="mt-2 mb-3" style="text-align:center;font-weight:bold">
+                       '.$red->username.' Message'.'
                        </h4>
                        <p class="text" style="text-align:center;">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">

@@ -89,6 +89,42 @@ mysqli_query($db, "SET NAMES utf8");
     }
 
     ?>
+        <button type="button" class="btn btn-primary">Launch demo modal</button>
+
+<!-- Modal -->
+<div class="modal fade col-lg-12" id="modalEditUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modaltitle_for_report">Users's Report</h5>
+            </div>
+            <div style="position:absolute; visibility:hidden" id="user_edit_id"></div>
+            <div class="modal-body" style="margin:3px" id='modal_for_report'>
+
+            <label for="user_edit_first_name">First name</label>
+            <input type="text" name="" id="user_edit_first_name" class='form-control'>
+
+            <label for="user_edit_last_name">Last name</label>
+            <input type="text" name="" id="user_edit_last_name" class='form-control'>
+
+            <label for="user_edit_username">Username</label>
+            <input type="text" name="" id="user_edit_username" class='form-control'>
+
+            <label for="user_edit_email">Email</label>
+            <input type="text" name="" id="user_edit_email" class='form-control'>
+
+            <div id="user_edit_selects">
+
+            </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="updateUser()" data-dismiss="modal">Update</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <br>
     <div class="container-fluid">
@@ -284,6 +320,53 @@ mysqli_query($db, "SET NAMES utf8");
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/loginscript.js"></script>
 
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/waves.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script>
+        function fillEditUser(id){
+            console.log(id)
+            $.post("ajax.php?f=fillEditUser",{id:id}, function(response){
+                respArr = response.split("|");
+                $("#user_edit_first_name").val(respArr[0]);
+                $("#user_edit_last_name").val(respArr[1]);
+                $("#user_edit_username").val(respArr[2]);
+                $("#user_edit_email").val(respArr[3]);
+                $("#user_edit_selects").html(respArr[4]);
+                $("#user_edit_id").html(respArr[5]);
+            })
+        }
+        function updateUser(){
+            var id_user =       $("#user_edit_id").html();
+            var first_name =    $("#user_edit_first_name").val();
+            var last_name =     $("#user_edit_last_name").val();
+            var username =      $("#user_edit_username").val();
+            var email =         $("#user_edit_email").val();
+
+            var role =          $("#user_edit_role").val();
+            var team =          $("#user_edit_team").val();
+
+            console.log(id_user, first_name, last_name, username, email, role, team);
+
+            $.post("ajax.php?f=updateUserEdit",
+            {
+                id_user:id_user,
+                first_name:first_name,
+                last_name:last_name,
+                username:username,
+                email:email,
+                role:role,
+                team:team
+            },
+
+            function(response){
+                console.log(response);
+                fillUsersTableAdmin();
+            })
+        }
+    </script>
 
 </body>
 

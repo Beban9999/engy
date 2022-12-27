@@ -93,6 +93,9 @@ if($f == "trafficChart"){
         $reached = substr($reached, 0, -1);
         echo $goals.' '.$reached.' '.$dates;
     }
+    else{
+        echo "0 0".date("Y m",time());
+    }
 
 }
 //Private message modal
@@ -188,6 +191,75 @@ if($f == "checkGlobalMessages")
         }
     }
 }
+if($f == "updateUserEdit"){
+    $id_user =      $_POST["id_user"];
+    $first_name =   $_POST["first_name"];
+    $last_name =    $_POST["last_name"];
+    $username =     $_POST["username"];
+    $email =        $_POST["email"];
+    $role =         $_POST["role"];
+    $team =         $_POST["team"];
+
+    //echo $id_user, $first_name, $last_name, $username, $email, $role, $team;
+    $stmt = $db->prepare("UPDATE user SET
+    first_name = ?, last_name = ?, username = ?, email = ?, team = ?, role = ?
+    WHERE id_user = ?");
+    $stmt->bind_param("sssssii",$first_name,$last_name,$username,$email,$team, $role,$id_user);
+    $stmt->execute();
+}
+if($f == "fillEditUser"){
+    $editUser = $_POST["id"];
+    $stmt = $db->prepare("SELECT * FROM user WHERE id_user = ?");
+    $stmt->bind_param("i", $editUser);
+    $stmt->execute();
+    $rez = $stmt->get_result();
+
+    if(mysqli_num_rows($rez) > 0){
+        $red = mysqli_fetch_object($rez);
+        echo $red->first_name.'|'.$red->last_name.'|'.$red->username.'|'.$red->email.'|';
+
+
+
+
+        echo '
+        <label for="user_edit_role">Role</label>
+        <select name="" id="user_edit_role" class="form-control">';
+        $stmt1 = $db->prepare("SELECT * FROM roles");
+        $stmt1->execute();
+        $rez1 = $stmt1->get_result();
+        if(mysqli_num_rows($rez1) > 0){
+            while($red1 = mysqli_fetch_object($rez1)){
+                if($red1->id_role == $red->role){
+                    echo '<option selected value = "'.$red1->id_role.'">'.$red1->role_name.'</option>';
+
+                }
+                else{
+                    echo '<option value = "'.$red1->id_role.'">'.$red1->role_name.'</option>';
+                }
+            }
+        }
+        echo '</select>
+        <label for="user_edit_team">Team</label>
+        <select name="" id="user_edit_team" class="form-control">';
+        $stmt1 = $db->prepare("SELECT * FROM teams");
+        $stmt1->execute();
+        $rez1 = $stmt1->get_result();
+        if(mysqli_num_rows($rez1) > 0){
+            while($red1 = mysqli_fetch_object($rez1)){
+                if($red1->team_name == $red->team){
+                    echo '<option style="color:'.$red1->color.'" selected value = "'.$red1->team_name.'">'.$red1->team_name.'</option>';
+
+                }
+                else{
+                    echo '<option style="color:'.$red1->color.'" value = "'.$red1->team_name.'">'.$red1->team_name.'</option>';
+                }
+            }
+        }
+
+        echo '</select>|'.$red->id_user.'';
+
+    }
+}
 if($f == "sendTrafficGoal"){
     $traffic = $_POST['inputTraffic'];
     $goalId = $_POST['goalId'];
@@ -215,7 +287,7 @@ if($f == "fillUsersTableAdmin"){
                 <td>'.$red->email.'</td>
                 <td>'.$red->role_name.'</td>
                 <td style="color:'.$color.';font-weight:bold">'.$red->team.'</td>
-                <td><button class="btn btn-warning"><i class="fas fa-pen"></i></button> <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+                <td><button class="btn btn-warning" data-toggle="modal" data-target="#modalEditUser" onclick="fillEditUser(\''.$red->id_user.'\')"><i class="fas fa-pen"></i></button> <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
             </tr>';
         }
     }
@@ -273,7 +345,7 @@ if($f == "fillReportsTable")
     $i = 0;
     $fridays = array();
     $ind = 0;
-    while($ind < 20)
+    while($ind < 4)
     {
         //echo date("[W]", time()-($i*24*60*60));
         //echo date("j F Y", time()-($i*24*60*60));

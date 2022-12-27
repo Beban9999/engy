@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2022 at 09:51 PM
+-- Generation Time: Dec 27, 2022 at 10:37 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -56,7 +56,7 @@ INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, 
 ('Nesa nije smrad', 'testi', 'asdkoaqwe', 'wkropwrgpkqwe', 'gwkopwrqwe', 'fkqweqwe', 'eee', 'Nesto', 'asdasd', 'asd', 'qwqeqwewqeqeqe', 1, 20, 0, 0),
 ('kita aeae', 'aeise', 'asdasd', 'asdasd', 'ewotrhi', '2asdasd', 'test', 'pisemo&nbsp;', 'haha', '', '', 1, 21, 0, 0),
 ('test', 'asdasd', 'feok', 'rkogw', 'rgwokwrgowrk', 'rwpokwrgpowrkg', 'rwpgwrpok', 'real data', 'wepok', 'wpogkreopqkrpokqe', 'erpo', 1, 22, 1, 0),
-('grwouhwrgou', 'eorwughorweugh', 'oewrghwo', 'rowghoworgjh', 'owgrh', 'wrgoh', 'gwroh', '', '', '', '', 4, 23, 0, 0),
+('grwouhwrgou', 'sim', 'oewrghwo', 'rowghoworgjh', 'owgrh', 'wrgoh', 'gwroh', '', '', '', '', 4, 23, 0, 0),
 ('test za<br>', '<div>arhivu</div><div><br></div>', 'tebra', '', '', '', '', '', '', '', '', 4, 24, 0, 1);
 
 -- --------------------------------------------------------
@@ -88,7 +88,8 @@ INSERT INTO `messages` (`id_message`, `message_text`, `user_from`, `user_for`, `
 (48, 'ALO', 4, 0, '2022-12-21 21:02:22', 1),
 (67, 'ASDASD', 1, 5, '2022-12-22 18:21:03', 1),
 (68, '<b>Test bold</b>', 1, 0, '2022-12-22 18:22:09', 0),
-(69, 'asd', 1, 5, '2022-12-22 19:33:31', 0);
+(69, 'asd', 1, 5, '2022-12-22 19:33:31', 0),
+(70, 'De si', 1, 4, '2022-12-26 21:27:07', 1);
 
 -- --------------------------------------------------------
 
@@ -142,6 +143,29 @@ INSERT INTO `roles` (`id_role`, `role_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `teams`
+--
+
+CREATE TABLE `teams` (
+  `id_team` int(10) UNSIGNED NOT NULL,
+  `team_name` varchar(80) NOT NULL,
+  `color` char(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id_team`, `team_name`, `color`) VALUES
+(1, 'CEO', 'black'),
+(2, 'Vice President', '#38b6ff'),
+(3, 'Sales Manager', '#ff1616'),
+(4, 'Account Manager', '#3d9e67'),
+(5, 'Developer', '#004aad');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `trafic_goals`
 --
 
@@ -163,7 +187,7 @@ INSERT INTO `trafic_goals` (`id_goal`, `goal_user`, `goal`, `goal_reach`, `goal_
 (4, 1, 556000, 0, '2023-03-27'),
 (5, 1, 1000000, 0, '2023-05-24'),
 (6, 1, 1500000, 0, '2023-06-24'),
-(7, 1, 1500000, 0, '2023-02-24');
+(7, 1, 1500000, 150000, '2023-02-24');
 
 -- --------------------------------------------------------
 
@@ -191,7 +215,7 @@ INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `
 (2, 'Svetlana', 'Grubenovic', 'ceca', 'cecili@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President', 2),
 (3, 'Joca', 'Grubenovic', 'joca', 'cojomaks@yahoo.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Sales Manager', 3),
 (4, 'Aleksa', 'Aleksic', 'beban', 'aleksart919@gs.viser.edu.rs', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Account Manager', 2),
-(5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@sesmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3),
+(5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@sesmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President', 3),
 (7, 'Ivan', 'Ivanovic', 'iva', 'nekimail@test.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3),
 (8, 'Mirko', 'Aleksic', 'miks', 'blejanje@tebra.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3);
 
@@ -224,6 +248,12 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id_role`);
 
 --
+-- Indexes for table `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`id_team`);
+
+--
 -- Indexes for table `trafic_goals`
 --
 ALTER TABLE `trafic_goals`
@@ -250,7 +280,7 @@ ALTER TABLE `data`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `reports`
@@ -263,6 +293,12 @@ ALTER TABLE `reports`
 --
 ALTER TABLE `roles`
   MODIFY `id_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `id_team` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `trafic_goals`

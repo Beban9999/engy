@@ -269,7 +269,7 @@ mysqli_query($db, "SET NAMES utf8");
             <h5>Client's Table</h5>
 
             <div class="card">
-
+                
                 <table class="table">
                     <thead class="table-dark">
                         <tr>

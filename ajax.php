@@ -512,7 +512,7 @@ if($f == "fillArchiveTableVisit"){
         while($red = mysqli_fetch_object($rez)){
         echo '<tr>
         <th  style="max-width:1px" scope="row"   >'.$red->customer.'</th>
-        <td  style="max-width:1px"               >'.$red->prod.'</td>
+        <td  style="max-width:1px;"               >'.$red->prod.'</td>
         <td  style="max-width:1px"               >'.$red->traff.'</td>
         <td  style="max-width:1px"               >'.$red->maincomp.'</td>
         <td  style="max-width:1px"               >'.$red->dest.'</td>

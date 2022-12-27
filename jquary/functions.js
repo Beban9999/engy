@@ -291,7 +291,7 @@ function fillTrafficChart(){
                     columnWidth: '50%'
                 }
             },
-            colors: ["#000000", "#4B0082"],
+            colors: ["#000080", "#4B0082"],
 
             fill: {
                 opacity: [0.85, 0.25, 1],

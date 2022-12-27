@@ -300,7 +300,7 @@ mysqli_query($db, "SET NAMES utf8");
                         <td id='ins_next' contenteditable style="max-width:1px"></td>
                         <td id='ins_result' contenteditable style="max-width:1px"></td>
                         <td id='ins_datecomm' contenteditable style="max-width:1px"></td>
-                        <td id='lastbutton'><button type="button" id='insertRow' class="btn btn-primary1 waves-effect waves-light" style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i> ADD</button>
+                        <td id='lastbutton'><button type="button" id='insertRow' class="btn btn-primary1 waves-effect waves-light" style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button>
                         </td>
 
                     </tr>

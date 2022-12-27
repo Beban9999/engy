@@ -215,7 +215,7 @@ if($f == "fillUsersTableAdmin"){
                 <td>'.$red->email.'</td>
                 <td>'.$red->role_name.'</td>
                 <td style="color:'.$color.';font-weight:bold">'.$red->team.'</td>
-                <td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+                <td><button class="btn btn-warning"><i class="fas fa-pen"></i></button> <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
             </tr>';
         }
     }

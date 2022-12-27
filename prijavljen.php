@@ -188,7 +188,7 @@ mysqli_query($db, "SET NAMES utf8");
                                     <div class="media">
                                         <div class="media-body align-self-center">
                                             <h5 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s Traffic</b></h5>
-                                           
+
                                            <br>
                                             <div class="chart-demo">
                                                 <br>
@@ -217,7 +217,7 @@ mysqli_query($db, "SET NAMES utf8");
                             <div class="row">
                                 <div class="col-12">
                                     <h6 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
-                                    
+
                                     <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
 
                                     <p class="text-muted mb-3" style='text-align:center;font-size:16px;'><b>Write your monthly traffic.</b>
@@ -269,12 +269,12 @@ mysqli_query($db, "SET NAMES utf8");
             <h5>Client's Table</h5>
 
             <div class="card">
-                
+
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
                             <th id='first' scope="col">Customer</th>
-                            <th scope="col">Product in use</th>
+                            <th scope="col" style="max-width:75px; padding:0px">Product in use</th>
                             <th scope="col">Traffic Volume</th>
                             <th scope="col">Main Competitor</th>
                             <th scope="col">Core Destinations</th>

@@ -77,10 +77,6 @@ mysqli_query($db, "SET NAMES utf8");
     <br>
 
 
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalreport">Launch demo modal</button>  -->
-
-    <!-- Modal -->
-
     <div class="modal fade col-lg-12" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
@@ -135,55 +131,57 @@ mysqli_query($db, "SET NAMES utf8");
             </div>
         </div>
     </div>
-<div class="container-fluid">
+    <div class="container-fluid">
 
-<div class ="row">
-    <div class="col-lg-8">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title" style = text-align:center >Welcome <b> <?php echo $_SESSION['username']; ?></b> </h3>
-                <h4 class="card-title" style = text-align:center > You are part of Managment Team! </h4>
-             
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title" style=text-align:center>Welcome <b> <?php echo $_SESSION['username']; ?></b> </h3>
+                        <h4 class="card-title" style=text-align:center> You are part of Managment Team! </h4>
 
-</div></div></div>
 
-    <div class="col-4">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
-                <img src="assets/images/widgets/login.png" alt="" height="192" class="mx-auto d-block mb-3">
-
-                <div class="form-group row">
-
+                    </div>
                 </div>
-                <div class="form-group">
-                    <textarea class="form-control" id="globalMessageText" rows="4" placeholder="Your message"></textarea>
-                </div>
-
-                <button type="submit" id="sendGlobalMessage" class="btn btn-primary btn-block px-4" style="background:purple;color:white">Send Message</button>
-                <button type="button" id='checkGlobalMessages' class="btn btn-primary btn-block px-4" data-toggle="modal" data-target="#exempleScroll" style="background:darkred">
-                    Remove your Global Messages
-                </button>
             </div>
-            <!--end card-body-->
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
+                        <img src="assets/images/widgets/login.png" alt="" height="192" class="mx-auto d-block mb-3">
+
+                        <div class="form-group row">
+
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="globalMessageText" rows="4" placeholder="Your message"></textarea>
+                        </div>
+
+                        <button type="submit" id="sendGlobalMessage" class="btn btn-primary btn-block px-4" style="background:purple;color:white">Send Message</button>
+                        <button type="button" id='checkGlobalMessages' class="btn btn-primary btn-block px-4" data-toggle="modal" data-target="#exempleScroll" style="background:darkred">
+                            Remove your Global Messages
+                        </button>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
         </div>
-        <!--end card-->
+        <!--end row-->
+        <br>
     </div>
-    <!--end col-->
-    </div>
-    <!--end row-->
-    <br>
-</div>
 
 
     <div class="container-fluid">
         <!--TABLE -->
         <div class="row">
-            <div class="col-12" >
+            <div class="col-12">
                 <div class="card" style="border-radius:1px;">
                     <!-- <div class="card-body"> -->
 
-                    <div class="table-responsive" >
+                    <div class="table-responsive">
                         <table class="table table-striped mb-0">
                             <thead class="thead-light" style="background:#6c4ab6;color:white">
                                 <tr>
@@ -237,14 +235,13 @@ mysqli_query($db, "SET NAMES utf8");
     </div> <!-- end row -->
     <div id="user_report_div"></div>
     <br>
-</div>
+    </div>
 </body>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/metisMenu.min.js"></script>
 <script src="assets/js/waves.min.js"></script>
 <script src="assets/js/jquery.slimscroll.min.js"></script>
-
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script type="text/javascript" src="js/loginscript.js"></script>
 <script>
@@ -261,7 +258,7 @@ mysqli_query($db, "SET NAMES utf8");
     }
 
     function viewReportForUser(week, userID, userName) {
-        $("#modaltitle_for_report").html(userName+"'s Report")
+        $("#modaltitle_for_report").html(userName + "'s Report")
         $.post("ajax.php?f=viewReportForUser", {
             week: week,
             userID,

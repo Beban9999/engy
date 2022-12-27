@@ -364,6 +364,8 @@ mysqli_query($db, "SET NAMES utf8");
             function(response){
                 console.log(response);
                 fillUsersTableAdmin();
+                $("#ana_device").html("");
+                fillApplicationUsersChart();
             })
         }
     </script>

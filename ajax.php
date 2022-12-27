@@ -293,7 +293,7 @@ if($f == "fillUsersTableAdmin"){
     }
 }
 if($f == "usersStatistics"){
-    $stmt = $db->prepare("SELECT role, count(*) as 'num' FROM user GROUP BY role");
+    $stmt = $db->prepare("SELECT roles.id_role, count(user.role) as 'num' FROM user right join roles on user.role = roles.id_role group by id_role;");
     $stmt->execute();
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
@@ -301,7 +301,7 @@ if($f == "usersStatistics"){
             echo $red->num.'|';
         }
     }
-    $stmt = $db->prepare("SELECT team, count(*) as 'num' FROM user GROUP BY team");
+    $stmt = $db->prepare("SELECT teams.team_name, count(user.role) as 'num' FROM user right join teams on user.team = teams.team_name group by team_name;");
     $stmt->execute();
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){

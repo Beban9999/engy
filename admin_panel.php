@@ -89,7 +89,7 @@ mysqli_query($db, "SET NAMES utf8");
     }
 
     ?>
-        <button type="button" class="btn btn-primary">Launch demo modal</button>
+        <!-- <button type="button" class="btn btn-primary">Launch demo modal</button> -->
 
 <!-- Modal -->
 <div class="modal fade col-lg-12" id="modalEditUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

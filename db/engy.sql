@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2022 at 10:37 PM
+-- Generation Time: Dec 28, 2022 at 12:10 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -57,7 +57,7 @@ INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, 
 ('kita aeae', 'aeise', 'asdasd', 'asdasd', 'ewotrhi', '2asdasd', 'test', 'pisemo&nbsp;', 'haha', '', '', 1, 21, 0, 0),
 ('test', 'asdasd', 'feok', 'rkogw', 'rgwokwrgowrk', 'rwpokwrgpowrkg', 'rwpgwrpok', 'real data', 'wepok', 'wpogkreopqkrpokqe', 'erpo', 1, 22, 1, 0),
 ('grwouhwrgou', 'sim', 'oewrghwo', 'rowghoworgjh', 'owgrh', 'wrgoh', 'gwroh', '', '', '', '', 4, 23, 0, 0),
-('test za<br>', '<div>arhivu</div><div><br></div>', 'tebra', '', '', '', '', '', '', '', '', 4, 24, 0, 1);
+('test za<br>', '<div>arhivu</div><div><br></div>', 'tebra', '', '', '', '', '', '', '', '', 4, 24, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,10 @@ INSERT INTO `messages` (`id_message`, `message_text`, `user_from`, `user_for`, `
 (67, 'ASDASD', 1, 5, '2022-12-22 18:21:03', 1),
 (68, '<b>Test bold</b>', 1, 0, '2022-12-22 18:22:09', 0),
 (69, 'asd', 1, 5, '2022-12-22 19:33:31', 0),
-(70, 'De si', 1, 4, '2022-12-26 21:27:07', 1);
+(70, 'De si', 1, 4, '2022-12-26 21:27:07', 1),
+(71, 'asd', 1, 4, '2022-12-28 11:55:01', 1),
+(72, 'qwe', 4, 7, '2022-12-28 11:55:25', 1),
+(73, 'asd', 4, 0, '2022-12-28 11:56:26', 1);
 
 -- --------------------------------------------------------
 
@@ -149,19 +152,20 @@ INSERT INTO `roles` (`id_role`, `role_name`) VALUES
 CREATE TABLE `teams` (
   `id_team` int(10) UNSIGNED NOT NULL,
   `team_name` varchar(80) NOT NULL,
-  `color` char(12) NOT NULL
+  `color` char(12) NOT NULL,
+  `team_icon` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `teams`
 --
 
-INSERT INTO `teams` (`id_team`, `team_name`, `color`) VALUES
-(1, 'CEO', 'black'),
-(2, 'Vice President', '#38b6ff'),
-(3, 'Sales Manager', '#ff1616'),
-(4, 'Account Manager', '#3d9e67'),
-(5, 'Developer', '#004aad');
+INSERT INTO `teams` (`id_team`, `team_name`, `color`, `team_icon`) VALUES
+(1, 'CEO', 'black', 'CEO.png'),
+(2, 'Vice President', '#38b6ff', 'VP.png'),
+(3, 'Sales Manager', '#ff1616', 'SM.png'),
+(4, 'Account Manager', '#3d9e67', 'AM.png'),
+(5, 'Developer', '#004aad', 'DEV.png');
 
 -- --------------------------------------------------------
 
@@ -280,7 +284,7 @@ ALTER TABLE `data`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `reports`

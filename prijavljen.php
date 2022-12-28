@@ -191,7 +191,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                                            <br>
                                             <div class="chart-demo">
-                                                <br>
+
                                                 <div id="apex_mixed1" class="apex-charts"></div>
                                             </div>
                                         </div>
@@ -352,7 +352,7 @@ mysqli_query($db, "SET NAMES utf8");
                     })
                 }
             </script>
-            <div id="archvInfo" class="alert alert-success" role="alert">Successfuly archived</div>
+            <div id="archvInfo" class="alert alert-success" role="alert">Successfully archived</div>
 
 </body>
 

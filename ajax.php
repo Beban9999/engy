@@ -336,7 +336,7 @@ if($f == "openAndSetUserGoals"){
 
                             <h5 class=" client-name">'.$red->first_name.' '.$red->last_name.'</h5> 
                             <h5 class=" client-name">'.$red->team.'</h5> 
-                            <input type="number" name="" value = "0" placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">
+                            <input type="number" name=""  placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">
                             <br>
                             <div class = "row">
                             <div class="col-lg-6">

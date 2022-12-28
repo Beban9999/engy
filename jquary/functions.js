@@ -275,7 +275,7 @@ function fillTrafficChart(){
         console.log(yourTraffic, trafficGoal, glalDates)
         var options = {
             chart: {
-                height: 380,
+                height: 429,
                 type: 'line',
                 stacked: false,
                 toolbar: {
@@ -349,7 +349,7 @@ function fillTrafficChart(){
             data: yourTraffic
         }, {
             name: 'Manager Expetation',
-            type: 'area',
+            type: 'column',
             data: trafficGoal
         },];
         options.labels = glalDates

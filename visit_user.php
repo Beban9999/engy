@@ -158,6 +158,8 @@ mysqli_query($db, "SET NAMES utf8");
     <?php
     navbar();
 
+    
+
     if (!isset($_GET["user"])) {
         echo '
             <br>
@@ -191,6 +193,11 @@ mysqli_query($db, "SET NAMES utf8");
         exit();
     }
     ?>
+    <br>
+     <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'><b>You are at IME NA CIJEM SMO PROFILU Profile.</b>
+                                    </p>        
+                                    <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
+
 
     <br>
     <p id="visit_user" style="visibility:hidden; position:absolute;"><?php echo $_GET["user"] ?></p> <!--DONT TOUCH YOU WILL DIE-->

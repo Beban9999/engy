@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2022 at 12:10 PM
+-- Generation Time: Dec 28, 2022 at 05:03 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -186,12 +186,13 @@ CREATE TABLE `trafic_goals` (
 --
 
 INSERT INTO `trafic_goals` (`id_goal`, `goal_user`, `goal`, `goal_reach`, `goal_date`) VALUES
-(1, 1, 1000000, 0, '2023-04-24'),
-(2, 1, 65000, 123123, '2023-01-27'),
-(4, 1, 556000, 0, '2023-03-27'),
-(5, 1, 1000000, 0, '2023-05-24'),
-(6, 1, 1500000, 0, '2023-06-24'),
-(7, 1, 1500000, 150000, '2023-02-24');
+(6, 1, 150, 0, '2022-12-28'),
+(14, 2, 2050, 0, '2022-12-28'),
+(15, 3, 12000, 0, '2022-12-28'),
+(16, 5, 3, 0, '2022-12-28'),
+(17, 4, 555, 0, '2022-12-28'),
+(18, 8, 1212, 0, '2022-12-28'),
+(19, 7, 12444, 0, '2022-12-28');
 
 -- --------------------------------------------------------
 
@@ -308,7 +309,7 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT for table `trafic_goals`
 --
 ALTER TABLE `trafic_goals`
-  MODIFY `id_goal` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_goal` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user`

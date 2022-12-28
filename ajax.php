@@ -294,6 +294,55 @@ if($f == "fillUsersTableAdmin"){
         }
     }
 }
+
+if($f == "trafficSetNewValues"){
+    $id_user = $_POST["id_user"];
+    $traffic_value = $_POST["traffic_value"];
+    $old_goal = $_POST["old_goal"];
+    $goal_date = date("Y-m-d", time());
+
+    echo "$id_user $traffic_value $old_goal $goal_date";
+
+    if($old_goal == 0 && $traffic_value != 0){
+        $stmt = $db->prepare("INSERT INTO `trafic_goals`(`goal_user`, `goal`, `goal_date`) VALUES (?, ?, ?)");
+        $stmt->bind_param("iis",$id_user, $traffic_value, $goal_date);
+        $stmt->execute();
+        //$rez = $stmt->get_result();
+    }
+    if($old_goal != 0 && $traffic_value != 0){
+        $stmt = $db->prepare("UPDATE `trafic_goals` SET `goal`= ?, `goal_date`= ? WHERE id_goal = ?");
+        $stmt->bind_param("isi",$traffic_value, $goal_date, $old_goal);
+        $stmt->execute();
+        //$rez = $stmt->get_result();
+    }
+}
+if($f == "openAndSetUserGoals"){
+    $stmt = $db->prepare("SELECT * FROM user");
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+
+            echo $red->first_name.' '.$red->last_name.' '.'<input type="number" name="" value = "0" placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">';
+
+            $currentMonth = date("m", time());
+            $currentMonth = '%-'.$currentMonth.'-%';
+            $stmt1 = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ? AND goal_date like ? order by goal_date DESC");
+            $stmt1->bind_param("is", $red->id_user, $currentMonth);
+            $stmt1->execute();
+            $rez1 = $stmt1->get_result();
+
+            if(mysqli_num_rows($rez1) > 0){
+                $red1 = mysqli_fetch_object($rez1);
+                echo "<div id=\"tr_goal_ex_$red1->id_goal\">$red1->goal</div>";
+            }
+            else{
+                echo "<div id=\"tr_goal_ex_0\">0</div>";
+            }
+        }
+
+    }
+}
 if($f == "usersStatistics"){
     $stmt = $db->prepare("SELECT roles.id_role, count(user.role) as 'num' FROM user right join roles on user.role = roles.id_role group by id_role;");
     $stmt->execute();

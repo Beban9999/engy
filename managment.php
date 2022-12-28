@@ -77,6 +77,28 @@ mysqli_query($db, "SET NAMES utf8");
     }
     ?>
     <br>
+    <!-- <button type="button" class="btn btn-primary">Launch demo modal</button> -->
+
+    <!-- Modal -->
+    <div class="modal fade col-lg-12" id="modalSetGoals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaltitle_for_report">Users's Report</h5>
+                </div>
+                <div class="modal-body" style="margin:3px" id='modal_for_goals'>
+
+
+                    <input type="text" name="" placeholder="Traffic goal" id="user_edit_first_name" class='form-control'>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="setUsersTrafficGoals()" data-dismiss="modal">Update</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="modal fade col-lg-12" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -144,31 +166,37 @@ mysqli_query($db, "SET NAMES utf8");
                         <div class="row">
 
 
-                        <div class="col-lg-4">
-                            <div class="card">
+                            <div class="col-lg-4">
+                                <div class="card">
                                     <img src="assets/images/widgets/p-3.png" alt="" height="100" class="img-fluid">
-                                <div class="card-body product-info">
-                                    <br>
-                                    <h4 class="product-title" style=text-align:center> Set Traffic Goals</h4>
-                                    <h5 class="card-title" style=text-align:center> Month:<b> January</b> </h5>
-                                      <hr>
-                                    <button type="submit" class="btn btn-primary btn-block px-2" style="background:#6c4ab6;color:white"><b>Open Table</b></button>
-                                   
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div><!--end col-->
+                                    <div class="card-body product-info">
+                                        <br>
+                                        <h4 class="product-title" style=text-align:center> Set Traffic Goals</h4>
+                                        <h5 class="card-title" style=text-align:center> Month:<b> <?php echo date("F", time()) ?></b> </h5>
+                                        <hr>
+                                        <button onclick="openAndSetUserGoals()" type="submit" class="btn btn-primary btn-block px-2" data-toggle="modal" data-target="#modalSetGoals" style="background:#6c4ab6;color:white"><b>Open Table</b></button>
 
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="chart-demo">
-                                        <div id="apex_column2" class="apex-charts"></div>
-                                    </div>                                        
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div><!--end col-->                            
-                
-                     
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+
+                            <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_column2" class="apex-charts"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+
+
                         </div>
                     </div>
                 </div>
@@ -179,8 +207,8 @@ mysqli_query($db, "SET NAMES utf8");
                     <div class="card-body">
                         <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
                         <img src="assets/images/widgets/login.png" alt="" height="209" class="mx-auto d-block mb-3">
-<br>
-<br>
+                        <br>
+                        <br>
 
                         <div class="form-group row">
 
@@ -188,7 +216,7 @@ mysqli_query($db, "SET NAMES utf8");
                         <div class="form-group">
                             <textarea class="form-control" id="globalMessageText" rows="4" placeholder="Your message"></textarea>
                         </div>
-                        
+
                         <button type="submit" id="sendGlobalMessage" class="btn btn-primary btn-block px-4" style="background:#6c4ab6;color:white;font-weight:bold">Send Message</button>
                         <button type="button" id='checkGlobalMessages' class="btn btn-primary btn-block px-4" data-toggle="modal" data-target="#exempleScroll" style="background:darkred;font-weight:bold">
                             Remove your Global Messages
@@ -282,6 +310,34 @@ mysqli_query($db, "SET NAMES utf8");
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script type="text/javascript" src="js/loginscript.js"></script>
 <script>
+    function setUsersTrafficGoals() {
+        var allInps = document.getElementById('modal_for_goals').getElementsByTagName('input');
+        var prevGoals = document.getElementById('modal_for_goals').getElementsByTagName('div');
+        for (var i = 0; i < allInps.length; i++) {
+
+            var id_user = allInps[i].id.split("_")[2]
+            var traffic_value = allInps[i].value
+            var old_goal = prevGoals[i].id.split("_")[3];
+            //console.log(id_user, traffic_value, old_goal)
+
+            $.post("ajax.php?f=trafficSetNewValues", {
+                id_user: id_user,
+                traffic_value: traffic_value,
+                old_goal: old_goal
+            }, function(response) {
+                console.log(response)
+            })
+
+
+        }
+    }
+
+    function openAndSetUserGoals() {
+        $.post("ajax.php?f=openAndSetUserGoals", function(response) {
+            $("#modal_for_goals").html(response)
+        })
+    }
+
     //<h4 id = 'privateMessageHeader' class="mt-0 header-title" style = "text-align:center">Private Message to USER</h4>
     function saveClickedUserInfo(clickedUser, userId) {
         document.getElementById("privateMessageHeader").innerHTML = "Private Message to " + clickedUser;

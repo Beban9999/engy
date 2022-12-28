@@ -273,16 +273,16 @@ mysqli_query($db, "SET NAMES utf8");
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th id='first' scope="col">Customer</th>
+                            <th id='first' scope="col"style="max-width:175px; padding:15px">Customer</th>
                             <th scope="col" style="max-width:75px; padding:0px">Product in use</th>
-                            <th scope="col">Traffic Volume</th>
-                            <th scope="col">Main Competitor</th>
-                            <th scope="col">Core Destinations</th>
-                            <th scope="col">Destinations Looking For</th>
-                            <th scope="col">Potential Destinations</th>
-                            <th id="action" scope="col">Action</th>
-                            <th scope="col">Next Step</th>
-                            <th scope="col">Result</th>
+                            <th scope="col" >Traffic Volume</th>
+                            <th scope="col"style="max-width:125px; padding:0px">Main Competitor</th>
+                            <th scope="col"style="max-width:125px; padding:5px">Core Destinations</th>
+                            <th scope="col"style="max-width:125px; padding:0px">Destinations Looking For</th>
+                            <th scope="col"style="max-width:125px; padding:5px">Potential Destinations</th>
+                            <th id="action" scope="col"style="max-width:200px; padding:30px">Action</th>
+                            <th scope="col"style="max-width:175px; padding:30px">Next Step</th>
+                            <th scope="col"style="max-width:175px; padding:30px">Result</th>
                             <th scope="col">Date/Comment</th>
                             <th id='last' scope="col">Archive</th>
 

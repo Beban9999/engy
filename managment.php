@@ -36,6 +36,8 @@ mysqli_query($db, "SET NAMES utf8");
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/metricacss.css" />
+    <link href="/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -137,10 +139,37 @@ mysqli_query($db, "SET NAMES utf8");
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title" style=text-align:center>Welcome <b> <?php echo $_SESSION['username']; ?></b> </h3>
-                        <h4 class="card-title" style=text-align:center> You are part of Managment Team! </h4>
+                        <h4 class="card-title" style=text-align:center>Welcome <b> <?php echo $_SESSION['username']; ?> to the Managment</b> </h4>
+                        <br>
+                        <div class="row">
 
 
+                        <div class="col-lg-4">
+                            <div class="card">
+                                    <img src="assets/images/widgets/p-3.png" alt="" height="100" class="img-fluid">
+                                <div class="card-body product-info">
+                                    <br>
+                                    <h4 class="product-title" style=text-align:center> Set Traffic Goals</h4>
+                                    <h5 class="card-title" style=text-align:center> Month:<b> January</b> </h5>
+                                      <hr>
+                                    <button type="submit" class="btn btn-primary btn-block px-2" style="background:#6c4ab6;color:white"><b>Open Table</b></button>
+                                   
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div><!--end col-->
+
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="chart-demo">
+                                        <div id="apex_column2" class="apex-charts"></div>
+                                    </div>                                        
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div><!--end col-->                            
+                
+                     
+                        </div>
                     </div>
                 </div>
             </div>
@@ -149,7 +178,9 @@ mysqli_query($db, "SET NAMES utf8");
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
-                        <img src="assets/images/widgets/login.png" alt="" height="192" class="mx-auto d-block mb-3">
+                        <img src="assets/images/widgets/login.png" alt="" height="209" class="mx-auto d-block mb-3">
+<br>
+<br>
 
                         <div class="form-group row">
 
@@ -157,9 +188,9 @@ mysqli_query($db, "SET NAMES utf8");
                         <div class="form-group">
                             <textarea class="form-control" id="globalMessageText" rows="4" placeholder="Your message"></textarea>
                         </div>
-
-                        <button type="submit" id="sendGlobalMessage" class="btn btn-primary btn-block px-4" style="background:purple;color:white">Send Message</button>
-                        <button type="button" id='checkGlobalMessages' class="btn btn-primary btn-block px-4" data-toggle="modal" data-target="#exempleScroll" style="background:darkred">
+                        
+                        <button type="submit" id="sendGlobalMessage" class="btn btn-primary btn-block px-4" style="background:#6c4ab6;color:white;font-weight:bold">Send Message</button>
+                        <button type="button" id='checkGlobalMessages' class="btn btn-primary btn-block px-4" data-toggle="modal" data-target="#exempleScroll" style="background:darkred;font-weight:bold">
                             Remove your Global Messages
                         </button>
                     </div>
@@ -237,6 +268,12 @@ mysqli_query($db, "SET NAMES utf8");
     <br>
     </div>
 </body>
+<script src="assets/plugins/moment/moment.js"></script>
+<script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
+<script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
+<script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
+<script src="assets/pages/jquery.apexcharts.init.js"></script>
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/metisMenu.min.js"></script>

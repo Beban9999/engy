@@ -84,7 +84,7 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modaltitle_for_report">Users's Report</h5>
+                    <h5 class="modal-title" id="modaltitle_for_report">Users's Traffic</h5>
                 </div>
                 <div class="modal-body" style="margin:3px" id='modal_for_goals'>
 
@@ -93,6 +93,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                 </div>
                 <div class="modal-footer">
+                    <p>Don't Forget to Update!</p>
                     <button type="button" class="btn btn-secondary" onclick="setUsersTrafficGoals()" data-dismiss="modal">Update</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>

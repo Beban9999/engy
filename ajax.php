@@ -323,7 +323,39 @@ if($f == "openAndSetUserGoals"){
     if(mysqli_num_rows($rez) > 0){
         while($red = mysqli_fetch_object($rez)){
 
-            echo $red->first_name.' '.$red->last_name.' '.'<input type="number" name="" value = "0" placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">';
+
+            echo '
+        <div class="container-fluid">
+            <div class = "row">
+                <div class="col-lg-12">
+                    <div class="card">                               
+                        <div class="card-body text-center">   
+                            <img src="img/AM.png" height="100" alt="user" class="rounded-circle thumb-xl">
+                            <br> 
+                            <br> 
+
+                            <h5 class=" client-name">'.$red->first_name.' '.$red->last_name.'</h5> 
+                            <h5 class=" client-name">'.$red->team.'</h5> 
+                            <input type="number" name="" value = "0" placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">
+                            <br>
+                            <div class = "row">
+                            <div class="col-lg-6">
+                                <div class="card" style=box-shadow:none>   
+                                    <h6>Last month traffic:<h6>
+                                </div></div>
+                                <div class="col-lg-6">
+                                <div class="card"style=box-shadow:none>   
+                                    <h6>Last month goal:<h6>
+                                </div></div></div>
+                            <p class="text-muted text-center mt-3">Current month traffic set: </p>
+                        </div><!--end card-body-->                                                          
+                    </div><!--end card-->
+                </div><!--end col-->
+               
+            </div>
+        </div>
+        ';
+            // echo $red->first_name.' '.$red->last_name.' '.'<input type="number" name="" value = "0" placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">';
 
             $currentMonth = date("m", time());
             $currentMonth = '%-'.$currentMonth.'-%';

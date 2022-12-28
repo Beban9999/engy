@@ -105,7 +105,9 @@ if($f == "checkPrivateMessages")
     $forUser = $_POST["id"];
 
     $stmt = $db->prepare("SELECT *
-    FROM messages JOIN user ON messages.user_from = user.id_user
+    FROM messages
+    JOIN user ON messages.user_from = user.id_user
+    JOIN teams ON user.team = teams.team_name
     WHERE user_for = ? AND user_from = ? AND deleted = 0 order by message_date desc");
     $stmt->bind_param('ii',$forUser, $currUser);
 
@@ -115,11 +117,12 @@ if($f == "checkPrivateMessages")
     if(mysqli_num_rows($rez) > 0){
         while($red = mysqli_fetch_object($rez)){
             $message_type = "Private Message";
-            if($red->team == "CEO")              $color = 'black';
-            if($red->team == "Vice President"){  $color = '#38b6ff';}
-            if($red->team == "Sales Manager") {  $color = '#ff1616';}
-            if($red->team == "Account Manager"){ $color = '#3d9e67';}
-            if($red->team == "Developer"){       $color = '#004aad';}
+            // if($red->team == "CEO")              $color = 'black';
+            // if($red->team == "Vice President"){  $color = '#38b6ff';}
+            // if($red->team == "Sales Manager") {  $color = '#ff1616';}
+            // if($red->team == "Account Manager"){ $color = '#3d9e67';}
+            // if($red->team == "Developer"){       $color = '#004aad';}
+            $color = $red->color;
             $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.','.$forUser.')" style="color:white" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
         echo '
         <div class="col-lg-12 mb-3">
@@ -151,7 +154,9 @@ if($f == "checkGlobalMessages")
     $currUser = $_SESSION['id_user'];
 
     $stmt = $db->prepare("SELECT *
-    FROM messages JOIN user ON messages.user_from = user.id_user
+    FROM messages
+    JOIN user ON messages.user_from = user.id_user
+    JOIN teams ON user.team = teams.team_name
     WHERE user_for = 0 AND user_from = ? AND deleted = 0 order by message_date desc");
     $stmt->bind_param('i', $currUser);
 
@@ -161,11 +166,12 @@ if($f == "checkGlobalMessages")
     if(mysqli_num_rows($rez) > 0){
         while($red = mysqli_fetch_object($rez)){
             $message_type = ($red->user_for == 0)? "<b>Global Message</b>" : "Private Message";
-            if($red->team == "CEO")              $color = 'black';
-            if($red->team == "Vice President"){  $color = '#38b6ff';}
-            if($red->team == "Sales Manager") {  $color = '#ff1616';}
-            if($red->team == "Account Manager"){ $color = '#3d9e67';}
-            if($red->team == "Developer"){       $color = '#004aad';}
+            // if($red->team == "CEO")              $color = 'black';
+            // if($red->team == "Vice President"){  $color = '#38b6ff';}
+            // if($red->team == "Sales Manager") {  $color = '#ff1616';}
+            // if($red->team == "Account Manager"){ $color = '#3d9e67';}
+            // if($red->team == "Developer"){       $color = '#004aad';}
+            $color = $red->color;
             $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.',0)" style="color:white;box-shadow:none" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
         echo '
         <div class="col-lg-12 mb-3">
@@ -269,16 +275,12 @@ if($f == "sendTrafficGoal"){
     $stmt->execute();
 }
 if($f == "fillUsersTableAdmin"){
-    $stmt = $db->prepare("SELECT * FROM user JOIN roles ON user.role = roles.id_role order by first_name");
+    $stmt = $db->prepare("SELECT * FROM user JOIN roles ON user.role = roles.id_role JOIN teams ON user.team = teams.team_name order by first_name");
     $stmt->execute();
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
         while($red = mysqli_fetch_object($rez)){
-            if($red->team == "CEO")              $color = 'black';
-            if($red->team == "Vice President"){  $color = '#38b6ff';}
-            if($red->team == "Sales Manager") {  $color = '#ff1616';}
-            if($red->team == "Account Manager"){ $color = '#3d9e67';}
-            if($red->team == "Developer"){       $color = '#004aad';}
+            $color = $red->color;
             echo  '
             <tr style="vertical-align:middle">
                 <td>'.$red->first_name.'</td>
@@ -423,12 +425,12 @@ if($f == "fillMessages")
     $type = $_POST["type"];
     if($type == 0){
         $stmt = $db->prepare("SELECT *
-        FROM messages JOIN user ON messages.user_from = user.id_user
+        FROM messages JOIN user ON messages.user_from = user.id_user JOIN teams ON user.team = teams.team_name
         WHERE user_for = 0 AND deleted = 0 order by message_date desc");
     }
     else{
         $stmt = $db->prepare("SELECT *
-        FROM messages JOIN user ON messages.user_from = user.id_user
+        FROM messages JOIN user ON messages.user_from = user.id_user JOIN teams ON user.team = teams.team_name
         WHERE user_for = ? AND deleted = 0 order by message_date desc");
         $stmt->bind_param('i', $currUser);
     }
@@ -437,11 +439,12 @@ if($f == "fillMessages")
     if(mysqli_num_rows($rez) > 0){
         while($red = mysqli_fetch_object($rez)){
             $message_type = ($red->user_for == 0)? "<b>Global Message</b>" : "Private Message";
-            if($red->team == "CEO")              $color = 'black';
-            if($red->team == "Vice President"){  $color = '#38b6ff';}
-            if($red->team == "Sales Manager") {  $color = '#ff1616';}
-            if($red->team == "Account Manager"){ $color = '#3d9e67';}
-            if($red->team == "Developer"){       $color = '#004aad';}
+            // if($red->team == "CEO")              $color = 'black';
+            // if($red->team == "Vice President"){  $color = '#38b6ff';}
+            // if($red->team == "Sales Manager") {  $color = '#ff1616';}
+            // if($red->team == "Account Manager"){ $color = '#3d9e67';}
+            // if($red->team == "Developer"){       $color = '#004aad';}
+            $color = $red->color;
             $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.')" style="color:white;box-shadow:none" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
         if($message_type != "Private Message") $btn = "";
         echo '

@@ -87,13 +87,39 @@
                 <!-- Icon -->
             ';
                 $team = $_SESSION['team'];
-                $img = "img/CEO.png";
+                $img = "img/";
 
-                if($team == "CEO")              $color = 'black';
-                if($team == "Vice President"){  $color = '#38b6ff'; $img = "img/VP.png";}
-                if($team == "Sales Manager") {  $color = '#ff1616'; $img = "img/SM.png";}
-                if($team == "Account Manager"){ $color = '#3d9e67'; $img = "img/AM.png";}
-                if($team == "Developer"){       $color = '#004aad'; $img = "img/DEV.png";}
+                $db = mysqli_connect("localhost", "root", "", "engy");
+
+                if (!$db) {
+                    echo "ERROR WITH DB CONNECTION" . mysqli_connect_errno();
+                    echo "<br>" . mysqli_connect_error();
+                    exit();
+                }
+
+                mysqli_query($db, "SET NAMES utf8");
+
+                $stmt = $db->prepare("SELECT * FROM user JOIN teams ON user.team = teams.team_name WHERE team = ?");
+                $stmt->bind_param('s',$team);
+                $stmt->execute();
+                $rez = $stmt->get_result();
+
+                if(mysqli_num_rows($rez) > 0){
+                    $red = mysqli_fetch_object($rez);
+                    $color = $red->color; $img.=$red->team_icon;
+                }
+                else{
+                    $color = "red";
+                    $img = "user.png";
+                }
+
+
+
+                // if($team == "CEO")              $color = 'black';
+                // else if($team == "Vice President"){  $color = '#38b6ff'; $img = "img/VP.png";}
+                // else if($team == "Sales Manager") {  $color = '#ff1616'; $img = "img/SM.png";}
+                // else if($team == "Account Manager"){ $color = '#3d9e67'; $img = "img/AM.png";}
+                // else if($team == "Developer"){       $color = '#004aad'; $img = "img/DEV.png";}
 
                 echo '<span style="color:'.$color.'">'.$_SESSION['username'].'</span>';
                 echo '

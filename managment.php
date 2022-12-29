@@ -313,7 +313,7 @@ mysqli_query($db, "SET NAMES utf8");
 <script>
     function setUsersTrafficGoals() {
         var allInps = document.getElementById('modal_for_goals').getElementsByTagName('input');
-        var prevGoals = document.getElementById('modal_for_goals').getElementsByTagName('div');
+        var prevGoals = document.getElementById('modal_for_goals').getElementsByTagName('span');
         for (var i = 0; i < allInps.length; i++) {
 
             var id_user = allInps[i].id.split("_")[2]

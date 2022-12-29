@@ -316,63 +316,85 @@ if($f == "trafficSetNewValues"){
         //$rez = $stmt->get_result();
     }
 }
-if($f == "openAndSetUserGoals"){
-    $stmt = $db->prepare("SELECT * FROM user");
+if ($f == "openAndSetUserGoals") {
+    $stmt = $db->prepare("SELECT * FROM user JOIN teams ON user.team = teams.team_name");
     $stmt->execute();
     $rez = $stmt->get_result();
-    if(mysqli_num_rows($rez) > 0){
-        while($red = mysqli_fetch_object($rez)){
+    if (mysqli_num_rows($rez) > 0) {
+        while ($red = mysqli_fetch_object($rez)) {
+            $img = "img/" . $red->team_icon;
+            $currentMonth = date("m", time());
+            $prevMonth = intval($currentMonth) - 1;
+            if ($prevMonth == 0) $prevMonth = 12;
+            $currentMonth = '%-' . $currentMonth . '-%';
+            $prevMonth = '%-' . $prevMonth . '-%';
 
+
+            $stmt2 = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ? AND goal_date like ? order by goal_date DESC");
+            $stmt2->bind_param("is", $red->id_user, $prevMonth);
+            $stmt2->execute();
+            $rez2 = $stmt2->get_result();
 
             echo '
         <div class="container-fluid">
             <div class = "row">
                 <div class="col-lg-12">
-                    <div class="card">                               
-                        <div class="card-body text-center">   
-                            <img src="img/AM.png" height="100" alt="user" class="rounded-circle thumb-xl">
-                            <br> 
-                            <br> 
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="' . $img . '" height="100" alt="user" class="rounded-circle thumb-xl">
+                            <br>
+                            <br>
 
-                            <h5 class=" client-name">'.$red->first_name.' '.$red->last_name.'</h5> 
-                            <h5 class=" client-name">'.$red->team.'</h5> 
-                            <input type="number" name=""  placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">
+                            <h5 class=" client-name">' . $red->first_name . ' ' . $red->last_name . '</h5>
+                            <h5 class=" client-name">' . $red->team . '</h5>
+                            <input type="number" name=""  placeholder ="Traffic goal" id="tr_goal_' . $red->id_user . '" class="form-control">
                             <br>
                             <div class = "row">
                             <div class="col-lg-6">
-                                <div class="card" style=box-shadow:none>   
-                                    <h6>Last month traffic:<h6>
-                                </div></div>
-                                <div class="col-lg-6">
-                                <div class="card"style=box-shadow:none>   
-                                    <h6>Last month goal:<h6>
-                                </div></div></div>
-                            <p class="text-muted text-center mt-3">Current month traffic set: </p>
-                        </div><!--end card-body-->                                                          
-                    </div><!--end card-->
-                </div><!--end col-->
-               
-            </div>
-        </div>
-        ';
-            // echo $red->first_name.' '.$red->last_name.' '.'<input type="number" name="" value = "0" placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">';
+                                <div class="card" style=box-shadow:none>';
 
-            $currentMonth = date("m", time());
-            $currentMonth = '%-'.$currentMonth.'-%';
+            if (mysqli_num_rows($rez2) > 0) {
+                $red2 = mysqli_fetch_object($rez2);
+                echo "<h6>Last month traffic: $red2->goal_reach</h6>";
+                echo ' </div></div>
+                                        <div class="col-lg-6">
+                                        <div class="card"style=box-shadow:none>';
+                echo "<h6>Last month goal: $red2->goal</h6>";
+            } else {
+                echo "<h6>Last month traffic: 0</h6>";
+                echo ' </div></div>
+                                        <div class="col-lg-6">
+                                        <div class="card"style=box-shadow:none>';
+                echo "<h6>Last month goal: 0</h6>";
+            }
+            echo '</div></div></div>
+                            <p class="text-muted text-center mt-3">Current month traffic set: ';
+
             $stmt1 = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ? AND goal_date like ? order by goal_date DESC");
             $stmt1->bind_param("is", $red->id_user, $currentMonth);
             $stmt1->execute();
             $rez1 = $stmt1->get_result();
 
-            if(mysqli_num_rows($rez1) > 0){
+            if (mysqli_num_rows($rez1) > 0) {
                 $red1 = mysqli_fetch_object($rez1);
-                echo "<div id=\"tr_goal_ex_$red1->id_goal\">$red1->goal</div>";
+                echo "<span id=\"tr_goal_ex_$red1->id_goal\">$red1->goal</span>";
+            } else {
+                echo "<span id=\"tr_goal_ex_0\">0</span>";
             }
-            else{
-                echo "<div id=\"tr_goal_ex_0\">0</div>";
-            }
-        }
 
+
+            echo '</p>
+                        </div><!--end card-body-->
+                    </div><!--end card-->
+                </div><!--end col-->
+
+            </div>
+        </div>
+        ';
+            // echo $red->first_name.' '.$red->last_name.' '.'<input type="number" name="" value = "0" placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">';
+
+
+        }
     }
 }
 if($f == "usersStatistics"){

@@ -349,7 +349,7 @@ function fillTrafficChart(){
             data: yourTraffic
         }, {
             name: 'Manager Expetation',
-            type: 'column',
+            type: 'area',
             data: trafficGoal
         },];
         options.labels = glalDates

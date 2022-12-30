@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2022 at 10:56 PM
+-- Generation Time: Dec 30, 2022 at 11:29 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -336,7 +336,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `procurment`
 --
 ALTER TABLE `procurment`
-  MODIFY `id_proc` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_proc` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `reports`

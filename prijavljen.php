@@ -712,6 +712,7 @@ mysqli_query($db, "SET NAMES utf8");
                         comment     :comment
                     },
                     function(response) {
+                        fillProcTable();
                         console.log(response);
                     })
             }

@@ -430,7 +430,7 @@ if($f == "updateProcValues"){
 }
 if($f == "fillProcTable"){
     $currUser = $_SESSION["id_user"];
-    $stmt = $db->prepare("SELECT * FROM procurment WHERE deleted = 0 and archived = 0 and user_proc = ?");
+    $stmt = $db->prepare("SELECT * FROM procurment WHERE deleted = 0 and archived = 0 and user_proc = ? order by date_added desc");
     $stmt->bind_param("i", $currUser);
     $stmt->execute();
     $rez = $stmt->get_result();

@@ -84,7 +84,7 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modaltitle_for_report">Users's Traffic</h5>
+                    <h5 class="modal-title" id="modaltitle_for_report">Users's Goals</h5>
                 </div>
                 <div class="modal-body" style="margin:3px" id='modal_for_goals'>
 
@@ -167,7 +167,7 @@ mysqli_query($db, "SET NAMES utf8");
                         <div class="row">
 
 
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <div class="card">
                                     <img src="assets/images/widgets/p-3.png" alt="" height="100" class="img-fluid">
                                     <div class="card-body product-info">
@@ -177,19 +177,6 @@ mysqli_query($db, "SET NAMES utf8");
                                         <hr>
                                         <button onclick="openAndSetUserGoals()" type="submit" class="btn btn-primary btn-block px-2" data-toggle="modal" data-target="#modalSetGoals" style="background:#6c4ab6;color:white"><b>Open Table</b></button>
 
-                                    </div>
-                                    <!--end card-body-->
-                                </div>
-                                <!--end card-->
-                            </div>
-                            <!--end col-->
-
-                            <div class="col-lg-8">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="chart-demo">
-                                            <div id="apex_column2" class="apex-charts"></div>
-                                        </div>
                                     </div>
                                     <!--end card-body-->
                                 </div>
@@ -215,7 +202,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="globalMessageText" rows="4" placeholder="Your message"></textarea>
+                            <textarea class="form-control" id="globalMessageText" rows="6" placeholder="Your message"></textarea>
                         </div>
 
                         <button type="submit" id="sendGlobalMessage" class="btn btn-primary btn-block px-4" style="background:#6c4ab6;color:white;font-weight:bold">Send Message</button>

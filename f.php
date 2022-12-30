@@ -8,6 +8,34 @@
         }
     }
 
+    function validate_user(){
+    $db = mysqli_connect("localhost", "root", "", "engy");
+
+    if (!$db) {
+        echo "ERROR WITH DB CONNECTION" . mysqli_connect_errno();
+        echo "<br>" . mysqli_connect_error();
+        exit();
+    }
+
+    mysqli_query($db, "SET NAMES utf8");
+    $id = $_SESSION["id_user"];
+    $stmt = $db->prepare("SELECT * FROM user WHERE id_user = ? and deleted_user = 0");
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+
+    $rez = $stmt->get_result();
+
+    if (mysqli_num_rows($rez) > 0) {
+        $red = mysqli_fetch_object($rez);
+        if ($red->username != $_SESSION["username"] || $red->role != $_SESSION["status"] || $red->team != $_SESSION["team"]) {
+            return false;
+        } else {
+            return true;
+        }
+    } else {
+        return false;
+    }
+}
     function navbar()
     {
         echo '

@@ -5,6 +5,10 @@ if (!prijavljen()) {
     header("Location: http://localhost/engy/index.php"); //HARDCODE PATH
     exit;
 }
+if(!validate_user()){
+  header("Location: http://localhost/engy/index.php?odjava"); //HARDCODE PATH
+  exit;
+}
 $db = mysqli_connect("localhost", "root", "", "engy");
 
 if (!$db) {
@@ -31,7 +35,7 @@ mysqli_query($db, "SET NAMES utf8");
   <link rel="stylesheet" href="css/mdb.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/metricacss.css" />
-  
+
 
   <script src="jquary/jquary.js"></script>
   <script src="jquary/jquary.form.js"></script>
@@ -41,7 +45,7 @@ mysqli_query($db, "SET NAMES utf8");
 
 
     <title>Archive</title>
-    
+
 </head>
 <style>
   body{
@@ -69,7 +73,7 @@ color:#9932CC;
 .table{
     text-align:center;
     border:black;
-    
+
 }
 .table-hover>tbody>tr:hover>*{
     background:#9932CC;
@@ -78,7 +82,7 @@ color:#9932CC;
 .table-hover>tbody>tr{
     border:black;
     border-style:solid;
-    
+
 }
 .btn-primary{
     background:#9932CC;
@@ -93,13 +97,13 @@ color:yellow;
 }
 </style>
 <body>
-    
+
 <?php
     navbar();
 ?>
 <div id="MetricaPages" class="main-icon-menu-pane">
-               <br>             
-                            
+               <br>
+
                         </div><!-- end Authentication-->
                     </div><!--end menu-body-->
                 </div><!-- end main-menu-inner-->
@@ -113,7 +117,7 @@ color:yellow;
 ?>!
 </h5><br>
 
-    <img src="assets/images/widgets/calendar.png" alt="" height="300" class="mx-auto d-block mb-3"> 
+    <img src="assets/images/widgets/calendar.png" alt="" height="300" class="mx-auto d-block mb-3">
   </div>
   <div class="card-footer text-muted"><i>“The difference between an <b>achiever</b> and a loser is,
 an achiever never gives up, never settles and lastly never forgets.”</i></div>
@@ -169,7 +173,7 @@ an achiever never gives up, never settles and lastly never forgets.”</i></div>
 
         <!--Wysiwig js-->
         <script src="assets/plugins/tinymce/tinymce.min.js"></script>
-        <script src="assets/pages/jquery.form-editor.init.js"></script> 
+        <script src="assets/pages/jquery.form-editor.init.js"></script>
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>

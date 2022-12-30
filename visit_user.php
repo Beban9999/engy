@@ -5,6 +5,10 @@ if (!prijavljen()) {
     header("Location: http://localhost/engy/index.php"); //HARDCODE PATH
     exit;
 }
+if(!validate_user()){
+    header("Location: http://localhost/engy/index.php?odjava"); //HARDCODE PATH
+    exit;
+  }
 $db = mysqli_connect("localhost", "root", "", "engy");
 
 if (!$db) {
@@ -158,7 +162,7 @@ mysqli_query($db, "SET NAMES utf8");
     <?php
     navbar();
 
-    
+
 
     if (!isset($_GET["user"])) {
         echo '
@@ -195,7 +199,7 @@ mysqli_query($db, "SET NAMES utf8");
     ?>
     <br>
      <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'><b>You are at IME NA CIJEM SMO PROFILU Profile.</b>
-                                    </p>        
+                                    </p>
                                     <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
 
 

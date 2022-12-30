@@ -6,7 +6,10 @@ if (!prijavljen()) {
     exit;
 }
 $db = mysqli_connect("localhost", "root", "", "engy");
-
+if(!validate_user()){
+    header("Location: http://localhost/engy/index.php?odjava"); //HARDCODE PATH
+    exit;
+  }
 if (!$db) {
     echo "ERROR WITH DB CONNECTION" . mysqli_connect_errno();
     echo "<br>" . mysqli_connect_error();

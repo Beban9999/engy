@@ -5,6 +5,10 @@ if (!prijavljen()) {
     header("Location: http://localhost/engy/index.php"); //HARDCODE PATH
     exit;
 }
+if(!validate_user()){
+    header("Location: http://localhost/engy/index.php?odjava"); //HARDCODE PATH
+    exit;
+}
 $db = mysqli_connect("localhost", "root", "", "engy");
 
 if (!$db) {

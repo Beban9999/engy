@@ -99,7 +99,7 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modaltitle_for_report">Delete user</h5>
+                    <h5 class="modal-title" id="modaltitle_for_report">DELETING USER</h5>
                 </div>
                 <div class="modal-body" style="margin:3px" id='modal_for_delete_user'>
 
@@ -107,8 +107,8 @@ mysqli_query($db, "SET NAMES utf8");
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="deleteUser()" data-dismiss="modal">Delete</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteUser()" data-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

@@ -289,7 +289,7 @@ if($f == "deleteUserFill"){
 
     if(mysqli_num_rows($rez) > 0){
         if($red = mysqli_fetch_object($rez)){
-            echo "Do you really wanna delete user: $red->first_name $red->last_name ($red->username)";
+            echo "Do you really wanna delete user:<b> $red->first_name $red->last_name ($red->username)</b>";
             echo "<div id='deleteUserId' style='position:absolute; visibility:hidden'>$red->id_user</div>";
         }
     }

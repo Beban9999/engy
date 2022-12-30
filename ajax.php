@@ -138,7 +138,7 @@ if($f == "checkPrivateMessages")
                        </h4>
                        <p class="text" style="text-align:center;">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">
-                       <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
+                       <li class="list-inline-item">by: <span style="font-weight:bold;color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
 
                            </ul>
                    </div><!--end blog-card-->
@@ -337,11 +337,11 @@ if ($f == "openAndSetUserGoals") {
 
             echo '
         <div class="container-fluid">
-            <div class = "row">
-                <div class="col-lg-12">
+            <div  = "row">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body text-center">
-                            <img src="' . $img . '" height="100" alt="user" class="rounded-circle thumb-xl">
+                            <img src="' . $img . '" height="80" alt="user" class="rounded-circle thumb-xl">
                             <br>
                             <br>
 
@@ -351,7 +351,7 @@ if ($f == "openAndSetUserGoals") {
                             <br>
                             <div class = "row">
                             <div class="col-lg-6">
-                                <div class="card" style=box-shadow:none>';
+                            <div class="card" style=box-shadow:none>';
 
             if (mysqli_num_rows($rez2) > 0) {
                 $red2 = mysqli_fetch_object($rez2);
@@ -368,7 +368,7 @@ if ($f == "openAndSetUserGoals") {
                 echo "<h6>Last month goal: 0</h6>";
             }
             echo '</div></div></div>
-                            <p class="text-muted text-center mt-3">Current month traffic set: ';
+                            <p class="text-center mt-3" style = background:#6c4ab6;color:white;border-radius:2px>Current month traffic set: ';
 
             $stmt1 = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ? AND goal_date like ? order by goal_date DESC");
             $stmt1->bind_param("is", $red->id_user, $currentMonth);
@@ -377,9 +377,9 @@ if ($f == "openAndSetUserGoals") {
 
             if (mysqli_num_rows($rez1) > 0) {
                 $red1 = mysqli_fetch_object($rez1);
-                echo "<span id=\"tr_goal_ex_$red1->id_goal\">$red1->goal</span>";
+                echo "<b><span id=\"tr_goal_ex_$red1->id_goal\">$red1->goal</span></b>";
             } else {
-                echo "<span id=\"tr_goal_ex_0\">0</span>";
+                echo "<b><span id=\"tr_goal_ex_0\">0</span></b>";
             }
 
 
@@ -390,7 +390,7 @@ if ($f == "openAndSetUserGoals") {
 
             </div>
         </div>
-        ';
+        <br>';
             // echo $red->first_name.' '.$red->last_name.' '.'<input type="number" name="" value = "0" placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">';
 
 
@@ -565,7 +565,7 @@ if($f == "fillMessages")
                        <p class="text" style="text-align:left;">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:left;">
                        <hr>
-                       <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
+                       <li class="list-inline-item">by: <span style="font-weight:bold;color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
 
                            </ul>
                    </div><!--end blog-card-->

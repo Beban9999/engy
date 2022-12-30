@@ -149,7 +149,7 @@
                 // else if($team == "Account Manager"){ $color = '#3d9e67'; $img = "img/AM.png";}
                 // else if($team == "Developer"){       $color = '#004aad'; $img = "img/DEV.png";}
 
-                echo '<span style="color:'.$color.'">'.$_SESSION['username'].'</span>';
+                echo '<span style="font-weight:bold; color:'.$color.'">'.$_SESSION['username'].'</span>';
                 echo '
                 </div>
             </div>

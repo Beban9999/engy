@@ -95,6 +95,26 @@ mysqli_query($db, "SET NAMES utf8");
         <!-- <button type="button" class="btn btn-primary">Launch demo modal</button> -->
 
 <!-- Modal -->
+<div class="modal fade col-lg-12" id="modalDeleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaltitle_for_report">Delete user</h5>
+                </div>
+                <div class="modal-body" style="margin:3px" id='modal_for_delete_user'>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="deleteUser()" data-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <div class="modal fade col-lg-12" id="modalEditUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
@@ -329,6 +349,20 @@ mysqli_query($db, "SET NAMES utf8");
     <script src="assets/js/waves.min.js"></script>
     <script src="assets/js/jquery.slimscroll.min.js"></script>
     <script>
+        function deleteUser(){
+            var id = $("#deleteUserId").html();
+            $.post("ajax.php?f=deleteUser",{id:id}, function(response){
+                fillUsersTableAdmin();
+                $("#ana_device").html("");
+                fillApplicationUsersChart();
+            })
+        }
+        function fillDeleteUser(id){
+            console.log(id)
+            $.post("ajax.php?f=deleteUserFill",{id:id}, function(response){
+                $("#modal_for_delete_user").html(response);
+            })
+        }
         function fillEditUser(id){
             console.log(id)
             $.post("ajax.php?f=fillEditUser",{id:id}, function(response){

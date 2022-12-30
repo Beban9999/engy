@@ -16,7 +16,7 @@ if($f == "prijava"){
     $korIme = $_POST['korIme'];
     $pass = sha1($_POST['pass']);
 
-    $stmt = $db->prepare("SELECT * FROM user WHERE username = ?");
+    $stmt = $db->prepare("SELECT * FROM user WHERE username = ? and deleted_user = 0");
     $stmt->bind_param('s', $korIme);
     $stmt->execute();
 
@@ -215,7 +215,7 @@ if($f == "updateUserEdit"){
 }
 if($f == "fillEditUser"){
     $editUser = $_POST["id"];
-    $stmt = $db->prepare("SELECT * FROM user WHERE id_user = ?");
+    $stmt = $db->prepare("SELECT * FROM user WHERE id_user = ? and deleted_user = 0");
     $stmt->bind_param("i", $editUser);
     $stmt->execute();
     $rez = $stmt->get_result();
@@ -274,8 +274,30 @@ if($f == "sendTrafficGoal"){
     $stmt->bind_param("ii", $traffic, $goalId);
     $stmt->execute();
 }
+if($f == "deleteUser"){
+    $id = $_POST["id"];
+    $stmt = $db->prepare("UPDATE user SET deleted_user = 1 WHERE id_user = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+}
+if($f == "deleteUserFill"){
+    $id = $_POST["id"];
+    $stmt = $db->prepare("SELECT * FROM user WHERE id_user = ? and deleted_user = 0");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $rez = $stmt->get_result();
+
+    if(mysqli_num_rows($rez) > 0){
+        if($red = mysqli_fetch_object($rez)){
+            echo "Do you really wanna delete user: $red->first_name $red->last_name ($red->username)";
+            echo "<div id='deleteUserId' style='position:absolute; visibility:hidden'>$red->id_user</div>";
+        }
+    }
+
+
+}
 if($f == "fillUsersTableAdmin"){
-    $stmt = $db->prepare("SELECT * FROM user JOIN roles ON user.role = roles.id_role JOIN teams ON user.team = teams.team_name order by first_name");
+    $stmt = $db->prepare("SELECT * FROM user JOIN roles ON user.role = roles.id_role JOIN teams ON user.team = teams.team_name WHERE user.deleted_user = 0 order by first_name");
     $stmt->execute();
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
@@ -289,7 +311,7 @@ if($f == "fillUsersTableAdmin"){
                 <td>'.$red->email.'</td>
                 <td>'.$red->role_name.'</td>
                 <td style="color:'.$color.';font-weight:bold">'.$red->team.'</td>
-                <td><button class="btn btn-warning" data-toggle="modal" data-target="#modalEditUser" onclick="fillEditUser(\''.$red->id_user.'\')"><i class="fas fa-pen"></i></button> <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+                <td><button class="btn btn-warning" data-toggle="modal" data-target="#modalEditUser" onclick="fillEditUser(\''.$red->id_user.'\')"><i class="fas fa-pen"></i></button> <button class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteUser" onclick="fillDeleteUser(\''.$red->id_user.'\')"><i class="fas fa-trash"></i></button></td>
             </tr>';
         }
     }
@@ -317,7 +339,7 @@ if($f == "trafficSetNewValues"){
     }
 }
 if ($f == "openAndSetUserGoals") {
-    $stmt = $db->prepare("SELECT * FROM user JOIN teams ON user.team = teams.team_name");
+    $stmt = $db->prepare("SELECT * FROM user JOIN teams ON user.team = teams.team_name WHERE user.deleted_user = 0");
     $stmt->execute();
     $rez = $stmt->get_result();
     if (mysqli_num_rows($rez) > 0) {
@@ -398,7 +420,7 @@ if ($f == "openAndSetUserGoals") {
     }
 }
 if($f == "usersStatistics"){
-    $stmt = $db->prepare("SELECT roles.id_role, count(user.role) as 'num' FROM user right join roles on user.role = roles.id_role group by id_role;");
+    $stmt = $db->prepare("SELECT roles.id_role, sum((CASE WHEN user.deleted_user = 0 THEN 1 ELSE 0 END)) as 'num' FROM user right join roles on user.role = roles.id_role group by id_role;");
     $stmt->execute();
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
@@ -406,7 +428,7 @@ if($f == "usersStatistics"){
             echo $red->num.'|';
         }
     }
-    $stmt = $db->prepare("SELECT teams.team_name, count(user.role) as 'num' FROM user right join teams on user.team = teams.team_name group by team_name;");
+    $stmt = $db->prepare("SELECT teams.team_name, sum((CASE WHEN user.deleted_user = 0 THEN 1 ELSE 0 END)) as 'num' FROM user right join teams on user.team = teams.team_name group by team_name;");
     $stmt->execute();
     $rez = $stmt->get_result();
     if(mysqli_num_rows($rez) > 0){
@@ -445,7 +467,7 @@ if($f == "sendReport")
 }
 if($f == "fillReportsTable")
 {
-    $stmt = $db->prepare("SELECT * FROM user WHERE role = 3 order by first_name");
+    $stmt = $db->prepare("SELECT * FROM user WHERE role = 3 and deleted_user = 0 order by first_name");
 
     $i = 0;
     $fridays = array();
@@ -657,7 +679,7 @@ if($f == "fillUsersTable"){
     $currUser = $_SESSION['id_user'];
     $stmt = $db->prepare("SELECT *
     FROM user JOIN roles ON user.role = roles.id_role
-    WHERE role <> 1 AND user.id_user != $currUser ORDER BY first_name, last_name");
+    WHERE role <> 1 AND user.id_user != $currUser AND deleted_user = 0 ORDER BY first_name, last_name");
     $stmt->execute();
 
     $rez = $stmt->get_result();

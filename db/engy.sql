@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2022 at 02:47 PM
+-- Generation Time: Dec 30, 2022 at 10:56 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -53,7 +53,7 @@ INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, 
 ('test', 'eeeeee', 'qewf', 'joi', 'joi', 'eeee', 'ojiwfg', 'asdasd', 'qweqwe', 'qweqwe', '123123123123', 1, 17, 0, 0),
 ('asd', 'asd', 'weqwe', '', 'qwe', '', '', '', '', '', 'eee', 1, 18, 0, 0),
 ('Aaaaaa', '', 'EEEE', 'qweqwe', 'qwe', 'TESTdd', 'qweqweqwe', 'eee', '', '', '', 1, 19, 0, 0),
-('Nesa nije smrad', 'testi', 'asdkoaqwe', 'wkropwrgpkqwe', 'gwkopwrqwe', 'fkqweqwe', 'eee', 'Nesto', 'asdasd', 'asd', 'qwqeqwewqeqeqe', 1, 20, 0, 0),
+('Nesa nije smrad', 'testi', 'asdkoaqwe', 'wkropwrgpkqwe', 'gwkopwrqwe', 'fkqweqwe', 'eee', 'Nesto', 'asdasd', 'asd', 'iii', 1, 20, 0, 0),
 ('kita aeae', 'aeise', 'asdasd', 'asdasd', 'ewotrhi', '2asdasd', 'test', 'pisemo&nbsp;', 'haha', '', '', 1, 21, 0, 0),
 ('test', 'asdasd', 'feok', 'rkogw', 'rgwokwrgowrk', 'rwpokwrgpowrkg', 'rwpgwrpok', 'real data', 'wepok', 'wpogkreopqkrpokqe', 'erpo', 1, 22, 1, 0),
 ('grwouhwrgou', 'sim', 'oewrghwo', 'rowghoworgjh', 'owgrh', 'wrgoh', 'gwroh', '', '', '', '', 4, 23, 0, 0),
@@ -93,6 +93,43 @@ INSERT INTO `messages` (`id_message`, `message_text`, `user_from`, `user_for`, `
 (71, 'asd', 1, 4, '2022-12-28 11:55:01', 1),
 (72, 'qwe', 4, 7, '2022-12-28 11:55:25', 1),
 (73, 'asd', 4, 0, '2022-12-28 11:56:26', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `procurment`
+--
+
+CREATE TABLE `procurment` (
+  `id_proc` int(10) UNSIGNED NOT NULL,
+  `cust_name` varchar(80) NOT NULL,
+  `acc_men` int(10) UNSIGNED NOT NULL,
+  `trans_sheet` varchar(255) NOT NULL,
+  `nda` varchar(255) NOT NULL,
+  `vat` varchar(255) NOT NULL,
+  `serv_agr` varchar(255) NOT NULL,
+  `search` varchar(255) NOT NULL,
+  `dpa` varchar(255) NOT NULL,
+  `cust_acc` varchar(255) NOT NULL,
+  `supp_acc` varchar(255) NOT NULL,
+  `rate_sheet` varchar(255) NOT NULL,
+  `base_rout` varchar(255) NOT NULL,
+  `follow_up` varchar(255) NOT NULL,
+  `act_point` varchar(1024) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT current_timestamp(),
+  `comment` text NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0,
+  `archived` tinyint(1) NOT NULL DEFAULT 0,
+  `user_proc` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `procurment`
+--
+
+INSERT INTO `procurment` (`id_proc`, `cust_name`, `acc_men`, `trans_sheet`, `nda`, `vat`, `serv_agr`, `search`, `dpa`, `cust_acc`, `supp_acc`, `rate_sheet`, `base_rout`, `follow_up`, `act_point`, `date_added`, `comment`, `deleted`, `archived`, `user_proc`) VALUES
+(2, 'AAAA', 0, ' Test', 'Proba', '4', 'ADSSD', '6', '67', ' 8', ' 9', '124444444', ' 14', ' 15', ' 176', '2022-12-30 21:39:47', '1536qweqwe', 0, 0, 1),
+(3, 'Test test', 0, ' 2', ' 3', ' 4', ' 5', '6', ' 7', ' 8', ' 9', '12123123', ' 14', ' 15', ' 176', '2022-12-30 21:39:47', '1536', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -186,7 +223,7 @@ CREATE TABLE `trafic_goals` (
 --
 
 INSERT INTO `trafic_goals` (`id_goal`, `goal_user`, `goal`, `goal_reach`, `goal_date`) VALUES
-(6, 1, 150, 0, '2022-12-28'),
+(6, 1, 150, 95, '2022-12-28'),
 (14, 2, 2050, 0, '2022-12-28'),
 (15, 3, 12000, 0, '2022-12-28'),
 (16, 5, 3, 0, '2022-12-28'),
@@ -220,7 +257,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `password`, `team`, `role`, `deleted_user`) VALUES
 (1, 'Nenad', 'Grubenovic', 'grubi', 'grubi@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'CEO', 1, 0),
 (2, 'Svetlana', 'Grubenovic', 'ceca', 'cecili@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President', 2, 0),
-(3, 'Joca', 'Grubenovic', 'joca', 'cojomaks@yahoo.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Sales Manager', 3, 0),
+(3, 'Joca', 'Grubenovic', 'joca', 'cojomaks@yahoo.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Sales Manager', 3, 1),
 (4, 'Aleksa', 'Aleksic', 'beban', 'aleksart919@gs.viser.edu.rs', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Account Manager', 2, 0),
 (5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@sesmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President', 3, 0),
 (7, 'Ivan', 'Ivanovic', 'iva', 'nekimail@test.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3, 0),
@@ -241,6 +278,12 @@ ALTER TABLE `data`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id_message`);
+
+--
+-- Indexes for table `procurment`
+--
+ALTER TABLE `procurment`
+  ADD PRIMARY KEY (`id_proc`);
 
 --
 -- Indexes for table `reports`
@@ -288,6 +331,12 @@ ALTER TABLE `data`
 --
 ALTER TABLE `messages`
   MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+
+--
+-- AUTO_INCREMENT for table `procurment`
+--
+ALTER TABLE `procurment`
+  MODIFY `id_proc` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `reports`

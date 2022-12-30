@@ -419,6 +419,211 @@ if ($f == "openAndSetUserGoals") {
         }
     }
 }
+if($f == "updateProcValues"){
+    $rec_id = $_POST["id"];
+    $col_name = $_POST["col"];
+    $val = $_POST["updateVal"];
+ //   echo $col_name,$val, $rec_id;
+    $stmt = $db->prepare("UPDATE procurment SET $col_name = ? WHERE id_proc = ?");
+    $stmt->bind_param('si',$val, $rec_id);
+    $stmt->execute();
+}
+if($f == "fillProcTable"){
+    $currUser = $_SESSION["id_user"];
+    $stmt = $db->prepare("SELECT * FROM procurment WHERE deleted = 0 and archived = 0 and user_proc = ?");
+    $stmt->bind_param("i", $currUser);
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    echo '
+    <script src="assets/plugins/nestable/jquery.nestable.min.js"></script>
+    <script src="assets/pages/jquery.nastable.init.js"></script>
+        ';
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            echo'
+
+            <div class="custom-dd" id="nestable_list_'.$red->id_proc.'">
+                                <ol class="dd-list">
+                                    <li class="dd-item" data-id="2">
+                                        <div class="dd-handle" id="proc_field_'.$red->id_proc.'" style=font-size:18px>
+                                            '.$red->cust_name.'
+                                        </div>
+                                        <ol class="dd-list">
+                                            <li class="dd-item" data-id="3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <h4 class="mt-0 header-title" id="proc_title_'.$red->id_proc.'">'.$red->cust_name.'</h4>
+                                                                <p class="text-muted mb-3">Procurment for client
+                                                                </p>
+
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="form-group row">
+                                                                            <label for="example-text-input" class="col-sm-2 col-form-label text-right">Customer Name</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" oninput = "changeTitle('.$red->id_proc.',\'cust_name\')" onfocusout="updateProcField('.$red->id_proc.',\'cust_name\')" type="text" value="'.$red->cust_name.'" id="cust_name_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-email-input" class="col-sm-2 col-form-label text-right">Account Manager</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'acc_men\')" type="email" value="'.$red->acc_men.'" id="acc_men_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-tel-input" class="col-sm-2 col-form-label text-right">eNgY Transit Sheet</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'trans_sheet\')" type="text" value="'.$red->trans_sheet.'" id="trans_sheet_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-password-input" class="col-sm-2 col-form-label text-right">NDA</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control"  onfocusout="updateProcField('.$red->id_proc.',\'nda\')" type="text" value="'.$red->nda.'" id="nda_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-number-input" class="col-sm-2 col-form-label text-right">VAT-/Register ID certificat</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'vat\')" type="text" value="'.$red->vat.'" id="vat_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group row">
+                                                                            <label for="example-color-input" class="col-sm-2 col-form-label text-right">Service Agreement</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'serv_agr\')" type="text" value="'.$red->serv_agr.'" id="serv_agr_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-search-input" class="col-sm-2 col-form-label text-right">Search</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'search\')" type="search" value="'.$red->search.'" id="search_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">DPA (Data Protection Agreement)</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'dpa\')" type="text" value="'.$red->dpa.'" id="dpa_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+
+
+
+                                                                    </div>
+
+
+                                                                    <div class="col-lg-6">
+
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Customer accounts</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'acc_men\')" type="text" value="'.$red->cust_acc.'" id="cust_acc_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Supplier accounts</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'acc_men\')" type="text" value="'.$red->supp_acc.'" id="supp_acc_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Rate Sheet</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'rate_sheet\')" type="text" value="'.$red->rate_sheet.'" id="rate_sheet_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Base Routing</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'base_rout\')" type="text" value="'.$red->base_rout.'" id="base_rout_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Follow Up</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'follow_up\')" type="text" value="'.$red->follow_up.'" id="follow_up_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Action POINT</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'act_point\')" type="text" value="'.$red->act_point.'" id="act_point_'.$red->id_proc.'">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Comments</label>
+                                                                            <div class="col-sm-10">
+                                                                                <textarea name="" onfocusout="updateProcField('.$red->id_proc.',\'comment\')" class="form-control" id="comment_'.$red->id_proc.'" cols="30" rows="5">'.$red->comment.'</textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <!--end card-body-->
+                                                        </div>
+                                                        <!--end card-->
+                                                    </div>
+                                                    <!--end col-->
+                                                </div>
+                                                <!--end row-->
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </div>
+            ';
+
+
+
+        }
+    }
+}
+if($f == "insertProcRow"){
+    $currUser = $_SESSION["id_user"];
+
+    $cust_name=     $_POST["cust_name"];
+    $acc_men=       $_POST["acc_men"];
+    $trans_sheet=   $_POST["trans_sheet"];
+    $nda     =      $_POST["nda"];
+    $vat=           $_POST["vat"];
+    $serv_agr=      $_POST["serv_agr"];
+    $search=        $_POST["search"];
+    $dpa=           $_POST["dpa"];
+    $cust_acc=      $_POST["cust_acc"];
+    $supp_acc=      $_POST["supp_acc"];
+    $rate_sheett=   $_POST["rate_sheett"];
+    $base_rout=     $_POST["base_rout"];
+    $follow_up=     $_POST["follow_up"];
+    $act_point=     $_POST["act_point"];
+    $comment=       $_POST["comment"];
+
+    //echo "$cust_name $acc_men $trans_sheet $nda $vat $serv_agr $search $dpa $cust_acc $supp_acc $rate_sheett $base_rout $follow_up $act_point $comment";
+
+    $stmt = $db->prepare("INSERT INTO `procurment`(`cust_name`, `acc_men`, `trans_sheet`, `nda`, `vat`, `serv_agr`, `search`, `dpa`, `cust_acc`, `supp_acc`, `rate_sheet`, `base_rout`, `follow_up`, `act_point`, `comment`, `user_proc`)
+                                           VALUES (?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?)");
+    $stmt->bind_param("sssssssssssssssi",
+    $cust_name,
+    $acc_men,
+    $trans_sheet,
+    $nda,
+    $vat,
+    $serv_agr,
+    $search,
+    $dpa,
+    $cust_acc,
+    $supp_acc,
+    $rate_sheett,
+    $base_rout,
+    $follow_up,
+    $act_point,
+    $comment,
+    $currUser);
+    $stmt->execute();
+}
 if($f == "usersStatistics"){
     $stmt = $db->prepare("SELECT roles.id_role, sum((CASE WHEN user.deleted_user = 0 THEN 1 ELSE 0 END)) as 'num' FROM user right join roles on user.role = roles.id_role group by id_role;");
     $stmt->execute();

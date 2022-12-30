@@ -5,7 +5,7 @@ if (!prijavljen()) {
     header("Location: http://localhost/engy/index.php"); //HARDCODE PATH
     exit;
 }
-if(!validate_user()){
+if (!validate_user()) {
     header("Location: http://localhost/engy/index.php?odjava"); //HARDCODE PATH
     exit;
 }
@@ -35,7 +35,7 @@ mysqli_query($db, "SET NAMES utf8");
     <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    
+
     <link rel="stylesheet" href="css/metricacss.css" />
     <link href="assets/plugins/nestable/jquery.nestable.min.css" rel="stylesheet" />
 
@@ -196,7 +196,7 @@ mysqli_query($db, "SET NAMES utf8");
                                         <div class="media-body align-self-center">
                                             <h5 class="card-title" style="text-align:center;color:black"><b><?php echo $_SESSION['username'] ?>'s Traffic</b></h5>
 
-                                           <br>
+                                            <br>
                                             <div class="chart-demo">
 
                                                 <div id="apex_mixed1" class="apex-charts"></div>
@@ -238,8 +238,9 @@ mysqli_query($db, "SET NAMES utf8");
                                         <td id="your_traffic">
                                             <input id="your_traffic_input" placeholder="Your Traffic" class='form-control' type="number">
                                             <br>
-                                            <button id='your_traffic_send' class='btn btn' style = background:#6c4ab6;color:white>Update</button>
-                                            <div id='currGoalId' style='position:absolute; visibility:hidden'></div></td>
+                                            <button id='your_traffic_send' class='btn btn' style=background:#6c4ab6;color:white>Update</button>
+                                            <div id='currGoalId' style='position:absolute; visibility:hidden'></div>
+                                        </td>
                                         <td id="traffic_goal"></td>
                                     </table>
                                     <br>
@@ -255,332 +256,309 @@ mysqli_query($db, "SET NAMES utf8");
             <div class='row'>
                 <div class="col-lg-12">
                     <div class='card'>
-                    <div class="card-body">
+                        <div class="card-body">
 
 
-<style>
-    .col-sm-2{
-        width:-webkit-fill-available;
-    }
-</style>
+                            <style>
+                                .col-sm-2 {
+                                    width: -webkit-fill-available;
+                                }
+                            </style>
 
-<!-- OVDE POCINJE OTVARANJE I ONO ST SE OTVORI -->
-<h4 class="page-title">Procurment</h4>
+                            <!-- OVDE POCINJE OTVARANJE I ONO ST SE OTVORI -->
+                            <h4 class="page-title">Procurment</h4>
 
-<div class="custom-dd" id="nestable_list_2">
+                            <div class="custom-dd" id="nestable_list_1">
+                                <ol class="dd-list">
+                                    <li class="dd-item" data-id="2">
+                                        <div class="dd-handle" style=font-size:18px>
+                                            New client
+                                        </div>
                                         <ol class="dd-list">
-                                            <li class="dd-item" data-id="2">
-                                                <div class="dd-handle" style = font-size:18px>
-                                                Clients name
-                                            </div>
-                                                <ol class="dd-list">
-                                                    <li class="dd-item" data-id="3">
-                                                    <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <div class="card">
-                                                                    <div class="card-body">        
-                                                                        <h4 class="mt-0 header-title">Clients name</h4>
-                                                                        <p class="text-muted mb-3">Procurment for client
-                                                                        </p>
-                                                                        
-                                                                        <div class="row">
-                                                                            <div class="col-lg-6">
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-text-input" class="col-sm-2 col-form-label text-right">Customer Name</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-email-input" class="col-sm-2 col-form-label text-right">Account Manager</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-tel-input" class="col-sm-2 col-form-label text-right">eNgY Transit Sheet</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-password-input" class="col-sm-2 col-form-label text-right">NDA</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-number-input" class="col-sm-2 col-form-label text-right">VAT-/Register ID certificat</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-color-input" class="col-sm-2 col-form-label text-right">Service Agreement</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-search-input" class="col-sm-2 col-form-label text-right">Search</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="search" value=" ot web" id="example-search-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">DPA (Data Protection Agreement)</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                
-                                                                               
-                                                                                                                  
+                                            <li class="dd-item" data-id="3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <h4 class="mt-0 header-title">Clients name</h4>
+                                                                <p class="text-muted mb-3">Procurment for client
+                                                                </p>
+
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="form-group row">
+                                                                            <label for="example-text-input" class="col-sm-2 col-form-label text-right">Customer Name</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="cust_name">
                                                                             </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-email-input" class="col-sm-2 col-form-label text-right">Account Manager</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="email" value="" id="acc_men">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-tel-input" class="col-sm-2 col-form-label text-right">eNgY Transit Sheet</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="trans_sheet">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-password-input" class="col-sm-2 col-form-label text-right">NDA</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="nda">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-number-input" class="col-sm-2 col-form-label text-right">VAT-/Register ID certificat</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="vat">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group row">
+                                                                            <label for="example-color-input" class="col-sm-2 col-form-label text-right">Service Agreement</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="serv_agr">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-search-input" class="col-sm-2 col-form-label text-right">Search</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="search" value="" id="search">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">DPA (Data Protection Agreement)</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="dpa">
+                                                                            </div>
+                                                                        </div>
 
 
-                                                                            <div class="col-lg-6">
-                                                                               
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Customer accounts</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Supplier accounts</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>       
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Rate Sheet</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>                      
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Base Routing</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>                    
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Follow Up</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>  
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Action POINT</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>  
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-datetime-local-input" class="col-sm-2 col-form-label text-right">Date and time</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                               
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Comments</label>
-                                                                                    <div class="col-sm-10">
-                                                                                    <input class="form-control" type="textarea" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>  
+
+                                                                    </div>
+
+
+                                                                    <div class="col-lg-6">
+
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Customer accounts</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="cust_acc">
                                                                             </div>
-                                                                        </div>                         
-                                                                                                                    
-                                                                    </div><!--end card-body-->
-                                                                </div><!--end card-->
-                                                            </div><!--end col-->
-                                                        </div><!--end row-->
-                                                    </li>
-                                                </ol>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Supplier accounts</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="supp_acc">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Rate Sheet</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="rate_sheett">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Base Routing</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="base_rout">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Follow Up</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="follow_up">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Action POINT</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value="" id="act_point">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Comments</label>
+                                                                            <div class="col-sm-10">
+                                                                                <textarea name="" class="form-control" id="comment" cols="30" rows="5"></textarea>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group row">
+                                                                            <div class="col-sm-10">
+                                                                                <button class="btn btn-success" onclick = "addNewProc()">Add</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <!--end card-body-->
+                                                        </div>
+                                                        <!--end card-->
+                                                    </div>
+                                                    <!--end col-->
+                                                </div>
+                                                <!--end row-->
                                             </li>
                                         </ol>
-                                    </div>
-                    <div class="custom-dd" style=font-size:24px id="nestable_list_1">
+                                    </li>
+                                </ol>
+                            </div>
+                            <div id="proc_table">
+
+                            <div class="custom-dd" id="nestable_list_2">
+                                <ol class="dd-list">
+                                    <li class="dd-item" data-id="2">
+                                        <div class="dd-handle" style=font-size:18px>
+                                            Clients name
+                                        </div>
                                         <ol class="dd-list">
-                                            <li class="dd-item" data-id="2">
-                                                <div class="dd-handle">
-                                                    Item 2
-                                                </div>
-                                                <ol class="dd-list">
-                                                    <li class="dd-item" data-id="3">
-                                                       <!-- end page title end breadcrumb -->
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <div class="card">
-                                                                    <div class="card-body">        
-                                                                        <h4 class="mt-0 header-title">Textual inputs</h4>
-                                                                        <p class="text-muted mb-3">Here are examples of <code class="highlighter-rouge">.form-control</code> applied to each
-                                                                            textual HTML5 <code class="highlighter-rouge">&lt;input&gt;</code> <code class="highlighter-rouge">type</code>.
-                                                                        </p>
-                                                                        
-                                                                        <div class="row">
-                                                                            <div class="col-lg-6">
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-text-input" class="col-sm-2 col-form-label text-right">Text</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="text" value=" " id="example-text-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-email-input" class="col-sm-2 col-form-label text-right">Email</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-tel-input" class="col-sm-2 col-form-label text-right">Telephone</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-password-input" class="col-sm-2 col-form-label text-right">Password</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="password" value="hunter2" id="example-password-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-number-input" class="col-sm-2 col-form-label text-right">Number</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="number" value="42" id="example-number-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-datetime-local-input" class="col-sm-2 col-form-label text-right">Date and time</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-color-input" class="col-sm-2 col-form-label text-right">Color</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="color" value="#0e6bd4" id="example-color-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                <div class="form-group row">
-                                                                                    <label class="col-sm-2 col-form-label text-right">Select</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <select class="form-control">
-                                                                                            <option>Select</option>
-                                                                                            <option>Large select</option>
-                                                                                            <option>Small select</option>
-                                                                                        </select>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label class="col-sm-2 col-form-label text-right">Custom Select</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <select class="custom-select">
-                                                                                            <option selected="">Open this select menu</option>
-                                                                                            <option value="1">One</option>
-                                                                                            <option value="2">Two</option>
-                                                                                            <option value="3">Three</option>
-                                                                                        </select>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-text-input-lg" class="col-sm-2 col-form-label text-right">Large</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="example-text-input-lg">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-text-input-sm" class="col-sm-2 col-form-label text-right">Small</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="example-text-input-sm">
-                                                                                    </div>
-                                                                                </div>                                   
+                                            <li class="dd-item" data-id="3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <h4 class="mt-0 header-title">Clients name</h4>
+                                                                <p class="text-muted mb-3">Procurment for client
+                                                                </p>
+
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="form-group row">
+                                                                            <label for="example-text-input" class="col-sm-2 col-form-label text-right">Customer Name</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
                                                                             </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-email-input" class="col-sm-2 col-form-label text-right">Account Manager</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-tel-input" class="col-sm-2 col-form-label text-right">eNgY Transit Sheet</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-password-input" class="col-sm-2 col-form-label text-right">NDA</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-number-input" class="col-sm-2 col-form-label text-right">VAT-/Register ID certificat</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group row">
+                                                                            <label for="example-color-input" class="col-sm-2 col-form-label text-right">Service Agreement</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-search-input" class="col-sm-2 col-form-label text-right">Search</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="search" value=" ot web" id="example-search-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">DPA (Data Protection Agreement)</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
 
 
-                                                                            <div class="col-lg-6">
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-search-input" class="col-sm-2 col-form-label text-right">Search</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="search" value=" ot web" id="example-search-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">URL</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
-                                                                                    </div>
-                                                                                </div> 
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-date-input" class="col-sm-2 col-form-label text-right">Date</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                               
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-week-input" class="col-sm-2 col-form-label text-right">Week</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <label for="example-time-input" class="col-sm-2 col-form-label text-right">Time</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row has-success">
-                                                                                    <label for="inputHorizontalSuccess" class="col-sm-2 col-form-label text-right">Email</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com">
-                                                                                        <div class="form-control-feedback">Success! You've done it.</div>
-                                                                                        <small class="form-text text-muted">Example help text that remains unchanged.</small>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row has-warning">
-                                                                                    <label for="inputHorizontalWarning" class="col-sm-2 col-form-label text-right">Email</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input type="email" class="form-control form-control-warning" id="inputHorizontalWarning" placeholder="name@example.com">
-                                                                                        <div class="form-control-feedback">Shucks, check the formatting of that and try again.</div>
-                                                                                        <small class="form-text text-muted">Example help text that remains unchanged.</small>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row has-error">
-                                                                                    <label for="inputHorizontalDnger" class="col-sm-2 col-form-label text-right">Email</label>
-                                                                                    <div class="col-sm-10">
-                                                                                        <input type="email" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="name@example.com">
-                                                                                        <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
-                                                                                        <small class="form-text text-muted">Example help text that remains unchanged.</small>
-                                                                                    </div>
-                                                                                </div>                                            
+
+                                                                    </div>
+
+
+                                                                    <div class="col-lg-6">
+
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Customer accounts</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
                                                                             </div>
-                                                                        </div>                         
-                                                                                                                    
-                                                                    </div><!--end card-body-->
-                                                                </div><!--end card-->
-                                                            </div><!--end col-->
-                                                        </div><!--end row-->
-                                                    </li>
-                                                    
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Supplier accounts</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Rate Sheet</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Base Routing</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Follow Up</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Action POINT</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" value=" " id="example-text-input">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="example-url-input" class="col-sm-2 col-form-label text-right">Comments</label>
+                                                                            <div class="col-sm-10">
+                                                                                <textarea name="" class="form-control" id="example-text-input" cols="30" rows="5"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <!--end card-body-->
                                                         </div>
-                                                    </li>
-                                                </ol>
-                                            </li>    
-                                        </ol>          
-                                        
-                            </div><!--nastable-list-1-->
+                                                        <!--end card-->
+                                                    </div>
+                                                    <!--end col-->
+                                                </div>
+                                                <!--end row-->
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+
+                            </div>
+                            </div>
+                                <!-- Start of next item -->
+
+
 
                         </div>
+                        <!--nastable-list-1-->
+
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="container-fluid">
+        </div>
+        <br>
 
+
+        <div class="container-fluid">
             <h5>Message Board</h5>
             <div class='row'>
                 <div class="col-lg-6">
@@ -608,16 +586,16 @@ mysqli_query($db, "SET NAMES utf8");
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th id='first' scope="col"style="max-width:175px; padding:15px">Customer</th>
+                            <th id='first' scope="col" style="max-width:175px; padding:15px">Customer</th>
                             <th scope="col" style="max-width:75px; padding:0px">Product in use</th>
-                            <th scope="col" >Traffic Volume</th>
-                            <th scope="col"style="max-width:125px; padding:0px">Main Competitor</th>
-                            <th scope="col"style="max-width:125px; padding:5px">Core Destinations</th>
-                            <th scope="col"style="max-width:125px; padding:0px">Destinations Looking For</th>
-                            <th scope="col"style="max-width:125px; padding:5px">Potential Destinations</th>
-                            <th id="action" scope="col"style="max-width:200px; padding:30px">Action</th>
-                            <th scope="col"style="max-width:175px; padding:30px">Next Step</th>
-                            <th scope="col"style="max-width:175px; padding:30px">Result</th>
+                            <th scope="col">Traffic Volume</th>
+                            <th scope="col" style="max-width:125px; padding:0px">Main Competitor</th>
+                            <th scope="col" style="max-width:125px; padding:5px">Core Destinations</th>
+                            <th scope="col" style="max-width:125px; padding:0px">Destinations Looking For</th>
+                            <th scope="col" style="max-width:125px; padding:5px">Potential Destinations</th>
+                            <th id="action" scope="col" style="max-width:200px; padding:30px">Action</th>
+                            <th scope="col" style="max-width:175px; padding:30px">Next Step</th>
+                            <th scope="col" style="max-width:175px; padding:30px">Result</th>
                             <th scope="col">Date/Comment</th>
                             <th id='last' scope="col">Archive</th>
 
@@ -645,51 +623,126 @@ mysqli_query($db, "SET NAMES utf8");
                 </table>
             </div>
 
-                                                                                        </div>
-            <!-- Navbar -->
-            <!-- Chartovi -->
+        </div>
+        <!-- Navbar -->
+        <!-- Chartovi -->
 
-            <script src="assets/plugins/moment/moment.js"></script>
-            <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
-            <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
-            <script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
-            <script src="assets/pages/jquery.apexcharts.init.js"></script>
-            <script src="assets/plugins/nestable/jquery.nestable.min.js"></script>
-        <script src="assets/pages/jquery.nastable.init.js"></script>
-
-            <script type="text/javascript" src="js/mdb.min.js"></script>
-            <script type="text/javascript" src="js/loginscript.js"></script>
-            <script>
-                rows = ['customer', 'prod', 'traff', 'maincomp', 'dest', 'looking', 'pot', 'act', 'next', 'result', 'datecomm']
+        <script src="assets/plugins/moment/moment.js"></script>
+        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
+        <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
+        <script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
+        <script src="assets/pages/jquery.apexcharts.init.js"></script>
 
 
-                // window.onbeforeunload = function () {
-                // return 'Are you sure you want to leave?';
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="js/loginscript.js"></script>
+        <script>
+            rows = ['customer', 'prod', 'traff', 'maincomp', 'dest', 'looking', 'pot', 'act', 'next', 'result', 'datecomm']
+            function changeTitle(id, col){
+                let updateVal = $("#"+col+ "_"+id).val();
+                $("#proc_title_"+id).html(updateVal);
+                $("#proc_field_"+id).html(updateVal);
+            }
+            function updateProcField(id, col){
+                let updateVal = $("#"+col+ "_"+id).val();
+                // if(col == "cust_name"){
+                //     updateVal = document.getElementById(col+ "_"+id).innerHTML;
                 // }
-                function execUpdate(id, col) {
-                    //console.log(document.getElementById(id+col).innerHTML);
-                    let updateVal = document.getElementById(id + col).innerHTML;
+                console.log(id, col, updateVal);
 
-                    $.post("ajax.php?f=execUpdate", {
-                            id: id,
-                            col: col,
-                            updateVal: updateVal
-                        },
-                        function(response) {
-                            $("#insertResp").html(response);
-                        })
-                }
-
-                function deletePrivateMessageFrom(id) {
-                    console.log("POKRENU")
-                    $.post("ajax.php?f=deletePrivateMessageFrom", {
-                        id: id
-                    }, function(response) {
-                        fillMessages(1);
+                $.post("ajax.php?f=updateProcValues", {
+                        id: id,
+                        col: col,
+                        updateVal: updateVal
+                    },
+                    function(response) {
+                        console.log(response);
                     })
-                }
-            </script>
-            <div id="archvInfo" class="alert alert-success" role="alert">Successfully archived</div>
+
+            }
+            function addNewProc(){
+                let cust_name =     $("#cust_name").val();
+                let acc_men =       $("#acc_men").val();
+                let trans_sheet =   $("#trans_sheet").val();
+                let nda =           $("#nda").val();
+                let vat =           $("#vat").val();
+                let serv_agr =      $("#serv_agr").val();
+                let search =        $("#search").val();
+                let dpa =           $("#dpa").val();
+                let cust_acc =      $("#cust_acc").val();
+                let supp_acc =      $("#supp_acc").val();
+                let rate_sheett =   $("#rate_sheett").val();
+                let base_rout =     $("#base_rout").val();
+                let follow_up =     $("#follow_up").val();
+                let act_point =     $("#act_point").val();
+                let comment =       $("#comment").val();
+
+                console.log(
+                    cust_name,
+                    acc_men,
+                    trans_sheet,
+                    nda,
+                    vat,
+                    serv_agr,
+                    search,
+                    dpa,
+                    cust_acc,
+                    supp_acc,
+                    rate_sheett,
+                    base_rout,
+                    follow_up,
+                    act_point,
+                    comment
+                )
+                $.post("ajax.php?f=insertProcRow", {
+                        cust_name   :cust_name  ,
+                        acc_men     :acc_men    ,
+                        trans_sheet :trans_sheet,
+                        nda         :nda        ,
+                        vat         :vat        ,
+                        serv_agr    :serv_agr   ,
+                        search      :search     ,
+                        dpa         :dpa        ,
+                        cust_acc    :cust_acc   ,
+                        supp_acc    :supp_acc   ,
+                        rate_sheett :rate_sheett,
+                        base_rout   :base_rout  ,
+                        follow_up   :follow_up  ,
+                        act_point   :act_point  ,
+                        comment     :comment
+                    },
+                    function(response) {
+                        console.log(response);
+                    })
+            }
+            // window.onbeforeunload = function () {
+            // return 'Are you sure you want to leave?';
+            // }
+            function execUpdate(id, col) {
+                //console.log(document.getElementById(id+col).innerHTML);
+                let updateVal = document.getElementById(id + col).innerHTML;
+
+                $.post("ajax.php?f=execUpdate", {
+                        id: id,
+                        col: col,
+                        updateVal: updateVal
+                    },
+                    function(response) {
+                        $("#insertResp").html(response);
+                    })
+            }
+
+            function deletePrivateMessageFrom(id) {
+                console.log("POKRENU")
+                $.post("ajax.php?f=deletePrivateMessageFrom", {
+                    id: id
+                }, function(response) {
+                    fillMessages(1);
+                })
+            }
+        </script>
+        <div id="archvInfo" class="alert alert-success" role="alert">Successfully archived</div>
+
 
 </body>
 

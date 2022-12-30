@@ -39,6 +39,9 @@ $(document).ready(function(){
     if(document.getElementById("message_div_private")){
         fillMessages(1);
     }
+    if(document.getElementById("proc_table")){
+        fillProcTable();
+    }
 
     $("#login").click(function(){
         let korIme = $("#form2Example11").val();
@@ -364,6 +367,11 @@ function fillTrafficChart(){
 function fillUsersTableAdmin(){
     $.post("ajax.php?f=fillUsersTableAdmin", function(response){
         $("#admin_users_table").html(response);
+    })
+}
+function fillProcTable(){
+    $.post("ajax.php?f=fillProcTable", function(response){
+        $("#proc_table").html(response);
     })
 }
 function fillApplicationUsersChart(){

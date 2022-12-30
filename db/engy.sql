@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2022 at 05:03 PM
+-- Generation Time: Dec 30, 2022 at 02:47 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -190,9 +190,10 @@ INSERT INTO `trafic_goals` (`id_goal`, `goal_user`, `goal`, `goal_reach`, `goal_
 (14, 2, 2050, 0, '2022-12-28'),
 (15, 3, 12000, 0, '2022-12-28'),
 (16, 5, 3, 0, '2022-12-28'),
-(17, 4, 555, 0, '2022-12-28'),
+(17, 4, 25000, 15000, '2022-12-29'),
 (18, 8, 1212, 0, '2022-12-28'),
-(19, 7, 12444, 0, '2022-12-28');
+(19, 7, 12444, 0, '2022-12-28'),
+(23, 4, 11111, 22222, '2022-11-29');
 
 -- --------------------------------------------------------
 
@@ -208,21 +209,22 @@ CREATE TABLE `user` (
   `email` varchar(80) NOT NULL,
   `password` varchar(80) NOT NULL,
   `team` varchar(80) NOT NULL,
-  `role` int(10) UNSIGNED NOT NULL
+  `role` int(10) UNSIGNED NOT NULL,
+  `deleted_user` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `password`, `team`, `role`) VALUES
-(1, 'Nenad', 'Grubenovic', 'grubi', 'grubi@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'CEO', 1),
-(2, 'Svetlana', 'Grubenovic', 'ceca', 'cecili@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President', 2),
-(3, 'Joca', 'Grubenovic', 'joca', 'cojomaks@yahoo.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Sales Manager', 3),
-(4, 'Aleksa', 'Aleksic', 'beban', 'aleksart919@gs.viser.edu.rs', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Account Manager', 2),
-(5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@sesmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President', 3),
-(7, 'Ivan', 'Ivanovic', 'iva', 'nekimail@test.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3),
-(8, 'Mirko', 'Aleksic', 'miks', 'blejanje@tebra.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3);
+INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `password`, `team`, `role`, `deleted_user`) VALUES
+(1, 'Nenad', 'Grubenovic', 'grubi', 'grubi@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'CEO', 1, 0),
+(2, 'Svetlana', 'Grubenovic', 'ceca', 'cecili@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President', 2, 0),
+(3, 'Joca', 'Grubenovic', 'joca', 'cojomaks@yahoo.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Sales Manager', 3, 0),
+(4, 'Aleksa', 'Aleksic', 'beban', 'aleksart919@gs.viser.edu.rs', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Account Manager', 2, 0),
+(5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@sesmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President', 3, 0),
+(7, 'Ivan', 'Ivanovic', 'iva', 'nekimail@test.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3, 0),
+(8, 'Mirko', 'Aleksic', 'miks', 'blejanje@tebra.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3, 0);
 
 --
 -- Indexes for dumped tables
@@ -309,7 +311,7 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT for table `trafic_goals`
 --
 ALTER TABLE `trafic_goals`
-  MODIFY `id_goal` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_goal` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `user`

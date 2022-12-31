@@ -670,6 +670,20 @@ if($f == "sendReport")
     $stmt->bind_param("si", $report_content, $currUser);
     $stmt->execute();
 }
+// Danijel dodao
+    if($f == "REQUEST_OLD_REPORT"){
+        $currUser = $_SESSION['id_user'];
+        $stmt = $db->prepare("SELECT report_message FROM reports WHERE report_user = " . $currUser);
+        $stmt->execute();
+        $rez = $stmt->get_result();
+
+        if(mysqli_num_rows($rez) > 0){
+            while($red = mysqli_fetch_object($rez)){
+                echo $red->report_message . "\n";
+            }
+        }
+    }
+//
 if($f == "fillReportsTable")
 {
     $stmt = $db->prepare("SELECT * FROM user WHERE role = 3 and deleted_user = 0 order by first_name");

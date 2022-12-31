@@ -320,6 +320,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                             </tr>
                         </thead>
+                        
                         <tbody id="admin_users_table">
                         </tbody>
                     </table>

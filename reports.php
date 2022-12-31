@@ -19,6 +19,7 @@ if (!$db) {
 mysqli_query($db, "SET NAMES utf8");
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -51,7 +52,27 @@ mysqli_query($db, "SET NAMES utf8");
     </head>
 
     <body>
+        <!-- Danijel dodao -->
+            <div class="modal fade col-lg-12" id="MODAL_OLD_REPORTS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modaltitle_for_report">OLD REPORTS</h5>
+                            </div>
+                            <div class="modal-body" style="margin:3px" id='MODAL_FOR_OLD_REPORTS'>
 
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <!-- kraj dodavanja -->
+
+    
     <div> <?php
     navbar();
     ?></div>
@@ -79,6 +100,8 @@ mysqli_query($db, "SET NAMES utf8");
                                         <br>
                                         <br>
                                         <button type="button"  class="btn btn-success" id="sendReportbtn" style= "position:absolute; right:1.5%; bottom:3.5%;">UPLOAD</button>
+                                        <button type="button"  class="btn btn-warning" data-toggle="modal" data-target="#MODAL_OLD_REPORTS" id="OLD_REPORT_BUTTON" style= "position:absolute; right:7.5%; bottom:3.5%;">OLD REPORTS</button>
+                                        <!-- <button class="btn btn-warning" data-toggle="modal" data-target="#MODAL_OLD_REPORTS" <i class="fas fa-pen"></i></button>  -->
                                     </form>
                                 </div><!--end card-body-->
                             </div><!--end card-->

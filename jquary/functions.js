@@ -134,6 +134,15 @@ $(document).ready(function(){
             console.log(response);
         })
     });
+    // Danijel
+    $("#OLD_REPORT_BUTTON").click(function(){
+        $.post("ajax.php?f=REQUEST_OLD_REPORT", function(response){
+            console.log(response);
+        
+            $("#MODAL_FOR_OLD_REPORTS").html(response);
+        })
+    });
+    //
 
     $("#insertRow").click(function(){
         let ins_customer       = $("#ins_customer").html();
@@ -231,7 +240,7 @@ function fillArchiveTable(){
         $("#archive_table").html(response);
     })
 }
-function fillUsersTable(){
+function fillTable(){
     $.post("ajax.php?f=fillUsersTable", function(response){
         $("#users_table").html(response);
     })
@@ -239,6 +248,7 @@ function fillUsersTable(){
 function fillReportsTable(){
     $.post("ajax.php?f=fillReportsTable", function(response){
         $("#reports_table").html(response);
+
     })
 }
 function fillGlobalMessagesModal(){

@@ -439,12 +439,14 @@ if($f == "fillProcTable"){
     <script src="assets/pages/jquery.nastable.init.js"></script>
         ';
     if(mysqli_num_rows($rez) > 0){
+        $br = 1;
         while($red = mysqli_fetch_object($rez)){
+            $br++;
             echo'
 
-            <div class="custom-dd" id="nestable_list_'.$red->id_proc.'">
+            <div class="custom-dd" id="nestable_list_'.$br.'">
                                 <ol class="dd-list">
-                                    <li class="dd-item" data-id="2">
+                                    <li class="dd-item dd-collapsed" data-id="2">
                                         <div class="dd-handle" id="proc_field_'.$red->id_proc.'" style=font-size:18px>
                                             '.$red->cust_name.'
                                         </div>
@@ -604,7 +606,7 @@ if($f == "insertProcRow"){
     //echo "$cust_name $acc_men $trans_sheet $nda $vat $serv_agr $search $dpa $cust_acc $supp_acc $rate_sheett $base_rout $follow_up $act_point $comment";
 
     $stmt = $db->prepare("INSERT INTO `procurment`(`cust_name`, `acc_men`, `trans_sheet`, `nda`, `vat`, `serv_agr`, `search`, `dpa`, `cust_acc`, `supp_acc`, `rate_sheet`, `base_rout`, `follow_up`, `act_point`, `comment`, `user_proc`)
-                                           VALUES (?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?)");
+                                           VALUES (?, ?, ?, ?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?)");
     $stmt->bind_param("sssssssssssssssi",
     $cust_name,
     $acc_men,
@@ -623,6 +625,7 @@ if($f == "insertProcRow"){
     $comment,
     $currUser);
     $stmt->execute();
+    $rez = $stmt->get_result();
 }
 if($f == "usersStatistics"){
     $stmt = $db->prepare("SELECT roles.id_role, sum((CASE WHEN user.deleted_user = 0 THEN 1 ELSE 0 END)) as 'num' FROM user right join roles on user.role = roles.id_role group by id_role;");

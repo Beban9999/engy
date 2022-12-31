@@ -5,7 +5,7 @@
  */
 
 
- 
+
 !function($) {
   "use strict";
 
@@ -23,37 +23,34 @@
   //init
   Nestable.prototype.init = function() {
       // activate Nestable for list 1
-      $('#nestable_list_1').nestable({
-          group: 1
-      }).on('change', this.updateOutput);
+      for(var i = 1; i < 10000; i++){
+          $('#nestable_list_'+i).nestable({
+              group: 1
+          }).on('change', this.updateOutput);
 
-      // activate Nestable for list 2
-      $('#nestable_list_2').nestable({
-          group: 1
-      }).on('change', this.updateOutput);
 
-      // output initial serialised data
-      this.updateOutput($('#nestable_list_1').data('output', $('#nestable_list_1_output')));
-      this.updateOutput($('#nestable_list_2').data('output', $('#nestable_list_2_output')));
 
-      $('#nestable_list_menu').on('click', function (e) {
-          var target = $(e.target),
-              action = target.data('action');
-          if (action === 'expand-all') {
-              $('.dd').nestable('expandAll');
-          }
-          if (action === 'collapse-all') {
-              $('.dd').nestable('collapseAll');
-          }
-      });
+          // output initial serialised data
+          this.updateOutput($('#nestable_list_'+i).data('output', $('#nestable_list_'+i+'_output')));
 
-      $('#nestable_list_3').nestable();
+          $('#nestable_list_menu').on('click', function (e) {
+              var target = $(e.target),
+                  action = target.data('action');
+              if (action === 'expand-all') {
+                  $('.dd').nestable('expandAll');
+              }
+              if (action === 'collapse-all') {
+                  $('.dd').nestable('collapseAll');
+              }
+          });
+
+      }
   },
   //init
   $.Nestable = new Nestable, $.Nestable.Constructor = Nestable
 }(window.jQuery),
 
-//initializing 
+//initializing
 function($) {
   "use strict";
   $.Nestable.init()

@@ -257,6 +257,126 @@ mysqli_query($db, "SET NAMES utf8");
                 <div class="col-lg-12">
                     <div class='card'>
                         <div class="card-body">
+                                        <div class='row'>
+                                            
+                                            <div class="col-lg-3" style = overflow-y:auto>
+                                                <div class='card'>
+                                                <div class="card-body">
+                                                <div class="chat-box-left">
+                                                <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
+
+                                                <h5 style = text-align:center>Use this to open clients form</h5>
+<br>
+                            <div class="tab-content chat-list slimscroll" id="pills-tabContent" style = max-height:300px;overflow-y:scroll>
+                                                <div id="general_chat">
+
+
+                                                                    <div class="col-lg-12">
+                                                                    <div class='card' style = border:solid;margin-bottom:5px>
+                                                                    <div class="card-body" >
+
+                                                                                                <div  class="media new-message">
+                                                                                                        <div class="media-left">
+                                                                                                        </div><!-- media-left -->
+                                                                                                        <div class="media-body">
+                                                                                                            <h6 style = text-align:center;margin-bottom:0px>Cao</h6>
+                                                                                                        </div><!-- end media-body -->
+                                                                                                    </div> <!--end media-->    
+                                                                </div>
+                                                                </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class='card' style = border:solid;margin-bottom:5px>
+                                                                    <div class="card-body" >
+
+                                                                                                <div  class="media new-message">
+                                                                                                        <div class="media-left">
+                                                                                                        </div><!-- media-left -->
+                                                                                                        <div class="media-body">
+                                                                                                            <h6 style = text-align:center;margin-bottom:0px>Cao</h6>
+                                                                                                        </div><!-- end media-body -->
+                                                                                                    </div> <!--end media-->    
+                                                                </div>
+                                                                </div>
+                                                                </div>     <div class="col-lg-12">
+                                                                    <div class='card' style = border:solid;margin-bottom:5px>
+                                                                    <div class="card-body" >
+
+                                                                                                <div  class="media new-message">
+                                                                                                        <div class="media-left">
+                                                                                                        </div><!-- media-left -->
+                                                                                                        <div class="media-body">
+                                                                                                            <h6 style = text-align:center;margin-bottom:0px>Cao</h6>
+                                                                                                        </div><!-- end media-body -->
+                                                                                                    </div> <!--end media-->    
+                                                                </div>
+                                                                </div>
+                                                                </div>     <div class="col-lg-12">
+                                                                    <div class='card' style = border:solid;margin-bottom:5px>
+                                                                    <div class="card-body" >
+
+                                                                                                <div  class="media new-message">
+                                                                                                        <div class="media-left">
+                                                                                                        </div><!-- media-left -->
+                                                                                                        <div class="media-body">
+                                                                                                            <h6 style = text-align:center;margin-bottom:0px>Cao</h6>
+                                                                                                        </div><!-- end media-body -->
+                                                                                                    </div> <!--end media-->    
+                                                                </div>
+                                                                </div>
+                                                                </div>
+
+                                                                                    
+                                                                <div class="col-lg-12">
+                                                                <div class='card' style = border:solid>
+                                                                <div class="card-body">
+
+                                                                                                    <div class="media new-message">
+                                                                                                        <div class="media-left">
+                                                                                                        </div><!-- media-left -->
+                                                                                                        <div class="media-body">
+                                                                                                        <h6 style = text-align:center;margin-bottom:0px>Cao</h6>
+                                                                                                        </div><!-- end media-body -->
+                                                                                                    </div> <!--end media-->    
+                                                                </div>
+                                                                </div>
+                                                                </div>
+                                       
+                                        </div><!--end personal chat-->
+                                </div><!--end tab-content-->
+                            </div><!--end chat-box-left -->
+
+                            </div>
+                                            </div>
+                                            </div>
+
+
+
+                                            <div class="col-lg-9">
+                                                <div class=card>
+                                                <div class="card-body">
+
+                                                <h5>Ovde otvara formu</h5>
+
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+<br>
+            <!--BRISE SE -->
+            <div class='row'>
+                <div class="col-lg-12">
+                    <div class='card'>
+                        <div class="card-body">
 
 
                             <style>

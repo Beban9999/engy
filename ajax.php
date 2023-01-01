@@ -444,7 +444,7 @@ if($f == "fillProcTable"){
             $br++;
             echo'
 
-            <div class="custom-dd" id="nestable_list_'.$br.'">
+            <div class="custom-dd nestable_list" id="nestable_list_'.$br.'">
                                 <ol class="dd-list">
                                     <li class="dd-item dd-collapsed" data-id="2">
                                         <div class="dd-handle" id="proc_field_'.$red->id_proc.'" style=font-size:18px>

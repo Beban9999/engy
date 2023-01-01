@@ -268,7 +268,7 @@ mysqli_query($db, "SET NAMES utf8");
                             <!-- OVDE POCINJE OTVARANJE I ONO ST SE OTVORI -->
                             <h4 class="page-title">Procurment</h4>
 
-                            <div class="custom-dd" id="nestable_list_1">
+                            <div class="custom-dd nestable_list" id="nestable_list_1">
                                 <ol class="dd-list">
                                     <li class="dd-item" data-id="2">
                                         <div class="dd-handle" style=font-size:18px>

@@ -714,8 +714,8 @@ if($f == "fillProcTable"){
         while($red = mysqli_fetch_object($rez)){
 
             echo'
-                <div class="col-lg-12" onclick="fillEditProcForm(\''.$red->id_proc.'\')">
-                <div class="card" style=border:solid;margin-bottom:5px>
+                <div class="col-lg-12">
+                <div class="card" onclick="fillEditProcForm(\''.$red->id_proc.'\', this)" style=border:solid;margin-bottom:5px>
                     <div class="card-body">
 
                         <div class="media new-message">

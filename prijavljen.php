@@ -161,6 +161,9 @@ body {
 .col-sm-2 {
     width: -webkit-fill-available;
 }
+.active_procurment{
+    background-color: red;
+}
 </style>
 
 
@@ -284,8 +287,8 @@ body {
                                                     <div id="general_chat">
 
 
-                                                        <div class="col-lg-12" onclick="fillEditProcForm(0)" >
-                                                            <div class='card' style=border:solid;margin-bottom:5px>
+                                                        <div class="col-lg-12">
+                                                            <div class='card active_procurment' onclick="fillEditProcForm(0, this)"  style=border:solid;margin-bottom:5px>
                                                                 <div class="card-body">
 
                                                                     <div class="media new-message">
@@ -583,12 +586,16 @@ body {
             $("#proc_field_" + id).html(updateVal);
         }
 
-        function fillEditProcForm(id){
+        function fillEditProcForm(id, elem){
+            console.log(elem)
+            old_elem = document.getElementsByClassName('active_procurment')[0];
+            old_elem.classList.remove("active_procurment")
+            elem.classList.add("active_procurment")
+
             $.post("ajax.php?f=fillEditProcForm", {
                     id: id,
                 },
                 function(response) {
-                    console.log(response);
                     $("#proc_edit_form").html(response);
                 })
         }

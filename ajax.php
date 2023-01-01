@@ -432,8 +432,7 @@ if($f == "fillEditProcForm"){
     $id = $_POST["id"];
     if($id == 0){
         echo '
-                                        <h4>Ovde otvara formu</h4>
-                                        <p class="text-muted mb-3">Procurment for client</p>
+                                        <h4>Add new client</h4>
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group row">
@@ -565,7 +564,7 @@ if($f == "fillEditProcForm"){
                                                                 id="act_point">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
+                                                    <div class="form-group row"style=margin-bottom:5px>
                                                         <label for="example-url-input"
                                                             class="col-sm-2 col-form-label text-right">Comments</label>
                                                         <div class="col-sm-10">
@@ -574,7 +573,7 @@ if($f == "fillEditProcForm"){
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group row">
+                                                    <div class="form-group row" style=text-align:right>
                                                         <div class="col-sm-10">
                                                             <button class="btn btn-success"
                                                                 onclick="addNewProc()">Add</button>
@@ -715,7 +714,7 @@ if($f == "fillProcTable"){
 
             echo'
                 <div class="col-lg-12">
-                <div class="card" onclick="fillEditProcForm(\''.$red->id_proc.'\', this)" style=border:solid;margin-bottom:5px>
+                <div class="card" onclick="fillEditProcForm(\''.$red->id_proc.'\', this)" style= border:solid;margin-bottom:5px;>
                     <div class="card-body">
 
                         <div class="media new-message">

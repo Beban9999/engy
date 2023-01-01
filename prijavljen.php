@@ -162,7 +162,8 @@ body {
     width: -webkit-fill-available;
 }
 .active_procurment{
-    background-color: red;
+    background-color: #4B0082 !important;
+    color:white;
 }
 </style>
 
@@ -269,7 +270,7 @@ body {
             <br>
             <div class='row'>
                 <div class="col-lg-12">
-                    <div class='card'>
+                    <div class='card' style = background:#4B0082>
                         <div class="card-body">
                             <div class='row'>
 
@@ -283,12 +284,12 @@ body {
                                                 <h5 style=text-align:center>Use this to open clients form</h5>
                                                 <br>
                                                 <div class="tab-content chat-list slimscroll" id="pills-tabContent"
-                                                    style=max-height:300px;overflow-y:scroll>
+                                                    style=max-height:448px;overflow-y:scroll>
                                                     <div id="general_chat">
 
 
                                                         <div class="col-lg-12">
-                                                            <div class='card active_procurment' onclick="fillEditProcForm(0, this)"  style=border:solid;margin-bottom:5px>
+                                                            <div class='card active_procurment' onclick="fillEditProcForm(0, this)" style=border:solid;margin-bottom:5px>
                                                                 <div class="card-body">
 
                                                                     <div class="media new-message">
@@ -297,13 +298,14 @@ body {
                                                                         <div class="media-body">
                                                                             <h6
                                                                                 style=text-align:center;margin-bottom:0px>
-                                                                                New Form</h6>
+                                                                                <i class="fas fa-plus"></i></h6>
                                                                         </div><!-- end media-body -->
                                                                     </div>
                                                                     <!--end media-->
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <hr style=background:black;>
 
 
                                                         <div id="proc_table">
@@ -327,8 +329,7 @@ body {
                                 <div class="col-lg-9">
                                     <div class=card>
                                         <div class="card-body" id="proc_edit_form">
-                                        <h4>Ovde otvara formu</h4>
-                                        <p class="text-muted mb-3">Procurment for client</p>
+                                        <h4>Add new client</h4>
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group row">
@@ -499,7 +500,7 @@ body {
             <h5>Message Board</h5>
             <div class='row'>
                 <div class="col-lg-6">
-                    <div class='card'>
+                    <div class='card' style = background:#4B0082;color:white>
                         <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Global Messages</b></h5>
                         <hr>
                         <div class="row" id="message_div_global"

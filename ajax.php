@@ -946,9 +946,10 @@ if($f == "fillMessages")
                        <h4 class="mt-2 mb-3" style="text-align:left;font-weight:bold">
                        '.$red->username.' Message'.'
                        </h4>
+                       <hr>
                        <p class="text" style="text-align:left;">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:left;">
-                       <hr>
+                       
                        <li class="list-inline-item">by: <span style="font-weight:bold;color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
 
                            </ul>
@@ -1023,7 +1024,7 @@ if($f == "viewReportForUser"){
 
             if($reports_week == $week){
                 echo $red->report_message;
-                echo '<br><br><p>Date: '.$red->report_date.'</p>';
+                echo '<br><hr><p>Date: '.$red->report_date.'</p>';
                 $isThereReport = 1;
                 break;
             }

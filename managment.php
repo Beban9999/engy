@@ -55,7 +55,7 @@ mysqli_query($db, "SET NAMES utf8");
 </head>
 <style>
     body {
-        background: #E8E8E8;
+        background: #4B0082;
     }
 </style>
 
@@ -112,7 +112,7 @@ mysqli_query($db, "SET NAMES utf8");
                 <div class="modal-header">
                     <h5 class="modal-title" id="modaltitle_for_report">Users's Report</h5>
                 </div>
-                <div class="modal-body" style="border:solid 3px;margin:3px" id='modal_for_report'>
+                <div class="modal-body" style="margin:3px" id='modal_for_report'>
 
                 </div>
                 <div class="modal-footer">

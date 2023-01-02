@@ -268,12 +268,27 @@ body {
                 </div>
             </div>
             <br>
+
             <div class='row'>
                 <div class="col-lg-12">
                     <div class='card' style = background:#4B0082>
                         <div class="card-body">
-                            <div class='row'>
+                        <div class="col-lg-12">
 
+
+                                    <div class="card text-center">
+                                    <div class="card-body">
+                                    <h3 class="card-title">Welcome to Procurment <?php echo $_SESSION['username'];
+                                    ?>!
+                                    </h3><br>
+
+                                    <img src="assets/images/widgets/calendar.png" alt="" height="200" class="mx-auto d-block mb-3">
+                                    </div>
+                                    <div class="card-footer text-muted"><i>“Organizational Procurement is a tight balancing act between <b>“cost and quality”</b> on one side and <b>“time and compliance”</b> on the other side, yet a seasoned procurement specialist keeps it evenly balanced.”</i></div>
+                                    </div>
+</div>
+<br>
+                            <div class='row'>
                                 <div class="col-lg-3" style=overflow-y:auto>
                                     <div class='card'>
                                         <div class="card-body">
@@ -281,7 +296,7 @@ body {
                                                 <img src="assets/images/widgets/p-1.png" alt="" height="186"
                                                     class="mx-auto d-block mb-3">
 
-                                                <h5 style=text-align:center>Use this to open clients form</h5>
+                                                <h5 style=text-align:center>Clients List</h5>
                                                 <br>
                                                 <div class="tab-content chat-list slimscroll" id="pills-tabContent"
                                                     style=max-height:448px;overflow-y:scroll>
@@ -305,8 +320,7 @@ body {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <hr style=background:black;>
-
+    <hr>
 
                                                         <div id="proc_table">
                                                         </div>
@@ -470,7 +484,7 @@ body {
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group row">
+                                                    <div class="form-group row" style=text-align:right;margin-top:5px>
                                                         <div class="col-sm-10">
                                                             <button class="btn btn-success"
                                                                 onclick="addNewProc()">Add</button>
@@ -500,9 +514,12 @@ body {
             <h5>Message Board</h5>
             <div class='row'>
                 <div class="col-lg-6">
-                    <div class='card' style = background:#4B0082;color:white>
+                    <div class='card'>
+
                         <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Global Messages</b></h5>
                         <hr>
+                        <img src="assets/images/widgets/login.png" alt="" height="250" class="mx-auto d-block mb-3">
+
                         <div class="row" id="message_div_global"
                             style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
                     </div>
@@ -511,6 +528,9 @@ body {
                     <div class=card>
                         <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Private Messages</b></h5>
                         <hr>
+
+                        <img src="assets/images/widgets/close.jpg" alt="" height="250" class="mx-auto d-block mb-3">
+
                         <div class="row" id="message_div_private"
                             style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
                     </div>

@@ -266,6 +266,27 @@ if($f == "fillEditUser"){
 
     }
 }
+if($f == "fillPrevReportsForUser"){
+    $currUser = $_SESSION["id_user"];
+    $stmt = $db->prepare("SELECT * FROM `reports` join user on reports.report_user = user.id_user WHERE reports.report_user = ? group by week(report_date) order by report_date desc");
+    $stmt->bind_param("i", $currUser);
+    $stmt->execute();
+
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            echo '
+            <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser('.date("W", strtotime($red->report_date)).','.$red->id_user.',\''.$red->first_name.'\');">
+                <div class="text-center">
+                    <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
+                </div>
+                    Week '.date("W", strtotime($red->report_date)).'
+                </div>
+                    </td>';
+        }
+    }
+
+}
 if($f == "sendTrafficGoal"){
     $traffic = $_POST['inputTraffic'];
     $goalId = $_POST['goalId'];
@@ -949,7 +970,7 @@ if($f == "fillMessages")
                        <hr>
                        <p class="text" style="text-align:left;">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:left;">
-                       
+
                        <li class="list-inline-item">by: <span style="font-weight:bold;color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
 
                            </ul>

@@ -5,7 +5,7 @@ if (!prijavljen()) {
     header("Location: http://localhost/engy/index.php"); //HARDCODE PATH
     exit;
 }
-if(!validate_user()){
+if (!validate_user()) {
     header("Location: http://localhost/engy/index.php?odjava"); //HARDCODE PATH
     exit;
 }
@@ -21,88 +21,121 @@ mysqli_query($db, "SET NAMES utf8");
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Reports</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A premium admin dashboard template by Mannatthemes" name="description" />
-        <meta content="Mannatthemes" name="author" />
-        <link rel="icon" href="logo.png" type="image/x-icon" />
 
-         <!-- Sweet Alert -->
-         <!-- <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css"> -->
-        <link href="assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
-        <script src="js/sweetalert2.min.js"></script>
-        <link rel="stylesheet" href="css/sweetalert2.min.css">
+<head>
+    <meta charset="utf-8" />
+    <title>Reports</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A premium admin dashboard template by Mannatthemes" name="description" />
+    <meta content="Mannatthemes" name="author" />
+    <link rel="icon" href="logo.png" type="image/x-icon" />
 
+    <!-- Sweet Alert -->
+    <!-- <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
+    <script src="js/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link href="/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-
-        <!-- App css -->
+    <!-- App css -->
     <link rel="stylesheet" href="css/mdb.min.css" />
-     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/footer.css" />
-     <link rel="stylesheet" href="css/metricacss.css" />
+    <link rel="stylesheet" href="css/metricacss.css" />
     <script src="jquary/jquary.js"></script>
     <script src="jquary/jquary.form.js"></script>
     <script src="jquary/functions.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/info.js"></script>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
     <div> <?php
-    navbar();
-    ?></div>
+            navbar();
+            ?></div>
 
-      <br>
-            <!-- Page Content-->
-            <div class="page-content">
-            <div class="container-fluid">
+    <br>
+    <div class="modal fade col-lg-12" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaltitle_for_report">Users's Report</h5>
+                </div>
+                <div class="modal-body" style="margin:3px" id='modal_for_report'>
 
-                    <!-- end page title end breadcrumb -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Content-->
+    <div class="page-content">
+        <div class="container-fluid">
 
-
-                    <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'>Write your weekly reports.<br> <b>Don't forget to upload!</b>
-                                    </p>
-                                    <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
-
-                    <div class="row">
-                        <div class="col-12" >
-                            <div class="card" >
-                                <div class="card-body">
-
-
-                                    <form method="post">
-                                        <textarea id="elm1" name="area"></textarea>
-                                        <br>
-                                        <br>
-                                        <button type="button"  class="btn btn-success" id="sendReportbtn" style= "position:absolute; right:1.5%; bottom:3.5%;">UPLOAD</button>
-                                    </form>
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
-</div>
-                </div><!-- container -->
+            <!-- end page title end breadcrumb -->
 
 
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/waves.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+            <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your weekly reports.<br> <b>Don't forget to upload!</b>
+            </p>
+            <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
 
 
-        <!--Wysiwig js-->
-        <script src="assets/plugins/tinymce/tinymce.min.js"></script>
-        <script src="assets/pages/jquery.form-editor.init.js"></script>
+                            <form method="post">
+                                <textarea id="elm1" name="area"></textarea>
+                                <br>
+                                <br>
+                                <button type="button" class="btn btn-success" id="sendReportbtn" style="position:absolute; right:1.5%; bottom:3.5%;">UPLOAD</button>
+                            </form>
+                        </div><!--end card-body-->
+                    </div><!--end card-->
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+        </div>
+    </div><!-- container -->
 
-        <!-- App js -->
-        <script src="assets/js/app.js"></script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>
-<script type="text/javascript" src="js/loginscript.js"></script>
+    <div id="report_preview_for_user">
 
-    </body>
+    </div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/waves.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+
+    <!--Wysiwig js-->
+    <script src="assets/plugins/tinymce/tinymce.min.js"></script>
+    <script src="assets/pages/jquery.form-editor.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/loginscript.js"></script>
+    <script>
+        function viewReportForUser(week, userID, userName) {
+            $("#modaltitle_for_report").html(userName + "'s Report")
+            $.post("ajax.php?f=viewReportForUser", {
+                week: week,
+                userID,
+                userID
+            }, function(response) {
+                $("#modal_for_report").html(response);
+            })
+        }
+    </script>
+
+</body>
+
 </html>

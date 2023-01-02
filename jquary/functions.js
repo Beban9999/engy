@@ -42,6 +42,9 @@ $(document).ready(function(){
     if(document.getElementById("proc_table")){
         fillProcTable();
     }
+    if(document.getElementById("report_preview_for_user")){
+        fillPrevReportsForUser();
+    }
 
     $("#login").click(function(){
         let korIme = $("#form2Example11").val();
@@ -372,6 +375,11 @@ function fillUsersTableAdmin(){
 function fillProcTable(){
     $.post("ajax.php?f=fillProcTable", function(response){
         $("#proc_table").html(response);
+    })
+}
+function fillPrevReportsForUser(){
+    $.post("ajax.php?f=fillPrevReportsForUser", function(response){
+        $("#report_preview_for_user").html(response)
     })
 }
 function fillApplicationUsersChart(){

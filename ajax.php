@@ -363,6 +363,8 @@ if ($f == "openAndSetUserGoals") {
     $stmt = $db->prepare("SELECT * FROM user JOIN teams ON user.team = teams.team_name WHERE user.deleted_user = 0");
     $stmt->execute();
     $rez = $stmt->get_result();
+    echo '        <div class="container-fluid">
+    <div class = "row">';
     if (mysqli_num_rows($rez) > 0) {
         while ($red = mysqli_fetch_object($rez)) {
             $img = "img/" . $red->team_icon;
@@ -379,8 +381,6 @@ if ($f == "openAndSetUserGoals") {
             $rez2 = $stmt2->get_result();
 
             echo '
-        <div class="container-fluid">
-            <div  = "row">
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body text-center">
@@ -429,16 +429,17 @@ if ($f == "openAndSetUserGoals") {
             echo '</p>
                         </div><!--end card-body-->
                     </div><!--end card-->
-                </div><!--end col-->
+                </div><!--end col--><br>
+';
 
-            </div>
-        </div>
-        <br>';
+
             // echo $red->first_name.' '.$red->last_name.' '.'<input type="number" name="" value = "0" placeholder ="Traffic goal" id="tr_goal_'.$red->id_user.'" class="form-control">';
 
 
         }
     }
+    echo '    </div>
+    </div>';
 }
 if($f == "updateProcValues"){
     $rec_id = $_POST["id"];

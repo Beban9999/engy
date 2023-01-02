@@ -944,7 +944,7 @@ if($f == "fillMessages")
                        </div><!--end meta-box-->
                        '.$btn.'
                        <h4 class="mt-2 mb-3" style="text-align:left;font-weight:bold">
-                       '.$red->username.' Message'.'
+                       '.$red->username."'s".' Message'.'
                        </h4>
                        <hr>
                        <p class="text" style="text-align:left;">'.$red->message_text.'</p>

@@ -205,7 +205,6 @@ body {
                                             <h5 class="card-title" style="text-align:center;color:black">
                                                 <b><?php echo $_SESSION['username'] ?>'s Traffic</b></h5>
 
-                                            <br>
                                             <div class="chart-demo">
 
                                                 <div id="apex_mixed1" class="apex-charts"></div>
@@ -235,7 +234,7 @@ body {
                                     <h6 class="card-title" style="text-align:center;color:black">
                                         <b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
 
-                                    <img src="assets/images/widgets/p-1.png" alt="" height="186"
+                                    <img src="assets/images/widgets/p-1.png" alt="" height="184"
                                         class="mx-auto d-block mb-3">
 
                                     <p class="text-muted mb-3" style='text-align:center;font-size:16px;'><b>Write your

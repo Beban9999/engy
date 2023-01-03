@@ -42,6 +42,9 @@ $(document).ready(function(){
     if(document.getElementById("proc_table")){
         fillProcTable();
     }
+    if(document.getElementById("proc_table_arch")){
+        fillProcTable(1);
+    }
     if(document.getElementById("report_preview_for_user")){
         fillPrevReportsForUser();
     }
@@ -372,9 +375,14 @@ function fillUsersTableAdmin(){
         $("#admin_users_table").html(response);
     })
 }
-function fillProcTable(){
-    $.post("ajax.php?f=fillProcTable", function(response){
-        $("#proc_table").html(response);
+function fillProcTable(arch = 0){
+    $.post("ajax.php?f=fillProcTable",{arch:arch}, function(response){
+        if(arch == 0){
+            $("#proc_table").html(response);
+        }
+        else{
+            $("#proc_table_arch").html(response);
+        }
     })
 }
 function fillPrevReportsForUser(){
@@ -474,8 +482,6 @@ function deleteRecord(id){
     })
 }
 function sendToArch(id){
-
-
     document.getElementById("archvInfo").style.visibility = "visible";
     setTimeout(() => {
         document.getElementById("archvInfo").style.visibility = "hidden";

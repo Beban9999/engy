@@ -302,7 +302,7 @@ body {
 
 
                                                         <div class="col-lg-12">
-                                                            <div class='card active_procurment' onclick="fillEditProcForm(0, this)" style=border:solid;margin-bottom:5px>
+                                                            <div class='card active_procurment' id="addNewProcDiv" onclick="fillEditProcForm(0, this)" style=border:solid;margin-bottom:5px>
                                                                 <div class="card-body">
 
                                                                     <div class="media new-message">
@@ -603,7 +603,17 @@ body {
         <script type="text/javascript" src="js/loginscript.js"></script>
         <script>
         rows = ['customer', 'prod', 'traff', 'maincomp', 'dest', 'looking', 'pot', 'act', 'next', 'result', 'datecomm']
-
+        function ArchiveProc(id, val){
+            $.post("ajax.php?f=archiveProc", {
+                    id: id,
+                    val:val
+                },
+                function(response) {
+                    console.log(response);
+                    fillProcTable();
+                    fillEditProcForm(0, document.getElementById("addNewProcDiv"));
+                })
+        }
         function changeTitle(id, col) {
             let updateVal = $("#" + col + "_" + id).val();
             $("#proc_title_" + id).html(updateVal);
@@ -613,7 +623,9 @@ body {
         function fillEditProcForm(id, elem){
             console.log(elem)
             old_elem = document.getElementsByClassName('active_procurment')[0];
-            old_elem.classList.remove("active_procurment")
+            if(old_elem){
+                old_elem.classList.remove("active_procurment")
+            }
             elem.classList.add("active_procurment")
 
             $.post("ajax.php?f=fillEditProcForm", {

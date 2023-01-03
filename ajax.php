@@ -450,6 +450,133 @@ if($f == "updateProcValues"){
     $stmt->bind_param('si',$val, $rec_id);
     $stmt->execute();
 }
+if($f == "fillEditProcFormArch"){
+    $id = $_POST["id"];
+    $stmt = $db->prepare("SELECT * FROM procurment WHERE id_proc = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        if($red = mysqli_fetch_object($rez)){
+            echo '
+            <script src="assets/plugins/nestable/jquery.nestable.min.js"></script>
+            <script src="assets/pages/jquery.nastable.init.js"></script>
+                        <h4 class="mt-0 header-title" id="proc_title_'.$red->id_proc.'">'.$red->cust_name.'</h4>
+                        <p class="text-muted mb-3">Procurment for client</p>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-sm-2 col-form-label text-right">Customer Name</label>
+                                    <div class="col-sm-10">
+                                        <input disabled class="form-control" type="text" value="'.$red->cust_name.'" id="cust_name_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-email-input" class="col-sm-2 col-form-label text-right">Account Manager</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="email" value="'.$red->acc_men.'" id="acc_men_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-tel-input" class="col-sm-2 col-form-label text-right">eNgY Transit Sheet</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->trans_sheet.'" id="trans_sheet_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-password-input" class="col-sm-2 col-form-label text-right">NDA</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control"  disabled type="text" value="'.$red->nda.'" id="nda_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-number-input" class="col-sm-2 col-form-label text-right">VAT-/Register ID certificat</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->vat.'" id="vat_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="example-color-input" class="col-sm-2 col-form-label text-right">Service Agreement</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->serv_agr.'" id="serv_agr_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-search-input" class="col-sm-2 col-form-label text-right">Search</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="search" value="'.$red->search.'" id="search_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">DPA (Data Protection Agreement)</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->dpa.'" id="dpa_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                            <div class="col-lg-6">
+
+                                <div class="form-group row">
+                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Customer accounts</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->cust_acc.'" id="cust_acc_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Supplier accounts</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->supp_acc.'" id="supp_acc_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Rate Sheet</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->rate_sheet.'" id="rate_sheet_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Base Routing</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->base_rout.'" id="base_rout_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Follow Up</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->follow_up.'" id="follow_up_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Action POINT</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled type="text" value="'.$red->act_point.'" id="act_point_'.$red->id_proc.'">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-url-input" class="col-sm-2 col-form-label text-right">Comments</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="" disabled class="form-control" id="comment_'.$red->id_proc.'" cols="30" rows="5">'.$red->comment.'</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row" style=text-align:right;margin-top:5px>
+                                <div class="col-sm-10">
+                                    <button class="btn btn-warning"
+                                        onclick="ArchiveProc('.$red->id_proc.',0)">Return From Archive</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+            ';
+        }
+    }
+}
 if($f == "fillEditProcForm"){
     $id = $_POST["id"];
     if($id == 0){
@@ -719,15 +846,29 @@ if($f == "fillEditProcForm"){
                                         <textarea name="" onfocusout="updateProcField('.$red->id_proc.',\'comment\')" class="form-control" id="comment_'.$red->id_proc.'" cols="30" rows="5">'.$red->comment.'</textarea>
                                     </div>
                                 </div>
+                                <div class="form-group row" style=text-align:right;margin-top:5px>
+                                <div class="col-sm-10">
+                                    <button class="btn btn-warning"
+                                        onclick="ArchiveProc('.$red->id_proc.',1)">Archive</button>
+                                </div>
+                            </div>
                             </div>
                         </div>
             ';
         }
     }
 }
+if($f == "archiveProc"){
+    $id = $_POST["id"];
+    $val = $_POST["val"];
+    $stmt = $db->prepare("UPDATE procurment SET archived = ? WHERE id_proc = ?");
+    $stmt->bind_param("ii", $val, $id);
+    echo $stmt->execute();
+}
 if($f == "fillProcTable"){
     $currUser = $_SESSION["id_user"];
-    $stmt = $db->prepare("SELECT * FROM procurment WHERE deleted = 0 and archived = 0 and user_proc = ? order by date_added desc");
+    $arch = $_POST["arch"];
+    $stmt = $db->prepare("SELECT * FROM procurment WHERE deleted = 0 and archived = $arch and user_proc = ? order by date_added desc");
     $stmt->bind_param("i", $currUser);
     $stmt->execute();
     $rez = $stmt->get_result();
@@ -754,9 +895,6 @@ if($f == "fillProcTable"){
             </div>
 
             ';
-
-
-
         }
     }
 }

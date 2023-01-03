@@ -175,7 +175,7 @@ if($f == "checkGlobalMessages")
             $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.',0)" style="color:white;box-shadow:none" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
         echo '
         <div class="col-lg-12 mb-3">
-           <div class="card"style="background:#8d72e1;color:white">
+           <div class="card">
                <div class="card-body" >
                    <div class="blog-card">
                        <div class="meta-box" >
@@ -187,7 +187,7 @@ if($f == "checkGlobalMessages")
                        </h4>
                        <p class="text" style="text-align:center;">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">
-                       <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
+                       <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:10px" >'.$red->message_date.'</li>
 
                            </ul>
                    </div><!--end blog-card-->
@@ -276,7 +276,7 @@ if($f == "fillPrevReportsForUser"){
     if(mysqli_num_rows($rez) > 0){
         while($red = mysqli_fetch_object($rez)){
             echo '
-            <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport" onclick="viewReportForUser('.date("W", strtotime($red->report_date)).','.$red->id_user.',\''.$red->first_name.'\');">
+            <td><div class="file-box" data-toggle="modal" data-target="#exampleModalreport" style=margin-left:10px;text-align:center onclick="viewReportForUser('.date("W", strtotime($red->report_date)).','.$red->id_user.',\''.$red->first_name.'\');">
                 <div class="text-center">
                     <i class="far fa-file-alt text-primary" style="font-size:36px;cursor:pointer"></i>
                 </div>
@@ -381,7 +381,7 @@ if ($f == "openAndSetUserGoals") {
             $rez2 = $stmt2->get_result();
 
             echo '
-                <div class="col-lg-4">
+                <div class="col-lg-4" style = margin-bottom:10px>
                     <div class="card">
                         <div class="card-body text-center">
                             <img src="' . $img . '" height="80" alt="user" class="rounded-circle thumb-xl">
@@ -958,7 +958,7 @@ if($f == "fillMessages")
         if($message_type != "Private Message") $btn = "";
         echo '
         <div class="col-lg-12 mb-3">
-           <div class="card"style="background:#8d72e1;color:white">
+           <div class="card">
                <div class="card-body" >
                    <div class="blog-card">
                        <div class="meta-box" >
@@ -969,10 +969,10 @@ if($f == "fillMessages")
                        '.$red->username."'s".' Message'.'
                        </h4>
                        <hr>
-                       <p class="text" style="text-align:left;">'.$red->message_text.'</p>
+                       <p class="text" style="text-align:left;font-weight:bold;font-size:18px">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:left;">
 
-                       <li class="list-inline-item">by: <span style="font-weight:bold;color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
+                       <li class="list-inline-item">by: <span style="font-weight:bold;font-size:14px;color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
 
                            </ul>
                    </div><!--end blog-card-->

@@ -270,7 +270,6 @@ body {
 
             <div class='row'>
                 <div class="col-lg-12">
-                    <div class='card' style = background:#4B0082>
                         <div class="card-body">
                         <div class="col-lg-12">
 
@@ -512,27 +511,32 @@ body {
         <div class="container-fluid">
             <h5>Message Board</h5>
             <div class='row'>
-                <div class="col-lg-6">
+                <div class="col-lg-6" >
                     <div class='card'>
+                    <div class='card-body'>
 
-                        <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Global Messages</b></h5>
-                        <hr>
+                        <h5 class="card-title" style="text-align:center;"><b>Global Messages</b></h5>
+                        <br>
                         <img src="assets/images/widgets/login.png" alt="" height="250" class="mx-auto d-block mb-3">
 
                         <div class="row" id="message_div_global"
                             style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
                     </div>
+</div>
                 </div>
                 <div class="col-lg-6">
                     <div class=card>
-                        <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>Private Messages</b></h5>
-                        <hr>
+                    <div class='card-body'>
+
+                        <h5 class="card-title" style="text-align:center;"><b>Private Messages</b></h5>
+                        <br>
 
                         <img src="assets/images/widgets/close.jpg" alt="" height="250" class="mx-auto d-block mb-3">
 
                         <div class="row" id="message_div_private"
                             style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
                     </div>
+</div>
                 </div>
 
             </div>

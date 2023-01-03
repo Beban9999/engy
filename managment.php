@@ -163,10 +163,10 @@ mysqli_query($db, "SET NAMES utf8");
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-8">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" style=text-align:center>Welcome <b> <?php echo $_SESSION['username']; ?> to the Managment</b> </h4>
+                        <h4 class="card-title" style=text-align:center>Welcome <b> <?php echo $_SESSION['username']; ?> </b>to the Managment </h4>
                         <br>
                         <div class="row">
 

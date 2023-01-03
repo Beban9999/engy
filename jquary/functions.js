@@ -5,7 +5,14 @@ $(document).ready(function(){
         fillUsersTableAdmin();
     }
     if(document.getElementById("apex_mixed1")){
-        fillTrafficChart();
+        if(document.getElementById("visit_user")){
+            console.log("NA VISITU SMO!");
+            var user = document.getElementById("visit_user").innerHTML;
+            fillTrafficChart(user);
+        }
+        else{
+            fillTrafficChart();
+        }
     }
     if(document.getElementById("ana_device")){
         fillApplicationUsersChart();
@@ -273,8 +280,8 @@ function fillMessages(type){
     }
 
 }
-function fillTrafficChart(){
-    $.post("ajax.php?f=trafficChart", function (response) {
+function fillTrafficChart(id=0){
+    $.post("ajax.php?f=trafficChart",{id:id}, function (response) {
         console.log(response);
         var respArray = response.split(" ");
         var yourTraffic = respArray[1].split(",").map(function (x) { return parseInt(x); })

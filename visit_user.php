@@ -17,6 +17,17 @@ if (!$db) {
     exit();
 }
 mysqli_query($db, "SET NAMES utf8");
+
+$stmt = $db->prepare("SELECT * FROM user WHERE id_user = ?");
+$stmt->bind_param("i", $_GET["user"]);
+$stmt->execute();
+$rez = $stmt->get_result();
+$user_name_visit = "None";
+if(mysqli_num_rows($rez) > 0){
+    $red = mysqli_fetch_object($rez);
+    $user_name_visit =  $red->username;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -156,7 +167,10 @@ mysqli_query($db, "SET NAMES utf8");
         border-radius: 5px;
     }
 </style>
-
+        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
+        <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
+        <script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
+        <script src="assets/pages/jquery.apexcharts.init.js"></script>
 
 <body id="dashboard_body">
     <?php
@@ -198,7 +212,7 @@ mysqli_query($db, "SET NAMES utf8");
     }
     ?>
     <br>
-     <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'><b>You are at IME NA CIJEM SMO PROFILU Profile.</b>
+     <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'><b>You are at <?php echo $user_name_visit;?>&apos;s Profile.</b>
                                     </p>
                                     <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
 
@@ -206,6 +220,41 @@ mysqli_query($db, "SET NAMES utf8");
     <br>
     <p id="visit_user" style="visibility:hidden; position:absolute;"><?php echo $_GET["user"] ?></p> <!--DONT TOUCH YOU WILL DIE-->
     <div class="container-fluid">
+
+    <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="media">
+                                        <div class="media-body align-self-center">
+                                            <h5 class="card-title" style="text-align:center;color:black">
+                                                <b><?php echo $user_name_visit;?>'s Traffic</b></h5>
+
+                                            <div class="chart-demo">
+
+                                                <div id="apex_mixed1" class="apex-charts"></div>
+                                            </div>
+                                        </div>
+                                        <!--end media body-->
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end col-->
+
+
+
+                            </div><!-- end row -->
+                        </div>
+                        <!--end card-body-->
+                    </div>
+                    <!--end card-->
+                </div>
+
+
+
         <div class="card">
             <br>
         <h4 class="card-title" style = text-align:center >Current Data</h4>

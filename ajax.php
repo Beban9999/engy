@@ -75,6 +75,9 @@ if($f == "deletePrivateMessageFrom")
 
 if($f == "trafficChart"){
     $currUser = $_SESSION['id_user'];
+    if($_POST["id"] != 0){
+        $currUser = $_POST["id"];
+    }
     $stmt = $db->prepare("SELECT * FROM trafic_goals WHERE goal_user = ? order by goal_date");
     $stmt->bind_param("i", $currUser);
     $stmt->execute();

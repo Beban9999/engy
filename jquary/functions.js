@@ -145,6 +145,7 @@ $(document).ready(function(){
         console.log(myContent);
         $.post("ajax.php?f=sendReport",{myContent:myContent}, function(response){
             console.log(response);
+            fillPrevReportsForUser();
         })
     });
 

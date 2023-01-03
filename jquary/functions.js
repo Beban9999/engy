@@ -383,7 +383,13 @@ function fillUsersTableAdmin(){
     })
 }
 function fillProcTable(arch = 0){
-    $.post("ajax.php?f=fillProcTable",{arch:arch}, function(response){
+
+    var user_visit = 0;
+    if(document.getElementById("visit_user")){
+        console.log("NA VISITU SMO ZA PROCURMENT!");
+        user_visit = document.getElementById("visit_user").innerHTML;
+    }
+    $.post("ajax.php?f=fillProcTable",{arch:arch, user_visit:user_visit}, function(response){
         if(arch == 0){
             $("#proc_table").html(response);
         }

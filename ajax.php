@@ -571,7 +571,7 @@ if($f == "fillEditProcFormArch"){
                                 <div class="form-group row" style=text-align:right;margin-top:5px>
                                 <div class="col-sm-10">
                                     <button class="btn btn-warning"
-                                        onclick="ArchiveProc('.$red->id_proc.',0)">Return From Archive</button>
+                                        onclick="ArchiveProc('.$red->id_proc.',0)" id="archiveProcBtn">Return From Archive</button>
                                 </div>
                             </div>
                             </div>
@@ -870,6 +870,9 @@ if($f == "archiveProc"){
 }
 if($f == "fillProcTable"){
     $currUser = $_SESSION["id_user"];
+    if($_POST["user_visit"] != 0){
+        $currUser = $_POST["user_visit"];
+    }
     $arch = $_POST["arch"];
     $stmt = $db->prepare("SELECT * FROM procurment WHERE deleted = 0 and archived = $arch and user_proc = ? order by date_added desc");
     $stmt->bind_param("i", $currUser);

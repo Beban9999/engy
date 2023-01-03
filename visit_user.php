@@ -5,10 +5,10 @@ if (!prijavljen()) {
     header("Location: http://localhost/engy/index.php"); //HARDCODE PATH
     exit;
 }
-if(!validate_user()){
+if (!validate_user()) {
     header("Location: http://localhost/engy/index.php?odjava"); //HARDCODE PATH
     exit;
-  }
+}
 $db = mysqli_connect("localhost", "root", "", "engy");
 
 if (!$db) {
@@ -23,7 +23,7 @@ $stmt->bind_param("i", $_GET["user"]);
 $stmt->execute();
 $rez = $stmt->get_result();
 $user_name_visit = "None";
-if(mysqli_num_rows($rez) > 0){
+if (mysqli_num_rows($rez) > 0) {
     $red = mysqli_fetch_object($rez);
     $user_name_visit =  $red->username;
 }
@@ -166,11 +166,18 @@ if(mysqli_num_rows($rez) > 0){
     .card {
         border-radius: 5px;
     }
+    .col-sm-2 {
+    width: -webkit-fill-available;
+    }
+    .active_procurment{
+        background-color: #4B0082 !important;
+        color:white;
+    }
 </style>
-        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
-        <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
-        <script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
-        <script src="assets/pages/jquery.apexcharts.init.js"></script>
+<script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
+<script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
+<script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
+<script src="assets/pages/jquery.apexcharts.init.js"></script>
 
 <body id="dashboard_body">
     <?php
@@ -212,53 +219,100 @@ if(mysqli_num_rows($rez) > 0){
     }
     ?>
     <br>
-     <p class="text-muted mb-3" style ='text-align:center;font-size:20px;'><b>You are at <?php echo $user_name_visit;?>&apos;s Profile.</b>
-                                    </p>
-                                    <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
+    <p class="text-muted mb-3" style='text-align:center;font-size:20px;'><b>You are at <?php echo $user_name_visit; ?>&apos;s Profile.</b>
+    </p>
+    <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
 
 
     <br>
     <p id="visit_user" style="visibility:hidden; position:absolute;"><?php echo $_GET["user"] ?></p> <!--DONT TOUCH YOU WILL DIE-->
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3" style=overflow-y:auto>
+                <div class='card'>
+                    <div class="card-body">
+                        <div class="chat-box-left">
+                            <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
 
-    <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-body">
-
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="media">
-                                        <div class="media-body align-self-center">
-                                            <h5 class="card-title" style="text-align:center;color:black">
-                                                <b><?php echo $user_name_visit;?>'s Traffic</b></h5>
-
-                                            <div class="chart-demo">
-
-                                                <div id="apex_mixed1" class="apex-charts"></div>
-                                            </div>
-                                        </div>
-                                        <!--end media body-->
+                            <h5 style=text-align:center>Active</h5>
+                            <br>
+                            <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
+                                <div id="general_chat">
+                                    <div id="proc_table">
                                     </div>
-                                    <!--end col-->
                                 </div>
-                                <!--end col-->
-
-
-
-                            </div><!-- end row -->
+                            </div>
                         </div>
-                        <!--end card-body-->
                     </div>
-                    <!--end card-->
                 </div>
+            </div>
+            <div class="col-lg-3" style=overflow-y:auto>
+                <div class='card'>
+                    <div class="card-body">
+                        <div class="chat-box-left">
+                            <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
+
+                            <h5 style=text-align:center>Archive</h5>
+                            <br>
+                            <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
+                                <div id="general_chat">
+                                    <div id="proc_table_arch">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class=card>
+                    <div class="card-body" id="proc_edit_form_arch">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="media">
+                                <div class="media-body align-self-center">
+                                    <h5 class="card-title" style="text-align:center;color:black">
+                                        <b><?php echo $user_name_visit; ?>'s Traffic</b>
+                                    </h5>
+
+                                    <div class="chart-demo">
+
+                                        <div id="apex_mixed1" class="apex-charts"></div>
+                                    </div>
+                                </div>
+                                <!--end media body-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end col-->
+                    </div><!-- end row -->
+                </div>
+                <!--end card-body-->
+            </div>
+            <!--end card-->
+        </div>
+
+
 
 
 
         <div class="card">
             <br>
-        <h4 class="card-title" style = text-align:center >Current Data</h4>
-        <h6 class="card-title" style = text-align:center >Managers current actions </h6>
+            <h4 class="card-title" style=text-align:center>Current Data</h4>
+            <h6 class="card-title" style=text-align:center>Managers current actions </h6>
 
             <table class="table">
                 <thead class="table-dark">
@@ -281,11 +335,11 @@ if(mysqli_num_rows($rez) > 0){
                 </tbody>
             </table>
         </div>
-<br>
+        <br>
         <div class="card">
             <br>
-        <h4 class="card-title" style = text-align:center >Archived Data</h4>
-        <h6 class="card-title" style = text-align:center >Managers past actions </h6>
+            <h4 class="card-title" style=text-align:center>Archived Data</h4>
+            <h6 class="card-title" style=text-align:center>Managers past actions </h6>
 
             <table class="table">
                 <thead class="table-dark">
@@ -313,7 +367,24 @@ if(mysqli_num_rows($rez) > 0){
     <script src="assets/pages/jquery.apexcharts.init.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/loginscript.js"></script>
+    <script>
+        function fillEditProcForm(id, elem) {
+            console.log(elem)
+            old_elem = document.getElementsByClassName('active_procurment')[0];
+            if (old_elem) {
+                old_elem.classList.remove("active_procurment")
+            }
+            elem.classList.add("active_procurment")
 
+            $.post("ajax.php?f=fillEditProcFormArch", {
+                    id: id,
+                },
+                function(response) {
+                    $("#proc_edit_form_arch").html(response);
+                    document.getElementById("archiveProcBtn").remove();
+                })
+        }
+    </script>
 
 </body>
 

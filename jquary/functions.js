@@ -477,11 +477,14 @@ function fillApplicationUsersChart(){
       $("#managers").html(responseArray[1])
       $("#users").html(responseArray[2])
 
+
       $("#account_managers").html(responseArray[3])
       $("#c_levels").html(responseArray[4])
       $("#developers").html(responseArray[5])
-      $("#sales_manager").html(responseArray[6])
-      $("#vice_presidents").html(responseArray[7])
+      $("#procurement_manager").html(responseArray[6])
+      $("#sales_manager").html(responseArray[7])
+      $("#vice_presidents").html(responseArray[8])
+      $("#vice_presidents_of_procurment").html(responseArray[9])
 
     })
 }

@@ -97,7 +97,7 @@ if($f == "trafficChart"){
         echo $goals.' '.$reached.' '.$dates;
     }
     else{
-        echo "0 0".date("Y m",time());
+        echo "0 0 ".date("Y m",time());
     }
 
 }
@@ -363,7 +363,7 @@ if($f == "trafficSetNewValues"){
     }
 }
 if ($f == "openAndSetUserGoals") {
-    $stmt = $db->prepare("SELECT * FROM user JOIN teams ON user.team = teams.team_name WHERE user.deleted_user = 0");
+    $stmt = $db->prepare("SELECT * FROM user JOIN teams ON user.team = teams.team_name WHERE user.deleted_user = 0 and user.role = 3;");
     $stmt->execute();
     $rez = $stmt->get_result();
     echo '        <div class="container-fluid">
@@ -483,7 +483,7 @@ if($f == "fillEditProcFormArch"){
                                 <div class="form-group row">
                                     <label for="example-tel-input" class="col-sm-2 col-form-label text-right">eNgY Transit Sheet</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" disabled type="text" value="'.$red->trans_sheet.'" id="trans_sheet_'.$red->id_proc.'">
+                                        <textarea class="form-control" disabled type="text" value="" rows="1" id="trans_sheet_'.$red->id_proc.'">'.$red->trans_sheet.'</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -609,8 +609,8 @@ if($f == "fillEditProcForm"){
                                                             class="col-sm-2 col-form-label text-right">eNgY Transit
                                                             Sheet</label>
                                                         <div class="col-sm-10">
-                                                            <input class="form-control" type="text" value=""
-                                                                id="trans_sheet">
+                                                            <textarea class="form-control"  rows="1" type="text" value=""
+                                                                id="trans_sheet"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -763,7 +763,7 @@ if($f == "fillEditProcForm"){
                                 <div class="form-group row">
                                     <label for="example-tel-input" class="col-sm-2 col-form-label text-right">eNgY Transit Sheet</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'trans_sheet\')" type="text" value="'.$red->trans_sheet.'" id="trans_sheet_'.$red->id_proc.'">
+                                        <textarea class="form-control"  rows="1" onfocusout="updateProcField('.$red->id_proc.',\'trans_sheet\')" type="text" id="trans_sheet_'.$red->id_proc.'">'.$red->trans_sheet.'</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">

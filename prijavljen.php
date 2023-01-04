@@ -361,8 +361,8 @@ body {
                                                             class="col-sm-2 col-form-label text-right">eNgY Transit
                                                             Sheet</label>
                                                         <div class="col-sm-10">
-                                                            <input class="form-control" type="text" value=""
-                                                                id="trans_sheet">
+                                                            <textarea class="form-control" rows="1" type="text" value=""
+                                                                id="trans_sheet"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

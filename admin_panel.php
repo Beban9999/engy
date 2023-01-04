@@ -251,6 +251,20 @@ mysqli_query($db, "SET NAMES utf8");
                                                 <td id="vice_presidents">5</td>
 
                                             </tr>
+                                            <tr>
+                                                <th scope="row">Vice Presidents of Procuremenet</th>
+
+                                                <td> <img src="img/VPoP.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td id="vice_presidents_of_procurment">5</td>
+
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Procuremenet Manager</th>
+
+                                                <td> <img src="img/PM.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
+                                                <td id="procurement_manager">5</td>
+
+                                            </tr>
 
 
                                         </tbody>

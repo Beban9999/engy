@@ -189,18 +189,18 @@ mysqli_query($db, "SET NAMES utf8");
               <table class="table table-striped table-hover" style=margin:0px;>
                 <thead>
                   <tr>
-                    <th id='first' scope="col">Customer</th>
-                    <th scope="col">Product in use</th>
-                    <th scope="col">Traffic Volume</th>
-                    <th scope="col">Main Competitor</th>
-                    <th scope="col">Core Destinations</th>
-                    <th scope="col">Destinations Looking For</th>
-                    <th scope="col">Potential Destinations</th>
-                    <th scope="col">Action</th>
-                    <th scope="col">Next Step</th>
-                    <th scope="col">Result</th>
-                    <th scope="col">Date/Comment</th>
-                    <th id='last' scope="col">Return</th>
+                    <th id='first' scope="col"                    >Customer</th>
+                    <th scope="col"                               >Product in use</th>
+                    <th scope="col"                               >Traffic Volume</th>
+                    <th scope="col"                               >Main Competitor</th>
+                    <th scope="col"                               >Core Destinations</th>
+                    <th scope="col"         style="width:150px;"  >Destinations Looking For</th>
+                    <th scope="col"         style="width:150px;"  >Potential Destinations</th>
+                    <th scope="col"         style="width:175px;"  >Action</th>
+                    <th scope="col"         style="width:175px;"  >Next Step</th>
+                    <th scope="col"         style="width:175px;"  >Result</th>
+                    <th scope="col"         style="width:175px;"  >Date/Comment</th>
+                    <th id='last' scope="col"                     >Return</th>
                   </tr>
                 </thead>
                 <tbody id="archive_table">

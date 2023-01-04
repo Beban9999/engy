@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2023 at 04:49 PM
+-- Generation Time: Jan 04, 2023 at 10:06 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -51,7 +51,7 @@ CREATE TABLE `data` (
 
 INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, `pot`, `act`, `next`, `result`, `datecomm`, `user`, `data_id`, `deleted`, `archived`) VALUES
 ('test', 'eeeeee', 'qewf', 'joi', 'joi', 'eeee', 'ojiwfg', 'asdasd', 'qweqwe', 'qweqwe', '123123123123', 1, 17, 0, 0),
-('asd', 'asd', 'weqwe', '', 'qwe', '', '', '', '', '', 'eee', 1, 18, 0, 0),
+('asd', 'asd', 'weqwe', 'asdasdasd', 'qwe', 'asdasd', '', 'asdadsasdasdasdasdeeeeeeeeeee', 'asdasdasdasdasdasdasdasd', 'asdasdasdasdasdasdasdasda', 'eeeasdasdasdasdasdasdasdasd', 1, 18, 0, 1),
 ('Aaaaaa', '', 'EEEE', 'qweqwe', 'qwe', 'TESTdd', 'qweqweqwe', 'eee', '', '', '', 1, 19, 0, 1),
 ('Nesa nije smrad', 'testi', 'asdkoaqwe', 'wkropwrgpkqwe', 'gwkopwrqwe', 'fkqweqwe', 'eee', 'Nesto', 'asdasd', 'asd', 'iii', 1, 20, 1, 0),
 ('kita aeae', 'aeise', 'asdasd', 'asdasd', 'ewotrhi', '2asdasd', 'test', 'pisemo&nbsp;', 'haha', '', '', 1, 21, 1, 0),
@@ -128,10 +128,20 @@ CREATE TABLE `procurment` (
 --
 
 INSERT INTO `procurment` (`id_proc`, `cust_name`, `acc_men`, `trans_sheet`, `nda`, `vat`, `serv_agr`, `search`, `dpa`, `cust_acc`, `supp_acc`, `rate_sheet`, `base_rout`, `follow_up`, `act_point`, `date_added`, `comment`, `deleted`, `archived`, `user_proc`) VALUES
-(23, 'sdmasdasdeeeqweqwee', 'ljf bsldjfbsadjfb lj', 'hbfl hjsadbf ashdjfb', 'lh jrbqlshfjbasldfh jb', 'lhjfb l', 'hbf hrbfajsdlhfb ', 'lhjbasdjhf basfjh ', 'bjhfba sdfljhb ', 'hfb sjhdfb asdjhlf', ' bjsadhfbasldfhb ', 'lhfb alshfb lhj', 'b jlfhasbqdfl hj', 'bfh basdlfjhba sdlf', 'bf habdfl habf l', '2023-01-01 15:55:10', 'hdsfsfsf', 0, 0, 1),
+(23, 'sdmasdasdeeeqweqwee', 'ljf bsldjfbsadjfb lj', 'hbfl hjsadbf ashdjfb', 'lh jrbqlshfjbasldfh jb', 'lhjfb l', 'hbf hrbfajsdlhfb ', 'lhjbasdjhf basfjh ', 'bjhfba sdfljhb ', 'hfb sjhdfb asdjhlf', ' bjsadhfbasldfhb ', 'lhfb alshfb lhj', 'b jlfhasbqdfl hj', 'bfh basdlfjhba sdlf', 'bf habdfl habf l', '2023-01-01 15:55:10', 'hdsfsfsf', 0, 1, 1),
 (27, 'TEST', '', '', '', '', '', '', 'asdasd', '', '', '', '', '', '', '2023-01-02 19:24:33', '', 0, 1, 1),
 (28, 'test', 'ba', 'ba', 'qwe', 'qwe', '', '', '', '', '', '', '', '', '', '2023-01-03 17:47:02', '', 0, 1, 4),
-(29, 'qwe', '1213212', '123123123', '', '', '', '', '', '', '', '', '', '', '', '2023-01-03 17:47:09', '', 0, 0, 4);
+(29, 'qwe', '1213212', '123123123', '', '', '', '', '', '', '', '', '', '', '', '2023-01-03 17:47:09', '', 0, 0, 4),
+(30, 'ASDASDASD', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 16:52:16', '', 0, 0, 1),
+(31, 'asdasdasd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:28', '', 0, 1, 1),
+(32, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:30', '', 0, 1, 1),
+(33, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:30', '', 0, 1, 1),
+(34, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:30', '', 0, 1, 1),
+(35, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:31', '', 0, 1, 1),
+(36, 'TEST 123', '123', '321', '123', '312', '123', '321', '123', '123', 'r3232r', 'g442', 'fff44f4fq', 'q3q3', '3rr3', '2023-01-04 20:32:51', 'ASDASDASDASDASDASD', 0, 1, 1),
+(37, '', '', 'asdasdasdasdasd', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 21:22:21', '', 0, 0, 1),
+(38, 'TTT', '', 'asdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqe', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 21:22:42', '', 0, 1, 1),
+(39, '', '', 'Lets test again Lets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test agai', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 21:26:17', '', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -206,7 +216,9 @@ INSERT INTO `teams` (`id_team`, `team_name`, `color`, `team_icon`) VALUES
 (2, 'Vice President', '#38b6ff', 'VP.png'),
 (3, 'Sales Manager', '#ff1616', 'SM.png'),
 (4, 'Account Manager', '#3d9e67', 'AM.png'),
-(5, 'Developer', '#004aad', 'DEV.png');
+(5, 'Developer', '#004aad', 'DEV.png'),
+(6, 'Procurement Manager', '#008037', 'PM.png'),
+(7, 'Vice President of Procurement', '#38b6ff', 'VPoP.png');
 
 -- --------------------------------------------------------
 
@@ -265,7 +277,9 @@ INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `username`, `email`, `
 (4, 'Aleksa', 'Aleksic', 'beban', 'aleksart919@gs.viser.edu.rs', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Account Manager', 2, 0),
 (5, 'Jovan', 'Jovanovic', 'jova', 'aefokj.araerk@sesmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Sales Manager', 3, 0),
 (7, 'Ivan', 'Ivanovic', 'iva', 'nekimail@test.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3, 0),
-(8, 'Mirko', 'Aleksic', 'miks', 'blejanje@tebra.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3, 0);
+(8, 'Mirko', 'Aleksic', 'miks', 'blejanje@tebra.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Developer', 3, 0),
+(10, 'Walter', 'Woyde', 'vox', 'testemail@tspid.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Vice President of Procurement', 2, 0),
+(11, 'Jovana', 'Jeremic', 'joksi', 'ligma@tspid.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Procurement Manager', 3, 0);
 
 --
 -- Indexes for dumped tables
@@ -340,7 +354,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `procurment`
 --
 ALTER TABLE `procurment`
-  MODIFY `id_proc` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_proc` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `reports`
@@ -358,7 +372,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id_team` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_team` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `trafic_goals`
@@ -370,7 +384,7 @@ ALTER TABLE `trafic_goals`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

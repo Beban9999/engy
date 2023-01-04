@@ -36,12 +36,7 @@ mysqli_query($db, "SET NAMES utf8");
     <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/footer.css" />
-
     <link rel="stylesheet" href="css/metricacss.css" />
-    <link href="assets/plugins/nestable/jquery.nestable.min.css" rel="stylesheet" />
-
-
-
 
     <script src="jquary/jquary.js"></script>
     <script src="jquary/jquary.form.js"></script>
@@ -318,8 +313,7 @@ body {
                                                                 </div>
                                                             </div>
                                                         </div>
-    <hr>
-
+                                                        <hr>
                                                         <div id="proc_table">
                                                         </div>
 
@@ -598,9 +592,19 @@ body {
         <script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
         <script src="assets/pages/jquery.apexcharts.init.js"></script>
 
-
         <script type="text/javascript" src="js/mdb.min.js"></script>
         <script type="text/javascript" src="js/loginscript.js"></script>
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.min.js"></script>
+        <script src="assets/js/jquery.slimscroll.min.js"></script>
+        <!--Wysiwig js-->
+        <script src="assets/plugins/tinymce/tinymce.min.js"></script>
+        <script src="assets/pages/jquery.form-editor.init.js"></script>
+      <!-- App js -->
+        <script src="assets/js/app.js"></script>
         <script>
         rows = ['customer', 'prod', 'traff', 'maincomp', 'dest', 'looking', 'pot', 'act', 'next', 'result', 'datecomm']
         function ArchiveProc(id, val){
@@ -738,8 +742,8 @@ body {
         </script>
         <div id="archvInfo" class="alert alert-success" role="alert">Successfully archived</div>
 
-        <script src="assets/plugins/nestable/jquery.nestable.min.js"></script>
-        <script src="assets/pages/jquery.nastable.init.js"></script>
+
+
 </body>
 
 </html>

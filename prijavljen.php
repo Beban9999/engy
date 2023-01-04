@@ -184,86 +184,88 @@ body {
         <div class="container-fluid">
             <!-- Page-Title -->
             <br>
-            <h5 class="page-title">Dashboard</h5>
+            <div id="traffic_div">
+                <br>
+                <h5 class="page-title">Dashboard</h5>
+                <!-- end page title end breadcrumb -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
 
-            <!-- end page title end breadcrumb -->
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="media">
+                                            <div class="media-body align-self-center">
+                                                <h5 class="card-title" style="text-align:center;color:black">
+                                                    <b><?php echo $_SESSION['username'] ?>'s Traffic</b></h5>
 
+                                                <div class="chart-demo">
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="media">
-                                        <div class="media-body align-self-center">
-                                            <h5 class="card-title" style="text-align:center;color:black">
-                                                <b><?php echo $_SESSION['username'] ?>'s Traffic</b></h5>
-
-                                            <div class="chart-demo">
-
-                                                <div id="apex_mixed1" class="apex-charts"></div>
+                                                    <div id="apex_mixed1" class="apex-charts"></div>
+                                                </div>
                                             </div>
+                                            <!--end media body-->
                                         </div>
-                                        <!--end media body-->
+                                        <!--end col-->
                                     </div>
                                     <!--end col-->
-                                </div>
-                                <!--end col-->
 
 
 
-                            </div><!-- end row -->
+                                </div><!-- end row -->
+                            </div>
+                            <!--end card-body-->
                         </div>
-                        <!--end card-body-->
+                        <!--end card-->
                     </div>
-                    <!--end card-->
-                </div>
-                <!--end col-->
+                    <!--end col-->
 
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h6 class="card-title" style="text-align:center;color:black">
-                                        <b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6 class="card-title" style="text-align:center;color:black">
+                                            <b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
 
-                                    <img src="assets/images/widgets/p-1.png" alt="" height="184"
-                                        class="mx-auto d-block mb-3">
+                                        <img src="assets/images/widgets/p-1.png" alt="" height="184"
+                                            class="mx-auto d-block mb-3">
 
-                                    <p class="text-muted mb-3" style='text-align:center;font-size:16px;'><b>Write your
-                                            monthly traffic.</b>
-                                    <table class="table table-bordered mb-0 table-centered">
-                                        <thead>
-                                            <tr>
-                                                <th style="background:#6c4ab6;color:white">Your Traffic</th>
-                                                <th id='traffic_goal_title' style="background:#6c4ab6;color:white">
-                                                    Traffic Goal</th>
-                                            </tr>
-                                        </thead>
-                                        <td id="your_traffic">
-                                            <input id="your_traffic_input" placeholder="Your Traffic"
-                                                class='form-control' type="number">
-                                            <br>
-                                            <button id='your_traffic_send' class='btn btn'
-                                                style=background:#6c4ab6;color:white>Update</button>
-                                            <div id='currGoalId' style='position:absolute; visibility:hidden'></div>
-                                        </td>
-                                        <td id="traffic_goal"></td>
-                                    </table>
-                                    <br>
+                                        <p class="text-muted mb-3" style='text-align:center;font-size:16px;'><b>Write your
+                                                monthly traffic.</b>
+                                        <table class="table table-bordered mb-0 table-centered">
+                                            <thead>
+                                                <tr>
+                                                    <th style="background:#6c4ab6;color:white">Your Traffic</th>
+                                                    <th id='traffic_goal_title' style="background:#6c4ab6;color:white">
+                                                        Traffic Goal</th>
+                                                </tr>
+                                            </thead>
+                                            <td id="your_traffic">
+                                                <input id="your_traffic_input" placeholder="Your Traffic"
+                                                    class='form-control' type="number">
+                                                <br>
+                                                <button id='your_traffic_send' class='btn btn'
+                                                    style=background:#6c4ab6;color:white>Update</button>
+                                                <div id='currGoalId' style='position:absolute; visibility:hidden'></div>
+                                            </td>
+                                            <td id="traffic_goal"></td>
+                                        </table>
+                                        <br>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!--end card-body-->
                     </div>
-                    <!--end card-body-->
                 </div>
-            </div>
-            <br>
 
-            <div class='row'>
+            </div>
+
+            <div class='row' id="procurment_div">
+                <br>
                 <div class="col-lg-12">
                         <div class="card-body">
                         <div class="col-lg-12">
@@ -536,50 +538,53 @@ body {
             </div>
             <br>
             <!-- TABLE -->
-            <h5>Client's Table</h5>
+            <div id="clients_table_div">
+                <h5>Client's Table</h5>
 
-            <div class="card">
+                <div class="card">
 
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                            <th id='first' scope="col" style="max-width:175px; padding:15px">Customer</th>
-                            <th scope="col" style="max-width:75px; padding:0px">Product in use</th>
-                            <th scope="col">Traffic Volume</th>
-                            <th scope="col" style="max-width:125px; padding:0px">Main Competitor</th>
-                            <th scope="col" style="max-width:125px; padding:5px">Core Destinations</th>
-                            <th scope="col" style="max-width:125px; padding:0px">Destinations Looking For</th>
-                            <th scope="col" style="max-width:125px; padding:5px">Potential Destinations</th>
-                            <th id="action" scope="col" style="max-width:200px; padding:30px">Action</th>
-                            <th scope="col" style="max-width:175px; padding:30px">Next Step</th>
-                            <th scope="col" style="max-width:175px; padding:30px">Result</th>
-                            <th scope="col">Date/Comment</th>
-                            <th id='last' scope="col">Archive</th>
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th id='first' scope="col" style="max-width:175px; padding:15px">Customer</th>
+                                <th scope="col" style="max-width:75px; padding:0px">Product in use</th>
+                                <th scope="col">Traffic Volume</th>
+                                <th scope="col" style="max-width:125px; padding:0px">Main Competitor</th>
+                                <th scope="col" style="max-width:125px; padding:5px">Core Destinations</th>
+                                <th scope="col" style="max-width:125px; padding:0px">Destinations Looking For</th>
+                                <th scope="col" style="max-width:125px; padding:5px">Potential Destinations</th>
+                                <th id="action" scope="col" style="max-width:200px; padding:30px">Action</th>
+                                <th scope="col" style="max-width:175px; padding:30px">Next Step</th>
+                                <th scope="col" style="max-width:175px; padding:30px">Result</th>
+                                <th scope="col">Date/Comment</th>
+                                <th id='last' scope="col">Archive</th>
+
+                            </tr>
+                        </thead>
+                        <tr class="proba">
+                            <th id='ins_customer' contenteditable style="max-width:1px; color:purple" scope="row"></th>
+                            <td id='ins_prod' contenteditable style="max-width:1px"></td>
+                            <td id='ins_traff' contenteditable style="max-width:1px"></td>
+                            <td id='ins_maincomp' contenteditable style="max-width:1px"></td>
+                            <td id='ins_dest' contenteditable style="max-width:1px"></td>
+                            <td id='ins_looking' contenteditable style="max-width:1px"></td>
+                            <td id='ins_pot' contenteditable style="max-width:1px"></td>
+                            <td id='ins_act' contenteditable style="max-width:1px"></td>
+                            <td id='ins_next' contenteditable style="max-width:1px"></td>
+                            <td id='ins_result' contenteditable style="max-width:1px"></td>
+                            <td id='ins_datecomm' contenteditable style="max-width:1px"></td>
+                            <td id='lastbutton'><button type="button" id='insertRow'
+                                    class="btn btn-primary1 waves-effect waves-light"
+                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button>
+                            </td>
 
                         </tr>
-                    </thead>
-                    <tr class="proba">
-                        <th id='ins_customer' contenteditable style="max-width:1px; color:purple" scope="row"></th>
-                        <td id='ins_prod' contenteditable style="max-width:1px"></td>
-                        <td id='ins_traff' contenteditable style="max-width:1px"></td>
-                        <td id='ins_maincomp' contenteditable style="max-width:1px"></td>
-                        <td id='ins_dest' contenteditable style="max-width:1px"></td>
-                        <td id='ins_looking' contenteditable style="max-width:1px"></td>
-                        <td id='ins_pot' contenteditable style="max-width:1px"></td>
-                        <td id='ins_act' contenteditable style="max-width:1px"></td>
-                        <td id='ins_next' contenteditable style="max-width:1px"></td>
-                        <td id='ins_result' contenteditable style="max-width:1px"></td>
-                        <td id='ins_datecomm' contenteditable style="max-width:1px"></td>
-                        <td id='lastbutton'><button type="button" id='insertRow'
-                                class="btn btn-primary1 waves-effect waves-light"
-                                style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button>
-                        </td>
+                        <div id="insertResp"></div>
+                        <tbody id="table_body">
+                        </tbody>
+                    </table>
+                </div>
 
-                    </tr>
-                    <div id="insertResp"></div>
-                    <tbody id="table_body">
-                    </tbody>
-                </table>
             </div>
 
         </div>
@@ -741,6 +746,31 @@ body {
         }
         </script>
         <div id="archvInfo" class="alert alert-success" role="alert">Successfully archived</div>
+        <?php
+        echo '<div>'.strpos($_SESSION["team"], "Procurement").'</div>';
+            if(strpos($_SESSION["team"], "Procurement") !== false){
+                echo '
+                <script>
+                document.getElementById("clients_table_div").remove();
+                document.getElementById("traffic_div").remove();
+                </script>
+                ';
+            }
+            if($_SESSION["team"] == "CEO" || $_SESSION["team"] == "Vice President"){
+                echo '
+                <script>
+                document.getElementById("traffic_div").remove();
+                </script>
+                ';
+            }
+            if($_SESSION["team"] == "Account Manager" || $_SESSION["team"] == "Sales Manager"){
+                echo '
+                <script>
+                document.getElementById("procurment_div").remove();
+                </script>
+                ';
+            }
+        ?>
 
 
 

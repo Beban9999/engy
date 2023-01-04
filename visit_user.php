@@ -23,9 +23,11 @@ $stmt->bind_param("i", $_GET["user"]);
 $stmt->execute();
 $rez = $stmt->get_result();
 $user_name_visit = "None";
+$team_visit = "";
 if (mysqli_num_rows($rez) > 0) {
     $red = mysqli_fetch_object($rez);
     $user_name_visit =  $red->username;
+    $team_visit = $red->team;
 }
 
 ?>
@@ -166,12 +168,14 @@ if (mysqli_num_rows($rez) > 0) {
     .card {
         border-radius: 5px;
     }
+
     .col-sm-2 {
-    width: -webkit-fill-available;
+        width: -webkit-fill-available;
     }
-    .active_procurment{
+
+    .active_procurment {
         background-color: #4B0082 !important;
-        color:white;
+        color: white;
     }
 </style>
 <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
@@ -227,140 +231,148 @@ if (mysqli_num_rows($rez) > 0) {
     <br>
     <p id="visit_user" style="visibility:hidden; position:absolute;"><?php echo $_GET["user"] ?></p> <!--DONT TOUCH YOU WILL DIE-->
     <div class="container-fluid">
-    <div class="col-lg-12">
-            <div class="card">
-                <div class="card-body">
-                <h5 style=text-align:center><b>Check <?php echo $user_name_visit; ?>&apos;s Procurment.</b></h5>
-
-</div></div></div>
-<br>
-        <div class="row">
-            <div class="col-lg-3" style=overflow-y:auto>
-                <div class='card'>
+        <div id="procurment_div">
+            <div class="col-lg-12">
+                <div class="card">
                     <div class="card-body">
-                        <div class="chat-box-left">
-                            <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
+                        <h5 style=text-align:center><b>Check <?php echo $user_name_visit; ?>&apos;s Procurment.</b></h5>
 
-                            <h5 style=text-align:center>Active</h5>
-                            <br>
-                            <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
-                                <div id="general_chat">
-                                    <div id="proc_table">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-3" style=overflow-y:auto>
+                    <div class='card'>
+                        <div class="card-body">
+                            <div class="chat-box-left">
+                                <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
+
+                                <h5 style=text-align:center>Active</h5>
+                                <br>
+                                <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
+                                    <div id="general_chat">
+                                        <div id="proc_table">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <h5 style=text-align:center>Archive</h5>
-                            <br>
-                            <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
-                                <div id="general_chat">
-                                    <div id="proc_table_arch">
+                                <hr>
+                                <h5 style=text-align:center>Archive</h5>
+                                <br>
+                                <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
+                                    <div id="general_chat">
+                                        <div id="proc_table_arch">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="col-lg-9">
-                <div class=card>
-                    <div class="card-body" id="proc_edit_form_arch">
+
+                <div class="col-lg-9">
+                    <div class=card>
+                        <div class="card-body" id="proc_edit_form_arch">
+                        </div>
                     </div>
                 </div>
+
             </div>
-           
+
         </div>
-        
-
-<br>
-
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-body">
 
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="media">
-                                <div class="media-body align-self-center">
-                                    <h5 class="card-title" style="text-align:center;color:black">
-                                        <b><?php echo $user_name_visit; ?>'s Traffic</b>
-                                    </h5>
+        <div id="traffic_div">
+            <br>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
 
-                                    <div class="chart-demo">
 
-                                        <div id="apex_mixed1" class="apex-charts"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="media">
+                                    <div class="media-body align-self-center">
+                                        <h5 class="card-title" style="text-align:center;color:black">
+                                            <b><?php echo $user_name_visit; ?>'s Traffic</b>
+                                        </h5>
+
+                                        <div class="chart-demo">
+
+                                            <div id="apex_mixed1" class="apex-charts"></div>
+                                        </div>
                                     </div>
+                                    <!--end media body-->
                                 </div>
-                                <!--end media body-->
+                                <!--end col-->
                             </div>
                             <!--end col-->
-                        </div>
-                        <!--end col-->
-                    </div><!-- end row -->
+                        </div><!-- end row -->
+                    </div>
+                    <!--end card-body-->
                 </div>
-                <!--end card-body-->
+                <!--end card-->
             </div>
-            <!--end card-->
+
         </div>
 
 
-<br>
-
-
-        <div class="card">
-            <br>
-            <h4 class="card-title" style=text-align:center>Current Data</h4>
-            <h6 class="card-title" style=text-align:center>Managers current actions </h6>
-
-            <table class="table">
-                <thead class="table-dark">
-                    <tr>
-                        <th id='first' scope="col">Customer</th>
-                        <th scope="col">Product in use</th>
-                        <th scope="col">Traffic Volume</th>
-                        <th scope="col">Main Competitor</th>
-                        <th scope="col">Core Destinations</th>
-                        <th scope="col">Destinations Looking For</th>
-                        <th scope="col">Potential Destinations</th>
-                        <th id="action" scope="col">Action</th>
-                        <th scope="col">Next Step</th>
-                        <th scope="col">Result</th>
-                        <th scope="col">Date/Comment</th>
-                    </tr>
-                </thead>
-                <div id="insertResp"></div>
-                <tbody id="table_body_visit">
-                </tbody>
-            </table>
-        </div>
         <br>
-        <div class="card">
-            <br>
-            <h4 class="card-title" style=text-align:center>Archived Data</h4>
-            <h6 class="card-title" style=text-align:center>Managers past actions </h6>
 
-            <table class="table">
-                <thead class="table-dark">
-                    <tr>
-                        <th id='first' scope="col">Customer</th>
-                        <th scope="col">Product in use</th>
-                        <th scope="col">Traffic Volume</th>
-                        <th scope="col">Main Competitor</th>
-                        <th scope="col">Core Destinations</th>
-                        <th scope="col">Destinations Looking For</th>
-                        <th scope="col">Potential Destinations</th>
-                        <th id="action" scope="col">Action</th>
-                        <th scope="col">Next Step</th>
-                        <th scope="col">Result</th>
-                        <th scope="col">Date/Comment</th>
-                    </tr>
-                </thead>
-                <div id="insertResp"></div>
-                <tbody id="table_archive_body_visit">
-                </tbody>
-            </table>
+        <div id="clients_table_div">
+            <div class="card">
+                <br>
+                <h4 class="card-title" style=text-align:center>Current Data</h4>
+                <h6 class="card-title" style=text-align:center>Managers current actions </h6>
+
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th id='first' scope="col">Customer</th>
+                            <th scope="col">Product in use</th>
+                            <th scope="col">Traffic Volume</th>
+                            <th scope="col">Main Competitor</th>
+                            <th scope="col">Core Destinations</th>
+                            <th scope="col">Destinations Looking For</th>
+                            <th scope="col">Potential Destinations</th>
+                            <th id="action" scope="col">Action</th>
+                            <th scope="col">Next Step</th>
+                            <th scope="col">Result</th>
+                            <th scope="col">Date/Comment</th>
+                        </tr>
+                    </thead>
+                    <div id="insertResp"></div>
+                    <tbody id="table_body_visit">
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="card">
+                <br>
+                <h4 class="card-title" style=text-align:center>Archived Data</h4>
+                <h6 class="card-title" style=text-align:center>Managers past actions </h6>
+
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th id='first' scope="col">Customer</th>
+                            <th scope="col">Product in use</th>
+                            <th scope="col">Traffic Volume</th>
+                            <th scope="col">Main Competitor</th>
+                            <th scope="col">Core Destinations</th>
+                            <th scope="col">Destinations Looking For</th>
+                            <th scope="col">Potential Destinations</th>
+                            <th id="action" scope="col">Action</th>
+                            <th scope="col">Next Step</th>
+                            <th scope="col">Result</th>
+                            <th scope="col">Date/Comment</th>
+                        </tr>
+                    </thead>
+                    <div id="insertResp"></div>
+                    <tbody id="table_archive_body_visit">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -385,7 +397,30 @@ if (mysqli_num_rows($rez) > 0) {
                 })
         }
     </script>
-
+    <?php
+    if (strpos($team_visit, "Procurement") !== false) {
+        echo '
+                <script>
+                document.getElementById("clients_table_div").remove();
+                document.getElementById("traffic_div").remove();
+                </script>
+                ';
+    }
+    if ($team_visit == "CEO" || $team_visit == "Vice President") {
+        echo '
+                <script>
+                document.getElementById("traffic_div").remove();
+                </script>
+                ';
+    }
+    if ($team_visit == "Account Manager" || $team_visit == "Sales Manager") {
+        echo '
+                <script>
+                document.getElementById("procurment_div").remove();
+                </script>
+                ';
+    }
+    ?>
 </body>
 
 </html>

@@ -129,7 +129,6 @@ mysqli_query($db, "SET NAMES utf8");
   </div>
   <!-- end left-sidenav-->
   <div class="container-fluid">
-
     <div class="card text-center">
       <div class="card-body">
         <h3 class="card-title">Welcome <?php echo $_SESSION['username'];
@@ -141,34 +140,32 @@ mysqli_query($db, "SET NAMES utf8");
       <div class="card-footer text-muted"><i>“The difference between an <b>achiever</b> and a loser is,
           an achiever never gives up, never settles and lastly never forgets.”</i></div>
     </div>
+    <div id="procurement_div">
+      <br>
+      <div class='row'>
+        <div class="col-lg-3" style=overflow-y:auto>
+          <div class='card'>
+            <div class="card-body">
+              <div class="chat-box-left">
+                <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
 
-    <style>
-
-    </style>
-    <br>
-    <div class='row'>
-      <div class="col-lg-3" style=overflow-y:auto>
-        <div class='card'>
-          <div class="card-body">
-            <div class="chat-box-left">
-              <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
-
-              <h5 style=text-align:center>Clients List</h5>
-              <br>
-              <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
-                <div id="general_chat">
-                  <div id="proc_table_arch">
+                <h5 style=text-align:center>Clients List</h5>
+                <br>
+                <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
+                  <div id="general_chat">
+                    <div id="proc_table_arch">
+                    </div>
                   </div>
+                  <!--end personal chat-->
                 </div>
-                <!--end personal chat-->
+                <!--end tab-content-->
               </div>
-              <!--end tab-content-->
-            </div>
-            <!--end chat-box-left -->
+              <!--end chat-box-left -->
 
+            </div>
           </div>
-        </div>
-      </div>
+</div>
+
 
 
 
@@ -179,8 +176,10 @@ mysqli_query($db, "SET NAMES utf8");
         </div>
       </div>
     </div>
+    </div>
     <br>
-    <div class="row">
+
+    <div id ="clients_table_div">
       <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
@@ -210,6 +209,7 @@ mysqli_query($db, "SET NAMES utf8");
           </div>
         </div>
       </div>
+    </div>
 
       <!-- Container wrapper -->
 
@@ -257,6 +257,22 @@ mysqli_query($db, "SET NAMES utf8");
                 })
         }
       </script>
+            <?php
+            if(strpos($_SESSION["team"], "Procurement") !== false){
+                echo '
+                <script>
+                document.getElementById("clients_table_div").remove();
+                </script>
+                ';
+            }
+            if($_SESSION["team"] == "Account Manager" || $_SESSION["team"] == "Sales Manager"){
+                echo '
+                <script>
+                document.getElementById("procurement_div").remove();
+                </script>
+                ';
+            }
+        ?>
 </body>
 
 </html>

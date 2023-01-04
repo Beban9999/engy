@@ -465,7 +465,6 @@ if($f == "fillEditProcFormArch"){
             <script src="assets/plugins/nestable/jquery.nestable.min.js"></script>
             <script src="assets/pages/jquery.nastable.init.js"></script>
                         <h4 class="mt-0 header-title" id="proc_title_'.$red->id_proc.'">'.$red->cust_name.'</h4>
-                        <p class="text-muted mb-3">Procurment for client</p>
 
                         <div class="row">
                             <div class="col-lg-6">
@@ -746,7 +745,6 @@ if($f == "fillEditProcForm"){
             <script src="assets/plugins/nestable/jquery.nestable.min.js"></script>
             <script src="assets/pages/jquery.nastable.init.js"></script>
                         <h4 class="mt-0 header-title" id="proc_title_'.$red->id_proc.'">'.$red->cust_name.'</h4>
-                        <p class="text-muted mb-3">Procurment for client</p>
 
                         <div class="row">
                             <div class="col-lg-6">
@@ -883,7 +881,7 @@ if($f == "fillProcTable"){
 
             echo'
                 <div class="col-lg-12">
-                <div class="card" onclick="fillEditProcForm(\''.$red->id_proc.'\', this)" style= border:solid;margin-bottom:5px;>
+                <div class="card" onclick="fillEditProcForm(\''.$red->id_proc.'\', this)" style= border:none;margin:10px;background:#E0E0E0;>
                     <div class="card-body">
 
                         <div class="media new-message">

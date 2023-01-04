@@ -227,6 +227,13 @@ if (mysqli_num_rows($rez) > 0) {
     <br>
     <p id="visit_user" style="visibility:hidden; position:absolute;"><?php echo $_GET["user"] ?></p> <!--DONT TOUCH YOU WILL DIE-->
     <div class="container-fluid">
+    <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                <h5 style=text-align:center><b>Check <?php echo $user_name_visit; ?>&apos;s Procurment.</b></h5>
+
+</div></div></div>
+<br>
         <div class="row">
             <div class="col-lg-3" style=overflow-y:auto>
                 <div class='card'>
@@ -242,16 +249,7 @@ if (mysqli_num_rows($rez) > 0) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3" style=overflow-y:auto>
-                <div class='card'>
-                    <div class="card-body">
-                        <div class="chat-box-left">
-                            <img src="assets/images/widgets/p-1.png" alt="" height="186" class="mx-auto d-block mb-3">
-
+                            <hr>
                             <h5 style=text-align:center>Archive</h5>
                             <br>
                             <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
@@ -264,18 +262,20 @@ if (mysqli_num_rows($rez) > 0) {
                     </div>
                 </div>
             </div>
+            
             <div class="col-lg-9">
                 <div class=card>
                     <div class="card-body" id="proc_edit_form_arch">
                     </div>
                 </div>
             </div>
-
+           
         </div>
+        
 
+<br>
 
-
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
 
@@ -306,7 +306,7 @@ if (mysqli_num_rows($rez) > 0) {
         </div>
 
 
-
+<br>
 
 
         <div class="card">

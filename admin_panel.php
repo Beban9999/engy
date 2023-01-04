@@ -178,17 +178,17 @@ mysqli_query($db, "SET NAMES utf8");
                                                 </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">Administrators</th>
+                                                <th scope="row">Administrator</th>
                                                 <td id="admins">1</td>
 
                                             </tr>
                                             <tr>
-                                                <th scope="row">Managers</th>
+                                                <th scope="row">Manager</th>
                                                 <td id="managers">3</td>
 
                                             </tr>
                                             <tr>
-                                                <th scope="row">Users</th>
+                                                <th scope="row">User</th>
                                                 <td id="users">5</td>
 
                                             </tr>
@@ -231,7 +231,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                                             </tr>
                                             <tr>
-                                                <th scope="row">Developers</th>
+                                                <th scope="row">Developer</th>
 
                                                 <td><img src="img/DEV.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
                                                 <td id="developers">1</td>
@@ -245,21 +245,21 @@ mysqli_query($db, "SET NAMES utf8");
 
                                             </tr>
                                             <tr>
-                                                <th scope="row">Vice Presidents</th>
+                                                <th scope="row">Vice President</th>
 
                                                 <td> <img src="img/VP.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
                                                 <td id="vice_presidents">5</td>
 
                                             </tr>
                                             <tr>
-                                                <th scope="row">Vice Presidents of Procuremenet</th>
+                                                <th scope="row">Vice President of Procurement</th>
 
                                                 <td> <img src="img/VPoP.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
                                                 <td id="vice_presidents_of_procurment">5</td>
 
                                             </tr>
                                             <tr>
-                                                <th scope="row">Procuremenet Manager</th>
+                                                <th scope="row">Procurement Manager</th>
 
                                                 <td> <img src="img/PM.png" alt="" height="30" class="mx-auto d-block mb-3"></td>
                                                 <td id="procurement_manager">5</td>
@@ -288,19 +288,20 @@ mysqli_query($db, "SET NAMES utf8");
             </div>
             <div class="col-lg-4">
                 <div class='card'>
-                    <br>
-                    <img src="assets/images/widgets/admin.png" alt="" height="330" class="mx-auto d-block mb-3" style=margin-top:15px>
-                    <div class="col-lg-12">
-                        <br>
-                        <h3 class="header-title" style=text-align:center;background:#6c4ab6;color:white>Database Access</h3>
-                        <img src="assets/images/widgets/info.png" alt="" height="92" class="mx-auto d-block mb-3" style=margin-top:15px>
+                <div class='card-body'>
 
-                        <h6 class="header-title" style=text-align:center;>Contact <b>Head Administrators</b> for more informations.</h6>
-                        <h6 class="header-title" style=text-align:center;>At the moment <b><a href="https://www.ngrubii.com/">Nenad</a></b> is only available Head Admin.</h6>
-                        <h6 class="header-title" style=text-align:center;margin:5px>You can find him by pressing on his name, or send him a private email on <a href="mailto:nenad@engy.solutions"><b>nenad@engy.solutions</b></a>.
+                    <br>
+                    <img src="assets/images/widgets/admin.png" alt="" height="310" class="mx-auto d-block mb-3" style=margin-top:15px>
+                    <div class="col-lg-12">
+                        <h3 class="header-title" style=text-align:center;background:#6c4ab6;color:white>Database Access</h3>
+                        <br>
+                        <img src="assets/images/widgets/info.png" alt="" height="92" class="mx-auto d-block mb-3" style=margin-top:15px>
+                        <h5 class="header-title" style=text-align:center;>Contact <b>Head Administrators</b> for more informations.</h6>
+                        <h5 class="header-title" style=text-align:center;>At the moment <b><a href="https://www.ngrubii.com/">Nenad</a></b> is only available Head Admin.</h6>
+                        <h5 class="header-title" style=text-align:center;margin:5px>You can find him by pressing on his name, or send him a private email on <a href="mailto:nenad@engy.solutions"><b>nenad@engy.solutions</b></a>.
                         </h6>
 
-
+</div>
                     </div>
                 </div>
             </div>

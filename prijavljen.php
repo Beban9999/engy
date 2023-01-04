@@ -285,7 +285,7 @@ body {
 <br>
                             <div class='row'>
                                 <div class="col-lg-3" style=overflow-y:auto>
-                                    <div class='card'>
+                                    <div class='card' style = height:756px;>
                                         <div class="card-body">
                                             <div class="chat-box-left">
                                                 <img src="assets/images/widgets/p-1.png" alt="" height="186"
@@ -294,7 +294,7 @@ body {
                                                 <h5 style=text-align:center>Clients List</h5>
                                                 <br>
                                                 <div class="tab-content chat-list slimscroll" id="pills-tabContent"
-                                                    style=max-height:448px;overflow-y:scroll>
+                                                    style=height:180px;overflow-y:scroll>
                                                     <div id="general_chat">
 
 

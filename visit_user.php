@@ -223,9 +223,19 @@ if (mysqli_num_rows($rez) > 0) {
     }
     ?>
     <br>
+    <div class="container-fluid">
+
+    <div class="row">
+                <div class="col-lg-12" style=overflow-y:auto>
+                    <div class='card'>
+                        <div class="card-body">
     <p class="text-muted mb-3" style='text-align:center;font-size:20px;'><b>You are at <?php echo $user_name_visit; ?>&apos;s Profile.</b>
     </p>
-    <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
+    <img src="assets/images/widgets/reporting.png" alt="" height="200" class="mx-auto d-block mb-3">
+</div></div>
+</div>
+</div></div>
+
 
 
     <br>
@@ -321,6 +331,7 @@ if (mysqli_num_rows($rez) > 0) {
 
         <div id="clients_table_div">
             <div class="card">
+                
                 <br>
                 <h4 class="card-title" style=text-align:center>Current Data</h4>
                 <h6 class="card-title" style=text-align:center>Managers current actions </h6>

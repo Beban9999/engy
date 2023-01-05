@@ -61,7 +61,7 @@ if(isset($_GET['odjava']) == true) {
                     style="width: 185px;" alt="logo">
                     <br><br>
                     <h4 class="mt-1 mb-5 pb-1">Welcome Sales Warriors!</h4>
-                    <b><p>Please login to your account</p></b>
+                    <b><p>Please login into your account</p></b>
 
                 </div>
 

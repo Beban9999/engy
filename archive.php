@@ -49,9 +49,9 @@ mysqli_query($db, "SET NAMES utf8");
 
 </head>
 <style>
-  body {
+ body {
     background: #E8E8E8;
-  }
+}
 
   .nav-link {
     font-size: 16px;
@@ -151,7 +151,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                 <h5 style=text-align:center>Clients List</h5>
                 <br>
-                <div class="tab-content chat-list slimscroll" id="pills-tabContent" style=max-height:448px;overflow-y:scroll>
+                <div class="tab-content chat-list slimscroll" id="pills-tabContent"  style=height:188px;overflow-y:scroll>
                   <div id="general_chat">
                     <div id="proc_table_arch">
                     </div>

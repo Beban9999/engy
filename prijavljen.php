@@ -183,7 +183,7 @@ body {
 
         <div class="container-fluid">
             <!-- Page-Title -->
-            <br>
+
             <div id="traffic_div">
                 <br>
                 <h5 class="page-title">Dashboard</h5>
@@ -263,9 +263,43 @@ body {
                 </div>
 
             </div>
+<br>
+            <h5>Message Board</h5>
+            <div class='row'>
+                <div class="col-lg-6" >
+                    <div class='card'>
+                    <div class='card-body'>
 
+                        <h5 class="card-title" style="text-align:center;"><b>Global Messages</b></h5>
+                        <br>
+                        <img src="assets/images/widgets/login.png" alt="" height="250" class="mx-auto d-block mb-3">
+
+                        <div class="row" id="message_div_global"
+                            style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
+                    </div>
+</div>
+                </div>
+                <div class="col-lg-6">
+                    <div class=card>
+                    <div class='card-body'>
+
+                        <h5 class="card-title" style="text-align:center;"><b>Private Messages</b></h5>
+                        <br>
+
+                        <img src="assets/images/widgets/close.jpg" alt="" height="250" class="mx-auto d-block mb-3">
+
+                        <div class="row" id="message_div_private"
+                            style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
+                    </div>
+</div>
+                </div>
+
+            </div>
+<br>
             <div class='row' id="procurment_div">
-                <br>
+                
+                <h5>Procurement</h5>
+                
                 <div class="col-lg-12">
                         <div class="card-body">
                         <div class="col-lg-12">
@@ -273,7 +307,7 @@ body {
 
                                     <div class="card text-center">
                                     <div class="card-body">
-                                    <h3 class="card-title">Welcome to Procurment <?php echo $_SESSION['username'];
+                                    <h3 class="card-title">Welcome to Procurement <?php echo $_SESSION['username'];
                                     ?>!
                                     </h3><br>
 
@@ -505,42 +539,23 @@ body {
 
 
         <div class="container-fluid">
-            <h5>Message Board</h5>
-            <div class='row'>
-                <div class="col-lg-6" >
-                    <div class='card'>
-                    <div class='card-body'>
-
-                        <h5 class="card-title" style="text-align:center;"><b>Global Messages</b></h5>
-                        <br>
-                        <img src="assets/images/widgets/login.png" alt="" height="250" class="mx-auto d-block mb-3">
-
-                        <div class="row" id="message_div_global"
-                            style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
-                    </div>
-</div>
-                </div>
-                <div class="col-lg-6">
-                    <div class=card>
-                    <div class='card-body'>
-
-                        <h5 class="card-title" style="text-align:center;"><b>Private Messages</b></h5>
-                        <br>
-
-                        <img src="assets/images/widgets/close.jpg" alt="" height="250" class="mx-auto d-block mb-3">
-
-                        <div class="row" id="message_div_private"
-                            style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
-                    </div>
-</div>
-                </div>
-
-            </div>
-            <br>
+          
             <!-- TABLE -->
             <div id="clients_table_div">
                 <h5>Client's Table</h5>
+                <div class="col-lg-12">
+                <div class="card">
+                    <br>
+                <h4 style = text-align:center>For your traffic plans</h4>
+                <h5 style = text-align:center>You can archive old agreements, they will be stored in archive.</h5>
+                <br>
+                <div class="card-footer text-muted" style = text-align:center;><i>“Plans are <b>nothing</b>, planning is <b>everything</b>.”
+                                                </i></div>
+                                    </div>
 
+
+                 </div></div></div>
+                 <br>
                 <div class="card">
 
                     <table class="table">

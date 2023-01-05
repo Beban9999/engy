@@ -166,12 +166,12 @@ mysqli_query($db, "SET NAMES utf8");
             <div class="col-8">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" style=text-align:center>Welcome <b> <?php echo $_SESSION['username']; ?> </b>to the Managment </h4>
+                        <h4 class="card-title" style=text-align:center>Welcome to the Managment, <b> <?php echo $_SESSION['username']; ?></b>! </h4>
                         <br>
                         <div class="row">
 
 
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="card">
                                     <img src="assets/images/widgets/p-3.png" alt="" height="100" class="img-fluid">
                                     <div class="card-body product-info">
@@ -200,15 +200,14 @@ mysqli_query($db, "SET NAMES utf8");
                         <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
                         <img src="assets/images/widgets/login.png" alt="" height="209" class="mx-auto d-block mb-3">
                         <br>
-                        <br>
 
                         <div class="form-group row">
 
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="globalMessageText" rows="6" placeholder="Your message"></textarea>
+                            <textarea class="form-control" id="globalMessageText" rows="4" placeholder="Your message"></textarea>
                         </div>
-
+<br>
                         <button type="submit" id="sendGlobalMessage" class="btn btn-primary btn-block px-4" style="background:#6c4ab6;color:white;font-weight:bold">Send Message</button>
                         <button type="button" id='checkGlobalMessages' class="btn btn-primary btn-block px-4" data-toggle="modal" data-target="#exempleScroll" style="background:darkred;font-weight:bold">
                             Remove your Global Messages

@@ -1114,7 +1114,7 @@ if($f == "fillMessages")
                        <p class="text" style="text-align:left;font-weight:bold;font-size:18px">'.$red->message_text.'</p>
                        <ul class="p-0 mt-4 list-inline " style="text-align:left;">
 
-                       <li class="list-inline-item">by: <span style="font-weight:bold;font-size:14px;color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
+                       <li class="list-inline-item">by: <span style="font-weight:bold;font-size:16px;color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
 
                            </ul>
                    </div><!--end blog-card-->

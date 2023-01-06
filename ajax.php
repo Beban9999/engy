@@ -1096,7 +1096,7 @@ if($f == "fillMessages")
             // if($red->team == "Account Manager"){ $color = '#3d9e67';}
             // if($red->team == "Developer"){       $color = '#004aad';}
             $color = $red->color;
-            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.')" style="color:white;box-shadow:none" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
+            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.')" style="box-shadow:none" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
         if($message_type != "Private Message") $btn = "";
         echo '
         <div class="col-lg-12 mb-3">
@@ -1195,11 +1195,11 @@ if($f == "viewReportForUser"){
         }
         if($isThereReport == 0)
         {
-            echo "No report for user";
+            echo "User didn't post a report for this week.";
         }
     }
     else{
-        echo "No report for user";
+        echo "User didn't post a report for this week.";
     }
 }
 if($f == "fillUsersTable"){

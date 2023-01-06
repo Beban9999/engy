@@ -300,7 +300,7 @@ function fillTrafficChart(id=0){
                 }
             },
             stroke: {
-                width: [0, 2, 4],
+                width: [0, 0, 0],
                 curve: 'smooth'
             },
             plotOptions: {
@@ -308,10 +308,10 @@ function fillTrafficChart(id=0){
                     columnWidth: '50%'
                 }
             },
-            colors: ["#000080", "#4B0082"],
+            colors: ["#000080","#9400D3"],
 
             fill: {
-                opacity: [0.85, 0.25, 1],
+                opacity: [0.85, 1, 1],
                 gradient: {
                     inverseColors: false,
                     shade: 'light',
@@ -366,7 +366,7 @@ function fillTrafficChart(id=0){
             data: yourTraffic
         }, {
             name: 'Manager Expetation',
-            type: 'area',
+            type: 'column',
             data: trafficGoal
         },];
         options.labels = glalDates

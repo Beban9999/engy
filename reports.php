@@ -86,27 +86,17 @@ mysqli_query($db, "SET NAMES utf8");
             <!-- end page title end breadcrumb -->
             <div class='row'>
 
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class='card'>
                     <div class="card-body">
 
                             <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your weekly reports.<br> <b>Don't forget to upload!</b>
                             </p>
-                            <img src="assets/images/widgets/reporting.png" alt="" height="300" class="mx-auto d-block mb-3">
+                            <img src="assets/images/widgets/reporting.png" alt="" height="250" class="mx-auto d-block mb-3">
                             </div><!--end card-->
                                 </div> <!-- end col -->
 </div>
-                <div class="col-lg-6">
-                    <div class='card'>
-                    <div class='card-body'>
-                    
-                    <h5 class="modal-title" id="modaltitle_for_report" style = text-align:center>Report History</h5>
-                    <hr>
-                            <div id="report_preview_for_user" style = max-width:800px;overflow-x:scroll>
-                            </div>
-                    </div>
-</div>
-                </div>
+               
             </div>
            <br>
                             <div class="row">
@@ -130,6 +120,21 @@ mysqli_query($db, "SET NAMES utf8");
 
             
         </div>
+        <br>
+        <div class="container-fluid">
+
+        <div class="col-lg-12">
+                    <div class='card'>
+                    <div class='card-body'>
+                    
+                    <h5 class="modal-title" id="modaltitle_for_report" style = text-align:center>Report History</h5>
+                    <hr>
+                            <div id="report_preview_for_user" style = max-width:800px;overflow-x:scroll>
+                            </div>
+                    </div>
+</div>
+                </div>
+</div>
     </div><!-- container -->
 
    

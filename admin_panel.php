@@ -291,10 +291,11 @@ mysqli_query($db, "SET NAMES utf8");
                 <div class='card-body'>
 
                     <br>
-                    <img src="assets/images/widgets/admin.png" alt="" height="310" class="mx-auto d-block mb-3" style=margin-top:15px>
+                    <img src="assets/images/widgets/admin.png" alt="" height="318" class="mx-auto d-block mb-3" style=margin-top:15px>
                     <div class="col-lg-12">
+                    <br>
+
                         <h3 class="header-title" style=text-align:center;background:#6c4ab6;color:white>Database Access</h3>
-                        <br>
                         <img src="assets/images/widgets/info.png" alt="" height="92" class="mx-auto d-block mb-3" style=margin-top:15px>
                         <h5 class="header-title" style=text-align:center;>Contact <b>Head Administrators</b> for more informations.</h6>
                         <h5 class="header-title" style=text-align:center;>At the moment <b><a href="https://www.ngrubii.com/">Nenad</a></b> is only available Head Admin.</h6>

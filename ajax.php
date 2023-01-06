@@ -126,28 +126,29 @@ if($f == "checkPrivateMessages")
             // if($red->team == "Account Manager"){ $color = '#3d9e67';}
             // if($red->team == "Developer"){       $color = '#004aad';}
             $color = $red->color;
-            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.','.$forUser.')" style="color:white" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
-        echo '
-        <div class="col-lg-12 mb-3">
-           <div class="card"style="background:#8d72e1;color:white">
-               <div class="card-body" >
-                   <div class="blog-card">
-                       <div class="meta-box" >
-
-                       </div><!--end meta-box-->
-                       '.$btn.'
-                       <h4 class="mt-2 mb-3" style="text-align:center">
-                       '.$message_type.'
-                       </h4>
-                       <p class="text" style="text-align:center;">'.$red->message_text.'</p>
-                       <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">
-                       <li class="list-inline-item">by: <span style="font-weight:bold;color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:12px" >'.$red->message_date.'</li>
-
-                           </ul>
-                   </div><!--end blog-card-->
-               </div><!--end card-body-->
-           </div><!--end card-->
-       </div> <!--end col-->';
+            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.','.$forUser.')" style=box-shadow:none class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
+    // Nenad Nenad Nenad Nenad
+            echo '
+            <div class="col-lg-12 mb-3">
+            <div class="card">
+                <div class="card-body" >
+                    <div class="blog-card">
+                        <div class="meta-box" >
+ 
+                        </div><!--end meta-box-->
+                        '.$btn.'
+                        <h4 class="mt-2 mb-3" style="text-align:center">
+                        '.$message_type.'
+                        </h4>
+                        <p class="text" style="text-align:center;">'.$red->message_text.'</p>
+                        <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">
+                        <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:10px" >'.$red->message_date.'</li>
+ 
+                            </ul>
+                    </div><!--end blog-card-->
+                </div><!--end card-body-->
+            </div><!--end card-->
+        </div> <!--end col-->';
         }
     }
 }
@@ -175,7 +176,7 @@ if($f == "checkGlobalMessages")
             // if($red->team == "Account Manager"){ $color = '#3d9e67';}
             // if($red->team == "Developer"){       $color = '#004aad';}
             $color = $red->color;
-            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.',0)" style="color:white;box-shadow:none" class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
+            $btn = '<button type="button" onclick = "deletePrivateMessageFrom('.$red->id_message.',0)" style=box-shadow:none class="position-absolute top-0 end-0 btn waves-effect waves-light">X</button>';
         echo '
         <div class="col-lg-12 mb-3">
            <div class="card">

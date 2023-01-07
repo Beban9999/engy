@@ -173,7 +173,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                             <div class="col-lg-4">
                                 <div class="card">
-                                    <img src="assets/images/widgets/p-3.png" alt="" height="100" class="img-fluid">
+                                    <img src="assets/images/widgets/p-3.png" alt="" height="100" class="img-fluid ">
                                     <div class="card-body product-info">
                                         <br>
                                         <h4 class="product-title" style=text-align:center> Set Traffic Goals</h4>
@@ -198,7 +198,7 @@ mysqli_query($db, "SET NAMES utf8");
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
-                        <img src="assets/images/widgets/login.png" alt="" height="209" class="mx-auto d-block mb-3">
+                        <img src="assets/images/widgets/login.png" alt="" height="209" class="img-fluid">
                         <br>
 
                         <div class="form-group row">

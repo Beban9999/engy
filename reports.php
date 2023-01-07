@@ -92,7 +92,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                             <p class="text-muted mb-3" style='text-align:center;font-size:20px;'>Write your weekly reports.<br> <b>Don't forget to upload!</b>
                             </p>
-                            <img src="assets/images/widgets/reporting.png" alt="" height="250" class="mx-auto d-block mb-3">
+                            <img src="assets/images/widgets/reporting.png" alt="" style = "max-width: 350px; width:100%;" class="img-fluid center-block d-block mx-auto">
                             </div><!--end card-->
                                 </div> <!-- end col -->
 </div>

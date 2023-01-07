@@ -2,12 +2,12 @@
 session_start();
 require_once("f.php");
 if (!prijavljen()) {
-    header("Location: http://localhost/engy/index.php"); //HARDCODE PATH
+    header("Location: http://".$_SERVER["SERVER_NAME"]."/engy/index.php"); //HARDCODE PATH
     exit;
 }
 $db = mysqli_connect("localhost", "root", "", "engy");
 if(!validate_user()){
-    header("Location: http://localhost/engy/index.php?odjava"); //HARDCODE PATH
+    header("Location: http://".$_SERVER["SERVER_NAME"]."/engy/index.php?odjava"); //HARDCODE PATH
     exit;
   }
 if (!$db) {

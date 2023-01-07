@@ -633,7 +633,6 @@ if($f == "fillEditProcForm"){
                                                                 id="serv_agr">
                                                         </div>
                                                     </div>
-                                                    </div>
                                                     <div class="form-group row">
                                                         <label for="example-url-input"
                                                             class="col-sm-2 col-form-label text-right">DPA (Data
@@ -642,9 +641,6 @@ if($f == "fillEditProcForm"){
                                                             <input class="form-control" type="text" value="" id="dpa">
                                                         </div>
                                                     </div>
-
-
-
                                                 </div>
 
 
@@ -893,7 +889,6 @@ if($f == "insertProcRow"){
     $nda     =      $_POST["nda"];
     $vat=           $_POST["vat"];
     $serv_agr=      $_POST["serv_agr"];
-    $search=        $_POST["search"];
     $dpa=           $_POST["dpa"];
     $cust_acc=      $_POST["cust_acc"];
     $supp_acc=      $_POST["supp_acc"];
@@ -905,16 +900,15 @@ if($f == "insertProcRow"){
 
     //echo "$cust_name $acc_men $trans_sheet $nda $vat $serv_agr $search $dpa $cust_acc $supp_acc $rate_sheett $base_rout $follow_up $act_point $comment";
 
-    $stmt = $db->prepare("INSERT INTO `procurment`(`cust_name`, `acc_men`, `trans_sheet`, `nda`, `vat`, `serv_agr`, `search`, `dpa`, `cust_acc`, `supp_acc`, `rate_sheet`, `base_rout`, `follow_up`, `act_point`, `comment`, `user_proc`)
-                                           VALUES (?, ?, ?, ?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?)");
-    $stmt->bind_param("sssssssssssssssi",
+    $stmt = $db->prepare("INSERT INTO `procurment`(`cust_name`, `acc_men`, `trans_sheet`, `nda`, `vat`, `serv_agr`, `dpa`, `cust_acc`, `supp_acc`, `rate_sheet`, `base_rout`, `follow_up`, `act_point`, `comment`, `user_proc`)
+                                           VALUES (?, ?, ?, ?, ?, ?,?, ?,?, ?, ?,?, ?, ?,?)");
+    $stmt->bind_param("ssssssssssssssi",
     $cust_name,
     $acc_men,
     $trans_sheet,
     $nda,
     $vat,
     $serv_agr,
-    $search,
     $dpa,
     $cust_acc,
     $supp_acc,

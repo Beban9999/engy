@@ -364,7 +364,7 @@ if($f == "trafficSetNewValues"){
     }
 }
 if ($f == "openAndSetUserGoals") {
-    $stmt = $db->prepare("SELECT * FROM user JOIN teams ON user.team = teams.team_name WHERE user.deleted_user = 0 and user.role = 3;");
+    $stmt = $db->prepare("SELECT * FROM user JOIN teams ON user.team = teams.team_name WHERE user.deleted_user = 0 and user.team = 'Sales Manager' or user.team = 'Account Manager';");
     $stmt->execute();
     $rez = $stmt->get_result();
     echo '        <div class="container-fluid">

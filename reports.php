@@ -96,7 +96,7 @@ mysqli_query($db, "SET NAMES utf8");
                             </div><!--end card-->
                                 </div> <!-- end col -->
 </div>
-               
+
             </div>
            <br>
                             <div class="row">
@@ -118,7 +118,7 @@ mysqli_query($db, "SET NAMES utf8");
                                 </div> <!-- end col -->
                             </div> <!-- end row -->
 
-            
+
         </div>
         <br>
         <div class="container-fluid">
@@ -126,10 +126,10 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="col-lg-12">
                     <div class='card'>
                     <div class='card-body'>
-                    
+
                     <h5 class="modal-title" id="modaltitle_for_report" style = text-align:center>Report History</h5>
                     <hr>
-                            <div id="report_preview_for_user" style = max-width:800px;overflow-x:scroll>
+                            <div id="report_preview_for_user" style = overflow-x:scroll>
                             </div>
                     </div>
 </div>
@@ -137,7 +137,7 @@ mysqli_query($db, "SET NAMES utf8");
 </div>
     </div><!-- container -->
 
-   
+
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

@@ -135,7 +135,7 @@ mysqli_query($db, "SET NAMES utf8");
                                         ?>!
           </h5><br>
 
-          <img src="assets/images/widgets/calendar.png" alt="" height="300" class="mx-auto d-block mb-3">
+          <img src="assets/images/widgets/calendar.png" alt="" style = "max-width:300px" class="img-fluid">
       </div>
       <div class="card-footer text-muted"><i>“The difference between an <b>achiever</b> and a loser is,
           an achiever never gives up, never settles and lastly never forgets.”</i></div>
@@ -171,6 +171,7 @@ mysqli_query($db, "SET NAMES utf8");
 
       <div class="col-lg-9">
         <div class=card>
+          
           <div class="card-body" id="proc_edit_form_arch">
           </div>
         </div>
@@ -184,6 +185,7 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="card">
           <div class="card-body">
             <div class="card">
+            <div class="table-responsive">
 
               <table class="table table-striped table-hover" style=margin:0px;>
                 <thead>
@@ -206,6 +208,7 @@ mysqli_query($db, "SET NAMES utf8");
                 </tbody>
               </table>
             </div>
+</div>
           </div>
         </div>
       </div>

@@ -226,11 +226,11 @@ body {
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h6 class="card-title" style="text-align:center;color:black">
+                                        <h6 style="text-align:center;color:black">
                                             <b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
 
-                                        <img src="assets/images/widgets/p-1.png" alt="" height="184"
-                                            class="mx-auto d-block mb-3">
+                                        <img src="assets/images/widgets/p-1.png" class="center-block d-block mx-auto" alt="" style = "max-width: 350px; width:100%;"
+                                            >
 
                                         <p class="text-muted mb-3" style='text-align:center;font-size:16px;'><b>Write your
                                                 monthly traffic.</b>
@@ -272,7 +272,7 @@ body {
 
                         <h5 class="card-title" style="text-align:center;"><b>Global Messages</b></h5>
                         <br>
-                        <img src="assets/images/widgets/login.png" alt="" height="250" class="mx-auto d-block mb-3">
+                        <img src="assets/images/widgets/login.png" alt="" style = "max-width: 400px; width:100%;" class="img-fluid center-block d-block mx-auto">
 
                         <div class="row" id="message_div_global"
                             style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
@@ -286,7 +286,7 @@ body {
                         <h5 class="card-title" style="text-align:center;"><b>Private Messages</b></h5>
                         <br>
 
-                        <img src="assets/images/widgets/close.jpg" alt="" height="250" class="mx-auto d-block mb-3">
+                        <img src="assets/images/widgets/close.jpg" alt="" style = "max-width:400px; width:100%;" class="img-fluid center-block d-block mx-auto">
 
                         <div class="row" id="message_div_private"
                             style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
@@ -311,7 +311,7 @@ body {
                                     ?>!
                                     </h3><br>
 
-                                    <img src="assets/images/widgets/calendar.png" alt="" height="200" class="mx-auto d-block mb-3">
+                                    <img src="assets/images/widgets/calendar.png" alt="" height="200" class="img-fluid">
                                     </div>
                                     <div class="card-footer text-muted"><i>“Organizational Procurement is a tight balancing act between <b>“cost and quality”</b> on one side and <b>“time and compliance”</b> on the other side, yet a seasoned procurement specialist keeps it evenly balanced.”</i></div>
                                     </div>
@@ -549,6 +549,7 @@ body {
                  </div>
                  <br>
                 <div class="card">
+                <div class="table-responsive">
 
                     <table class="table">
                         <thead class="table-dark">
@@ -592,7 +593,7 @@ body {
                     </table>
                 </div>
             </div>
-
+</div>
         </div>
         <!-- Navbar -->
         <!-- Chartovi -->

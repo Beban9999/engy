@@ -84,14 +84,21 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a id="prijavljen" class="nav-link" href="prijavljen.php">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a id="reports" class="nav-link" href="reports.php">Reports</a>
-                </li>
-                <li class="nav-item">
-                    <a id="archive" class="nav-link" href="archive.php">Archive</a>
-                </li>
-                ';
+                </li>';
+
+                if($_SESSION["team"] != "Developer"){
+
+                    if($_SESSION["team"] != "CEO" && $_SESSION["team"] != "Vice President")
+                    echo '<li class="nav-item">
+                        <a id="reports" role="link" class="nav-link" href="reports.php">Reports</a>
+                    </li>';
+
+
+                    echo '<li class="nav-item">
+                        <a id="archive" class="nav-link" href="archive.php">Archive</a>
+                    </li>
+                    ';
+                }
                     if($_SESSION["status"] == 1){
                     echo '<li class="nav-item">
                             <a id="managment" class="nav-link" href="managment.php">Managment</a>

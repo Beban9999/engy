@@ -265,6 +265,13 @@ mysqli_query($db, "SET NAMES utf8");
                 </script>
                 ';
             }
+            if($_SESSION["team"] == "CEO" || $_SESSION["team"] == "Vice President"){
+              echo '
+              <script>
+              document.getElementById("procurement_div").remove();
+              </script>
+              ';
+          }
             if($_SESSION["team"] == "Account Manager" || $_SESSION["team"] == "Sales Manager"){
                 echo '
                 <script>
@@ -272,6 +279,14 @@ mysqli_query($db, "SET NAMES utf8");
                 </script>
                 ';
             }
+            if($_SESSION["team"] == "Developer"){
+              echo '
+              <script>
+              document.getElementById("procurement_div").remove();
+              document.getElementById("clients_table_div").remove();
+              </script>
+              ';
+          }
         ?>
 </body>
 

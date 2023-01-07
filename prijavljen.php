@@ -546,7 +546,7 @@ body {
                                     </div>
 
 
-                 </div></div></div>
+                 </div>
                  <br>
                 <div class="card">
 
@@ -591,7 +591,6 @@ body {
                         </tbody>
                     </table>
                 </div>
-
             </div>
 
         </div>
@@ -766,6 +765,7 @@ body {
                 echo '
                 <script>
                 document.getElementById("traffic_div").remove();
+                document.getElementById("procurment_div").remove();
                 </script>
                 ';
             }
@@ -773,6 +773,15 @@ body {
                 echo '
                 <script>
                 document.getElementById("procurment_div").remove();
+                </script>
+                ';
+            }
+            if($_SESSION["team"] == "Developer"){
+                echo '
+                <script>
+                document.getElementById("procurment_div").remove();
+                document.getElementById("traffic_div").remove();
+                document.getElementById("clients_table_div").remove();
                 </script>
                 ';
             }

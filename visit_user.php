@@ -331,7 +331,7 @@ if (mysqli_num_rows($rez) > 0) {
 
         <div id="clients_table_div">
             <div class="card">
-                
+
                 <br>
                 <h4 class="card-title" style=text-align:center>Current Data</h4>
                 <h6 class="card-title" style=text-align:center>Managers current actions </h6>
@@ -421,6 +421,7 @@ if (mysqli_num_rows($rez) > 0) {
         echo '
                 <script>
                 document.getElementById("traffic_div").remove();
+                document.getElementById("procurment_div").remove();
                 </script>
                 ';
     }
@@ -430,6 +431,15 @@ if (mysqli_num_rows($rez) > 0) {
                 document.getElementById("procurment_div").remove();
                 </script>
                 ';
+    }
+    if($team_visit == "Developer"){
+        echo '
+        <script>
+        document.getElementById("procurment_div").remove();
+        document.getElementById("traffic_div").remove();
+        document.getElementById("clients_table_div").remove();
+        </script>
+        ';
     }
     ?>
 </body>

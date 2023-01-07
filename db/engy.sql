@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2023 at 10:06 PM
+-- Generation Time: Jan 07, 2023 at 07:42 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -57,7 +57,8 @@ INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, 
 ('kita aeae', 'aeise', 'asdasd', 'asdasd', 'ewotrhi', '2asdasd', 'test', 'pisemo&nbsp;', 'haha', '', '', 1, 21, 1, 0),
 ('test', 'asdasd', 'feok', 'rkogw', 'rgwokwrgowrk', 'rwpokwrgpowrkg', 'rwpgwrpok', 'real data', 'wepok', 'wpogkreopqkrpokqe', 'erpo', 1, 22, 1, 0),
 ('grwouhwrgou', 'sim', 'oewrghwo', 'rowghoworgjh', 'owgrh', 'wrgoh', 'gwroh', '', '', '', '', 4, 23, 0, 0),
-('test za<br>', '<div>arhivu</div><div><br></div>', 'tebra', '', '', '', '', '', '', '', '', 4, 24, 0, 0);
+('test za<br>', '<div>arhivu</div><div><br></div>', 'tebra', '', '', '', '', '', '', '', '', 4, 24, 0, 0),
+('', '', '', '', '', 'asdasd', '', '', '', '', '', 1, 25, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,6 @@ CREATE TABLE `procurment` (
   `nda` varchar(255) NOT NULL,
   `vat` varchar(255) NOT NULL,
   `serv_agr` varchar(255) NOT NULL,
-  `search` varchar(255) NOT NULL,
   `dpa` varchar(255) NOT NULL,
   `cust_acc` varchar(255) NOT NULL,
   `supp_acc` varchar(255) NOT NULL,
@@ -127,21 +127,21 @@ CREATE TABLE `procurment` (
 -- Dumping data for table `procurment`
 --
 
-INSERT INTO `procurment` (`id_proc`, `cust_name`, `acc_men`, `trans_sheet`, `nda`, `vat`, `serv_agr`, `search`, `dpa`, `cust_acc`, `supp_acc`, `rate_sheet`, `base_rout`, `follow_up`, `act_point`, `date_added`, `comment`, `deleted`, `archived`, `user_proc`) VALUES
-(23, 'sdmasdasdeeeqweqwee', 'ljf bsldjfbsadjfb lj', 'hbfl hjsadbf ashdjfb', 'lh jrbqlshfjbasldfh jb', 'lhjfb l', 'hbf hrbfajsdlhfb ', 'lhjbasdjhf basfjh ', 'bjhfba sdfljhb ', 'hfb sjhdfb asdjhlf', ' bjsadhfbasldfhb ', 'lhfb alshfb lhj', 'b jlfhasbqdfl hj', 'bfh basdlfjhba sdlf', 'bf habdfl habf l', '2023-01-01 15:55:10', 'hdsfsfsf', 0, 1, 1),
-(27, 'TEST', '', '', '', '', '', '', 'asdasd', '', '', '', '', '', '', '2023-01-02 19:24:33', '', 0, 1, 1),
-(28, 'test', 'ba', 'ba', 'qwe', 'qwe', '', '', '', '', '', '', '', '', '', '2023-01-03 17:47:02', '', 0, 1, 4),
-(29, 'qwe', '1213212', '123123123', '', '', '', '', '', '', '', '', '', '', '', '2023-01-03 17:47:09', '', 0, 0, 4),
-(30, 'ASDASDASD', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 16:52:16', '', 0, 0, 1),
-(31, 'asdasdasd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:28', '', 0, 1, 1),
-(32, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:30', '', 0, 1, 1),
-(33, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:30', '', 0, 1, 1),
-(34, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:30', '', 0, 1, 1),
-(35, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:31', '', 0, 1, 1),
-(36, 'TEST 123', '123', '321', '123', '312', '123', '321', '123', '123', 'r3232r', 'g442', 'fff44f4fq', 'q3q3', '3rr3', '2023-01-04 20:32:51', 'ASDASDASDASDASDASD', 0, 1, 1),
-(37, '', '', 'asdasdasdasdasd', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 21:22:21', '', 0, 0, 1),
-(38, 'TTT', '', 'asdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqe', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 21:22:42', '', 0, 1, 1),
-(39, '', '', 'Lets test again Lets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test agai', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 21:26:17', '', 0, 0, 1);
+INSERT INTO `procurment` (`id_proc`, `cust_name`, `acc_men`, `trans_sheet`, `nda`, `vat`, `serv_agr`, `dpa`, `cust_acc`, `supp_acc`, `rate_sheet`, `base_rout`, `follow_up`, `act_point`, `date_added`, `comment`, `deleted`, `archived`, `user_proc`) VALUES
+(23, 'sdmasdasdeeeqweqwee', 'ljf bsldjfbsadjfb lj', 'hbfl hjsadbf ashdjfb', 'lh jrbqlshfjbasldfh jb', 'lhjfb l', 'hbf hrbfajsdlhfb ', 'bjhfba sdfljhb ', 'hfb sjhdfb asdjhlf', ' bjsadhfbasldfhb ', 'lhfb alshfb lhj', 'b jlfhasbqdfl hj', 'bfh basdlfjhba sdlf', 'bf habdfl habf l', '2023-01-01 15:55:10', 'hdsfsfsf', 0, 1, 1),
+(27, 'TEST', '', '', '', '', '', 'asdasd', '', '', '', '', '', '', '2023-01-02 19:24:33', '', 0, 1, 1),
+(28, 'test', 'ba', 'ba', 'qwe', 'qwe', '', '', '', '', '', '', '', '', '2023-01-03 17:47:02', '', 0, 1, 4),
+(29, 'qwe', '1213212', '123123123', '', '', '', '', '', '', '', '', '', '', '2023-01-03 17:47:09', '', 0, 0, 4),
+(30, 'ASDASDASD', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 16:52:16', '', 0, 0, 1),
+(31, 'asdasdasd', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:28', '', 0, 1, 1),
+(32, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:30', '', 0, 1, 1),
+(33, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:30', '', 0, 1, 1),
+(34, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:30', '', 0, 1, 1),
+(35, 'asdasdasadd', '', '', '', '', '', '', '', '', '', '', '', '', '2023-01-04 20:27:31', '', 0, 1, 1),
+(36, 'TEST 123', '123', '321', '123', '312', '123', '123', '123', 'r3232r', 'g442', 'fff44f4fq', 'q3q3', '3rr3', '2023-01-04 20:32:51', 'ASDASDASDASDASDASD', 0, 1, 1),
+(37, 'TEST', '', 'asdasdasdasdasd', '', '', '', '', '', '', '', '', '', '', '2023-01-04 21:22:21', '', 0, 0, 1),
+(38, 'TTT', '', 'asdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqeasdadsasdpfejkqwjfwqe', '', '', '', '', '', '', '', '', '', '', '2023-01-04 21:22:42', '', 0, 1, 1),
+(39, 'asdasd', 'asdasd', 'Lets test again Lets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test againLets test agai', 'asd', 'asd', 'asd', 'asd', 'asdasdasd', 'eqwe123123', 'asd', 'asd', 'asd', 'asd', '2023-01-04 21:26:17', 'asdasdasd', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -342,7 +342,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `data_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `data_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `messages`

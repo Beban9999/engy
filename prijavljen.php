@@ -297,9 +297,9 @@ body {
             </div>
 <br>
             <div class='row' id="procurment_div">
-                
+
                 <h5>Procurement</h5>
-                
+
                 <div class="col-lg-12">
                         <div class="card-body">
                         <div class="col-lg-12">
@@ -427,14 +427,6 @@ body {
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="example-search-input"
-                                                            class="col-sm-2 col-form-label text-right">Search</label>
-                                                        <div class="col-sm-10">
-                                                            <input class="form-control" type="search" value=""
-                                                                id="search">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
                                                         <label for="example-url-input"
                                                             class="col-sm-2 col-form-label text-right">DPA (Data
                                                             Protection Agreement)</label>
@@ -539,7 +531,7 @@ body {
 
 
         <div class="container-fluid">
-          
+
             <!-- TABLE -->
             <div id="clients_table_div">
                 <h5>Client's Table</h5>
@@ -762,7 +754,6 @@ body {
         </script>
         <div id="archvInfo" class="alert alert-success" role="alert">Successfully archived</div>
         <?php
-        echo '<div>'.strpos($_SESSION["team"], "Procurement").'</div>';
             if(strpos($_SESSION["team"], "Procurement") !== false){
                 echo '
                 <script>

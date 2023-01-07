@@ -134,7 +134,7 @@ if($f == "checkPrivateMessages")
                 <div class="card-body" >
                     <div class="blog-card">
                         <div class="meta-box" >
- 
+
                         </div><!--end meta-box-->
                         '.$btn.'
                         <h4 class="mt-2 mb-3" style="text-align:center">
@@ -143,7 +143,7 @@ if($f == "checkPrivateMessages")
                         <p class="text" style="text-align:center;">'.$red->message_text.'</p>
                         <ul class="p-0 mt-4 list-inline " style="text-align:center;margin-bottom:1px;">
                         <li class="list-inline-item">by: <span style="color:'.$color.'">'.$red->username.'</span></li><br><li class="list" style="font-size:10px" >'.$red->message_date.'</li>
- 
+
                             </ul>
                     </div><!--end blog-card-->
                 </div><!--end card-body-->
@@ -507,12 +507,6 @@ if($f == "fillEditProcFormArch"){
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="example-search-input" class="col-sm-2 col-form-label text-right">Search</label>
-                                    <div class="col-sm-10">
-                                        <input class="form-control" disabled type="search" value="'.$red->search.'" id="search_'.$red->id_proc.'">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <label for="example-url-input" class="col-sm-2 col-form-label text-right">DPA (Data Protection Agreement)</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" disabled type="text" value="'.$red->dpa.'" id="dpa_'.$red->id_proc.'">
@@ -639,13 +633,6 @@ if($f == "fillEditProcForm"){
                                                                 id="serv_agr">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label for="example-search-input"
-                                                            class="col-sm-2 col-form-label text-right">Search</label>
-                                                        <div class="col-sm-10">
-                                                            <input class="form-control" type="search" value=""
-                                                                id="search">
-                                                        </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="example-url-input"
@@ -787,12 +774,6 @@ if($f == "fillEditProcForm"){
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="example-search-input" class="col-sm-2 col-form-label text-right">Search</label>
-                                    <div class="col-sm-10">
-                                        <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'search\')" type="search" value="'.$red->search.'" id="search_'.$red->id_proc.'">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <label for="example-url-input" class="col-sm-2 col-form-label text-right">DPA (Data Protection Agreement)</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'dpa\')" type="text" value="'.$red->dpa.'" id="dpa_'.$red->id_proc.'">
@@ -809,13 +790,13 @@ if($f == "fillEditProcForm"){
                                 <div class="form-group row">
                                     <label for="example-url-input" class="col-sm-2 col-form-label text-right">Customer accounts</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'acc_men\')" type="text" value="'.$red->cust_acc.'" id="cust_acc_'.$red->id_proc.'">
+                                        <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'cust_acc\')" type="text" value="'.$red->cust_acc.'" id="cust_acc_'.$red->id_proc.'">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-url-input" class="col-sm-2 col-form-label text-right">Supplier accounts</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'acc_men\')" type="text" value="'.$red->supp_acc.'" id="supp_acc_'.$red->id_proc.'">
+                                        <input class="form-control" onfocusout="updateProcField('.$red->id_proc.',\'supp_acc\')" type="text" value="'.$red->supp_acc.'" id="supp_acc_'.$red->id_proc.'">
                                     </div>
                                 </div>
                                 <div class="form-group row">

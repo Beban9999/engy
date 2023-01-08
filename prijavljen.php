@@ -304,7 +304,7 @@ body {
                                     ?>!
                                     </h3><br>
 
-                                    <img src="assets/images/widgets/calendar.png" alt="" height="200" class="img-fluid">
+                                    <img src="assets/images/widgets/calendar.png" alt="" style = "max-width: 350px; width:100%;" class="img-fluid center-block d-block mx-auto">
                                     </div>
                                     <div class="card-footer text-muted"><i>“Organizational Procurement is a tight balancing act between <b>“cost and quality”</b> on one side and <b>“time and compliance”</b> on the other side, yet a seasoned procurement specialist keeps it evenly balanced.”</i></div>
                                     </div>
@@ -520,7 +520,6 @@ body {
 
             <br>
         </div>
-        <br>
 
 
         <div class="container-fluid">

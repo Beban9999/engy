@@ -102,7 +102,7 @@ if(isset($_GET['odjava']) == true) {
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <img src="assets/images/widgets/p-1.png" alt="" height="300" class="mx-auto d-block mb-3">
+                <img src="assets/images/widgets/p-1.png" alt="" style = "max-width: 350px; width:100%;" class="img-fluid center-block d-block mx-auto">
                 <h4 class="mb-4">“The way to get started is to quit talking and begin doing.” </h4>
                 <p class="big mb-0">– Walt Disney</p>
               </div>

@@ -176,9 +176,10 @@ mysqli_query($db, "SET NAMES utf8");
     <div id ="clients_table_div">
       <div class="col-lg-12">
         <div class="card">
+        <div class="table-responsive">
+
           <div class="card-body">
             <div class="card">
-            <div class="table-responsive">
 
               <table class="table table-striped table-hover" style=margin:0px;>
                 <thead>
@@ -201,7 +202,6 @@ mysqli_query($db, "SET NAMES utf8");
                 </tbody>
               </table>
             </div>
-</div>
           </div>
         </div>
       </div>

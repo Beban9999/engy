@@ -322,8 +322,10 @@ if (mysqli_num_rows($rez) > 0) {
 
         <br>
 
-        <div id="clients_table_div">
-            <div class="card">
+    <div id="clients_table_div">
+        <div class="card">
+            <div class="table-responsive">
+
 
                 <br>
                 <h4 class="card-title" style=text-align:center>Current Data</h4>
@@ -350,8 +352,11 @@ if (mysqli_num_rows($rez) > 0) {
                     </tbody>
                 </table>
             </div>
+        </div>
             <br>
-            <div class="card">
+        <div class="card">
+            <div class="table-responsive">
+
                 <br>
                 <h4 class="card-title" style=text-align:center>Archived Data</h4>
                 <h6 class="card-title" style=text-align:center>Managers past actions </h6>
@@ -378,7 +383,8 @@ if (mysqli_num_rows($rez) > 0) {
                 </table>
             </div>
         </div>
-    </div>
+     </div>
+ </div>
 
     <script src="assets/pages/jquery.apexcharts.init.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>

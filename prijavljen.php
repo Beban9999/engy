@@ -272,7 +272,7 @@ body {
                     </div>
 </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class=card>
                     <div class='card-body'>
@@ -614,6 +614,17 @@ body {
         rows = ['customer', 'prod', 'traff', 'maincomp', 'dest', 'looking', 'pot', 'act', 'next', 'result', 'datecomm']
         function ArchiveProc(id, val){
             $.post("ajax.php?f=archiveProc", {
+                    id: id,
+                    val:val
+                },
+                function(response) {
+                    console.log(response);
+                    fillProcTable();
+                    fillEditProcForm(0, document.getElementById("addNewProcDiv"));
+                })
+        }
+        function DeleteProc(id, val){
+            $.post("ajax.php?f=deleteProc", {
                     id: id,
                     val:val
                 },

@@ -830,6 +830,8 @@ if($f == "fillEditProcForm"){
                                 <div class="col-sm-10">
                                     <button class="btn btn-warning"
                                         onclick="ArchiveProc('.$red->id_proc.',1)">Archive</button>
+                                        <button class="btn btn-danger"
+                                        onclick="DeleteProc('.$red->id_proc.',1)" id="deleteProcBtn">Delete</button>
                                 </div>
                             </div>
                             </div>
@@ -843,6 +845,12 @@ if($f == "archiveProc"){
     $val = $_POST["val"];
     $stmt = $db->prepare("UPDATE procurment SET archived = ? WHERE id_proc = ?");
     $stmt->bind_param("ii", $val, $id);
+    echo $stmt->execute();
+}
+if($f == "deleteProc"){
+    $id = $_POST["id"];
+    $stmt = $db->prepare("UPDATE procurment SET deleted = 1 WHERE id_proc = ?");
+    $stmt->bind_param("i", $id);
     echo $stmt->execute();
 }
 if($f == "fillProcTable"){

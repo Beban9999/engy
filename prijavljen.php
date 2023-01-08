@@ -222,7 +222,7 @@ body {
                                         <h6 style="text-align:center;color:black">
                                             <b><?php echo $_SESSION['username'] ?>'s traffic goal</b></h6>
 
-                                        <img src="assets/images/widgets/p-1.png" class="center-block d-block mx-auto" alt="" style = "max-width: 350px; width:100%;"
+                                        <img src="assets/images/widgets/p-1.png" class="center-block d-block mx-auto" alt="" style = "max-width: 273px; width:100%;"
                                             >
 
                                         <p class="text-muted mb-3" style='text-align:center;font-size:16px;'><b>Write your
@@ -272,6 +272,7 @@ body {
                     </div>
 </div>
                 </div>
+                
                 <div class="col-lg-6">
                     <div class=card>
                     <div class='card-body'>

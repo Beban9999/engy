@@ -3,16 +3,16 @@
 session_start();
 require_once("f.php");
 
-if(isset($_SESSION['user']) and isset($_SESSION['status']) and isset($_GET['odjava']) == false){           
-    header("Location: http://localhost/engy/prijavljen.php"); //Za sada hardcode path
+if(isset($_SESSION['user']) and isset($_SESSION['status']) and isset($_GET['odjava']) == false){
+    header("Location: http://".$_SERVER['SERVER_NAME']."/engy/prijavljen.php"); //Za sada hardcode path
     exit;
-  } 
-    
+  }
+
 if(isset($_GET['odjava']) == true) {
   unset($_SESSION['user']);
   unset($_SESSION['status']);
   session_destroy();
-  header("Location: http://localhost/engy/index.php"); //Za sada hardcode path
+  header("Location: http://".$_SERVER['SERVER_NAME']."/engy/index.php"); //Za sada hardcode path
   exit; // OVO JE NENAD
 }
 ?>
@@ -43,7 +43,7 @@ if(isset($_GET['odjava']) == true) {
 </head>
 
 <style>
-  
+
 </style>
 </head>
 <body>
@@ -94,7 +94,7 @@ if(isset($_GET['odjava']) == true) {
                   // </div';
                   // }
                   ?>
-                 
+
 
 
 
@@ -102,7 +102,7 @@ if(isset($_GET['odjava']) == true) {
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <img src="assets/images/widgets/p-1.png" alt="" height="300" class="mx-auto d-block mb-3"> 
+                <img src="assets/images/widgets/p-1.png" alt="" height="300" class="mx-auto d-block mb-3">
                 <h4 class="mb-4">“The way to get started is to quit talking and begin doing.” </h4>
                 <p class="big mb-0">– Walt Disney</p>
               </div>
@@ -113,7 +113,7 @@ if(isset($_GET['odjava']) == true) {
     </div>
   </div>
 </section>
-<!-- 
+<!--
     <form method = "post" action= "prijavise.php">
         <input type = 'text' name="username" placeholder="Unesite username"><br>
         <input type = 'password' name="password" placeholder="Unesite password"><br>
@@ -121,7 +121,7 @@ if(isset($_GET['odjava']) == true) {
     </form> -->
 
 
-    
+
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script type="text/javascript" src="js/loginscript.js"></script>
   <script>

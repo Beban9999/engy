@@ -1,15 +1,8 @@
 <?php
 session_start();
 require_once("f.php");
-if (!prijavljen()) {
-    header("Location: http://".$_SERVER["SERVER_NAME"]."/engy/index.php"); //HARDCODE PATH
-    exit;
-}
-$db = mysqli_connect("localhost", "root", "", "engy");
-if(!validate_user()){
-    header("Location: http://".$_SERVER["SERVER_NAME"]."/engy/index.php?odjava"); //HARDCODE PATH
-    exit;
-  }
+page_validation();
+$db = db_connect();
 if (!$db) {
     echo "ERROR WITH DB CONNECTION" . mysqli_connect_errno();
     echo "<br>" . mysqli_connect_error();

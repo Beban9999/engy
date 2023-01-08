@@ -7,9 +7,16 @@
             return false;
         }
     }
-
+    function db_connect(){
+        if($_SERVER["SERVER_NAME"] == "localhost"){
+            return mysqli_connect("localhost", "root", "", "engy");
+        }
+        else{
+            return mysqli_connect("localhost", "ngrubiicrs_grubi", "Grubi123.", "ngrubiicrs_engy");
+        }
+    }
     function validate_user(){
-    $db = mysqli_connect("localhost", "root", "", "engy");
+    $db = db_connect();
 
     if (!$db) {
         echo "ERROR WITH DB CONNECTION" . mysqli_connect_errno();
@@ -36,6 +43,16 @@
         return false;
     }
 }
+    function page_validation(){
+        if (!prijavljen()) {
+            header("Location: http://".$_SERVER["SERVER_NAME"]."/engy/index.php");
+            exit;
+        }
+        if (!validate_user()) {
+            header("Location: http://".$_SERVER["SERVER_NAME"]."/engy/index.php?odjava");
+            exit;
+        }
+    }
     function navbar()
     {
         echo '
@@ -124,7 +141,7 @@
                 $team = $_SESSION['team'];
                 $img = "img/";
 
-                $db = mysqli_connect("localhost", "root", "", "engy");
+                $db = db_connect();
 
                 if (!$db) {
                     echo "ERROR WITH DB CONNECTION" . mysqli_connect_errno();

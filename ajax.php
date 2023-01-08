@@ -1,6 +1,7 @@
 <?php
 session_start();
-$db = mysqli_connect("localhost", "root", "", "engy");
+require_once("f.php");
+$db = db_connect();
 
 if (!$db) {
     echo "ERROR WITH DB CONNECTION" . mysqli_connect_errno();

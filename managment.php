@@ -156,17 +156,19 @@ mysqli_query($db, "SET NAMES utf8");
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-8">
+
+
+
+            <div class="col-6">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title" style=text-align:center>Welcome to the Managment, <b> <?php echo $_SESSION['username']; ?></b>! </h4>
                         <br>
                         <div class="row">
 
-
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <div class="card">
-                                    <img src="assets/images/widgets/p-3.png" alt="" height="100" class="img-fluid ">
+                                    <img src="assets/images/widgets/p-3.png" alt=""style = "max-width: 400px; width:100%;" class="img-fluid center-block d-block mx-auto">
                                     <div class="card-body product-info">
                                         <br>
                                         <h4 class="product-title" style=text-align:center> Set Traffic Goals</h4>
@@ -187,11 +189,11 @@ mysqli_query($db, "SET NAMES utf8");
                 </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-6">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>
-                        <img src="assets/images/widgets/login.png" alt="" height="209" class="img-fluid">
+                        <img src="assets/images/widgets/login.png" alt=""  style = "max-width: 373px; width:100%;" class="img-fluid center-block d-block mx-auto">
                         <br>
 
                         <div class="form-group row">

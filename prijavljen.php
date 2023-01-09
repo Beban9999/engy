@@ -280,7 +280,7 @@ body {
                         <h5 class="card-title" style="text-align:center;"><b>Private Messages</b></h5>
                         <br>
 
-                        <img src="assets/images/widgets/close.jpg" alt="" style = "max-width:400px; width:100%;" class="img-fluid center-block d-block mx-auto">
+                        <img src="assets/images/widgets/close.jpg" alt="" style = "max-width:407px; width:100%;" class="img-fluid center-block d-block mx-auto">
 
                         <div class="row" id="message_div_private"
                             style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>

@@ -321,6 +321,7 @@ body {
 
                                                 <h5 style=text-align:center>Clients List</h5>
                                                 <br>
+
                                                 <div class="tab-content chat-list slimscroll" id="pills-tabContent"
                                                     style=height:180px;overflow-y:scroll>
                                                     <div id="general_chat">
@@ -343,6 +344,7 @@ body {
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <input class = 'form-control' type="text" name="search_proc" id="search_proc" oninput="searchProc(this)">
                                                         <hr>
                                                         <div id="proc_table">
                                                         </div>
@@ -612,6 +614,11 @@ body {
         <script src="assets/js/app.js"></script>
         <script>
         rows = ['customer', 'prod', 'traff', 'maincomp', 'dest', 'looking', 'pot', 'act', 'next', 'result', 'datecomm']
+        function searchProc(val){
+            let vvv = val.value;
+            console.log(vvv);
+            fillProcTable(0, vvv);
+        }
         function ArchiveProc(id, val){
             $.post("ajax.php?f=archiveProc", {
                     id: id,

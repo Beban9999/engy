@@ -855,11 +855,12 @@ if($f == "deleteProc"){
 }
 if($f == "fillProcTable"){
     $currUser = $_SESSION["id_user"];
+    $search = $_POST["search"];
     if($_POST["user_visit"] != 0){
         $currUser = $_POST["user_visit"];
     }
     $arch = $_POST["arch"];
-    $stmt = $db->prepare("SELECT * FROM procurment WHERE deleted = 0 and archived = $arch and user_proc = ? order by date_added desc");
+    $stmt = $db->prepare("SELECT * FROM procurment WHERE cust_name like '%$search%' and deleted = 0 and archived = $arch and user_proc = ? order by date_added desc");
     $stmt->bind_param("i", $currUser);
     $stmt->execute();
     $rez = $stmt->get_result();

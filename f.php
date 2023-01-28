@@ -101,7 +101,11 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a id="prijavljen" class="nav-link" href="prijavljen.php">Dashboard</a>
-                </li>';
+                </li>
+                '
+                
+                ;
+                
 
                 if($_SESSION["team"] != "Developer"){
 
@@ -130,6 +134,9 @@
                             </li>';
                     }
                 echo '
+                <li class="nav-item">
+                <a id="faq" class="nav-link" href="faq.php">FAQ</a>
+                </li>
                 </ul>
                 <!-- Left links -->
             </div>

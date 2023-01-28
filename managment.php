@@ -158,8 +158,7 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="row">
 
 
-
-            <div class="col-6">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title" style=text-align:center>Welcome to the Managment, <b> <?php echo $_SESSION['username']; ?></b>! </h4>
@@ -189,7 +188,7 @@ mysqli_query($db, "SET NAMES utf8");
                 </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mt-0 header-title" style="text-align:center">Global Message</h4>

@@ -62,8 +62,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                         <img src="assets/images/widgets/construction.png" alt="" style = "max-width: 1200px; width:100%;" class="img-fluid center-block d-block mx-auto">
 
-                        <div class="row" id="message_div_global"
-                            style="margin-left:1px;margin-top:15px;margin-right:1px;"></div>
+                        
                   
                 </div>
 

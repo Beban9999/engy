@@ -54,17 +54,181 @@ mysqli_query($db, "SET NAMES utf8");
 <div class='row'>
                 <div class="col-lg-12">
                     <br>
-                <h4 class="card-title" style="text-align:center;"><b>Page is under construction, coming soon.</b></h4>
+                <h5 class="card-title" style="text-align:left;margin-bottom:5px"><b>Frequently asked questions</b></h5>
+                
 
-                        <br>
-                        <br>                        <br>
-                        <br>
+            <div class='row'>
+                <div class="col-lg-12" >
+                    <div class='card'>
+                    <div class='card-body'>
 
-                        <img src="assets/images/widgets/construction.png" alt="" style = "max-width: 1200px; width:100%;" class="img-fluid center-block d-block mx-auto">
-
-                        
-                  
+                       
+                        <div class="row" id="faq" style="margin-left:1px;margin-top:15px;margin-right:1px;">
+                        <div class="row">
+                                        <div class="col-md-12 col-lg-6">
+                                            <ul class="list-unstyled faq-qa">
+                                                <li class="mb-5">
+                                                    <h6 class="">1. What is Scipio?</h6>
+                                                    <p class="font-14 text-muted ml-3">Scipio is a SalesForce Web Application for 
+                                                        managing traffic, writting weekly reports, procurment and client managment.
+                                                    </p>
+                                                </li>
+                                                <li class="mb-5">
+                                                    <h6 class="">3. Who can use Scipio?</h6>
+                                                    <p class="font-14 text-muted  ml-3"> If you are reading this, you are probably
+                                                        part of eNgY Solutions - Telecommunications SMS Company. Every employee got his
+                                                        personal account.
+                                                    </p>
+                                                </li>
+                                                <li class="mb-5">
+                                                    <h6 class="">5. Data of my profile is not correct.</h6>
+                                                    <p class="font-14 text-muted ml-3">If you see yourself in different team, or 
+                                                        have a wrong name, you'll need to contact administrator. <a href="https://www.ngrubii.com/">Contact Administrator</a>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6">
+                                            <ul class="list-unstyled faq-qa">
+                                                <li class="mb-5">
+                                                    <h6 class="">2. Who can see my profile page?</h6>
+                                                    <p class="font-14 text-muted ml-3">Every administrator and manager can see your
+                                                        profile page(your traffic, your tables).
+                                                        <br>
+                                                        <br>
+                                                    </p>
+                                                </li>
+                                                <li class="mb-5">
+                                                    <h6 class="">4. Can i transfer data from excel to the application?</h6>
+                                                    <p class="font-14 text-muted ml-3">Yes! Administrators can do it for you.
+                                                        <br>
+                                                        <br>
+                                                    </p>
+                                                </li>
+                                                <li class="mb-5">
+                                                    <h6 class="">6. If I delete something, is it permanently lost?</h6>
+                                                    <p class="font-14 text-muted ml-3">No data is permanently lost.
+                                                        Everything, even deleted things are stored in database, administrators can
+                                                        return it from recycle bin!
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div><!--end col-->
+                                    </div> <!--end row-->   
+                                     
+                    </div>
+                    </div>
+                    
                 </div>
+                <br>
+                <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title">Scipio Details</h4>
+                                    <p class="text-muted">Page by page explanation.
+                                    </p>
+                                    <div class="accordion" id="accordionExample-faq">
+                                        <div class="card shadow-none border mb-1">
+                                            <div class="card-header" id="headingOne">
+                                            <h5 class="my-0">
+                                                <button class="btn btn-link ml-4" style = color:purple type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Portal and Company Roles
+                                                </button>
+                                            </h5>
+                                            </div>
+                                        
+                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample-faq">
+                                            <div class="card-body">
+                                            <div class="card">
+                                            <div class="card-body">
+                                                On the portal, there are three types of users:<hr>
+                                                <ul>
+                                                <li><b>Administrator</b> - Can access to all pages. Have ability to change users credentials.
+                                                Other users cannot see them in any list. Can do everything that manager can.</li><br>
+                                                <li><b>Manager</b> - Can access to Managment Panel. Can set traffic goals for Account/Sales teams.
+                                                Have ability to read all weekly reports. Can write global & private messages. Can do everything that user does.</li><br>
+                                                <li><b>User</b> - can fill tables, write weekly reports and access to archive. Cannot write messages, only can read it.</li>
+                                                </ul>
+                                                <br>
+</div>
+</div>
+<br>
+<div class="card">
+                                <div class="card-body" style = text-align:center>
+                                                <b>Employees are also devided into company teams:</b>
+                                                <hr>
+                                                <ul style = "list-style-type: none">
+                                                <li><span style = color:green>Account Managers</span></li><br>
+                                                <li><span style = color:red>Sales Managers</span></li><br>
+                                                <li><span style = color:darkgreen>Procurment Managers</span></li><br>
+                                                <li><span style = color:skyblue>Vice Presidents</span></li><br>
+                                                <li><span style = color:black>C Level</span></li><br>
+                                                <li><span style = color:blue>Developers</span></li><br>
+
+                                                </ul>
+</div></div>
+
+
+                                            </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="card shadow-none border mb-1">
+                                            <div class="card-header" id="headingTwo">
+                                            <h5 class="my-0">
+                                                <button class="btn btn-link collapsed ml-4 align-self-center" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    How buy Frogetor on coin?
+                                                </button>
+                                            </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample-faq">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 
+                                            </div>
+                                            </div>
+                                        </div>
+
+
+                                        
+                                        <div class="card shadow-none border mb-1">
+                                            <div class="card-header" id="headingThree">
+                                            <h5 class="my-0">
+                                                <button class="btn btn-link collapsed ml-4" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    What cryptocurrency can i use to buy Frogetor?
+                                                </button>
+                                            </h5>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample-faq">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                            </div>
+                                            </div>
+                                        </div>    
+                                        <div class="card shadow-none border mb-1">
+                                            <div class="card-header" id="headingFour">
+                                            <h5 class="my-0">
+                                                <button class="btn btn-link collapsed ml-4" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    What cryptocurrency can i use to buy Frogetor?
+                                                </button>
+                                            </h5>
+                                            </div>
+                                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample-faq">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                            </div>
+                                            </div>
+                                        </div>                                                
+                                    </div><!--end accordion-->
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div>
+
+               
 
                 </div>
                 </div>

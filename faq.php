@@ -250,20 +250,7 @@ mysqli_query($db, "SET NAMES utf8");
 
                                             </div>
                                         </div>
-                                        <div class="card shadow-none border mb-1">
-                                            <div class="card-header" id="headingFour">
-                                            <h5 class="my-0">
-                                                <button class="btn btn-link collapsed ml-4" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                 <b>   What cryptocurrency can i use to buy Frogetor? </b>
-                                                </button>
-                                            </h5>
-                                            </div>
-                                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample-faq">
-                                            <div class="card-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-                                            </div>
-                                            </div>
-                                        </div>
+                                   
                                     </div><!--end accordion-->
                                 </div><!--end card-body-->
                             </div><!--end card-->

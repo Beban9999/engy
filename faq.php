@@ -140,18 +140,17 @@ mysqli_query($db, "SET NAMES utf8");
                                         <div class="card shadow-none border mb-1">
                                             <div class="card-header" id="headingOne">
                                             <h5 class="my-0">
-                                                <button class="btn btn-link ml-4" style = color:purple type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    Portal and Company Roles
+                                                <button class="btn btn-link ml-4" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <b>Portal and Company Roles</b>
                                                 </button>
                                             </h5>
                                             </div>
 
-                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample-faq">
-                                            <div class="card-body">
-                                            <div class="card">
-                                            <div class="card-body">
+                                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample-faq">
+                                            <div class="card-body" style = text-align:center>
+                                          
                                                 On the portal, there are three types of users:<hr>
-                                                <ul>
+                                                <ul style = "list-style-type: none">
                                                 <li><b>Administrator</b> - Can access to all pages. Have ability to change users credentials.
                                                 Other users cannot see them in any list. Can do everything that manager can.</li><br>
                                                 <li><b>Manager</b> - Can access to Managment Panel. Can set traffic goals for Account/Sales teams.
@@ -159,19 +158,26 @@ mysqli_query($db, "SET NAMES utf8");
                                                 <li><b>User</b> - can fill tables, write weekly reports and access to archive. Cannot write messages, only can read it.</li>
                                                 </ul>
                                                 <br>
-</div>
-</div>
+
 <br>
 <div class="card">
                                 <div class="card-body" style = text-align:center>
                                                 <b>Employees are also devided into company teams:</b>
                                                 <hr>
                                                 <ul style = "list-style-type: none">
+                                                <img src="img/am.png" alt="" style = "max-width:100px" class="img-fluid">
                                                 <li><span style = color:green;font-weight:bold>Account Managers</span></li><br>
+                                                <img src="img/sm.png" alt="" style = "max-width:100px" class="img-fluid">
                                                 <li><span style = color:red;font-weight:bold>Sales Managers</span></li><br>
+                                                <img src="img/pm.png" alt="" style = "max-width:100px" class="img-fluid">
                                                 <li><span style = color:darkgreen;font-weight:bold>Procurment Managers</span></li><br>
+                                                <img src="img/vp.png" alt="" style = "max-width:100px" class="img-fluid">
                                                 <li><span style = color:dodgerblue;font-weight:bold>Vice Presidents</span></li><br>
+                                                <img src="img/ceo.png" alt="" style = "max-width:100px" class="img-fluid">
+
                                                 <li><span style = color:black;font-weight:bold>C Level</span></li><br>
+                                                <img src="img/dev.png" alt="" style = "max-width:100px" class="img-fluid">
+
                                                 <li><span style = color:blue;font-weight:bold>Developers</span></li><br>
 
                                                 </ul>
@@ -188,14 +194,32 @@ mysqli_query($db, "SET NAMES utf8");
                                             <div class="card-header" id="headingTwo">
                                             <h5 class="my-0">
                                                 <button class="btn btn-link collapsed ml-4 align-self-center" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    How buy Frogetor on coin?
-                                                </button>
+                                               <b> How to use traffic table graph?</b>
+                                            </button>
                                             </h5>
                                             </div>
                                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample-faq">
                                             <div class="card-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                                            </div>
+
+                                            <div class="card">
+                                            <div class="card-body" style = text-align:center>
+                                            <h4>Manager and User are working with Traffic goal tables.</h4><hr>
+
+                                        <h5>Manager is setting goals for every employee, every month through Managment Panel.</h5>
+                                        
+                                        <img src="assets/images/widgets/am.png" alt="" class="img-fluid">
+<hr>
+                                        <h5>Users can see added values on their graphs on Dashboard, and also add their monthly results at the beginning of next month.</h5><br>
+                                        <img src="assets/images/widgets/value.png" alt=""  class="img-fluid">
+<br>
+                                        <img src="assets/images/widgets/table.png" alt=""  class="img-fluid">
+
+
+
+                                            </div></div>
+                                        
+
+                                        </div>
                                             </div>
                                         </div>
 
@@ -205,21 +229,32 @@ mysqli_query($db, "SET NAMES utf8");
                                             <div class="card-header" id="headingThree">
                                             <h5 class="my-0">
                                                 <button class="btn btn-link collapsed ml-4" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    What cryptocurrency can i use to buy Frogetor?
+                                                 <b>  Writting Weekly Reports</b>
                                                 </button>
                                             </h5>
                                             </div>
                                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample-faq">
-                                            <div class="card-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                            <div class="card-body" style = text-align:center>
+                                               <h5> When you upload your weekly report it is visible under writting space on your Reports section.
+                                                If you overwrite your report, last one is going to be visible.</h5><br>
+                                                <br>
+                                                <img src="assets/images/widgets/reports.png" alt="" class="img-fluid">
+                                                <hr>
+                                                <h5>Managers can see your weekly report every Friday, until Friday everything you upload is visible only to you.</h5><br>
+                                                <h5>They can see your last 4 reports.</h5><br>
+
+                                                <img src="assets/images/widgets/pastreports.png" alt="" class="img-fluid"><br><br>
+
+    
                                             </div>
+
                                             </div>
                                         </div>
                                         <div class="card shadow-none border mb-1">
                                             <div class="card-header" id="headingFour">
                                             <h5 class="my-0">
                                                 <button class="btn btn-link collapsed ml-4" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                    What cryptocurrency can i use to buy Frogetor?
+                                                 <b>   What cryptocurrency can i use to buy Frogetor? </b>
                                                 </button>
                                             </h5>
                                             </div>

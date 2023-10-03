@@ -164,6 +164,24 @@ mysqli_query($db, "SET NAMES utf8");
                         <h4 class="card-title" style=text-align:center><b>Europe</b></h4>
                         <img src="img/europa.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
                         <hr>
+                        <div class="table-responsive">
+
+       
+
+<table class="table table-dark table-hover" style=margin:0px;>
+  <thead>
+    <tr>
+      <th id='first' scope="col" style=text-align:center>Customer</th>
+      <th scope="col"style=text-align:center>Country</th>
+      <th scope="col"style=text-align:center>Type of Traffic</th>
+      <th scope="col"style=text-align:center>Modify</th>
+   
+    </tr>
+  </thead>
+  <tbody id="archive_table">
+  </tbody>
+</table>
+</div>
                         <div class="row">
 
                         
@@ -179,6 +197,26 @@ mysqli_query($db, "SET NAMES utf8");
                         <h4 class="card-title" style=text-align:center><b>Asia</b></h4>
                         <img src="img/asia.png" alt="" style = "max-width: 380px; width:100%;" class="img-fluid center-block d-block mx-auto">
                             <hr>
+                            <div class="table-responsive">
+
+       
+
+<table class="table table-dark table-hover" style=margin:0px;>
+  <thead>
+    <tr>
+      <th id='first' scope="col" style=text-align:center>Customer</th>
+      <th scope="col"style=text-align:center>Country</th>
+      <th scope="col"style=text-align:center>Type of Traffic</th>
+      <th scope="col"style=text-align:center>Modify</th>
+   
+    </tr>
+  </thead>
+  <tbody">
+    
+    
+  </tbody>
+</table>
+</div>
                         <div class="row">
 
                         
@@ -195,6 +233,25 @@ mysqli_query($db, "SET NAMES utf8");
                         <img src="img/na.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
 
                         <hr>
+                        
+                        <div class="table-responsive">
+
+       
+
+<table class="table table-dark table-hover" style=margin:0px;>
+  <thead>
+    <tr>
+      <th id='first' scope="col" style=text-align:center>Customer</th>
+      <th scope="col"style=text-align:center>Country</th>
+      <th scope="col"style=text-align:center>Type of Traffic</th>
+      <th scope="col"style=text-align:center>Modify</th>
+   
+    </tr>
+  </thead>
+  <tbody id="archive_table">
+  </tbody>
+</table>
+</div>
                         <div class="row">
 
                         
@@ -212,6 +269,25 @@ mysqli_query($db, "SET NAMES utf8");
                         <img src="img/sa.png" alt="" style = "max-width: 185px; width:100%;" class="img-fluid center-block d-block mx-auto">
 
                         <hr>
+                        <div class="table-responsive">
+
+       
+
+              <table class="table table-dark table-hover" style=margin:0px;>
+                <thead>
+                  <tr>
+                    <th id='first' scope="col" style=text-align:center>Customer</th>
+                    <th scope="col"style=text-align:center>Country</th>
+                    <th scope="col"style=text-align:center>Type of Traffic</th>
+                    <th scope="col"style=text-align:center>Modify</th>
+                 
+                  </tr>
+                </thead>
+                <tbody id="archive_table">
+                </tbody>
+              </table>
+            </div>
+         
                         <div class="row">
 
                         
@@ -228,6 +304,25 @@ mysqli_query($db, "SET NAMES utf8");
                         <img src="img/africa.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
 
                         <hr>
+                        <div class="table-responsive">
+
+       
+
+<table class="table table-dark table-hover" style=margin:0px;>
+  <thead>
+    <tr>
+      <th id='first' scope="col" style=text-align:center>Customer</th>
+      <th scope="col"style=text-align:center>Country</th>
+      <th scope="col"style=text-align:center>Type of Traffic</th>
+      <th scope="col"style=text-align:center>Modify</th>
+
+   
+    </tr>
+  </thead>
+  <tbody id="archive_table">
+  </tbody>
+</table>
+</div>
                         <div class="row">
 
                         
@@ -243,15 +338,33 @@ mysqli_query($db, "SET NAMES utf8");
                         <h4 class="card-title" style=text-align:center><b>Australia</b></h4>
                         <img src="img/australia.png" alt="" style = "max-width: 275px; width:100%;" class="img-fluid center-block d-block mx-auto">
                         <hr>
+                        <div class="table-responsive">
+
+       
+
+<table class="table table-dark table-hover" style=margin:0px;>
+  <thead>
+    <tr>
+      <th id='first' scope="col" style=text-align:center>Customer</th>
+      <th scope="col"style=text-align:center>Country</th>
+      <th scope="col"style=text-align:center>Type of Traffic</th>
+      <th scope="col"style=text-align:center>Modify</th>
+   
+    </tr>
+  </thead>
+  <tbody id="archive_table">
+  </tbody>
+</table>
+</div>
                         <div class="row">
 
-                        
+                    
 
-
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+           
 
 
 </body>

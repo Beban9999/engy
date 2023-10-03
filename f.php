@@ -102,6 +102,9 @@
                 <li class="nav-item">
                     <a id="prijavljen" class="nav-link" href="prijavljen.php">Dashboard</a>
                 </li>
+                <li class="nav-item">
+                <a id="trafficboard" class="nav-link" href="trafficboard.php">Traffic Board</a>
+            </li>
                 '
                 
                 ;

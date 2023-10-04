@@ -178,8 +178,7 @@ mysqli_query($db, "SET NAMES utf8");
    
     </tr>
   </thead>
-  <tbody id="archive_table">
-  </tbody>
+  
 </table>
 </div>
                         <div class="row">
@@ -211,10 +210,7 @@ mysqli_query($db, "SET NAMES utf8");
    
     </tr>
   </thead>
-  <tbody">
-    
-    
-  </tbody>
+  
 </table>
 </div>
                         <div class="row">
@@ -248,8 +244,7 @@ mysqli_query($db, "SET NAMES utf8");
    
     </tr>
   </thead>
-  <tbody id="archive_table">
-  </tbody>
+  
 </table>
 </div>
                         <div class="row">
@@ -283,8 +278,6 @@ mysqli_query($db, "SET NAMES utf8");
                  
                   </tr>
                 </thead>
-                <tbody id="archive_table">
-                </tbody>
               </table>
             </div>
          
@@ -319,8 +312,6 @@ mysqli_query($db, "SET NAMES utf8");
    
     </tr>
   </thead>
-  <tbody id="archive_table">
-  </tbody>
 </table>
 </div>
                         <div class="row">
@@ -352,8 +343,7 @@ mysqli_query($db, "SET NAMES utf8");
    
     </tr>
   </thead>
-  <tbody id="archive_table">
-  </tbody>
+  
 </table>
 </div>
                         <div class="row">

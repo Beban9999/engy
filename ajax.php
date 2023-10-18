@@ -65,6 +65,20 @@ if($f == "insertRow"){
     $rez = $stmt->get_result();
     echo $rez;
 }
+if($f == "insertTrafficRow"){
+    $currUser = $_SESSION['id_user'];
+    $trf_cust = $_POST['trf_cust']; 
+    $trf_cntr = $_POST['trf_cntr'];
+    $trf_type = $_POST['trf_type'];
+    $trf_cont = $_POST['trf_cont'];
+
+    $stmt = $db->prepare("INSERT INTO `traffic`(`traffic_country`, `traffic_type`, `traffic_customer`, `traffic_user_id`, `continent`) VALUES (?,?,?,?,?)");
+    $stmt->bind_param('sssii',$trf_cntr,$trf_type,$trf_cust,$currUser,$trf_cont);
+    $stmt->execute();
+
+    $rez = $stmt->get_result();
+    echo $rez;
+}
 if($f == "deletePrivateMessageFrom")
 {
     $msg_id = $_POST["id"];
@@ -72,7 +86,25 @@ if($f == "deletePrivateMessageFrom")
     $stmt->bind_param('i', $msg_id);
     $stmt->execute();
 }
+if($f == "fillTrafficBody"){
+    $cont = $_POST['cont'];
 
+    $stmt = $db->prepare("SELECT * FROM traffic WHERE continent = ? ORDER BY 1 DESC");
+    $stmt->bind_param("i", $cont);
+    $stmt->execute();
+    $rez = $stmt->get_result();
+    if(mysqli_num_rows($rez) > 0){
+        while($red = mysqli_fetch_object($rez)){
+            echo  '
+            <tr>
+                <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_customer\')" id="'.$red->traffic_id.'traffic_customer"  style=text-align:center>'.$red->traffic_customer.'</td>
+                <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_country\')" id="'.$red->traffic_id.'traffic_country" style=text-align:center>'.$red->traffic_country.'</td>
+                <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_type\')" id="'.$red->traffic_id.'traffic_type" style=text-align:center>'.$red->traffic_type.'</td>
+                <td scope="col" style=text-align:center>Edit field<td>
+            </tr>';
+        }
+    }
+}
 
 if($f == "trafficChart"){
     $currUser = $_SESSION['id_user'];
@@ -445,6 +477,15 @@ if ($f == "openAndSetUserGoals") {
     }
     echo '    </div>
     </div>';
+}
+if($f == "updateTrafficField"){
+    $rec_id = $_POST["id"];
+    $col_name = $_POST["col"];
+    $val = $_POST["updateVal"];
+ //   echo $col_name,$val, $rec_id;
+    $stmt = $db->prepare("UPDATE traffic SET $col_name = ? WHERE traffic_id = ?");
+    $stmt->bind_param('si',$val, $rec_id);
+    $stmt->execute();
 }
 if($f == "updateProcValues"){
     $rec_id = $_POST["id"];

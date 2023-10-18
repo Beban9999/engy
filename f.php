@@ -109,6 +109,13 @@
                 
                 ;
                 
+                if($_SESSION["team"] == "Procurement Manager" || $_SESSION["team"] == "Vice President of Procurement" ||
+                $_SESSION["team"] == "CEO" || $_SESSION["team"] == "Vice President" ){
+                    echo '<li class="nav-item">
+                    <a id="invoices" role="link" class="nav-link" href="invoices.php">Invoices</a>
+                </li>';
+                }
+
 
                 if($_SESSION["team"] != "Developer"){
 

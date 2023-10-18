@@ -3678,14 +3678,6 @@ dt {
   border-color: #ffffff;
 }
 
-.checkbox-dark input[type="checkbox"]:checked + label::before {
-  background-color: #2f4686;
-  border-color: #2f4686;
-}
-
-.checkbox-dark input[type="checkbox"]:checked + label::after {
-  border-color: #ffffff;
-}
 
 /* Radios */
 .radio label {

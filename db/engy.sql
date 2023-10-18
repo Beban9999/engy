@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2023 at 07:42 PM
+-- Generation Time: Oct 18, 2023 at 11:10 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -58,7 +58,8 @@ INSERT INTO `data` (`customer`, `prod`, `traff`, `maincomp`, `dest`, `looking`, 
 ('test', 'asdasd', 'feok', 'rkogw', 'rgwokwrgowrk', 'rwpokwrgpowrkg', 'rwpgwrpok', 'real data', 'wepok', 'wpogkreopqkrpokqe', 'erpo', 1, 22, 1, 0),
 ('grwouhwrgou', 'sim', 'oewrghwo', 'rowghoworgjh', 'owgrh', 'wrgoh', 'gwroh', '', '', '', '', 4, 23, 0, 0),
 ('test za<br>', '<div>arhivu</div><div><br></div>', 'tebra', '', '', '', '', '', '', '', '', 4, 24, 0, 0),
-('', '', '', '', '', 'asdasd', '', '', '', '', '', 1, 25, 0, 0);
+('', '', '', '', '', 'asdasd', '', '', '', '', '', 1, 25, 0, 0),
+('asd', '', '', 'asdasdasd', '', '', '', 'asdasdeqweq', '', 'asdasd', '123123132213', 1, 26, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -223,6 +224,46 @@ INSERT INTO `teams` (`id_team`, `team_name`, `color`, `team_icon`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `traffic`
+--
+
+CREATE TABLE `traffic` (
+  `traffic_id` int(11) NOT NULL,
+  `traffic_country` varchar(80) DEFAULT NULL,
+  `traffic_type` varchar(120) DEFAULT NULL,
+  `traffic_customer` varchar(120) DEFAULT NULL,
+  `traffic_user_id` int(11) NOT NULL,
+  `continent` int(11) NOT NULL,
+  `trff_deleted` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `traffic`
+--
+
+INSERT INTO `traffic` (`traffic_id`, `traffic_country`, `traffic_type`, `traffic_customer`, `traffic_user_id`, `continent`, `trff_deleted`) VALUES
+(1, 'eee', 'wwww', 'asd', 1, 1, 0),
+(2, 'SADeee', 'Daqqqq', 'STA&nbsp;', 1, 2, 0),
+(3, 'fff', 'asdsadsad', 'qweqwe', 1, 1, 0),
+(4, 'asdasd', 'ddddd', '', 1, 1, 0),
+(5, 'eqwe', 'eeeee', 'ttesd', 1, 1, 0),
+(6, 'qweqwe', '333333', 'test', 1, 3, 0),
+(7, 'aaaaaas', 'sssssssssssss', 'ffffff', 1, 4, 0),
+(8, '', '4444444', '', 1, 3, 0),
+(9, 'eeee1', '3333', 'sssss', 1, 4, 0),
+(10, 'Radi svuda', 'ddd3333', 'Msm da', 1, 5, 0),
+(11, '31331313', '5555555', '455', 1, 6, 0),
+(12, 'eeqw', 'ddddd', 'eee', 1, 6, 0),
+(13, 'brwasdasd', 'asdasdeeeeeeeeeee', 'ez', 1, 6, 0),
+(14, 'i o', 'Ovde isto', 'Tesksta ', 1, 1, 0),
+(15, 'Aleksa', 'Pise', 'qweqweqe', 1, 1, 0),
+(16, 'da probamo', 'Nesto', 'I ovde', 1, 3, 0),
+(17, 'Dal&nbsp;', 'Ovde radi', 'A', 1, 4, 0),
+(18, 'wwwwwwww', 'adsaads', 'test', 1, 1, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `trafic_goals`
 --
 
@@ -322,6 +363,12 @@ ALTER TABLE `teams`
   ADD PRIMARY KEY (`id_team`);
 
 --
+-- Indexes for table `traffic`
+--
+ALTER TABLE `traffic`
+  ADD PRIMARY KEY (`traffic_id`);
+
+--
 -- Indexes for table `trafic_goals`
 --
 ALTER TABLE `trafic_goals`
@@ -342,7 +389,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `data_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `data_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -373,6 +420,12 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `teams`
   MODIFY `id_team` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `traffic`
+--
+ALTER TABLE `traffic`
+  MODIFY `traffic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `trafic_goals`

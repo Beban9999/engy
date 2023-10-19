@@ -36,7 +36,7 @@
    </head>
    <style>
       body {
-      background: #4B0082;
+      background: #818589	;
       }
    </style>
    <body>
@@ -61,94 +61,31 @@
          }
          ?>
       <br>
-      <div class="modal fade col-lg-12" id="modalSetGoals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id="modaltitle_for_report">Users's Goals</h5>
-               </div>
-               <div class="modal-body" style="margin:3px" id='modal_for_goals'>
-                  <input type="text" name="" placeholder="Traffic goal" id="user_edit_first_name" class='form-control'>
-               </div>
-               <div class="modal-footer">
-                  <p>Don't Forget to Update!</p>
-                  <button type="button" class="btn btn-secondary" onclick="setUsersTrafficGoals()" data-dismiss="modal">Update</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="modal fade col-lg-12" id="exampleModalreport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id="modaltitle_for_report">Users's Report</h5>
-               </div>
-               <div class="modal-body" style="margin:3px" id='modal_for_report'>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="modal fade" id="exempleScroll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 id="modal_heading" class="modal-title">Private Message</h5>
-               </div>
-               <div id="globalMessagesForUser" class="modal-body">
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id='privateMessageHeader'>New </h5>
-               </div>
-               <div class="modal-body">
-                  <form>
-                     <div class="form-group">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="privateMessageText"></textarea>
-                     </div>
-                  </form>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" id="sendPrivateMessage" class="btn btn-primary" data-dismiss="modal">Send message</button>
-               </div>
-            </div>
-         </div>
-      </div>
+     
       <div class="container-fluid">
       <div class="row">
-      <div class="col-lg-6" style="margin-bottom:15px">
+      <div class="col-lg-6" style="margin-bottom:15px;">
          <div class="card">
             <div class="card-body">
                <h4 class="card-title" style=text-align:center><b>Europe</b></h4>
                <img src="img/europa.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive">
-                  <table class="table table-dark table-hover" style=margin:0px;>
-                     <thead>
+               <div class="table-responsive" style= max-height:300px>
+                  <table class="table table-hover">
+                  <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
-                           <th id='first' scope="col" style=text-align:center>Customer</th>
+                           <th id='first' scope="col" style=text-align:center;>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
                            <th scope="col"style=text-align:center>Type of Traffic</th>
                            <th scope="col"style=text-align:center>Modify</th>
                         </tr>
                         <tr>
-                               <td scope="col" style=text-align:center><input id='trf_cust1' type="text"></td>
+                               <td scope="col" style=text-align:center;width:100px><input id='trf_cust1' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr1' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type1' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow1'>ADD</button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow1'class="btn btn-primary1 waves-effect waves-light"
+                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
+                              
                        </tr>
                      </thead>
                      <tbody id='eur_body'>
@@ -164,12 +101,12 @@
          <div class="card">
             <div class="card-body">
                <h4 class="card-title" style=text-align:center><b>Asia</b></h4>
-               <img src="img/asia.png" alt="" style = "max-width: 380px; width:100%;" class="img-fluid center-block d-block mx-auto">
+               <img src="img/asia.png" alt="" style = "max-width: 386px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive">
-                  <table class="table table-dark table-hover" style=margin:0px;>
-                     <thead>
-                        <tr>
+               <div class="table-responsive"style= max-height:300px>
+                  <table class="table table-hover" style=margin:0px;>
+                  <thead style=background:#4B0082;color:white;position:sticky;top:0;>
+                  <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
                            <th scope="col"style=text-align:center>Type of Traffic</th>
@@ -179,7 +116,8 @@
                                <td scope="col" style=text-align:center><input id='trf_cust2' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr2' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type2' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow2'>ADD</button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow2'class="btn btn-primary1 waves-effect waves-light"
+                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
                            </tr>
 
                      </thead>
@@ -198,9 +136,9 @@
                <h4 class="card-title" style=text-align:center><b>North America</b></h4>
                <img src="img/na.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive">
-                  <table class="table table-dark table-hover" style=margin:0px;>
-                     <thead>
+               <div class="table-responsive" style= max-height:300px>
+                  <table class="table table-hover" style=margin:0px;>
+                  <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
@@ -211,7 +149,8 @@
                                <td scope="col" style=text-align:center><input id='trf_cust3' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr3' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type3' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow3'>ADD</button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow3'class="btn btn-primary1 waves-effect waves-light"
+                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
                            </tr>
                      </thead>
                      <tbody id='north_body'>
@@ -227,11 +166,11 @@
          <div class="card">
             <div class="card-body">
                <h4 class="card-title" style=text-align:center><b>South America</b></h4>
-               <img src="img/sa.png" alt="" style = "max-width: 185px; width:100%;" class="img-fluid center-block d-block mx-auto">
+               <img src="img/sa.png" alt="" style = "max-width: 187px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive">
-                  <table class="table table-dark table-hover" style=margin:0px;>
-                     <thead>
+               <div class="table-responsive" style= max-height:300px>
+                  <table class="table table-hover" style=margin:0px;>
+                  <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
@@ -242,7 +181,8 @@
                                <td scope="col" style=text-align:center><input id='trf_cust4' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr4' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type4' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow4'>ADD</button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow4'class="btn btn-primary1 waves-effect waves-light"
+                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
                            </tr>
                      </thead>
                      <tbody id='south_body'>
@@ -260,9 +200,9 @@
                <h4 class="card-title" style=text-align:center><b>Africa</b></h4>
                <img src="img/africa.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive">
-                  <table class="table table-dark table-hover" style=margin:0px;>
-                     <thead>
+               <div class="table-responsive" style= max-height:300px>
+                  <table class="table table-hover" style=margin:0px;>
+                  <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
@@ -273,7 +213,8 @@
                                <td scope="col" style=text-align:center><input id='trf_cust5' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr5' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type5' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow5'>ADD</button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow5'class="btn btn-primary1 waves-effect waves-light"
+                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
                            </tr>
                      </thead>
                      <tbody id='africa_body'>
@@ -291,9 +232,9 @@
                <h4 class="card-title" style=text-align:center><b>Australia</b></h4>
                <img src="img/australia.png" alt="" style = "max-width: 275px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive">
-                  <table class="table table-dark table-hover" style=margin:0px;>
-                     <thead>
+               <div class="table-responsive" style= max-height:300px>
+                  <table class="table table-hover" style=margin:0px;>
+                  <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
@@ -304,7 +245,8 @@
                                <td scope="col" style=text-align:center><input id='trf_cust6' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr6' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type6' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow6'>ADD</button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow6'class="btn btn-primary1 waves-effect waves-light"
+                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
                            </tr>
                      </thead>
                      <tbody id='australia_body'>

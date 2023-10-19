@@ -38,6 +38,31 @@
       body {
       background: #818589	;
       }
+      .table>:not(caption)>*>*{
+         vertical-align:middle;
+         padding:1px;
+      }
+      .btn-danger{
+         height:10px;
+      }
+     #trf_cntr1, #trf_cust1, #trf_type1{
+         margin:10px;
+      }
+      #trf_cntr2, #trf_cust2, #trf_type2{
+         margin:10px;
+      }
+      #trf_cntr3, #trf_cust3, #trf_type3{
+         margin:10px;
+      }
+      #trf_cntr4, #trf_cust4, #trf_type4{
+         margin:10px;
+      }
+      #trf_cntr5, #trf_cust5, #trf_type5{
+         margin:10px;
+      }
+      #trf_cntr6, #trf_cust6, #trf_type6{
+         margin:10px;
+      }
    </style>
    <body>
       <?php
@@ -70,21 +95,20 @@
                <h4 class="card-title" style=text-align:center><b>Europe</b></h4>
                <img src="img/europa.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive" style= max-height:300px>
+               <div class="table-responsive" style= max-height:1000px>
                   <table class="table table-hover">
                   <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center;>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
                            <th scope="col"style=text-align:center>Type of Traffic</th>
-                           <th scope="col"style=text-align:center>Modify</th>
+                           <th scope="col"style=text-align:center>Add/Remove</th>
                         </tr>
                         <tr>
                                <td scope="col" style=text-align:center;width:100px><input id='trf_cust1' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr1' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type1' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow1'class="btn btn-primary1 waves-effect waves-light"
-                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow1'style = border:none;background:none;padding:0px;color:white><i class="fas fa-plus"></i></button></td>
                               
                        </tr>
                      </thead>
@@ -103,21 +127,21 @@
                <h4 class="card-title" style=text-align:center><b>Asia</b></h4>
                <img src="img/asia.png" alt="" style = "max-width: 386px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive"style= max-height:300px>
+               <div class="table-responsive"style= max-height:1000px>
                   <table class="table table-hover" style=margin:0px;>
                   <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                   <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
                            <th scope="col"style=text-align:center>Type of Traffic</th>
-                           <th scope="col"style=text-align:center>Modify</th>
+                           <th scope="col"style=text-align:center>Add/Remove</th>
                         </tr>
                         <tr>
                                <td scope="col" style=text-align:center><input id='trf_cust2' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr2' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type2' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow2'class="btn btn-primary1 waves-effect waves-light"
-                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow2' style = border:none;background:none;padding:0px;color:white><i class="fas fa-plus"></i></button></td>
+                                    
                            </tr>
 
                      </thead>
@@ -136,21 +160,20 @@
                <h4 class="card-title" style=text-align:center><b>North America</b></h4>
                <img src="img/na.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive" style= max-height:300px>
+               <div class="table-responsive" style= max-height:1000px>
                   <table class="table table-hover" style=margin:0px;>
                   <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
                            <th scope="col"style=text-align:center>Type of Traffic</th>
-                           <th scope="col"style=text-align:center>Modify</th>
+                           <th scope="col"style=text-align:center>Add/Remove</th>
                         </tr>
                         <tr>
                                <td scope="col" style=text-align:center><input id='trf_cust3' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr3' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type3' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow3'class="btn btn-primary1 waves-effect waves-light"
-                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow3'style = border:none;background:none;padding:0px;color:white><i class="fas fa-plus"></i></button></td>
                            </tr>
                      </thead>
                      <tbody id='north_body'>
@@ -168,21 +191,20 @@
                <h4 class="card-title" style=text-align:center><b>South America</b></h4>
                <img src="img/sa.png" alt="" style = "max-width: 187px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive" style= max-height:300px>
+               <div class="table-responsive" style= max-height:1000px>
                   <table class="table table-hover" style=margin:0px;>
                   <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
                            <th scope="col"style=text-align:center>Type of Traffic</th>
-                           <th scope="col"style=text-align:center>Modify</th>
+                           <th scope="col"style=text-align:center>Add/Remove</th>
                         </tr>
                         <tr>
                                <td scope="col" style=text-align:center><input id='trf_cust4' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr4' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type4' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow4'class="btn btn-primary1 waves-effect waves-light"
-                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow4'style = border:none;background:none;padding:0px;color:white><i class="fas fa-plus"></i></button></td>
                            </tr>
                      </thead>
                      <tbody id='south_body'>
@@ -200,21 +222,20 @@
                <h4 class="card-title" style=text-align:center><b>Africa</b></h4>
                <img src="img/africa.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive" style= max-height:300px>
+               <div class="table-responsive" style= max-height:1000px>
                   <table class="table table-hover" style=margin:0px;>
                   <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
                            <th scope="col"style=text-align:center>Type of Traffic</th>
-                           <th scope="col"style=text-align:center>Modify</th>
+                           <th scope="col"style=text-align:center>Add/Remove</th>
                         </tr>
                         <tr>
                                <td scope="col" style=text-align:center><input id='trf_cust5' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr5' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type5' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow5'class="btn btn-primary1 waves-effect waves-light"
-                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow5'style = border:none;background:none;padding:0px;color:white><i class="fas fa-plus"></i></button></td>
                            </tr>
                      </thead>
                      <tbody id='africa_body'>
@@ -232,21 +253,20 @@
                <h4 class="card-title" style=text-align:center><b>Australia</b></h4>
                <img src="img/australia.png" alt="" style = "max-width: 275px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
-               <div class="table-responsive" style= max-height:300px>
+               <div class="table-responsive" style= max-height:1000px>
                   <table class="table table-hover" style=margin:0px;>
                   <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center>Customer</th>
                            <th scope="col"style=text-align:center>Country</th>
                            <th scope="col"style=text-align:center>Type of Traffic</th>
-                           <th scope="col"style=text-align:center>Modify</th>
+                           <th scope="col"style=text-align:center>Add/Remove</th>
                         </tr>
                         <tr>
                                <td scope="col" style=text-align:center><input id='trf_cust6' type="text"></td>
                                <td scope="col"style=text-align:center><input  id='trf_cntr6' type="text"></td>
                               <td scope="col"style=text-align:center><input   id='trf_type6' type="text"></td>
-                              <td scope="col"style=text-align:center><button id='insertTrafficRow6'class="btn btn-primary1 waves-effect waves-light"
-                                    style="background:#2b55cc; color:white"> <i class="fas fa-plus"></i></button></td>
+                              <td scope="col"style=text-align:center><button id='insertTrafficRow6'style = border:none;background:none;padding:0px;color:white><i class="fas fa-plus"></i></button></td>
                            </tr>
                      </thead>
                      <tbody id='australia_body'>

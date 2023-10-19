@@ -97,11 +97,10 @@ if($f == "fillTrafficBody"){
         while($red = mysqli_fetch_object($rez)){
             echo  '
             <tr>
-                <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_customer\')" id="'.$red->traffic_id.'traffic_customer"  style=text-align:center>'.$red->traffic_customer.'</td>
+                <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_customer\')" id="'.$red->traffic_id.'traffic_customer"  style=text-align:center;color:#4B0082;font-weight:bold>'.$red->traffic_customer.'</td>
                 <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_country\')" id="'.$red->traffic_id.'traffic_country" style=text-align:center>'.$red->traffic_country.'</td>
                 <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_type\')" id="'.$red->traffic_id.'traffic_type" style=text-align:center>'.$red->traffic_type.'</td>
-                <td scope="col" style=text-align:center><button id="obrisi" class="btn btn-danger waves-effect waves-light"
-                style="background:#e32636; color:white"> <i class="fas fa-trash"></i></button></td>
+                <td scope="col" style=text-align:center;vertical-align:middle><button style = border:none;background:none;padding:0px><i class="fas fa-minus"></i></button></td>
             </tr>';
         }
     }

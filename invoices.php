@@ -51,7 +51,9 @@ mysqli_query($db, "SET NAMES utf8");
 <style>
 
 
-
+.table-bordered>:not(caption)>*>*{
+    vertical-align:middle;
+}
 
 
 </style>
@@ -61,11 +63,11 @@ mysqli_query($db, "SET NAMES utf8");
 <br>
 <div class="card text-center">
       <div class="card-body">
-        <h3 class="card-title">Welcome <?php echo $_SESSION['username'];
+        <h3 class="card-title">Welcome to the Invoices <?php echo $_SESSION['username'];
                                         ?>!
           </h5><br>
 
-          <img src="assets/images/widgets/calendar.png" alt="" style = "max-width:300px" class="img-fluid">
+          <img src="assets/images/widgets/planing.png" alt="" style = "max-width:450px" class="img-fluid">
       </div>
       <div class="card-footer text-muted"><i>“a list of goods sent or <b>services provided</b>, with a statement of the sum due for these; a bill.”</i></div>
     </div>
@@ -85,7 +87,7 @@ mysqli_query($db, "SET NAMES utf8");
     
                                     <div class="table-responsive">
                                         <table class="table table-bordered mb-0 table-centered">
-                                            <thead>
+                                            <thead style = border:2px>
                                             <tr>
                                                 <th><b>Invoice ID</b></th>
                                                 <th>Company Name</th>
@@ -93,40 +95,50 @@ mysqli_query($db, "SET NAMES utf8");
                                                 <th>Order Status</th>
                                                 <th>Action</th>
                                             </tr>
-                                            </thead>
-                                            <tbody>
                                             <tr>
+                                                <th><b></b></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th><button class="btn btn-primary"><i class="fas fa-plus"></i></button></th>
+                                            </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                            <tr style = background-color:green;color:white>
                                                 <td>#124781</td>
                                                 <td>IDM</td>
                                                 <td>25/11/2018</td>
-                                                <td><span class="badge badge-soft-success">Approved</span></td>
+                                                <td><span class="badge badge-soft-success">Done</span></td>
                                                 <td>
                                                 <button class="btn btn-success"><i class="fas fa-check"></i></button>
-                                                 <button class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteUser"><i class="fas fa-trash"></i></button></td>
+                                                <button class="btn btn-warning"><i class="fas fa-refresh"></i></button>
+                                                 <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
 
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>#542136</td>
+                                            <tr style = background:darkred;color:white>                                                <td>#542136</td>
                                                 <td>IDM</td>
                                                 <td>19/11/2018</td>
                                                
-                                                <td><span class="badge badge-soft-success">Approved</span></td>
+                                                <td><span class="badge badge-soft-success" style = color:white>Not received</span></td>
                                                 <td>
                                                 <button class="btn btn-success"><i class="fas fa-check"></i></button>
-                                                 <button class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteUser"><i class="fas fa-trash"></i></button></td>
+                                                <button class="btn btn-warning"><i class="fas fa-refresh"></i></button>
+                                                 <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
 
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr style = background:#FFC72C;color:black>
                                                 <td>#234578</td>
                                                 <td>IDM</td>
                                                 <td>11/10/2018</td>
                                                 
-                                                <td><span class="badge badge-soft-danger">Rejected</span></td>
+                                                <td><span class="badge badge-soft-danger" style=color:black>In progress</span></td>
                                                 <td>
                                                 <button class="btn btn-success"><i class="fas fa-check"></i></button>
-                                                 <button class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteUser"><i class="fas fa-trash"></i></button></td>
+                                                <button class="btn btn-warning"><i class="fas fa-refresh"></i></button>
+                                                 <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
 
                                                 </td>
                                             </tr>
@@ -138,7 +150,8 @@ mysqli_query($db, "SET NAMES utf8");
                                 
                                                 <td>
                                                 <button class="btn btn-success"><i class="fas fa-check"></i></button>
-                                                 <button class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteUser"><i class="fas fa-trash"></i></button></td>
+                                                <button class="btn btn-warning"><i class="fas fa-refresh"></i></button>
+                                                 <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
 
                                                 </td>
                                                 

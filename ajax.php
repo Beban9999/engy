@@ -65,6 +65,12 @@ if($f == "insertRow"){
     $rez = $stmt->get_result();
     echo $rez;
 }
+if($f == "deleteTraffic"){
+    $traffic_id = $_POST["traffic_id"];
+    $stmt = $db->prepare("UPDATE traffic SET trff_deleted = 1 WHERE traffic_id = ?");
+    $stmt->bind_param('i', $traffic_id);
+    $stmt->execute();
+}
 if($f == "insertTrafficRow"){
     $currUser = $_SESSION['id_user'];
     $trf_cust = $_POST['trf_cust']; 
@@ -89,7 +95,7 @@ if($f == "deletePrivateMessageFrom")
 if($f == "fillTrafficBody"){
     $cont = $_POST['cont'];
 
-    $stmt = $db->prepare("SELECT * FROM traffic WHERE continent = ? ORDER BY 1 DESC");
+    $stmt = $db->prepare("SELECT * FROM traffic WHERE continent = ? AND trff_deleted = 0 ORDER BY 1 DESC");
     $stmt->bind_param("i", $cont);
     $stmt->execute();
     $rez = $stmt->get_result();
@@ -100,7 +106,7 @@ if($f == "fillTrafficBody"){
                 <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_customer\')" id="'.$red->traffic_id.'traffic_customer"  style=text-align:center;color:#4B0082;font-weight:bold>'.$red->traffic_customer.'</td>
                 <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_country\')" id="'.$red->traffic_id.'traffic_country" style=text-align:center>'.$red->traffic_country.'</td>
                 <td scope="col" contenteditable onfocusout="updateTrafficField('.$red->traffic_id.',\'traffic_type\')" id="'.$red->traffic_id.'traffic_type" style=text-align:center>'.$red->traffic_type.'</td>
-                <td scope="col" style=text-align:center;vertical-align:middle><button style = border:none;background:none;padding:0px><i class="fas fa-minus"></i></button></td>
+                <td scope="col" style=text-align:center;vertical-align:middle><button onclick="deleteTraffic('.$red->traffic_id.','.$cont.')" style = border:none;background:none;padding:0px><i class="fas fa-minus"></i></button></td>
             </tr>';
         }
     }

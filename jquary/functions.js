@@ -168,29 +168,22 @@ $(document).ready(function(){
     });
     $("#insertTrafficRow1").click(function(){
         sendTrafficData(1,$("#trf_cust1").val(),$("#trf_cntr1").val(),$("#trf_type1").val())
-        fillTrafficBody(document.getElementById("eur_body"), 1);
     })
     $("#insertTrafficRow2").click(function(){
         sendTrafficData(2,$("#trf_cust2").val(),$("#trf_cntr2").val(),$("#trf_type2").val())
-        fillTrafficBody(document.getElementById("asia_body"), 2);
     })
     $("#insertTrafficRow3").click(function(){
         sendTrafficData(3,$("#trf_cust3").val(),$("#trf_cntr3").val(),$("#trf_type3").val())
-        fillTrafficBody(document.getElementById("north_body"), 3);
     })
     $("#insertTrafficRow4").click(function(){
         sendTrafficData(4,$("#trf_cust4").val(),$("#trf_cntr4").val(),$("#trf_type4").val())
-        fillTrafficBody(document.getElementById("south_body"), 4);
     })
     $("#insertTrafficRow5").click(function(){
         sendTrafficData(5,$("#trf_cust5").val(),$("#trf_cntr5").val(),$("#trf_type5").val())
-        fillTrafficBody(document.getElementById("africa_body"), 5);
     })
     $("#insertTrafficRow6").click(function(){
         sendTrafficData(6,$("#trf_cust6").val(),$("#trf_cntr6").val(),$("#trf_type6").val())
-        fillTrafficBody(document.getElementById("australia_body"), 6);
     })
-
 
     $("#insertRow").click(function(){
         let ins_customer       = $("#ins_customer").html();
@@ -262,7 +255,6 @@ function fillTrafficBody(body_element, cont){
         cont:cont,
     },  
     function(response){
-        console.log(response)
         body_element.innerHTML = response
     }
     
@@ -284,6 +276,7 @@ function sendTrafficData(trf_cont, trf_cust, trf_cntr, trf_type){
         $("#trf_cntr"+trf_cont).val("")
         $("#trf_type"+trf_cont).val("")
         console.log(response)
+        fillUnknownTraffic(trf_cont);
     })
 }
 
@@ -355,6 +348,26 @@ function fillMessages(type){
         })
     }
 
+}
+function fillUnknownTraffic(cont){
+    if(cont == 1){
+        fillTrafficBody(document.getElementById("eur_body"), 1);
+    }
+    else if(cont == 2){
+        fillTrafficBody(document.getElementById("asia_body"), 2);
+    }
+    else if(cont == 3){
+        fillTrafficBody(document.getElementById("north_body"), 3);
+    }
+    else if(cont == 4){
+        fillTrafficBody(document.getElementById("south_body"), 4);
+    }
+    else if(cont == 5){
+        fillTrafficBody(document.getElementById("africa_body"), 5);
+    }
+    else if(cont == 6){
+        fillTrafficBody(document.getElementById("australia_body"), 6);
+    }
 }
 function fillTrafficChart(id=0){
     $.post("ajax.php?f=trafficChart",{id:id}, function (response) {
@@ -563,9 +576,6 @@ function fillApplicationUsersChart(){
 
     })
 }
-// setInterval(() => {
-//     fillMessages(1); fillMessages(0);
-// }, 2000);
 
 function deleteRecord(id){
     $.post("ajax.php?f=deleteRecord",{id:id}, function(response){

@@ -305,5 +305,15 @@
                     console.log(response);
                 })
     }
+    function deleteTraffic(traffic_id, cont){
+      console.log(traffic_id)
+      $.post("ajax.php?f=deleteTraffic", {
+                  traffic_id: traffic_id,
+                },
+                function(response) {
+                    console.log(response);
+                    fillUnknownTraffic(cont)
+                })
+    }
    </script>
 </html>

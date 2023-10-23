@@ -96,7 +96,7 @@
                <img src="img/europa.png" alt="" style = "max-width: 250px; width:100%;" class="img-fluid center-block d-block mx-auto">
                <hr>
                <div class="table-responsive" style= max-height:1000px>
-                  <table class="table table-hover">
+                  <table class="table table-hover" style=margin:0px;>
                   <thead style=background:#4B0082;color:white;position:sticky;top:0;>
                         <tr>
                            <th id='first' scope="col" style=text-align:center;>Customer</th>
@@ -116,6 +116,7 @@
                      </tbody>
                   </table>
                </div>
+               
                <div class="row"> 
                </div>
             </div>

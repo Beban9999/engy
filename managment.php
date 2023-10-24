@@ -103,7 +103,7 @@ mysqli_query($db, "SET NAMES utf8");
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modaltitle_for_report">Users's Report</h5>
+                    <h5 class="modal-title" id="modaltitle_for_report_user">Users's Report</h5>
                 </div>
                 <div class="modal-body" style="margin:3px" id='modal_for_report'>
 
@@ -336,7 +336,7 @@ mysqli_query($db, "SET NAMES utf8");
     }
 
     function viewReportForUser(week, userID, userName) {
-        $("#modaltitle_for_report").html(userName + "'s Report")
+        $("#modaltitle_for_report_user").html(userName + "'s Report")
         $.post("ajax.php?f=viewReportForUser", {
             week: week,
             userID,

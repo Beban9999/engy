@@ -68,22 +68,6 @@
       <?php
          navbar();
          
-         if ($_SESSION["status"] == 3) {
-             echo '
-             <br>
-             <div class="container-fluid">
-         
-                 <div class="row">
-                     <div class="col-lg-12">
-                         <div class="card">
-                             <h5 class="card-title" style="text-align:center; margin-top:15px;"><b>You do not have access to this page</b></h5>
-                             <hr style="border-color: white">
-                         </div>
-                     </div>
-                 </div>
-             </div>';
-             exit();
-         }
          ?>
       <br>
      
